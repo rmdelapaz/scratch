@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build an interactive animated story in Scratch — multiple sprites, backdrops, and broadcasts for scene changes. A parent-friendly Module 3 project lesson.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Lesson 3.1: An Interactive Animated Story — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module 3</a></li>
+            <li aria-current="page">Lesson 3.1</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🎭 Lesson 3.1: An Interactive Animated Story</h1>
+                <p class="lead">Time to build something your child will want to show off: a little animated scene with two characters who talk to each other, on a real backdrop. You'll meet the magic block that lets sprites work as a team — the broadcast.</p>
+
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <ul>
+                        <li>Add multiple sprites and a backdrop from the libraries</li>
+                        <li>Position sprites with <strong>go to</strong> and <strong>glide</strong></li>
+                        <li>Coordinate sprites with <strong>broadcast</strong> and <strong>when I receive</strong></li>
+                        <li>Stage a two-character conversation that plays itself</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 45 minutes &nbsp;•&nbsp; <strong>Builds on:</strong> Module 2</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
+                    </div>
+                </div>
+            </header>
+
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#cast" class="toc-link">Try It: Set the scene</a></li>
+                        <li><a href="#glide" class="toc-link">Learn It: Positioning &amp; glide</a></li>
+                        <li><a href="#broadcast" class="toc-link">Learn It: Broadcasts (the team signal)</a></li>
+                        <li><a href="#convo" class="toc-link">Try It: A conversation that plays itself</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Story before code</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <section id="cast" class="lesson-section">
+                <h2>🛠️ Try It: Set the scene</h2>
+                <p>Every story needs a place and a cast. Start a new project, then:</p>
+                <ol class="steps">
+                    <li><strong>Add a backdrop.</strong> Click the <em>Choose a Backdrop</em> button (bottom-right, below the stage panel) and pick a setting — say, "Forest."</li>
+                    <li><strong>Add a second sprite.</strong> Click the <em>Choose a Sprite</em> cat button and pick a character to join the cat.</li>
+                </ol>
+
+                <div class="card-grid">
+                    <figure class="shot" style="margin:0;">
+                        <img class="screenshot" src="images/scratch_sprite_library.png" alt="The Choose a Sprite library, a grid of characters with category filters like Animals, People, Fantasy, Dance, and a search box.">
+                        <figcaption>The sprite library — hundreds of ready characters.</figcaption>
+                    </figure>
+                    <figure class="shot" style="margin:0;">
+                        <img class="screenshot" src="images/scratch_backdrop_library.png" alt="The Choose a Backdrop library, a grid of background scenes with category filters.">
+                        <figcaption>The backdrop library — pick your setting.</figcaption>
+                    </figure>
+                </div>
+                <div class="card card-info">
+                    <h4>💡 Remember from Lesson 1.2</h4>
+                    <p>Each sprite has its <em>own</em> code. Click a sprite in the sprite list before you add blocks, so the blocks land on the right character.</p>
+                </div>
+            </section>
+
+            <section id="glide" class="lesson-section">
+                <h2>🎓 Learn It: Positioning &amp; glide</h2>
+                <p>The stage is a grid: <strong>x</strong> is left–right (−240 to 240), <strong>y</strong> is down–up (−180 to 180), and the center is <strong>x: 0, y: 0</strong>. Two Motion blocks place your cast:</p>
+                <ul>
+                    <li><strong>go to x: __ y: __</strong> — teleports instantly (use it to set a starting spot).</li>
+                    <li><strong>glide 1 secs to x: __ y: __</strong> — slides smoothly over time (lovely for entrances).</li>
+                </ul>
+                <div class="sb-script" aria-label="cat enters by gliding">
+                    <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                    <div class="sb-block sb-motion">go to x: <span class="sb-input">-200</span> y: <span class="sb-input">-100</span></div>
+                    <div class="sb-block sb-motion">glide <span class="sb-input">2</span> secs to x: <span class="sb-input">0</span> y: <span class="sb-input">-100</span></div>
+                    <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello, forest!</span> for <span class="sb-input">2</span> seconds</div>
+                </div>
+                <p>Give the cat this script: it starts off-stage-left and glides to center as the story opens. Cinematic!</p>
+            </section>
+
+            <section id="broadcast" class="lesson-section">
+                <h2>🎓 Learn It: Broadcasts — the team signal</h2>
+                <p>Here's the problem: how does Sprite B know when Sprite A finished talking, so it can reply? Sprites can't see each other's scripts. The answer is a <strong>broadcast</strong> — a silent, invisible signal any sprite can shout, and any sprite can listen for.</p>
+                <p>It's like a stage director calling "Cue: cat's done!" Every actor listening for that cue springs into action.</p>
+
+                <div class="mermaid">
+                    sequenceDiagram
+                        participant Cat
+                        participant Director as Broadcast
+                        participant Bear
+                        Cat->>Director: broadcast "your turn"
+                        Director-->>Bear: when I receive "your turn"
+                        Bear->>Bear: say a reply
+                </div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Cat: send the cue</h4>
+                        <div class="sb-script" aria-label="cat broadcasts your turn">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi Bear!</span> for <span class="sb-input">2</span> seconds</div>
+                            <div class="sb-block sb-events">broadcast <span class="sb-dropdown">your turn</span></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4>Bear: listen for the cue</h4>
+                        <div class="sb-script" aria-label="bear receives your turn">
+                            <div class="sb-block sb-events sb-hat">when I receive <span class="sb-dropdown">your turn</span></div>
+                            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi Cat! Nice day!</span> for <span class="sb-input">2</span> seconds</div>
+                        </div>
+                    </div>
+                </div>
+                <p>Both blocks live in the gold <strong>Events</strong> category. The first time, you'll pick "New message" and name your cue (like <em>your turn</em>). Naming cues clearly is a great habit.</p>
+            </section>
+
+            <section id="convo" class="lesson-section">
+                <h2>🛠️ Try It: A conversation that plays itself</h2>
+                <p>Chain broadcasts to script a whole back-and-forth. Each sprite talks, then cues the next line:</p>
+                <ol class="steps">
+                    <li><strong>Cat</strong> (on green flag): say "Hi Bear!", then <strong>broadcast line 2</strong>.</li>
+                    <li><strong>Bear</strong> (when I receive <em>line 2</em>): say "Hello Cat!", then <strong>broadcast line 3</strong>.</li>
+                    <li><strong>Cat</strong> (when I receive <em>line 3</em>): say "Want to explore?", then <strong>broadcast line 4</strong>.</li>
+                    <li><strong>Bear</strong> (when I receive <em>line 4</em>): say "Let's go!" and glide off together.</li>
+                </ol>
+                <div class="card card-success">
+                    <h4>✅ Why broadcasts beat guessing wait times</h4>
+                    <p>You <em>could</em> try to line up two sprites with matching "wait" blocks — but the timing drifts and breaks. Broadcasts guarantee the next line only starts when the last one truly finishes. Cleaner, and it always works.</p>
+                </div>
+                <details class="card">
+                    <summary>💡 Challenge: change the backdrop mid-story</summary>
+                    <p>The Stage can receive broadcasts too. Give the Stage a script: <em>when I receive "night"</em> → <strong>switch backdrop to</strong> a night scene. Then have a sprite broadcast "night" at the story's turning point. Instant scene change!</p>
+                </details>
+            </section>
+
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: Story before code</h2>
+                    <p>The secret to a great story project: <strong>plan the story with paper and voices first, code second.</strong> Coding a story your child hasn't imagined yet is backwards.</p>
+                    <h4>The 3-step story warm-up</h4>
+                    <ol class="steps">
+                        <li><strong>Who?</strong> Let them pick two characters and give them names and personalities.</li>
+                        <li><strong>Where?</strong> Pick the setting (backdrop) together.</li>
+                        <li><strong>What happens?</strong> Act out the conversation out loud, taking turns voicing each character. <em>That</em> is the script you'll code.</li>
+                    </ol>
+                    <p class="say-this">"Let's be the characters first! You be the bear, I'll be the cat. What does the cat say? …Great — now let's make Scratch say exactly that."</p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>Two lines each is plenty. You wire the broadcasts; they choose the words and characters. The magic is hearing <em>their</em> words come out of the sprite.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>They can manage the broadcast chain with light help. Encourage a beginning, a problem, and an ending.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>Push for a scene change (backdrop broadcast), sound effects, and a third character. Suddenly it's a real production.</p>
+                        </div>
+                    </div>
+                    <div class="card card-warning" style="margin-bottom:0;">
+                        <h4>⚠️ Common kid bug</h4>
+                        <p>Both sprites start talking at once (they both used <em>when 🟩 clicked</em>). Fix: only the <em>first</em> line starts on the flag; every other line starts with <em>when I receive</em>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> Two sprites need to take turns talking. What coordinates them?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — broadcast + when I receive let sprites cue each other.">A) broadcast and "when I receive"</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Matching waits drift and break.">B) Carefully matched wait blocks</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Loops repeat; they don't coordinate sprites.">C) A forever loop on each</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> Which block moves a sprite <em>smoothly</em> over time?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="That teleports instantly.">A) go to x/y</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — glide slides over a set number of seconds.">B) glide _ secs to x/y</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That changes costume, not position.">C) next costume</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> Both characters talk at the exact same time. Likely cause?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Correct — both scripts start on the green flag instead of waiting for a cue.">A) Both start with "when 🟩 clicked" instead of "when I receive"</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Backdrops don't cause this.">B) The backdrop is wrong</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Not a sizing issue.">C) The sprites are too big</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="summary" class="lesson-section">
+                <h2>Summary &amp; What's Next</h2>
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li>Add sprites and backdrops from the libraries; each sprite has its own code.</li>
+                        <li><strong>go to</strong> teleports; <strong>glide</strong> slides smoothly.</li>
+                        <li><strong>broadcast</strong> + <strong>when I receive</strong> let sprites cue each other reliably.</li>
+                        <li>Plan the story out loud <em>before</em> coding it.</li>
+                    </ul>
+                </div>
+                <h3>🚀 Next up</h3>
+                <p>Stories are wonderful, but kids often dream of <em>games</em>. In <strong>Lesson 3.2</strong> we build one — with a <strong>variable</strong> to keep score. Get ready to catch some falling apples.</p>
+            </section>
+
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_06.html" class="prev-lesson">← Previous: Conditionals &amp; Sensing</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="lesson_08.html" class="next-lesson">Next: A Simple Game →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

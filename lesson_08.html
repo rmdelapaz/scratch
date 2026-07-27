@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build a simple catch game in Scratch with a score variable. A parent-friendly Module 3 lesson on variables, scoring, and game logic.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Lesson 3.2: A Simple Game with Variables &amp; Score — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module 3</a></li>
+            <li aria-current="page">Lesson 3.2</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🎮 Lesson 3.2: A Simple Game with Variables &amp; Score</h1>
+                <p class="lead">This is the one kids beg to build: a real game. We'll make a "catch the apple" game and keep score — which means meeting one of the most powerful ideas in coding: the <strong>variable</strong>.</p>
+
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <ul>
+                        <li>Understand what a <strong>variable</strong> is and create one</li>
+                        <li>Use <strong>set</strong> and <strong>change</strong> to keep a score</li>
+                        <li>Combine everything (loops, if, sensing, broadcasts) into a game</li>
+                        <li>Show the score on the stage</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 50 minutes &nbsp;•&nbsp; <strong>Builds on:</strong> Modules 1–2 &amp; Lesson 3.1</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
+                    </div>
+                </div>
+            </header>
+
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#var" class="toc-link">Learn It: What's a variable?</a></li>
+                        <li><a href="#make" class="toc-link">Learn It: Make a score variable</a></li>
+                        <li><a href="#plan" class="toc-link">The game plan</a></li>
+                        <li><a href="#apple" class="toc-link">Try It: Code the apple</a></li>
+                        <li><a href="#catcher" class="toc-link">Try It: Code the catcher</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Design first, code second</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <section id="var" class="lesson-section">
+                <h2>🎓 Learn It: What's a variable?</h2>
+                <p>A <strong>variable</strong> is a labeled box that holds a value the computer can remember and change — like a score, a life count, or a player's name. The box has a <em>name</em> ("score") and a <em>value</em> (0, then 1, then 2…).</p>
+                <blockquote>Think of a whiteboard on the wall labeled "SCORE." You can read what's on it, erase it, and write a new number. That's a variable.</blockquote>
+                <p>Variables live in the orange <strong>Variables</strong> category. The three blocks you'll use constantly:</p>
+                <ul class="sb-legend">
+                    <li><span class="sb-dot" style="background:#FF8C1A"></span> <strong>set [score] to 0</strong> — put a specific value in the box</li>
+                    <li><span class="sb-dot" style="background:#FF8C1A"></span> <strong>change [score] by 1</strong> — add to what's already there</li>
+                    <li><span class="sb-dot" style="background:#FF8C1A"></span> <strong>[score]</strong> (the reporter) — read the current value</li>
+                </ul>
+            </section>
+
+            <section id="make" class="lesson-section">
+                <h2>🎓 Learn It: Make a score variable</h2>
+                <p>Click the <strong>Variables</strong> category, then <strong>“Make a Variable.”</strong> Name it <em>score</em>, keep "For all sprites," and click OK.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_make_variable.png" alt="The 'New Variable' dialog box in Scratch, with a name field, options for 'For all sprites' or 'For this sprite only', and Cancel/OK buttons. Behind it, the Variables palette shows blocks like 'set my variable to 0' and 'change my variable by 1'.">
+                    <figcaption>Figure 1: Making a variable. Name it clearly (like <em>score</em>) and choose "For all sprites."</figcaption>
+                </figure>
+
+                <p>Once created, a checkbox appears next to <em>score</em> in the palette — tick it and the score shows live on the stage. New blocks (<em>set</em>, <em>change</em>, <em>show/hide</em>) now use your variable.</p>
+            </section>
+
+            <section id="plan" class="lesson-section">
+                <h2>🗺️ The game plan</h2>
+                <p>Our game: apples fall from the top; move the cat with the mouse to catch them; each catch scores a point.</p>
+                <div class="mermaid">
+                    flowchart TD
+                        A["🟩 Green flag: set score = 0"] --> B["Apple: go to top, random x"]
+                        B --> C["Apple glides down"]
+                        C --> D{"Touching the cat?"}
+                        D -->|Yes| E["change score by 1"]
+                        D -->|No, hit bottom| F["missed"]
+                        E --> B
+                        F --> B
+                        style A fill:#FF8C1A,color:#fff,stroke:#333
+                        style D fill:#5CB1D6,color:#fff,stroke:#333
+                        style E fill:#FF8C1A,color:#fff,stroke:#333
+                </div>
+                <p>Set the scene first: add an <strong>Apple</strong> sprite and keep the cat (or pick a "Bowl"). Optionally add a backdrop.</p>
+            </section>
+
+            <section id="apple" class="lesson-section">
+                <h2>🛠️ Try It: Code the apple</h2>
+                <p>Select the <strong>Apple</strong> sprite. It resets the score, then falls again and again from a random spot:</p>
+                <div class="sb-script" aria-label="apple falling and scoring script">
+                    <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                    <div class="sb-block sb-variables">set <span class="sb-dropdown">score</span> to <span class="sb-input">0</span></div>
+                    <div class="sb-block sb-control">forever</div>
+                    <div class="sb-nest">
+                        <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div>
+                        <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Cat?</span></div>
+                        <div class="sb-nest">
+                            <div class="sb-block sb-motion">change y by <span class="sb-input">-8</span></div>
+                            <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching edge?</span> then</div>
+                            <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div></div>
+                        </div>
+                        <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+                    </div>
+                </div>
+                <p>Read it as a story: start at the top at a random x, fall until caught (bounce back to the top if it hits the bottom edge), and when the cat catches it, add a point — then do it all again, forever.</p>
+                <div class="card card-info">
+                    <h4>💡 Where these came from</h4>
+                    <p><em>pick random</em> is a green <strong>Operators</strong> block. <em>touching</em> is a blue-green <strong>Sensing</strong> block. <em>repeat until</em> and <em>if</em> are <strong>Control</strong>. You're combining four categories — real programming!</p>
+                </div>
+            </section>
+
+            <section id="catcher" class="lesson-section">
+                <h2>🛠️ Try It: Code the catcher</h2>
+                <p>Select the <strong>Cat</strong>. It simply follows the mouse left–right along the bottom:</p>
+                <div class="sb-script" aria-label="cat follows mouse x">
+                    <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                    <div class="sb-block sb-control">forever</div>
+                    <div class="sb-nest">
+                        <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#5CB1D6;color:#fff;">mouse x</span> y: <span class="sb-input">-140</span></div>
+                    </div>
+                </div>
+                <p>Press the green flag and move your mouse — the cat slides along the bottom, catching apples, and the score ticks up. You built a game! 🎉</p>
+                <div class="card card-success">
+                    <h4>✅ Make it a real challenge</h4>
+                    <p>Add a <strong>timer</strong>: make a <em>time left</em> variable, set it to 30, and in a loop <em>change time left by -1</em> / <em>wait 1 second</em> until it hits 0, then <em>broadcast game over</em> and <em>stop all</em>. Now there's a reason to hurry.</p>
+                </div>
+                <details class="card">
+                    <summary>🐛 Common problems &amp; fixes</summary>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Symptom</th><th>Fix</th></tr></thead>
+                            <tbody>
+                                <tr><td>Score jumps up by lots at once</td><td>The apple keeps touching the cat for several frames. After scoring, add <em>go to</em> the top immediately (as above) so it leaves the cat.</td></tr>
+                                <tr><td>Score never goes up</td><td>Check the <em>touching</em> block names the right sprite, and the cat and apple actually overlap.</td></tr>
+                                <tr><td>Score doesn't reset</td><td>Make sure <em>set score to 0</em> runs on the green flag, before the forever loop.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+            </section>
+
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: Design first, code second</h2>
+                    <p>Games are where kids' ambitions outrun their skills — and where frustration lives. Head it off by <strong>designing on paper first</strong>.</p>
+                    <h4>The one-page game design</h4>
+                    <ul>
+                        <li><strong>Goal:</strong> What are you trying to do? (Catch apples.)</li>
+                        <li><strong>Controls:</strong> How do you play? (Move the mouse.)</li>
+                        <li><strong>Scoring:</strong> How do you win/score? (+1 per catch.)</li>
+                        <li><strong>Lose condition:</strong> Can you lose? (Timer runs out.)</li>
+                    </ul>
+                    <p class="say-this">"Before we code, tell me your game like you're explaining it to a friend. How do you play? How do you win? Let's write those down — those are our to-do list."</p>
+
+                    <h4>Explain variables with a real whiteboard</h4>
+                    <p>Grab a sticky note labeled "SCORE: 0." Each time you pretend to catch something, cross it out and write the next number. Then say: "the <em>change score by 1</em> block does exactly this."</p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>You build most of it; they choose the apple, the catcher, and press GO. The thrill is catching + watching the number grow.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>They can build the catcher and add the score change. Great age to add the timer and a "game over" message.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>Push for levels, a high-score variable, or a "lives" system. Let them scope it — then help them cut it down to something finishable.</p>
+                        </div>
+                    </div>
+                    <div class="card card-warning" style="margin-bottom:0;">
+                        <h4>⚠️ The scope trap</h4>
+                        <p>Kids dream up "an open-world game with 50 levels." Gently steer to <em>one</em> working mechanic first. "Let's make catching <em>one</em> apple perfect, then add more." A finished tiny game beats an abandoned huge one — for their motivation and yours.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> What is a variable?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — a named box that stores a value you can read and change.">A) A named box that stores a value the program can change</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That's a loop.">B) A block that repeats actions</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That's a sprite.">C) A character on the stage</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> To add one point to the score, you use…</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="'set' replaces the value entirely.">A) set score to 1</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — 'change score by 1' adds to the current value.">B) change score by 1</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That would erase the score each time.">C) set score to 0</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> Where should "set score to 0" go?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Correct — reset the score once at the start, before the game loop.">A) Right after the green flag, before the game loop</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That would wipe the score constantly.">B) Inside the forever loop</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Then it never resets between plays.">C) It doesn't matter</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="summary" class="lesson-section">
+                <h2>Summary &amp; What's Next</h2>
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li>A <strong>variable</strong> is a named box that stores a changeable value like a score.</li>
+                        <li><strong>set</strong> puts a value in; <strong>change</strong> adds to it; tick the checkbox to show it on stage.</li>
+                        <li>A game combines loops, if, sensing, operators, and variables together.</li>
+                        <li>Design on paper first, build one working mechanic, then grow it.</li>
+                    </ul>
+                </div>
+                <h3>🚀 Next up</h3>
+                <p>Every project hits bugs, and the best coders are the best <em>fixers</em>. In <strong>Lesson 3.3</strong> we learn a calm, kid-friendly way to debug — plus how to learn from others by exploring and remixing shared projects.</p>
+            </section>
+
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_07.html" class="prev-lesson">← Previous: Interactive Story</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="lesson_09.html" class="next-lesson">Next: Debugging &amp; Remixing →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

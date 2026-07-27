@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Loops in Scratch — repeat and forever blocks — explained for parents, with a real walking-animation project and teaching tips.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Lesson 2.2: Loops — Making Things Repeat — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module 2</a></li>
+            <li aria-current="page">Lesson 2.2</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🔁 Lesson 2.2: Loops — Making Things Repeat</h1>
+                <p class="lead">Why write a block ten times when you can tell Scratch "do this ten times"? Loops are the first idea that makes kids feel like real programmers — and they're the secret behind every animation and game.</p>
+
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <ul>
+                        <li>Use the <strong>repeat</strong> and <strong>forever</strong> loops</li>
+                        <li>Understand what goes <em>inside</em> a loop vs. outside it</li>
+                        <li>Build a smooth walking animation with a loop</li>
+                        <li>Recognize and fix a runaway "forever" loop</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 35 minutes &nbsp;•&nbsp; <strong>Builds on:</strong> Sequences (2.1)</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
+                    </div>
+                </div>
+            </header>
+
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#why" class="toc-link">Learn It: Why loops exist</a></li>
+                        <li><a href="#repeat" class="toc-link">Learn It: repeat vs. forever</a></li>
+                        <li><a href="#inside" class="toc-link">Learn It: Inside the loop</a></li>
+                        <li><a href="#walk" class="toc-link">Try It: A real walking cat</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Loops all around us</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <section id="why" class="lesson-section">
+                <h2>🎓 Learn It: Why loops exist</h2>
+                <p>Imagine you want the cat to take 20 little steps. You <em>could</em> drag in 20 "move" blocks. Painful — and if you wanted 21, you'd start over. A <strong>loop</strong> says "do this again and again" so one block replaces twenty.</p>
+
+                <div class="card-grid">
+                    <div class="card card-warning">
+                        <h4>😩 The hard way</h4>
+                        <div class="sb-script" aria-label="move repeated four times">
+                            <div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div>
+                            <div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div>
+                            <div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div>
+                            <div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div>
+                        </div>
+                        <p><small>…and 16 more. No thanks.</small></p>
+                    </div>
+                    <div class="card card-success">
+                        <h4>😎 The loop way</h4>
+                        <div class="sb-script" aria-label="repeat 20 containing move 10 steps">
+                            <div class="sb-block sb-control">repeat <span class="sb-input">20</span></div>
+                            <div class="sb-nest"><div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div></div>
+                        </div>
+                        <p><small>One loop. Change 20 to 100 in a heartbeat.</small></p>
+                    </div>
+                </div>
+                <p>Loops live in the orange <strong>Control</strong> category. Notice they're <strong>C-shaped</strong> — blocks you place <em>inside</em> the "mouth" of the C get repeated.</p>
+            </section>
+
+            <section id="repeat" class="lesson-section">
+                <h2>🎓 Learn It: repeat vs. forever</h2>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_palette_control.png" alt="The Control palette showing the 'repeat 10' and 'forever' C-shaped loop blocks near the top." style="max-width:330px;">
+                    <figcaption>Figure 1: The two loops you'll use most — <em>repeat</em> and <em>forever</em>.</figcaption>
+                </figure>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Loop</th><th>What it does</th><th>Use it when…</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>repeat 10</strong></td><td>Runs the inside blocks a set number of times, then moves on</td><td>You know how many times (blink 3 times, take 20 steps)</td></tr>
+                            <tr><td><strong>forever</strong></td><td>Runs the inside blocks endlessly until you press stop</td><td>Something should always be happening (a heartbeat, constant fall, always checking a key)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card card-warning">
+                    <h4>⚠️ "forever" never ends on its own</h4>
+                    <p>Any block placed <em>after</em> a forever loop will <strong>never run</strong> — the program never gets past it. That's not a bug in Scratch; it's the loop doing its job. Use the red stop to end it.</p>
+                </div>
+            </section>
+
+            <section id="inside" class="lesson-section">
+                <h2>🎓 Learn It: What goes inside the loop</h2>
+                <p>This is the idea kids (and adults!) trip on: only the blocks <em>inside</em> the C repeat. Compare:</p>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Say is inside → repeats</h4>
+                        <div class="sb-script" aria-label="repeat 3 with say inside">
+                            <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
+                            <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Ha!</span> for <span class="sb-input">1</span> seconds</div></div>
+                        </div>
+                        <p><small>"Ha!" three times.</small></p>
+                    </div>
+                    <div class="card">
+                        <h4>Say is outside → runs once</h4>
+                        <div class="sb-script" aria-label="repeat 3 empty then say once">
+                            <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
+                            <div class="sb-nest"><div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div></div>
+                            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Done!</span> for <span class="sb-input">1</span> seconds</div>
+                        </div>
+                        <p><small>Moves 3×, then says "Done!" once.</small></p>
+                    </div>
+                </div>
+                <div class="mermaid">
+                    flowchart TD
+                        A["Enter repeat 3"] --> B{"Done 3 times?"}
+                        B -->|No| C["Run inside blocks"]
+                        C --> B
+                        B -->|Yes| D["Continue below the loop"]
+                        style A fill:#FFAB19,color:#5c3d00,stroke:#333
+                        style B fill:#5CB1D6,color:#fff,stroke:#333
+                        style C fill:#4C97FF,color:#fff,stroke:#333
+                        style D fill:#e2e8f0,color:#1e293b,stroke:#333
+                </div>
+            </section>
+
+            <section id="walk" class="lesson-section">
+                <h2>🛠️ Try It: A real walking cat</h2>
+                <p>In Module 1 the cat "jumped" across. With a loop we get smooth walking. The cat has two costumes; alternating them <em>while</em> moving looks like real steps.</p>
+                <ol class="steps">
+                    <li>Start with <strong>when 🟩 clicked</strong>, then <strong>go to x: -200 y: 0</strong> (start at the left).</li>
+                    <li>Add a <strong>repeat 20</strong> loop (Control).</li>
+                    <li><em>Inside</em> the loop, add: <strong>move 20 steps</strong>, <strong>next costume</strong>, and <strong>wait 0.1 seconds</strong>.</li>
+                </ol>
+                <div class="sb-script" aria-label="walking animation script">
+                    <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                    <div class="sb-block sb-motion">go to x: <span class="sb-input">-200</span> y: <span class="sb-input">0</span></div>
+                    <div class="sb-block sb-control">repeat <span class="sb-input">20</span></div>
+                    <div class="sb-nest">
+                        <div class="sb-block sb-motion">move <span class="sb-input">20</span> steps</div>
+                        <div class="sb-block sb-looks">next costume</div>
+                        <div class="sb-block sb-control">wait <span class="sb-input">0.1</span> seconds</div>
+                    </div>
+                </div>
+                <p>Press the green flag: the cat strides across the stage, legs moving. That's your first animation! The <strong>wait 0.1</strong> sets the walk speed — smaller is faster.</p>
+
+                <details class="card">
+                    <summary>💡 Challenge: make it pace back and forth forever</summary>
+                    <p>Wrap the whole walk in a <strong>forever</strong> loop and add <strong>if on edge, bounce</strong> (Motion) plus set the sprite's rotation style to "left-right" so it flips instead of going upside-down. Now it patrols endlessly until you hit stop.</p>
+                </details>
+            </section>
+
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: Loops all around us</h2>
+                    <p>Loops are everywhere in daily life — naming them together makes the abstract idea stick.</p>
+                    <h4>Spot-the-loop game</h4>
+                    <p class="say-this">"Brushing teeth is a loop: scrub, scrub, scrub — repeat until clean! Can you think of another loop? What about the wheels on the car, or a song's chorus?"</p>
+                    <ul>
+                        <li>Stirring a pot • jumping jacks • a ticking clock • steps while walking • a chorus repeating.</li>
+                    </ul>
+
+                    <h4>The powerful question</h4>
+                    <p>When your child copy-pastes the same block many times, don't correct — <em>ask</em>:</p>
+                    <p class="say-this">"That works! Is there a block that could do all of those for us at once, so we don't have to make so many?"</p>
+                    <p>Letting them <em>discover</em> the loop is far stickier than telling them.</p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>Stick to <strong>repeat</strong> with small numbers they can count out loud. "Repeat 3 — let's count the jumps!"</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>Great age for the walking project. Let them tune the wait number and feel how it changes speed.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>Introduce a loop <em>inside</em> a loop (nesting). E.g., repeat 4 { repeat 10 { move; wait } turn 90 } to trace a square.</p>
+                        </div>
+                    </div>
+                    <div class="card card-warning" style="margin-bottom:0;">
+                        <h4>⚠️ Common kid bug</h4>
+                        <p>They drop a block <em>below</em> the loop expecting it to repeat, or they trap the whole program in a <strong>forever</strong> so a later block "does nothing." Point at the C-shape: "Is your block inside the mouth, or outside?"</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> You want the cat to blink exactly 5 times. Best loop?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — repeat 5, because you know the exact count.">A) repeat 5</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Forever never stops on its own.">B) forever</button>
+                            <button class="quiz-option" data-correct="false" data-hint="A wait pauses; it doesn't repeat.">C) wait 5 seconds</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> Only which blocks repeat in a loop?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Blocks below the C don't repeat.">A) All blocks in the whole script</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Correct — only blocks nested inside the C-shape repeat.">B) Only the blocks inside the C-shape</button>
+                            <button class="quiz-option" data-correct="false" data-hint="It's about position, not color.">C) Only the blue ones</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> A block placed <em>after</em> a "forever" loop will…</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — the program never exits a forever loop, so nothing after it runs.">A) never run</button>
+                            <button class="quiz-option" data-correct="false" data-hint="It won't run at all.">B) run first</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Forever doesn't take turns.">C) alternate with the loop</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="summary" class="lesson-section">
+                <h2>Summary &amp; What's Next</h2>
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li><strong>repeat</strong> runs a set number of times; <strong>forever</strong> runs until you press stop.</li>
+                        <li>Loops are C-shaped — only the blocks <em>inside</em> repeat.</li>
+                        <li>Alternating costumes inside a loop creates smooth animation.</li>
+                        <li>Let kids discover loops by asking "could one block do all these?"</li>
+                    </ul>
+                </div>
+                <h3>🚀 Next up</h3>
+                <p>So far the cat does what we plan. In <strong>Lesson 2.3</strong> it starts making <em>decisions</em> — reacting to key presses and touches with <strong>if/then</strong> and <strong>sensing</strong> blocks. This is where projects become interactive.</p>
+            </section>
+
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_04.html" class="prev-lesson">← Previous: Sequences &amp; Timing</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="lesson_06.html" class="next-lesson">Next: Conditionals &amp; Sensing →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

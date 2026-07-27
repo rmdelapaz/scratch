@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keep your child safe on Scratch — accounts and privacy, sharing projects, the moderated community, comments, and healthy digital habits. A parent safety lesson.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Lesson 4.2: Sharing Safely &amp; the Scratch Community — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module 4</a></li>
+            <li aria-current="page">Lesson 4.2</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🛡️ Lesson 4.2: Sharing Safely &amp; the Scratch Community</h1>
+                <p class="lead">Scratch has a huge online community — one of its best features and the part parents worry about most. Here's exactly how it works, what protections exist, and how to set your child up to share safely and kindly.</p>
+
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <ul>
+                        <li>Understand Scratch accounts, privacy, and what data is collected</li>
+                        <li>Know how sharing works — private by default until <em>you</em> share</li>
+                        <li>Explain the moderated community and comment controls</li>
+                        <li>Set healthy sharing habits and good digital citizenship</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 30 minutes &nbsp;•&nbsp; <strong>Audience:</strong> you (then a chat with your child)</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Guidance for all ages</span>
+                    </div>
+                </div>
+            </header>
+
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#accounts" class="toc-link">Accounts &amp; privacy</a></li>
+                        <li><a href="#private" class="toc-link">Private by default</a></li>
+                        <li><a href="#community" class="toc-link">The moderated community</a></li>
+                        <li><a href="#comments" class="toc-link">Comments &amp; controls</a></li>
+                        <li><a href="#citizen" class="toc-link">Teach It: Digital citizenship</a></li>
+                        <li><a href="#habits" class="toc-link">Healthy habits</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <section id="accounts" class="lesson-section">
+                <h2>🎓 Accounts &amp; privacy</h2>
+                <p>Scratch is run by a non-profit and takes children's privacy seriously (it complies with children's privacy laws like COPPA in the US). When your child signs up, Scratch asks for <strong>a parent/guardian email</strong> and collects minimal information.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_parents_page.png" alt="The official Scratch for Parents page, with information for parents and guardians about how Scratch works and how to keep children safe.">
+                    <figcaption>Figure 1: The official <a href="https://scratch.mit.edu/parents/">Scratch for Parents</a> page — your best reference for privacy and safety specifics, straight from the source.</figcaption>
+                </figure>
+
+                <div class="card card-success">
+                    <h4>✅ Set up the account the safe way</h4>
+                    <ul>
+                        <li>Use a <strong>username that hides real identity</strong> (no full name, school, or birth year).</li>
+                        <li>Enter <strong>your</strong> email as the parent contact — you'll get account notices.</li>
+                        <li>Choose a password together and keep it somewhere you both can find it.</li>
+                        <li>Remind them: never share real name, address, school, phone, or photos in projects or comments.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="private" class="lesson-section">
+                <h2>🎓 Private by default</h2>
+                <p>A crucial reassurance: <strong>projects are NOT public until your child explicitly clicks “Share.”</strong> Everything they build stays private to their account until then. Nothing is broadcast to the world by accident.</p>
+                <div class="mermaid">
+                    flowchart LR
+                        A["Create a project"] --> B["Saved to account<br/>(private)"]
+                        B -->|child clicks Share| C["Visible in the community"]
+                        B -->|never shares| D["Stays private forever"]
+                        style A fill:#4C97FF,color:#fff,stroke:#333
+                        style B fill:#59C059,color:#fff,stroke:#333
+                        style C fill:#FFAB19,color:#5c3d00,stroke:#333
+                        style D fill:#e2e8f0,color:#1e293b,stroke:#333
+                </div>
+                <div class="card card-info">
+                    <h4>💡 You can code without ever sharing</h4>
+                    <p>If you'd rather keep everything private for now, that's completely fine — your child can create, save, and enjoy Scratch indefinitely without sharing a single project. Sharing is a choice, not a requirement.</p>
+                </div>
+            </section>
+
+            <section id="community" class="lesson-section">
+                <h2>🎓 The moderated community</h2>
+                <p>When a project is shared, others can view it, "love" it, favorite it, remix it, and comment. Scratch works hard to keep this space kind: there's active moderation, community guidelines, and easy reporting.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_community_guidelines.png" alt="The Scratch Community Guidelines page, listing expectations like being respectful, being constructive, and keeping personal info private.">
+                    <figcaption>Figure 2: The <a href="https://scratch.mit.edu/community_guidelines">Community Guidelines</a> — short, kid-readable, and worth reading together.</figcaption>
+                </figure>
+
+                <p>The guidelines boil down to a few kind, sensible rules:</p>
+                <ul>
+                    <li><strong>Be respectful</strong> — treat others how you'd want to be treated.</li>
+                    <li><strong>Be constructive</strong> — give helpful feedback, not put-downs.</li>
+                    <li><strong>Keep personal info private</strong> — yours and everyone else's.</li>
+                    <li><strong>Be honest</strong> — credit others' work when you remix.</li>
+                    <li><strong>Help keep the site friendly</strong> — report anything that isn't.</li>
+                </ul>
+            </section>
+
+            <section id="comments" class="lesson-section">
+                <h2>🎓 Comments &amp; controls</h2>
+                <p>Comments are the main way kids interact. A few things that make this safer than typical social media:</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Control</th><th>What it does</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Report button</strong></td><td>Flags any comment or project for the moderation team.</td></tr>
+                            <tr><td><strong>Turn comments off</strong></td><td>Your child can disable comments on their own projects entirely.</td></tr>
+                            <tr><td><strong>Delete comments</strong></td><td>They control comments on their projects and profile.</td></tr>
+                            <tr><td><strong>Block/ignore</strong></td><td>Unwanted interactions can be reported and users blocked.</td></tr>
+                            <tr><td><strong>No private messaging</strong></td><td>There are no hidden DMs — interactions are public and visible to you.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card card-warning">
+                    <h4>⚠️ It's still the internet</h4>
+                    <p>Moderation is strong but not perfect, and any social space can bring criticism or the occasional unkind comment. Keep the account on a shared device or in a common room, check in regularly, and make it normal to show you a mean comment so you can report it together.</p>
+                </div>
+            </section>
+
+            <section id="citizen" class="lesson-section">
+                <h2>💬 Teach It: Digital citizenship</h2>
+                <div class="teach-panel">
+                    <p>Scratch is many kids' first online community — a wonderful, low-stakes place to practice being a good digital citizen, with you alongside.</p>
+                    <h4>The conversation to have before sharing</h4>
+                    <p class="say-this">"When we share your project, other kids around the world can see it and leave comments. Most are super nice! But our family rules are: we never share private stuff — our real name, where we live, our school — and if anyone's ever unkind, you show me and we handle it together. Deal?"</p>
+
+                    <h4>Model kind commenting</h4>
+                    <p>Write a comment together on a project you both like. Praise something specific: "I love how the dragon breathes fire — how did you do that?" Kind, curious, specific — the gold standard.</p>
+
+                    <h4>Handle criticism gracefully</h4>
+                    <p>Someone <em>will</em> eventually leave a "meh" comment. Frame it early: "Not everyone will love everything we make, and that's okay. We can learn from helpful notes and ignore unkind ones."</p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>Keep it private, or share only with family. They don't need the public community yet — focus on making.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>Good age to start sharing <em>with your supervision</em>. Read comments together at first. Practice writing kind ones.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>More independence, with clear expectations. Talk about online reputation, crediting remixes, and not oversharing.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="habits" class="lesson-section">
+                <h2>🎓 Healthy habits</h2>
+                <ul>
+                    <li><strong>Balance making vs. browsing.</strong> Creating is the goal; endless scrolling through others' games less so. Nudge toward "let's make" over "let's watch."</li>
+                    <li><strong>Time boundaries.</strong> Agree on session lengths up front, just like any screen time.</li>
+                    <li><strong>Shared space.</strong> Keep Scratch on a family device or in a common area, especially early on.</li>
+                    <li><strong>Regular check-ins.</strong> "Show me what you made!" doubles as fun bonding <em>and</em> light supervision.</li>
+                    <li><strong>Know the off switch.</strong> You can review your child's account via the parent email and Scratch's account tools whenever you like.</li>
+                </ul>
+            </section>
+
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> When is a child's Scratch project visible to the public?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Not automatic.">A) As soon as it's created</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — projects are private until the child explicitly clicks Share.">B) Only after they click "Share"</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Saving keeps it private.">C) The moment it's saved</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> Which is TRUE about the Scratch community?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Correct — it's moderated, has guidelines, and no private messaging.">A) It's moderated, has guidelines, and has no private DMs</button>
+                            <button class="quiz-option" data-correct="false" data-hint="There are no hidden DMs.">B) Kids can privately message anyone</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Comments can be turned off and reported.">C) Comments can't be controlled</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> Best safety habit for a young sharer?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Real names should stay private.">A) Use their real full name as the username</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — a non-identifying username, your email, and shared check-ins.">B) A non-identifying username, your email on the account, and regular check-ins</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Unsupervised early sharing isn't ideal.">C) Share everything publicly with no supervision</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="summary" class="lesson-section">
+                <h2>Summary &amp; What's Next</h2>
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li>Scratch minimizes data, uses a parent email, and is built for kids' privacy.</li>
+                        <li>Projects are <strong>private until shared</strong> — sharing is always a choice.</li>
+                        <li>The community is moderated, guideline-based, and has no private messaging.</li>
+                        <li>Set a non-identifying username, keep it a shared space, and talk about kind, safe behavior.</li>
+                    </ul>
+                </div>
+                <p><small>For the definitive, up-to-date details, always check the official <a href="https://scratch.mit.edu/parents/">Scratch for Parents</a> and <a href="https://scratch.mit.edu/privacy_policy">Privacy Policy</a> pages.</small></p>
+                <h3>🚀 Next up</h3>
+                <p>Your child is coding, creating, and sharing safely. Where does the adventure go from here? In <strong>Lesson 4.3</strong> — the course finale — we map what comes after Scratch, from ScratchJr for littles to real text-based languages.</p>
+            </section>
+
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_10.html" class="prev-lesson">← Previous: The Art of Not Taking Over</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="lesson_12.html" class="next-lesson">Next: What Comes After Scratch →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

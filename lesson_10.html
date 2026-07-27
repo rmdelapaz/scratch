@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to teach Scratch to your child without taking over — scaffolding, asking instead of telling, praising effort, and handling frustration. A parent teaching-craft lesson.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Lesson 4.1: The Art of Not Taking Over — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module 4</a></li>
+            <li aria-current="page">Lesson 4.1</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🤲 Lesson 4.1: The Art of Not Taking Over</h1>
+                <p class="lead">You've got the Scratch skills. Now for the harder craft: helping your child learn without doing it <em>for</em> them. This lesson is about teaching — the questions, the pacing, and the sit-on-your-hands patience that turn a helper into a great coach.</p>
+
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <ul>
+                        <li>Use <strong>scaffolding</strong> to give just enough help, then fade it</li>
+                        <li>Ask guiding questions instead of giving answers</li>
+                        <li>Praise <strong>effort and process</strong>, not just results</li>
+                        <li>Turn frustration ("productive struggle") into learning, not tears</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 25 minutes &nbsp;•&nbsp; <strong>Coding needed:</strong> none — this one's for you</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Applies to all ages</span>
+                    </div>
+                </div>
+            </header>
+
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#why" class="toc-link">Why "not taking over" matters</a></li>
+                        <li><a href="#scaffold" class="toc-link">Scaffolding: help that fades</a></li>
+                        <li><a href="#ask" class="toc-link">Ask, don't tell</a></li>
+                        <li><a href="#praise" class="toc-link">Praise the process</a></li>
+                        <li><a href="#struggle" class="toc-link">Productive struggle</a></li>
+                        <li><a href="#motivate" class="toc-link">Keeping the spark alive</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <section id="why" class="lesson-section">
+                <h2>Why "not taking over" matters</h2>
+                <p>When we grab the mouse and fix the bug, we get a working project — and rob our child of the exact moment learning happens. The struggle <em>is</em> the lesson. Your goal isn't a polished project; it's a child who believes "I can figure things out."</p>
+                <blockquote>Every time you solve it for them, you quietly teach: "this is too hard for you." Every time you help them solve it themselves, you teach: "you are a person who solves hard things."</blockquote>
+            </section>
+
+            <section id="scaffold" class="lesson-section">
+                <h2>🎓 Scaffolding: help that fades</h2>
+                <p><strong>Scaffolding</strong> means giving just enough support to keep your child moving, then removing it bit by bit as they gain confidence — like training wheels you gradually raise. Aim to give the <em>least</em> help that unblocks them.</p>
+                <div class="mermaid">
+                    flowchart LR
+                        A["Do it together<br/>(I lead)"] --> B["They lead,<br/>I prompt"]
+                        B --> C["They do it,<br/>I watch"]
+                        C --> D["They teach<br/>me / a sibling"]
+                        style A fill:#4C97FF,color:#fff,stroke:#333
+                        style B fill:#5CB1D6,color:#fff,stroke:#333
+                        style C fill:#59C059,color:#fff,stroke:#333
+                        style D fill:#9966FF,color:#fff,stroke:#333
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Too little help</th><th>Just-right (scaffold)</th><th>Too much help</th></tr></thead>
+                        <tbody>
+                            <tr><td>"Figure it out." (walks away)</td><td>"Which category might have a 'move' block?"</td><td>"Drag the blue move block here." (or does it)</td></tr>
+                            <tr><td>Child stalls, gives up</td><td>Child stays in the driver's seat</td><td>Child becomes a spectator</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="ask" class="lesson-section">
+                <h2>🎓 Ask, don't tell</h2>
+                <p>Questions keep your child thinking; answers end the thinking. Build a small toolkit of go-to prompts:</p>
+                <div class="teach-panel">
+                    <h4>Your question toolkit</h4>
+                    <p class="say-this">"What do you <em>want</em> to happen?"</p>
+                    <p class="say-this">"What happened <em>instead</em>?"</p>
+                    <p class="say-this">"Which block do you think is in charge of that?"</p>
+                    <p class="say-this">"What could we try to test that idea?"</p>
+                    <p class="say-this">"Where have we seen something like this before?"</p>
+                    <p style="margin-bottom:0;">Notice none of these give the answer. They hand your child the <em>next step of thinking</em> — which is the real skill.</p>
+                </div>
+                <div class="card card-warning">
+                    <h4>⚠️ The "helpful" reflex to resist</h4>
+                    <p>You'll see the fix instantly and want to blurt it out. Pause. Count to five. Ask a question instead. That five-second gap is where your child's problem-solving muscle grows.</p>
+                </div>
+            </section>
+
+            <section id="praise" class="lesson-section">
+                <h2>🎓 Praise the process, not the talent</h2>
+                <p>Decades of research (Carol Dweck's work on "growth mindset") show <em>what</em> we praise shapes how kids handle challenge. Praise fixed traits ("you're so smart") and kids avoid risks that might prove otherwise. Praise effort and strategy and they lean into hard things.</p>
+                <div class="card-grid">
+                    <div class="card card-success">
+                        <h4>✅ Say this</h4>
+                        <ul>
+                            <li>"You kept trying different things until it worked."</li>
+                            <li>"That was clever how you tested one block at a time."</li>
+                            <li>"You didn't give up when it got tricky."</li>
+                            <li>"How did you figure that out?"</li>
+                        </ul>
+                    </div>
+                    <div class="card card-warning">
+                        <h4>⚠️ Go easy on this</h4>
+                        <ul>
+                            <li>"You're a genius!"</li>
+                            <li>"You're so naturally good at this."</li>
+                            <li>"See, that was easy!" (it wasn't, to them)</li>
+                            <li>Praising only the finished product</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="struggle" class="lesson-section">
+                <h2>🎓 Productive struggle (the good kind)</h2>
+                <p>There's a sweet spot between "so easy it's boring" and "so hard it's crushing." In that zone — sometimes called productive struggle or "flow" — kids are challenged but capable. Your job is to keep them in it.</p>
+                <div class="mermaid">
+                    flowchart TD
+                        A["Too easy → boredom"] -->|add a challenge| B["Just right → flow ✨"]
+                        C["Too hard → frustration"] -->|break it into steps| B
+                        style A fill:#e2e8f0,color:#1e293b,stroke:#333
+                        style B fill:#59C059,color:#fff,stroke:#333
+                        style C fill:#ef4444,color:#fff,stroke:#333
+                </div>
+                <ul>
+                    <li><strong>Bored?</strong> Raise the bar: "What if it kept score?" "Can you add a second level?"</li>
+                    <li><strong>Frustrated?</strong> Shrink the step: "Let's just get it to move first. One thing at a time."</li>
+                    <li><strong>Boiling over?</strong> Take a break — a real, respected debugging strategy, not a failure.</li>
+                </ul>
+            </section>
+
+            <section id="motivate" class="lesson-section">
+                <h2>🎓 Keeping the spark alive</h2>
+                <ul>
+                    <li><strong>Follow their interests.</strong> A kid who loves cats will out-code any assignment about spreadsheets. Let the projects be <em>theirs</em>.</li>
+                    <li><strong>Keep sessions short and positive.</strong> End on a win, not on a bug. 20–30 focused minutes beats a grinding hour.</li>
+                    <li><strong>Make it social.</strong> Have them demo to a grandparent or friend. An audience is rocket fuel.</li>
+                    <li><strong>Let it be silly.</strong> Fart sounds and exploding cats are perfectly valid computer science. Joy is the goal.</li>
+                    <li><strong>Model your own learning.</strong> "I don't know either — let's find out together" is one of the most powerful things you can say.</li>
+                </ul>
+                <div class="card card-info">
+                    <h4>💡 You don't have to know the answer</h4>
+                    <p>Being a great coding parent isn't about expertise — it's about curiosity and encouragement. "Let's figure it out together" models exactly the mindset you're trying to grow.</p>
+                </div>
+            </section>
+
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> What is "scaffolding" in teaching?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — just-enough support that you gradually remove.">A) Giving just enough help, then fading it as they gain confidence</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That's taking over.">B) Doing the hard parts for them</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That's under-helping.">C) Leaving them entirely on their own</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> Which praise best builds resilience?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Praising fixed traits can backfire.">A) "You're so smart!"</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — praising effort and strategy encourages taking on challenges.">B) "You kept trying different things until it worked."</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Dismisses the real effort it took.">C) "See, that was easy!"</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> Your child is bored because the task is too easy. Best response?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — raise the challenge to get back into 'flow'.">A) Offer a new challenge ("What if it kept score?")</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Boredom means it's too easy, not too hard.">B) Make it simpler</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Ending abruptly wastes their momentum.">C) Stop the session</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="summary" class="lesson-section">
+                <h2>Summary &amp; What's Next</h2>
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li>The struggle is the lesson — resist fixing it for them.</li>
+                        <li><strong>Scaffold</strong>: give the least help that unblocks, then fade it.</li>
+                        <li>Ask guiding questions; praise effort and strategy, not talent.</li>
+                        <li>Keep them in "productive struggle," follow their interests, and end on a win.</li>
+                    </ul>
+                </div>
+                <h3>🚀 Next up</h3>
+                <p>As your child grows more confident, they'll want to share their creations with the world. In <strong>Lesson 4.2</strong> we set that up <em>safely</em> — accounts, privacy, the community, and healthy habits.</p>
+            </section>
+
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_09.html" class="prev-lesson">← Previous: Debugging &amp; Remixing</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="lesson_11.html" class="next-lesson">Next: Sharing Safely →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

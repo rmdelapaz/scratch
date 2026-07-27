@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sequences and timing in Scratch — why order matters, using the wait block, and building a short routine. A parent-friendly Module 2 lesson.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Lesson 2.1: Sequences &amp; Timing — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module 2</a></li>
+            <li aria-current="page">Lesson 2.1</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🔢 Lesson 2.1: Sequences &amp; Timing</h1>
+                <p class="lead">The most fundamental idea in all of coding is deceptively simple: computers do things <em>in order</em>. This lesson makes that idea concrete — and adds the "pause" button that turns a rushed jumble into a performance.</p>
+
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <ul>
+                        <li>Explain what a <strong>sequence</strong> is and why order matters</li>
+                        <li>Use the <strong>wait</strong> block to control timing and pacing</li>
+                        <li>Build a short multi-step routine that runs like a little performance</li>
+                        <li>Help your child predict and debug "wrong order" bugs</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 30 minutes &nbsp;•&nbsp; <strong>Builds on:</strong> Module 1</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
+                    </div>
+                </div>
+            </header>
+
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#seq" class="toc-link">Learn It: What a sequence is</a></li>
+                        <li><a href="#order" class="toc-link">Learn It: Order changes everything</a></li>
+                        <li><a href="#wait" class="toc-link">Learn It: The wait block</a></li>
+                        <li><a href="#build" class="toc-link">Try It: Build a greeting routine</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: The "robot game"</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <section id="seq" class="lesson-section">
+                <h2>🎓 Learn It: What a sequence is</h2>
+                <p>A <strong>sequence</strong> is just a list of steps carried out one after another, top to bottom. You already built one in Module 1. Computers are wonderfully obedient and completely literal: they do <em>exactly</em> what you stack up, in <em>exactly</em> that order — no guessing what you meant.</p>
+                <p>Think of a recipe: "crack the eggs, then whisk, then pour." Swap steps and breakfast goes sideways. Code is the same.</p>
+                <blockquote>A sequence is a recipe the computer follows to the letter. If it does something odd, it's usually following <em>your</em> recipe correctly — the recipe just isn't what you intended yet.</blockquote>
+            </section>
+
+            <section id="order" class="lesson-section">
+                <h2>🎓 Learn It: Order changes everything</h2>
+                <p>Here are two scripts with the <strong>same blocks in a different order</strong>. They behave completely differently:</p>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Move, then talk</h4>
+                        <div class="sb-script" aria-label="when clicked, move 100 steps, say Made it for 2 seconds">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-motion">move <span class="sb-input">100</span> steps</div>
+                            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Made it!</span> for <span class="sb-input">2</span> seconds</div>
+                        </div>
+                        <p><small>Cat walks across, <em>then</em> speaks.</small></p>
+                    </div>
+                    <div class="card">
+                        <h4>Talk, then move</h4>
+                        <div class="sb-script" aria-label="when clicked, say Here I go for 2 seconds, move 100 steps">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Here I go!</span> for <span class="sb-input">2</span> seconds</div>
+                            <div class="sb-block sb-motion">move <span class="sb-input">100</span> steps</div>
+                        </div>
+                        <p><small>Cat speaks first, <em>then</em> walks.</small></p>
+                    </div>
+                </div>
+
+                <div class="card card-success">
+                    <h4>✅ Try the experiment</h4>
+                    <p>Build one, run it, then drag the blocks to swap their order and run again. Feeling the difference is worth more than reading about it.</p>
+                </div>
+            </section>
+
+            <section id="wait" class="lesson-section">
+                <h2>🎓 Learn It: The wait block (your pacing tool)</h2>
+                <p>Computers are <em>fast</em> — often too fast. Without pauses, several actions blur into one instant. The <strong>“wait 1 seconds”</strong> block (from the orange <strong>Control</strong> category) is how you add breathing room, comic timing, and drama.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_palette_control.png" alt="The Control category palette showing blocks including 'wait 1 seconds', 'repeat 10', 'forever', 'if then', and 'if then else'." style="max-width:330px;">
+                    <figcaption>Figure 1: The <strong>Control</strong> palette. The <em>wait</em> block is right at the top.</figcaption>
+                </figure>
+
+                <p>Watch what a pause does to a knock-knock joke:</p>
+                <div class="sb-script" aria-label="joke with waits">
+                    <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                    <div class="sb-block sb-looks">say <span class="sb-input sb-text">Knock knock!</span> for <span class="sb-input">2</span> seconds</div>
+                    <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+                    <div class="sb-block sb-looks">say <span class="sb-input sb-text">Who's there?</span> for <span class="sb-input">2</span> seconds</div>
+                    <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+                    <div class="sb-block sb-looks">say <span class="sb-input sb-text">Boo!</span> for <span class="sb-input">2</span> seconds</div>
+                </div>
+                <p>Remove the waits and it still "works" — but the timing falls flat. Timing is where a project starts to feel <em>alive</em>.</p>
+            </section>
+
+            <section id="build" class="lesson-section">
+                <h2>🛠️ Try It: Build a greeting routine</h2>
+                <p>Let's make the cat perform a little four-beat welcome. Open a fresh project and build this on the cat:</p>
+                <ol class="steps">
+                    <li>Start with <strong>when 🟩 clicked</strong> (Events).</li>
+                    <li>Add <strong>go to x: 0 y: 0</strong> (Motion) so it always starts centered.</li>
+                    <li>Add <strong>say “Hi, I'm Scratchy!” for 2 seconds</strong> (Looks).</li>
+                    <li>Add <strong>wait 1 seconds</strong> (Control).</li>
+                    <li>Add <strong>move 120 steps</strong> (Motion), then <strong>say “Welcome to my world!” for 2 seconds</strong>.</li>
+                </ol>
+                <div class="sb-script" aria-label="full greeting routine">
+                    <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                    <div class="sb-block sb-motion">go to x: <span class="sb-input">0</span> y: <span class="sb-input">0</span></div>
+                    <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi, I'm Scratchy!</span> for <span class="sb-input">2</span> seconds</div>
+                    <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+                    <div class="sb-block sb-motion">move <span class="sb-input">120</span> steps</div>
+                    <div class="sb-block sb-looks">say <span class="sb-input sb-text">Welcome to my world!</span> for <span class="sb-input">2</span> seconds</div>
+                </div>
+                <details class="card">
+                    <summary>💡 Challenge: add a sound and a costume change</summary>
+                    <p>Between the wait and the move, add <strong>start sound Meow</strong> (Sound) and <strong>next costume</strong> (Looks). Now it greets, meows, and its legs shift as it walks off. Six blocks, one little show.</p>
+                </details>
+            </section>
+
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: The "robot game"</h2>
+                    <p>Sequences click into place fastest away from the screen, with a game kids adore: <strong>you</strong> become the robot.</p>
+                    <h4>How to play</h4>
+                    <ol class="steps">
+                        <li>Tell your child: "I'm a robot. I only do <em>exactly</em> what you say, one instruction at a time."</li>
+                        <li>Ask them to give you steps to, say, make a peanut-butter sandwich — and follow them <em>literally</em>. "Put peanut butter on the bread" → put the whole jar on the loaf.</li>
+                        <li>Let them laugh, then refine their instructions until it works. That's debugging a sequence!</li>
+                    </ol>
+                    <p class="say-this">"Remember: the computer is a robot just like I was. It's not being silly on purpose — it's doing your steps <em>exactly</em>. So if it looks wrong, let's read our steps in order and find the mix-up."</p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>The robot game <em>is</em> the lesson. On screen, three blocks is plenty. Let them pick the words and the wait times.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>Have them predict before pressing GO: "What happens first?" Prediction turns watching into thinking.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>Challenge them to time a two-sprite conversation using only waits. It's a great primer for loops next lesson.</p>
+                        </div>
+                    </div>
+                    <div class="card card-warning" style="margin-bottom:0;">
+                        <h4>⚠️ Common kid bug</h4>
+                        <p>They put a <em>say for 2 seconds</em> before a move and wonder why the cat "waits." It's not stuck — that block <em>holds</em> for 2 seconds by design. Point out the words "for 2 seconds" and let the penny drop.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> What is a "sequence" in coding?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — steps run one after another, top to bottom.">A) Steps carried out in order, one after another</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Order is exact, not random.">B) Steps run in a random order</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That's a loop — coming next lesson.">C) A step that repeats forever</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> Which category holds the <em>wait</em> block?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Blue is movement.">A) Motion (blue)</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — the orange Control category.">B) Control (orange)</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Purple is Looks.">C) Looks (purple)</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> Your child's cat "freezes" for two seconds mid-routine. Most likely reason?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Rarely the cause here.">A) The computer is broken</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Exactly — 'say ... for 2 seconds' or a wait block is doing its job.">B) A "say for 2 seconds" or "wait" block is holding, as designed</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Speed isn't the issue.">C) The cat is moving too fast</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="summary" class="lesson-section">
+                <h2>Summary &amp; What's Next</h2>
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li>A <strong>sequence</strong> runs top-to-bottom; order changes behavior.</li>
+                        <li>The <strong>wait</strong> block (Control) controls pacing and timing.</li>
+                        <li>Computers follow your steps literally — most "bugs" are a recipe mix-up.</li>
+                        <li>The off-screen "robot game" teaches sequencing better than any lecture.</li>
+                    </ul>
+                </div>
+                <h3>🚀 Next up</h3>
+                <p>Copy-pasting the same block ten times is nobody's idea of fun. In <strong>Lesson 2.2</strong> we meet <strong>loops</strong> — the blocks that repeat actions for you — and finally make the cat <em>truly</em> walk.</p>
+            </section>
+
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_03.html" class="prev-lesson">← Previous: Your First Project</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="lesson_05.html" class="next-lesson">Next: Loops →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

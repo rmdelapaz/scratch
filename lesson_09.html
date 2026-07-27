@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Debugging and remixing in Scratch — a calm, kid-friendly method for fixing bugs, plus how to learn from shared projects with See Inside and Remix.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Lesson 3.3: Debugging &amp; Remixing — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module 3</a></li>
+            <li aria-current="page">Lesson 3.3</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🐞 Lesson 3.3: Debugging &amp; Remixing</h1>
+                <p class="lead">Bugs aren't the enemy — they're the job. This lesson gives you a calm, repeatable way to find and fix problems (and coach your child through the frustration), plus how to learn from the world's biggest library of kid-made code.</p>
+
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <ul>
+                        <li>Apply a simple 4-step debugging method</li>
+                        <li>Recognize the most common Scratch bugs and their fixes</li>
+                        <li>Use <strong>See Inside</strong> to learn from any shared project</li>
+                        <li>Understand what <strong>remixing</strong> is (and its good etiquette)</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 35 minutes &nbsp;•&nbsp; <strong>Builds on:</strong> All of Modules 1–3</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
+                    </div>
+                </div>
+            </header>
+
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#mindset" class="toc-link">Learn It: The debugging mindset</a></li>
+                        <li><a href="#method" class="toc-link">Learn It: The 4-step method</a></li>
+                        <li><a href="#common" class="toc-link">Learn It: The usual suspects</a></li>
+                        <li><a href="#seeinside" class="toc-link">Learn It: See Inside &amp; remixing</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Coaching through frustration</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; Module 3 Complete</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <section id="mindset" class="lesson-section">
+                <h2>🎓 Learn It: The debugging mindset</h2>
+                <p>Professional programmers spend more time fixing than writing. "Bug" is just the word for "not doing what I expected yet." The single most valuable thing you can model for your child is <strong>calm curiosity</strong> in the face of a bug.</p>
+                <blockquote>The computer isn't wrong and it isn't being mean. It's doing <em>exactly</em> what the blocks say. Debugging is the detective game of finding the gap between what you said and what you meant.</blockquote>
+                <div class="card card-success">
+                    <h4>✅ Reframe the language</h4>
+                    <p>Swap "It's broken / I failed" for "Interesting — let's find out why." Bugs become puzzles instead of defeats. This one habit protects a child's confidence for years.</p>
+                </div>
+            </section>
+
+            <section id="method" class="lesson-section">
+                <h2>🎓 Learn It: The 4-step method</h2>
+                <p>When something's wrong, resist random flailing. Walk this loop instead:</p>
+                <div class="mermaid">
+                    flowchart LR
+                        A["1 · Watch<br/>what actually happens"] --> B["2 · Predict<br/>which block causes it"]
+                        B --> C["3 · Change<br/>ONE thing"]
+                        C --> D["4 · Test<br/>run it again"]
+                        D -->|still wrong| A
+                        D -->|fixed!| E([🎉])
+                        style A fill:#4C97FF,color:#fff,stroke:#333
+                        style B fill:#5CB1D6,color:#fff,stroke:#333
+                        style C fill:#FFAB19,color:#5c3d00,stroke:#333
+                        style D fill:#59C059,color:#fff,stroke:#333
+                </div>
+                <p>The golden rule is step 3: <strong>change only one thing at a time</strong>, then test. Change five things and you'll never know which one mattered.</p>
+                <div class="card card-info">
+                    <h4>🔍 Scratch's built-in debugging helpers</h4>
+                    <ul>
+                        <li><strong>Click a block or stack</strong> to run just that piece and watch what it does.</li>
+                        <li><strong>Tick a variable's checkbox</strong> to watch its value change live on the stage.</li>
+                        <li><strong>Add a temporary "say"</strong> block to print a value: <em>say (score)</em> tells you what the computer "thinks."</li>
+                        <li><strong>Slow it down</strong> with wait blocks so you can see each step.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="common" class="lesson-section">
+                <h2>🎓 Learn It: The usual suspects</h2>
+                <p>90% of Scratch bugs are one of these. Keep this table handy:</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Symptom</th><th>Usual cause</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td>Nothing happens</td><td>Code is on the wrong sprite</td><td>Select the right sprite in the sprite list</td></tr>
+                            <tr><td>Runs once, never reacts again</td><td>An <em>if</em> with no loop around it</td><td>Wrap the check in a <em>forever</em> loop</td></tr>
+                            <tr><td>Blocks after a loop never run</td><td>Trapped below a <em>forever</em></td><td>Move them inside, or use <em>repeat until</em></td></tr>
+                            <tr><td>Sprite zooms off / upside-down</td><td>Position not reset / rotation style</td><td>Add <em>go to x/y</em> at start; set rotation to left-right</td></tr>
+                            <tr><td>Score jumps by many at once</td><td>Condition stays true for many frames</td><td>Move the sprite away, or add a short wait after scoring</td></tr>
+                            <tr><td>Two sprites out of sync</td><td>Relying on wait timing</td><td>Coordinate with <em>broadcast</em> / <em>when I receive</em></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="seeinside" class="lesson-section">
+                <h2>🎓 Learn It: See Inside &amp; remixing</h2>
+                <p>One of Scratch's superpowers: <strong>you can look at the code of almost any shared project</strong>. On a project's page, click <strong>“See Inside”</strong> to open its full code and explore how it was made — a bottomless, free learning resource.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_project_page.png" alt="A shared Scratch project page showing the project player with a green flag, an Instructions panel, love/favorite/remix/view counts, a 'See Inside' button at the top right, and a Copy Link button.">
+                    <figcaption>Figure 1: A shared project page. <strong>See Inside</strong> (top-right) reveals the code; the icons show loves, favorites, remixes, and views.</figcaption>
+                </figure>
+
+                <p><strong>Remixing</strong> means making your own copy of someone's project to change and build on. Click <em>See Inside</em>, then <em>Remix</em> (when signed in), and it becomes yours to modify. Scratch is built around this — it's encouraged, not frowned upon.</p>
+
+                <div class="card-grid">
+                    <div class="card card-success">
+                        <h4>✅ Remixing done right</h4>
+                        <ul>
+                            <li>Change something meaningful and make it your own.</li>
+                            <li>Scratch auto-credits the original — leave that intact.</li>
+                            <li>Thank the original creator in your notes.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-warning">
+                        <h4>⚠️ Talk with your child about</h4>
+                        <ul>
+                            <li>Remixing to <em>learn</em>, not to claim someone's work as fully theirs.</li>
+                            <li>It's normal (and great) to learn by studying others' code.</li>
+                        </ul>
+                    </div>
+                </div>
+                <blockquote>Reading other people's code is how every programmer improves. "See Inside" turns the whole Scratch community into your child's textbook.</blockquote>
+            </section>
+
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: Coaching through frustration</h2>
+                    <p>A bug plus a tired kid equals tears. Your calm is the most important debugging tool in the room.</p>
+                    <h4>The "rubber duck" trick</h4>
+                    <p>Have your child explain their code out loud, block by block, to you (or a stuffed animal). Astonishingly often, they find the bug themselves mid-sentence — just from saying it aloud.</p>
+                    <p class="say-this">"Walk me through it like I know nothing. What should this block do? …and what did it <em>actually</em> do?"</p>
+
+                    <h4>Ask, don't fix</h4>
+                    <ul>
+                        <li>"What did you <em>expect</em> to happen?"</li>
+                        <li>"What happened <em>instead</em>?"</li>
+                        <li>"Which block do you think is responsible?"</li>
+                        <li>"What's one thing we could change to test that?"</li>
+                    </ul>
+
+                    <h4>Know when to take a break</h4>
+                    <p>If frustration boils over, stop. "Let's let our brains rest — coders do this all the time." Walking away and coming back fresh is a real, professional debugging strategy, not giving up.</p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>Keep bugs tiny and fixes fast. Celebrate the fix dramatically: "You SQUASHED the bug!" 🐞</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>Teach the 4-step method explicitly. Let them lead; you ask the questions. Introduce "See Inside" on a project they love.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>Encourage remixing an ambitious project to learn a new technique, then bringing that idea back to their own work.</p>
+                        </div>
+                    </div>
+                    <div class="card card-warning" style="margin-bottom:0;">
+                        <h4>⚠️ The biggest parent mistake</h4>
+                        <p>Grabbing the mouse and fixing it yourself. It ends the frustration <em>and</em> the learning. Sit on your hands; ask one more question. The pride of <em>their</em> fix is the whole point.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> The golden rule of debugging is…</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — change one thing, then test, so you know what mattered.">A) Change one thing at a time, then test</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Changing lots at once hides the real cause.">B) Change many things at once to save time</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Deleting loses your work and your clues.">C) Delete everything and start over</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> What does "See Inside" do on a shared project?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — it opens the project's code so you can learn how it works.">A) Opens the project's code to explore how it was made</button>
+                            <button class="quiz-option" data-correct="false" data-hint="It doesn't delete anything.">B) Deletes the project</button>
+                            <button class="quiz-option" data-correct="false" data-hint="No cost — Scratch is free.">C) Charges money to view</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> Your child is melting down over a stubborn bug. Best move?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="This ends the learning.">A) Grab the mouse and fix it for them</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — talking it through (or a short break) very often surfaces the fix.">B) Have them explain it aloud, or take a short break</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Pressure rarely helps.">C) Tell them to try harder</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="summary" class="lesson-section">
+                <h2>Summary &amp; Module 3 Complete 🎉</h2>
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li>Bugs are normal. Model calm curiosity, not frustration.</li>
+                        <li>Debug with a loop: <strong>Watch → Predict → Change one thing → Test</strong>.</li>
+                        <li>Most bugs are a handful of usual suspects — keep the table handy.</li>
+                        <li><strong>See Inside</strong> and <strong>remixing</strong> turn the whole community into a learning resource.</li>
+                    </ul>
+                </div>
+                <div class="card card-accent" style="text-align:center;">
+                    <h3>🏆 Module 3 done!</h3>
+                    <p>You've built a story and a game, and you can fix things when they wobble. That's a genuinely capable coding buddy.</p>
+                </div>
+                <h3>🚀 What's next</h3>
+                <p><strong>Module 4</strong> steps back from blocks to focus on <em>you</em> as a teacher — how to nurture without hovering, how to keep your child safe when sharing, and where the adventure goes after Scratch.</p>
+                <p style="text-align:center;"><a href="index.html" class="button">🏠 Back to Course Home</a></p>
+            </section>
+
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_08.html" class="prev-lesson">← Previous: A Simple Game</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="lesson_10.html" class="next-lesson">Next: The Art of Not Taking Over →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>
