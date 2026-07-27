@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[Lesson Description]">
+    <meta name="author" content="Ray De La Paz">
+    <title>[Lesson Title] - [Course Title]</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Mermaid — initialized by course-enhancements.js for theme awareness -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        // Initial config — JS will re-init on theme change
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Progress indicator -->
+    <div class="progress-indicator" role="progressbar" aria-label="Page scroll progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">[Course Title]</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">
+                ☰
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <a href="https://rays-home.netlify.app/contact">Contact</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module [X]</a></li>
+            <li aria-current="page">Lesson [X.Y]: [Lesson Title]</li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+            <!-- Lesson Header -->
+            <header>
+                <h1>📝 Lesson [X.Y]: [Lesson Title]</h1>
+                <p class="lead">[Brief lesson description that captures the key learning objectives]</p>
+
+                <!-- Learning objectives -->
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Objective 1 — specific and measurable</li>
+                        <li>Objective 2 — specific and measurable</li>
+                        <li>Objective 3 — specific and measurable</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 45–60 minutes</p>
+                    <p><strong>Project:</strong> [Brief description of hands-on project]</p>
+                </div>
+            </header>
+
+            <!-- Sticky Table of Contents -->
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#section1" class="toc-link">Introduction</a></li>
+                        <li><a href="#section2" class="toc-link">Core Concepts</a></li>
+                        <li><a href="#section3" class="toc-link">Examples and Code</a></li>
+                        <li><a href="#section4" class="toc-link">Hands-on Exercise</a></li>
+                        <li><a href="#section5" class="toc-link">Best Practices</a></li>
+                        <li><a href="#section6" class="toc-link">Summary</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <!-- Section 1: Introduction -->
+            <section id="section1" class="lesson-section">
+                <h2>Introduction</h2>
+                <p>[Introduce the topic. Explain why it's important and how it relates to previous lessons.]</p>
+                <p>[Provide context and real-world applications.]</p>
+
+                <!-- Optional: image or diagram -->
+                <figure>
+                    <!-- <img src="images/lesson_X_intro.png" alt="Description of image"> -->
+                    <!-- <figcaption>Figure 1: Caption describing the image</figcaption> -->
+                </figure>
+
+                <!-- Optional: Mermaid diagram example -->
+                <!--
+                <div class="mermaid">
+                    graph TD
+                    A[Start] --> B[Step 1]
+                    B --> C[Step 2]
+                    C --> D[End]
+                </div>
+                -->
+            </section>
+
+            <!-- Section 2: Core Concepts -->
+            <section id="section2" class="lesson-section">
+                <h2>Core Concepts</h2>
+
+                <h3>Concept One</h3>
+                <p>[Explain the first key concept in detail.]</p>
+
+                <!-- Definition box -->
+                <div class="card card-accent">
+                    <h4>📖 Definition</h4>
+                    <p><strong>Term:</strong> [Definition of the term]</p>
+                </div>
+
+                <h3>Concept Two</h3>
+                <p>[Explain the second key concept.]</p>
+
+                <!-- Note/Warning box -->
+                <blockquote>
+                    <strong>⚠️ Important Note:</strong> [Important information or warning that students should pay attention to]
+                </blockquote>
+
+                <h3>Concept Three</h3>
+                <p>[Explain the third key concept.]</p>
+
+                <!-- Success/Tip Card -->
+                <div class="card card-success">
+                    <h4>✅ Pro Tip</h4>
+                    <p>[Helpful tip or best practice]</p>
+                </div>
+
+                <!-- Warning Card -->
+                <div class="card card-warning">
+                    <h4>⚠️ Watch Out</h4>
+                    <p>[Common mistake or warning]</p>
+                </div>
+
+                <!-- Table example -->
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Feature 1</td>
+                                <td>Description of feature 1</td>
+                                <td>Example usage</td>
+                            </tr>
+                            <tr>
+                                <td>Feature 2</td>
+                                <td>Description of feature 2</td>
+                                <td>Example usage</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 3: Examples and Code -->
+            <section id="section3" class="lesson-section">
+                <h2>Examples and Code</h2>
+
+                <h3>Example 1: Basic Implementation</h3>
+                <p>[Explain what this example demonstrates]</p>
+
+                <pre><code class="language-python">
+# Example code goes here
+def example_function(param1, param2):
+    """
+    Docstring explaining the function
+    """
+    # Step 1: Do something
+    result = param1 + param2
+
+    # Step 2: Process result
+    if result > 0:
+        return "Positive"
+    else:
+        return "Non-positive"
+
+# Usage example
+output = example_function(5, 3)
+print(output)  # Output: Positive
+                </code></pre>
+
+                <h3>Example 2: Advanced Usage</h3>
+                <p>[Explain what this example demonstrates]</p>
+
+                <pre><code class="language-python">
+# More complex example
+class ExampleClass:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        return f"Hello, {self.name}!"
+
+# Create instance and use it
+obj = ExampleClass("Student")
+message = obj.greet()
+print(message)  # Output: Hello, Student!
+                </code></pre>
+
+                <!-- Code output/result -->
+                <div class="card card-output">
+                    <h4>Output:</h4>
+                    <pre><code>Hello, Student!</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 4: Hands-on Exercise -->
+            <section id="section4" class="lesson-section">
+                <h2>Hands-on Exercise</h2>
+
+                <div class="card card-info">
+                    <h3>🏋️ Exercise 1: Practice Basic Concepts</h3>
+                    <p><strong>Objective:</strong> Apply what you've learned about [concept].</p>
+
+                    <h4>Instructions:</h4>
+                    <ol>
+                        <li>Step 1 instruction</li>
+                        <li>Step 2 instruction</li>
+                        <li>Step 3 instruction</li>
+                    </ol>
+
+                    <h4>Starter Code:</h4>
+                    <pre><code class="language-python">
+# TODO: Complete this function
+def your_function(input_data):
+    # Your code here
+    pass
+
+# Test your function
+test_input = "example"
+result = your_function(test_input)
+print(f"Result: {result}")
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>[Provide a hint to help students if they get stuck]</p>
+                    </details>
+
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <pre><code class="language-python">
+def your_function(input_data):
+    # Solution code here
+    return input_data.upper()
+
+# Test your function
+test_input = "example"
+result = your_function(test_input)
+print(f"Result: {result}")  # Result: EXAMPLE
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Quiz Section -->
+                <div class="card quiz-container">
+                    <h3>🎯 Quick Quiz</h3>
+
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> What is the purpose of [concept]?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Think about the main use case">
+                                A) Incorrect answer
+                            </button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Correct! This is because...">
+                                B) Correct answer
+                            </button>
+                            <button class="quiz-option" data-correct="false" data-hint="Review section 2.1">
+                                C) Incorrect answer
+                            </button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Best Practices -->
+            <section id="section5" class="lesson-section">
+                <h2>Best Practices</h2>
+
+                <h3>✅ Do's</h3>
+                <ul>
+                    <li>Best practice 1 with explanation</li>
+                    <li>Best practice 2 with explanation</li>
+                    <li>Best practice 3 with explanation</li>
+                </ul>
+
+                <h3>❌ Don'ts</h3>
+                <ul>
+                    <li>Common mistake 1 and why to avoid it</li>
+                    <li>Common mistake 2 and why to avoid it</li>
+                    <li>Common mistake 3 and why to avoid it</li>
+                </ul>
+
+                <h3>💡 Pro Tips</h3>
+                <ul>
+                    <li>Advanced tip 1</li>
+                    <li>Advanced tip 2</li>
+                    <li>Advanced tip 3</li>
+                </ul>
+            </section>
+
+            <!-- Section 6: Summary -->
+            <section id="section6" class="lesson-section">
+                <h2>Summary</h2>
+
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li>Main point 1 from this lesson</li>
+                        <li>Main point 2 from this lesson</li>
+                        <li>Main point 3 from this lesson</li>
+                    </ul>
+                </div>
+
+                <h3>📚 Additional Resources</h3>
+                <ul>
+                    <li><a href="#">Resource 1 — Official documentation</a></li>
+                    <li><a href="#">Resource 2 — Tutorial or article</a></li>
+                    <li><a href="#">Resource 3 — Video or course</a></li>
+                </ul>
+
+                <h3>🚀 What's Next?</h3>
+                <p>In the next lesson, we'll explore [next topic] and build upon what we've learned here.</p>
+
+                <!-- Encouragement Card -->
+                <div class="card card-accent" style="text-align: center; padding: 2rem;">
+                    <h3>🎉 Congratulations!</h3>
+                    <p>You've completed this lesson. Keep up the great work!</p>
+                </div>
+            </section>
+
+            <!-- Lesson Navigation -->
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_[X-1].html" class="prev-lesson">← Previous: Lesson [X-1] Title</a>
+                <a href="index.html" class="home-link">🏠 Course Home</a>
+                <a href="lesson_[X+1].html" class="next-lesson">Next: Lesson [X+1] Title →</a>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://rays-home.netlify.app/contact">Contact</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build your first Scratch project step by step — make the cat move and talk when you click the green flag. A guided, parent-friendly walkthrough.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Lesson 1.3: Your First Project — Make the Cat Move &amp; Talk — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module 1</a></li>
+            <li aria-current="page">Lesson 1.3</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🚀 Lesson 1.3: Your First Project — Make the Cat Move &amp; Talk</h1>
+                <p class="lead">Time to actually build something! In this lesson you'll code the Scratch cat to walk across the stage and say hello when you click the green flag — your first real program.</p>
+
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Drag, drop, and snap blocks together to build a script</li>
+                        <li>Start a program with the “when 🟩 clicked” event</li>
+                        <li>Combine Motion and Looks blocks to make a sprite act</li>
+                        <li>Test, tweak, and troubleshoot a simple project</li>
+                        <li>Coach your child through building it themselves</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 40 minutes &nbsp;•&nbsp; <strong>Project:</strong> a moving, talking cat</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
+                    </div>
+                </div>
+            </header>
+
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#goal" class="toc-link">What we're building</a></li>
+                        <li><a href="#build" class="toc-link">Learn It: Build it step by step</a></li>
+                        <li><a href="#run" class="toc-link">Learn It: Run &amp; understand it</a></li>
+                        <li><a href="#tweak" class="toc-link">Try It: Make it yours</a></li>
+                        <li><a href="#fixes" class="toc-link">Common problems &amp; fixes</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Coach your child</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; Module 1 Complete</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <!-- Goal -->
+            <section id="goal" class="lesson-section">
+                <h2>🎬 What we're building</h2>
+                <p>Here's the finished program. Don't worry about how yet — this is our destination. When you click the green flag, the cat will walk to the right and greet you.</p>
+
+                <div class="sb-script" role="img" aria-label="Finished script: when green flag clicked, move 50 steps, say Hello I'm Scratch Cat for 2 seconds">
+                    <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                    <div class="sb-block sb-motion">move <span class="sb-input">50</span> steps</div>
+                    <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello! I'm Scratch Cat</span> for <span class="sb-input">2</span> seconds</div>
+                </div>
+
+                <p>Three blocks. That's a complete, working program. Let's build it one block at a time.</p>
+
+                <div class="card card-info">
+                    <h4>💡 Before you start</h4>
+                    <p>Open a fresh project at <a href="https://scratch.mit.edu/">scratch.mit.edu</a> → <strong>Create</strong>. Make sure the cat (Sprite1) is selected in the sprite list, so your blocks land on the cat.</p>
+                </div>
+            </section>
+
+            <!-- Build -->
+            <section id="build" class="lesson-section">
+                <h2>🎓 Learn It: Build it step by step</h2>
+
+                <ol class="steps">
+                    <li>
+                        <h3 style="margin-top:0;">Start with an Event</h3>
+                        <p>Click the gold <strong>Events</strong> category. Drag <strong>“when 🟩 clicked”</strong> into the middle code area. This is the "hat" that starts your program.</p>
+                        <div class="sb-script" aria-label="when green flag clicked">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Add some Motion</h3>
+                        <p>Click the blue <strong>Motion</strong> category. Drag <strong>“move 10 steps”</strong> so it snaps <em>underneath</em> the hat block (you'll see a grey shadow when it's about to connect — let go there).</p>
+                        <div class="sb-script" aria-label="when green flag clicked, move 10 steps">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div>
+                        </div>
+                        <p>Now click the green flag. The cat scoots a tiny bit! Ten steps is small — we'll make it bigger soon.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Make it talk</h3>
+                        <p>Click the purple <strong>Looks</strong> category. Drag <strong>“say Hello! for 2 seconds”</strong> so it snaps below the move block.</p>
+                        <div class="sb-script" aria-label="when green flag clicked, move 10 steps, say Hello for 2 seconds">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div>
+                            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello!</span> for <span class="sb-input">2</span> seconds</div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Type your own words &amp; a bigger move</h3>
+                        <p>Click the white oval that says <em>Hello!</em> and type your own message, like <strong>Hello! I'm Scratch Cat</strong>. Then click the <em>10</em> in the move block and change it to <strong>50</strong> so the walk is easier to see.</p>
+                        <div class="sb-script" aria-label="finished script">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-motion">move <span class="sb-input">50</span> steps</div>
+                            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello! I'm Scratch Cat</span> for <span class="sb-input">2</span> seconds</div>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="card card-success">
+                    <h4>✅ That's it — you built a program!</h4>
+                    <p>Click the green flag. The cat walks right and says hello. You just wrote software. 🎉</p>
+                </div>
+            </section>
+
+            <!-- Run & understand -->
+            <section id="run" class="lesson-section">
+                <h2>🎓 Learn It: Run &amp; understand it</h2>
+                <p>Click the <strong>green flag</strong> to run it; click the <strong>red stop</strong> to end it. Here's what happens, in order — this ordering is called a <strong>sequence</strong>, the most basic idea in all of coding:</p>
+
+                <div class="mermaid">
+                    flowchart TD
+                        A["🟩 Green flag clicked"] --> B["Cat moves 50 steps to the right"]
+                        B --> C["Cat says your message for 2 seconds"]
+                        C --> D["Program ends"]
+                        style A fill:#FFBF00,color:#4d3800,stroke:#333
+                        style B fill:#4C97FF,color:#fff,stroke:#333
+                        style C fill:#9966FF,color:#fff,stroke:#333
+                        style D fill:#e2e8f0,color:#1e293b,stroke:#333
+                </div>
+
+                <p>Scratch runs blocks <strong>top to bottom</strong>, one after another. Change the order and you change the behavior — put "say" before "move" and the cat talks first, then walks. Try it!</p>
+
+                <div class="card card-warning">
+                    <h4>🐛 Cat stuck at the edge?</h4>
+                    <p>Each green-flag click moves the cat 50 more steps, so it may march off the edge. To send it back to the start, drag the cat on the stage with your mouse, or add a Motion block <strong>“go to x: 0 y: 0”</strong> right after the hat to reset its position each run.</p>
+                </div>
+            </section>
+
+            <!-- Tweak -->
+            <section id="tweak" class="lesson-section">
+                <h2>🛠️ Try It: Make it yours</h2>
+                <p>The best learning happens when you change things and see what breaks or delights. Try these mini-challenges:</p>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>🎨 Easy</h4>
+                        <ul>
+                            <li>Change the message to a joke.</li>
+                            <li>Change 50 to 200 — where does the cat end up?</li>
+                            <li>Add a second “say” block for a reply.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>🔥 A bit more</h4>
+                        <ul>
+                            <li>From <strong>Sound</strong>, add “start sound Meow” after the move.</li>
+                            <li>From <strong>Looks</strong>, add “change size by 25”.</li>
+                            <li>Add “turn ↻ 15 degrees” for a tipsy walk.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <details class="card">
+                    <summary>💡 Challenge: make the cat walk <em>and</em> look like it's walking</summary>
+                    <p>The cat has two costumes. Add a Looks block <strong>“next costume”</strong> between move and say, and run it a few times — the legs switch! (In Module 2 we'll make this loop smoothly for real walking animation.)</p>
+                    <div class="sb-script" aria-label="with next costume added">
+                        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                        <div class="sb-block sb-motion">move <span class="sb-input">50</span> steps</div>
+                        <div class="sb-block sb-looks">next costume</div>
+                        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello! I'm Scratch Cat</span> for <span class="sb-input">2</span> seconds</div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Fixes -->
+            <section id="fixes" class="lesson-section">
+                <h2>🐛 Common problems &amp; fixes</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>What you see</th><th>Likely cause</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td>Nothing happens on green flag</td><td>Blocks aren't snapped together, or wrong sprite selected</td><td>Check blocks connect with no gaps; select the cat in the sprite list</td></tr>
+                            <tr><td>Cat moves but doesn't talk</td><td>The “say” block isn't attached under the others</td><td>Drag it until it snaps beneath the move block</td></tr>
+                            <tr><td>Cat walks off-screen</td><td>It keeps moving 50 more each run</td><td>Add “go to x: 0 y: 0” after the hat, or drag the cat back</td></tr>
+                            <tr><td>Cat is upside-down after turning</td><td>Rotation style</td><td>In the sprite info, set rotation to “left-right” (we'll cover this later)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <blockquote>Bugs aren't failures — they're the normal, healthy middle of coding. Model calm curiosity: <em>"Interesting! Why do you think it did that?"</em></blockquote>
+            </section>
+
+            <!-- TEACH IT -->
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: Coach your child through it</h2>
+                    <p>Now hand it over. You've done the build once, so you can guide without taking over. The magic words are questions, not instructions.</p>
+
+                    <h4>Run it as a treasure hunt, not a dictation</h4>
+                    <p>Instead of "drag the move block," try:</p>
+                    <p class="say-this">"We want the cat to walk. Which color do you think has moving blocks? …Let's look in the blue ones. See anything that says <em>move</em>?"</p>
+
+                    <h4>Let them own the fun parts</h4>
+                    <ul>
+                        <li><strong>The message is theirs.</strong> Let them type anything (within reason) in the “say” block — this is where they light up.</li>
+                        <li><strong>The number is theirs.</strong> Let them pick how many steps and discover big vs. small.</li>
+                        <li><strong>The green flag is theirs.</strong> They press GO. Every single time.</li>
+                    </ul>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>You handle the dragging if needed; they choose the words and press GO. Keep it to the three-block version. Celebrate loudly.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>They do all the dragging. Offer the "make it yours" challenges. Ask "what should happen next?" and let them lead.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>Give the goal, not the steps: "Make the cat cross the stage and say two things." Let them puzzle it out; jump in only if stuck.</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-success" style="margin-bottom:0;">
+                        <h4>🌟 End on a high</h4>
+                        <p>Finish by having them show the project to someone — a sibling, grandparent, a video call. Presenting their creation turns "I made a thing" into "I'm someone who makes things."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz -->
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> Which block should be at the <em>top</em> of the script so it runs when you press the green flag?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="That's a Motion block — it goes below the starter.">A) move 10 steps</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — the 'when green flag clicked' hat block starts the program.">B) when 🟩 clicked</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That's Looks — it comes after the starter too.">C) say Hello!</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> Scratch runs the blocks in a stack…</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Correct — top to bottom, one after another. That order is called a sequence.">A) from top to bottom, in order</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Order matters — it's not random.">B) in a random order</button>
+                            <button class="quiz-option" data-correct="false" data-hint="It's the other way around.">C) from bottom to top</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> Your child's cat won't talk, though it moves. Best first check?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Restarting rarely fixes logic.">A) Restart the computer</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — make sure the 'say' block is actually snapped onto the stack.">B) Is the “say” block snapped onto the stack?</button>
+                            <button class="quiz-option" data-correct="false" data-hint="No upgrade needed — Scratch is free.">C) Buy the full version</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary -->
+            <section id="summary" class="lesson-section">
+                <h2>Summary &amp; Module 1 Complete 🎉</h2>
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li>Programs start with an <strong>Event</strong> block like “when 🟩 clicked”.</li>
+                        <li>You build by dragging blocks so they <strong>snap</strong> into a top-to-bottom stack — a <strong>sequence</strong>.</li>
+                        <li>Combine <strong>Motion</strong> and <strong>Looks</strong> to make a sprite act; edit the white ovals to change words and numbers.</li>
+                        <li>Bugs are normal. Coach with questions and let your child own the creative choices.</li>
+                    </ul>
+                </div>
+
+                <div class="card card-accent" style="text-align:center;">
+                    <h3>🏆 You finished Module 1!</h3>
+                    <p>You went from "what is this?" to building and teaching a real program. You are officially your child's coding buddy.</p>
+                </div>
+
+                <h3>🚀 What's next</h3>
+                <p><strong>Module 2: Core Coding Concepts</strong> is coming soon. We'll turn this one-time action into living behavior — loops that repeat, events that respond to keys, and choices with if/then. Your cat is about to get a lot more interesting.</p>
+                <p style="text-align:center;">
+                    <a href="index.html" class="button">🏠 Back to Course Home</a>
+                </p>
+            </section>
+
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_02.html" class="prev-lesson">← Previous: Tour of the Editor</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="index.html#modules" class="next-lesson">Module 2 (Coming Soon) →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A guided, panel-by-panel tour of the Scratch editor for parents — the stage, sprites, blocks palette, the green flag, and how to save your work.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Lesson 1.2: A Guided Tour of the Scratch Editor — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module 1</a></li>
+            <li aria-current="page">Lesson 1.2</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🧭 Lesson 1.2: A Guided Tour of the Scratch Editor</h1>
+                <p class="lead">Open Scratch and let's walk through every panel together. By the end, nothing on the screen will feel mysterious — and you'll know exactly what to point at when your child asks "what's that?"</p>
+
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Open the Scratch editor (with or without an account)</li>
+                        <li>Name the four main areas of the editor and what each does</li>
+                        <li>Find any block using the colored category menu</li>
+                        <li>Use the green flag and stop button</li>
+                        <li>Save your work and set up a safe kid account</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 30 minutes &nbsp;•&nbsp; <strong>Best done:</strong> at a computer, following along</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
+                    </div>
+                </div>
+            </header>
+
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#open" class="toc-link">Learn It: Opening the editor</a></li>
+                        <li><a href="#map" class="toc-link">Learn It: The four areas (the map)</a></li>
+                        <li><a href="#palette" class="toc-link">Learn It: The Blocks Palette</a></li>
+                        <li><a href="#stage" class="toc-link">Learn It: The Stage &amp; green flag</a></li>
+                        <li><a href="#sprites" class="toc-link">Learn It: Sprites &amp; the sprite list</a></li>
+                        <li><a href="#tabs" class="toc-link">Learn It: Costumes, Sounds &amp; saving</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Give your child the tour</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <!-- Open -->
+            <section id="open" class="lesson-section">
+                <h2>🎓 Learn It: Opening the editor</h2>
+                <p>Go to <a href="https://scratch.mit.edu/">scratch.mit.edu</a> and click <strong>“Create”</strong> at the top-left (or the big <strong>“Start Creating”</strong> button). That's it — the editor opens with the friendly orange cat waiting for you. <strong>You don't need an account to start playing.</strong></p>
+                <div class="card card-success">
+                    <h4>✅ Account or no account?</h4>
+                    <p><strong>Without an account:</strong> you can build and test anything, but your project won't save automatically. Great for a first look.</p>
+                    <p style="margin-bottom:0;"><strong>With a free account:</strong> projects save to the cloud and can be shared. We'll set one up safely at the end of this lesson.</p>
+                </div>
+            </section>
+
+            <!-- The map -->
+            <section id="map" class="lesson-section">
+                <h2>🎓 Learn It: The four areas (your map)</h2>
+                <p>The editor looks busy at first, but it's really just <strong>four zones</strong>. Learn these and you've learned the editor.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_editor_full.png" alt="The full Scratch editor with four regions: the blocks palette on the left, the empty coding area in the middle, the stage with the cat on the upper right, and the sprite list on the lower right.">
+                    <figcaption>Figure 1: The whole editor. Four zones — palette (left), code area (middle), stage (upper-right), sprite list (lower-right).</figcaption>
+                </figure>
+
+                <div class="mermaid">
+                    flowchart LR
+                        P["1 · Blocks Palette<br/>pick instructions"] --> C["2 · Code Area<br/>snap them together"]
+                        C --> S["3 · Stage<br/>watch it happen"]
+                        S --> L["4 · Sprite List<br/>choose who you're coding"]
+                        L --> P
+                        style P fill:#4C97FF,color:#fff,stroke:#333
+                        style C fill:#e2e8f0,color:#1e293b,stroke:#333
+                        style S fill:#59C059,color:#fff,stroke:#333
+                        style L fill:#9966FF,color:#fff,stroke:#333
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>#</th><th>Zone</th><th>Where</th><th>What it's for</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td><strong>Blocks Palette</strong></td><td>Left</td><td>The menu of instructions, sorted by color/category</td></tr>
+                            <tr><td>2</td><td><strong>Code Area</strong></td><td>Middle</td><td>The workspace where you drag &amp; snap blocks together</td></tr>
+                            <tr><td>3</td><td><strong>Stage</strong></td><td>Upper right</td><td>The "screen" where your sprites act out your code</td></tr>
+                            <tr><td>4</td><td><strong>Sprite List</strong></td><td>Lower right</td><td>All your characters/objects; click one to code it</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Palette -->
+            <section id="palette" class="lesson-section">
+                <h2>🎓 Learn It: The Blocks Palette</h2>
+                <p>The left strip is where every instruction lives. Down the far-left edge is the <strong>category menu</strong> — a column of colored dots. Click a dot (or scroll) and the palette jumps to that category's blocks.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_blocks_palette.png" alt="Close-up of the Scratch blocks palette. A left column lists categories: Motion, Looks, Sound, Events, Control, Sensing, Operators, Variables, My Blocks — each with a colored dot. To the right are blue Motion blocks like 'move 10 steps' and 'turn 15 degrees'." style="max-width:340px;">
+                    <figcaption>Figure 2: The category menu (left) and the Motion blocks it reveals. Color = category.</figcaption>
+                </figure>
+
+                <p>Here's what each category is for. You don't need to memorize this — just know the color story:</p>
+                <ul class="sb-legend">
+                    <li><span class="sb-dot" style="background:#4C97FF"></span> <strong>Motion</strong> — move, turn, glide</li>
+                    <li><span class="sb-dot" style="background:#9966FF"></span> <strong>Looks</strong> — say, show, costumes, size</li>
+                    <li><span class="sb-dot" style="background:#CF63CF"></span> <strong>Sound</strong> — play sounds</li>
+                    <li><span class="sb-dot" style="background:#FFBF00"></span> <strong>Events</strong> — "when… " starters</li>
+                    <li><span class="sb-dot" style="background:#FFAB19"></span> <strong>Control</strong> — wait, repeat, if/then</li>
+                    <li><span class="sb-dot" style="background:#5CB1D6"></span> <strong>Sensing</strong> — touching, keys, mouse</li>
+                    <li><span class="sb-dot" style="background:#59C059"></span> <strong>Operators</strong> — math &amp; text</li>
+                    <li><span class="sb-dot" style="background:#FF8C1A"></span> <strong>Variables</strong> — store scores &amp; values</li>
+                </ul>
+
+                <blockquote><strong>⭐ Most-used starter:</strong> the gold <strong>Events</strong> category holds <em>“when 🟩 clicked”</em> — the block that kicks almost every program off. You'll use it constantly.</blockquote>
+            </section>
+
+            <!-- Stage -->
+            <section id="stage" class="lesson-section">
+                <h2>🎓 Learn It: The Stage &amp; the green flag</h2>
+                <p>The <strong>Stage</strong> (upper right) is your movie screen. Whatever your code does, you'll see it here. By default it holds one sprite: the Scratch cat.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_stage.png" alt="The Scratch stage, a white rectangle showing the orange Scratch cat standing in the center." style="max-width:460px;">
+                    <figcaption>Figure 3: The Stage with the default cat sprite.</figcaption>
+                </figure>
+
+                <p>Just above the stage sit the two most important buttons in all of Scratch:</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_controls.png" alt="Two buttons: a green flag and a red octagon stop button." style="max-width:220px;">
+                    <figcaption>Figure 4: The green flag (Go) and the red stop button.</figcaption>
+                </figure>
+
+                <div class="card-grid">
+                    <div class="card card-success">
+                        <h4>🟩 The Green Flag</h4>
+                        <p>Click it to <strong>run</strong> your project. Any script that starts with <em>“when 🟩 clicked”</em> springs to life.</p>
+                    </div>
+                    <div class="card card-danger">
+                        <h4>🛑 The Red Stop</h4>
+                        <p>Click it to <strong>stop everything</strong> immediately. Your child will use this a lot — that's healthy experimenting.</p>
+                    </div>
+                </div>
+                <p>You can also make the stage bigger: the icons at the top-right of the stage switch between small, large, and full-screen "presentation" mode — perfect for showing off a finished project.</p>
+            </section>
+
+            <!-- Sprites -->
+            <section id="sprites" class="lesson-section">
+                <h2>🎓 Learn It: Sprites &amp; the sprite list</h2>
+                <p>A <strong>sprite</strong> is any character or object you can code — the cat, a ball, a dragon, a button. Below the stage is the <strong>sprite list</strong>, showing every sprite in your project. <strong>Click a sprite to select it; the code area then shows that sprite's blocks.</strong> This is the #1 thing beginners forget.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_sprite_panel.png" alt="The sprite information panel showing Sprite1 selected, with fields for name, x and y position, show/hide, size, and direction, plus the sprite thumbnail and a Stage/backdrops panel." style="max-width:640px;">
+                    <figcaption>Figure 5: The sprite info panel (name, position, size, direction) and the sprite list.</figcaption>
+                </figure>
+
+                <div class="card card-warning">
+                    <h4>⚠️ The classic "why isn't my code working?"</h4>
+                    <p>Nine times out of ten, the code was added to the <em>wrong sprite</em>. If a block does nothing, first check: <strong>is the right sprite selected (highlighted) in the sprite list?</strong></p>
+                </div>
+
+                <p>To add more characters, use the round <strong>cat "+" button</strong> at the bottom-right of the sprite list — it opens a library full of ready-made sprites. The <strong>Stage panel</strong> to its right lets you change the background (called a <em>backdrop</em>).</p>
+            </section>
+
+            <!-- Tabs & saving -->
+            <section id="tabs" class="lesson-section">
+                <h2>🎓 Learn It: Costumes, Sounds &amp; saving</h2>
+                <p>At the very top-left are three tabs: <strong>Code</strong>, <strong>Costumes</strong>, and <strong>Sounds</strong>.</p>
+                <ul>
+                    <li><strong>Code</strong> — where you've been (blocks). This is home base.</li>
+                    <li><strong>Costumes</strong> — a sprite's different "outfits" or frames. Switching costumes is how animation works (the cat has two walking costumes).</li>
+                    <li><strong>Sounds</strong> — record or pick sounds for a sprite to play.</li>
+                </ul>
+
+                <div class="teach-panel">
+                    <h4>💾 Saving your work</h4>
+                    <p><strong>Signed in?</strong> Use <em>File → Save now</em>. Scratch also autosaves periodically.</p>
+                    <p><strong>Not signed in?</strong> Use <em>File → Save to your computer</em> to download a <code>.sb3</code> file you can reload later with <em>File → Load from your computer</em>.</p>
+                </div>
+
+                <div class="card card-info">
+                    <h4>👪 Setting up a safe kid account</h4>
+                    <p>Click <strong>“Join Scratch”</strong> and follow the steps. Scratch asks for a birth month/year and, importantly, <strong>a parent or guardian's email address</strong> — that's you. Use a username that <em>doesn't</em> reveal your child's real name, and keep the password somewhere you both can find it. We'll cover community and sharing safety in depth in Module 4.</p>
+                </div>
+            </section>
+
+            <!-- TEACH IT -->
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: Give your child the tour</h2>
+                    <p>Resist the urge to deliver a lecture. Kids learn this interface fastest by <strong>clicking everything</strong>. Your job is to give them a tiny map, then let them explore.</p>
+
+                    <h4>The 60-second tour to give them</h4>
+                    <p class="say-this">"See these four parts? Over <strong>here</strong> (left) are the blocks — that's your toy box. In the <strong>middle</strong> is where you build. Up <strong>here</strong> (stage) is where the cat does what you say. And this green flag makes it GO. Want to press it?"</p>
+
+                    <h4>A great first exploration game</h4>
+                    <ol class="steps">
+                        <li>Ask them to find every <em>color</em> of block by clicking the colored dots. "How many colors can you find?"</li>
+                        <li>Have them drag any one block into the middle and click it once to see what it does.</li>
+                        <li>Let them press the green flag and the red stop a few times. Demystify the two big buttons.</li>
+                    </ol>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>Point to zones using nicknames: "toy box," "stage," "GO button." Skip the vocabulary. Click things <em>for</em> them if the mouse is tricky.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>Let them run the tour back <em>to you</em>: "Can you teach me the four parts?" Teaching it cements it.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>Point out the Costumes/Sounds tabs and the sprite library, then step back. They'll happily rabbit-hole.</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-warning" style="margin-bottom:0;">
+                        <h4>🖐️ Hands in your lap</h4>
+                        <p>The hardest parenting skill in coding: <strong>don't grab the mouse.</strong> Point with your finger, ask questions, but let them do the clicking. Their hands, their learning.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz -->
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> Your child dragged in some blocks but nothing happens when they run it. What's the most likely cause?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Scratch is free and doesn't lock features.">A) Scratch needs a paid upgrade</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Exactly — code lives on the selected sprite. Check the sprite list first.">B) The code is on a different sprite than the one selected</button>
+                            <button class="quiz-option" data-correct="false" data-hint="The internet isn't the usual culprit for this.">C) The internet is too slow</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> Which button <em>runs</em> the project?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — the green flag runs any 'when green flag clicked' scripts.">A) The green flag 🟩</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That one halts everything.">B) The red stop 🛑</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That switches to a sprite's outfits.">C) The Costumes tab</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> In the editor, what does a block's category color help you do?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Color doesn't set speed.">A) Make the sprite move faster</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — color groups blocks so you can find the one you need quickly.">B) Quickly find the kind of block you need in the palette</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Saving is under the File menu.">C) Save the project</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary -->
+            <section id="summary" class="lesson-section">
+                <h2>Summary &amp; What's Next</h2>
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li>The editor is just four zones: <strong>palette</strong>, <strong>code area</strong>, <strong>stage</strong>, and <strong>sprite list</strong>.</li>
+                        <li>The colored category menu helps you find any block; gold <strong>Events</strong> holds the “when 🟩 clicked” starter.</li>
+                        <li>Green flag runs, red stop halts. Code always belongs to the <em>selected</em> sprite.</li>
+                        <li>Save via the File menu; kid accounts use a parent's email and a name that hides their identity.</li>
+                    </ul>
+                </div>
+                <h3>🚀 Next up</h3>
+                <p>Enough looking — time to build! In <strong>Lesson 1.3</strong> you'll create your first real project: making the cat move and talk when you click the green flag. This is the "whoa, I did that!" moment.</p>
+
+                <div class="card card-accent" style="text-align:center;">
+                    <h3>The map is in your head now. 🗺️</h3>
+                    <p>You could sit down at Scratch right now and not feel lost. That's a big deal.</p>
+                </div>
+            </section>
+
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_01.html" class="prev-lesson">← Previous: What Is Scratch</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="lesson_03.html" class="next-lesson">Next: Your First Project →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

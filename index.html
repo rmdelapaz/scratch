@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A friendly course that helps parents and adults learn to code with Scratch — and confidently teach it to their children. No coding experience needed.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Scratch for Parents — Learn It, Then Teach It</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Mermaid — initialized by course-enhancements.js for theme awareness -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Reading-position indicator -->
+    <div class="progress-indicator" role="presentation" aria-hidden="true">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">
+                ☰
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="#about">About</a>
+                <a href="#how">How It Works</a>
+                <a href="#modules">Modules</a>
+                <a href="#start">Get Started</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li aria-current="page">Home</li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+
+            <!-- Hero -->
+            <header>
+                <h1>🐱 Scratch for Parents</h1>
+                <p class="lead">Learn to code with Scratch — then confidently teach it to your child. Built for grown-ups who have <strong>never written a line of code</strong>.</p>
+            </header>
+
+            <div class="card card-accent" style="text-align:center;">
+                <h3 style="margin-top:0;">You don't need to be a "tech person" to raise one.</h3>
+                <p>This course teaches <em>you</em> the basics of Scratch first, then hands you the exact words, activities, and patience-savers to teach your kid. Every lesson has two halves: <strong>Learn It</strong> and <strong>Teach It</strong>.</p>
+                <p style="margin-bottom:0;"><a href="lesson_01.html" class="button" style="background:#fff;color:var(--primary-color);">Start Lesson 1 →</a></p>
+            </div>
+
+            <!-- About -->
+            <section id="about" class="card">
+                <h2>📚 About This Course</h2>
+                <p><a href="https://scratch.mit.edu/">Scratch</a> is a free, colorful coding playground made by MIT for kids roughly ages 8–16 (and younger with help). Instead of typing code, kids <strong>snap together colorful blocks</strong> like LEGO to make games, animations, and stories. It's the most popular way in the world for children to start coding.</p>
+                <p>The catch? Many parents feel lost the moment their child asks for help. This course fixes that. In a few short evenings you'll go from "I have no idea what this is" to "let me show you" — sitting beside your child as a confident coding buddy.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_home.png" alt="The Scratch website homepage at scratch.mit.edu, showing the slogan 'Create stories, games, and animations' with Start Creating and Join buttons and a row of featured community projects.">
+                    <figcaption>Figure: <a href="https://scratch.mit.edu/">scratch.mit.edu</a> — the free home of Scratch. This is where you and your child will create.</figcaption>
+                </figure>
+
+                <div class="card-grid">
+                    <div class="card card-success">
+                        <h3>✅ What You'll Be Able To Do</h3>
+                        <ul>
+                            <li>Navigate the Scratch editor without feeling lost</li>
+                            <li>Read and build block-based programs</li>
+                            <li>Make a character move, talk, and react</li>
+                            <li>Build a simple animation and a small game</li>
+                            <li>Explain each idea to your child in plain words</li>
+                            <li>Help them get "unstuck" without taking over</li>
+                            <li>Keep them safe in the Scratch online community</li>
+                        </ul>
+                    </div>
+                    <div class="card card-info">
+                        <h3>👪 Who This Is For</h3>
+                        <ul>
+                            <li>Parents and guardians of curious kids</li>
+                            <li>Grandparents, aunts, uncles, mentors</li>
+                            <li>Teachers and homeschoolers new to Scratch</li>
+                            <li>Any adult who wants coding basics, gently</li>
+                        </ul>
+                        <p><strong>Coding experience required:</strong> none. Seriously.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How it works -->
+            <section id="how" class="card">
+                <h2>🧭 How This Course Works</h2>
+                <p>Every lesson follows the same rhythm, so you always know what to expect. First you learn the skill yourself, then you get a ready-made plan for teaching it.</p>
+
+                <div class="mermaid">
+                    flowchart LR
+                        A([You Learn It]) --> B([You Try It])
+                        B --> C([You Teach It])
+                        C --> D([Your Child Creates])
+                        D -->|next lesson| A
+                        style A fill:#4C97FF,color:#fff,stroke:#333
+                        style B fill:#59C059,color:#fff,stroke:#333
+                        style C fill:#9966FF,color:#fff,stroke:#333
+                        style D fill:#FFAB19,color:#5c3d00,stroke:#333
+                </div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>🎓 Learn It</h4>
+                        <p>Clear, jargon-free explanations with real screenshots of Scratch. You follow along on your own screen.</p>
+                    </div>
+                    <div class="card">
+                        <h4>🛠️ Try It</h4>
+                        <p>A tiny hands-on project each lesson, with step-by-step instructions and the finished blocks shown.</p>
+                    </div>
+                    <div class="card">
+                        <h4>💬 Teach It</h4>
+                        <p>The exact phrases to say, common kid mistakes to expect, and age-appropriate tips (5–7, 8–11, 12+).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modules -->
+            <section id="modules">
+                <h2>📖 Course Modules</h2>
+                <p>The full course has four modules. <strong>Module 1 is ready now</strong> — the rest are on the way.</p>
+
+                <!-- Module 1 -->
+                <div class="card lesson-card">
+                    <h3>Module 1: Getting Started with Scratch <span class="module-status ready">Ready</span></h3>
+                    <p>Meet Scratch, tour the editor, and make your very first project move and talk. By the end you'll have coded something together.</p>
+                    <ul>
+                        <li><a href="lesson_01.html" class="lesson-link">Lesson 1.1: What Is Scratch &amp; Why Kids Love It</a> — 25 min</li>
+                        <li><a href="lesson_02.html" class="lesson-link">Lesson 1.2: A Guided Tour of the Scratch Editor</a> — 30 min</li>
+                        <li><a href="lesson_03.html" class="lesson-link">Lesson 1.3: Your First Project — Make the Cat Move &amp; Talk</a> — 40 min</li>
+                    </ul>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="card lesson-card">
+                    <h3>Module 2: Core Coding Concepts <span class="module-status soon">Coming Soon</span></h3>
+                    <p>The big ideas behind all code — sequences, events, loops, and conditionals — taught the Scratch way.</p>
+                    <ul>
+                        <li>Lesson 2.1: Sequences &amp; the Green Flag</li>
+                        <li>Lesson 2.2: Loops — Making Things Repeat</li>
+                        <li>Lesson 2.3: Conditionals &amp; Sensing — Making Choices</li>
+                    </ul>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="card lesson-card">
+                    <h3>Module 3: Building Real Projects <span class="module-status soon">Coming Soon</span></h3>
+                    <p>Put the pieces together into things kids are proud to share: an animated story and a simple game with a score.</p>
+                    <ul>
+                        <li>Lesson 3.1: An Interactive Animated Story</li>
+                        <li>Lesson 3.2: A Simple Game with Variables &amp; Score</li>
+                        <li>Lesson 3.3: Debugging &amp; Remixing — Fixing and Improving</li>
+                    </ul>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="card lesson-card">
+                    <h3>Module 4: Teaching Scratch to Your Child <span class="module-status soon">Coming Soon</span></h3>
+                    <p>Go deeper on the teaching craft: motivation, safe sharing, and where to go after Scratch.</p>
+                    <ul>
+                        <li>Lesson 4.1: The Art of Not Taking Over</li>
+                        <li>Lesson 4.2: Sharing Safely &amp; the Scratch Community</li>
+                        <li>Lesson 4.3: What Comes After Scratch</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Get started / prerequisites -->
+            <section id="start" class="card">
+                <h2>✅ What You Need to Start</h2>
+                <p>Almost nothing — that's part of why Scratch is wonderful.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Need</th><th>Details</th><th>Required?</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>A computer or tablet</td><td>Laptop, desktop, or Chromebook works best. Scratch also runs on most tablets.</td><td>Yes</td></tr>
+                            <tr><td>Internet connection</td><td>To use Scratch in your web browser at scratch.mit.edu.</td><td>Yes*</td></tr>
+                            <tr><td>A web browser</td><td>Chrome, Edge, Safari, or Firefox — a recent version.</td><td>Yes</td></tr>
+                            <tr><td>A free Scratch account</td><td>Optional, but lets you save projects. We'll cover sign-up (and parent email) in Lesson 1.2.</td><td>Optional</td></tr>
+                            <tr><td>15–40 minutes</td><td>Per lesson. Do them at your own pace, ideally before teaching your child.</td><td>Yes</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card card-info">
+                    <h4>💡 No internet? No problem.</h4>
+                    <p>*There's also a free <strong>Scratch offline app</strong> for Windows, Mac, ChromeOS, and Android. We'll point you to it in Module 4.</p>
+                </div>
+                <p style="text-align:center;margin-top:var(--spacing-lg);">
+                    <a href="lesson_01.html" class="button">🚀 Begin Module 1 →</a>
+                </p>
+            </section>
+
+            <!-- Resources -->
+            <section id="resources" class="card">
+                <h2>🔗 Helpful Links</h2>
+                <ul>
+                    <li><a href="https://scratch.mit.edu/">Scratch website</a> — where you'll create</li>
+                    <li><a href="https://scratch.mit.edu/parents/">Scratch for Parents</a> — official parent guide &amp; privacy info</li>
+                    <li><a href="https://scratch.mit.edu/ideas">Scratch Ideas &amp; Tutorials</a> — starter tutorials from the Scratch team</li>
+                    <li><a href="https://www.scratchjr.org/">ScratchJr</a> — a simpler version for ages 5–7 (tablet app)</li>
+                </ul>
+                <p><small>Scratch is a project of the Scratch Foundation. This is an independent educational course and is not affiliated with or endorsed by the Scratch Foundation or MIT.</small></p>
+            </section>
+
+            <!-- Search -->
+            <section class="card">
+                <h2>🔍 Search This Course</h2>
+                <div style="position: relative;">
+                    <input type="text" id="search-input" placeholder="Search lessons, topics, or keywords..."
+                           aria-label="Search course content">
+                    <div id="search-results" style="display: none; position: absolute; top: 100%; left: 0; right: 0;"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

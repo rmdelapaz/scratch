@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What Scratch is, why children love it, and how block-based coding works — the friendly first lesson for parents new to coding.">
+    <meta name="author" content="Ray De La Paz">
+    <title>Lesson 1.1: What Is Scratch &amp; Why Kids Love It — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Module 1</a></li>
+            <li aria-current="page">Lesson 1.1</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>📝 Lesson 1.1: What Is Scratch &amp; Why Kids Love It</h1>
+                <p class="lead">Before you teach it, understand it. In 25 minutes you'll know exactly what Scratch is, why it works so well for children, and why it's the perfect first step into coding.</p>
+
+                <div class="card card-info">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Explain, in one sentence, what Scratch is</li>
+                        <li>Describe how <strong>block-based coding</strong> differs from typed code</li>
+                        <li>List three reasons Scratch is great for young learners</li>
+                        <li>Introduce Scratch to your child with confidence</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 25 minutes &nbsp;•&nbsp; <strong>Coding needed:</strong> none</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11 (sweet spot)</span>
+                        <span class="age-badge">Ages 12+</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Sticky TOC -->
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#intro" class="toc-link">Why coding — and why now?</a></li>
+                        <li><a href="#what" class="toc-link">Learn It: What Scratch actually is</a></li>
+                        <li><a href="#blocks" class="toc-link">Learn It: Blocks vs. typing code</a></li>
+                        <li><a href="#why-love" class="toc-link">Learn It: Why kids love it</a></li>
+                        <li><a href="#free-safe" class="toc-link">Learn It: Free, and made for kids</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Introduce Scratch to your child</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <!-- 1. Intro -->
+            <section id="intro" class="lesson-section">
+                <h2>Why coding — and why now?</h2>
+                <p>Your child doesn't need to become a software engineer. But learning to code teaches something every kid can use: <strong>how to break a big problem into small steps</strong>, try an idea, see what happens, and fix it. That's problem-solving, creativity, and resilience rolled into one — and it happens to be fun.</p>
+                <p>The hard part for most families isn't the child's interest. It's that the <em>parent</em> feels unqualified to help. This course removes that barrier. You don't need to know how to code today. You just need to stay one comfortable step ahead — and this lesson is that first step.</p>
+                <blockquote>You are not learning to be a programmer. You're learning to be a <strong>coding buddy</strong> — curious, encouraging, and just informed enough to help.</blockquote>
+            </section>
+
+            <!-- 2. What is Scratch -->
+            <section id="what" class="lesson-section">
+                <h2>🎓 Learn It: What Scratch actually is</h2>
+                <p><strong>Scratch is a free website where kids make their own games, animations, and stories by snapping together colorful blocks instead of typing code.</strong> That's the whole idea in one sentence.</p>
+                <p>It was created by the <strong>MIT Media Lab</strong> and is run by the non-profit Scratch Foundation. It's used by tens of millions of children around the world, in over 70 languages, and it's completely free.</p>
+
+                <figure class="shot">
+                    <img class="screenshot" src="images/scratch_editor_full.png" alt="The Scratch project editor. On the left is a palette of colorful command blocks under categories like Motion and Looks. The middle is an empty coding area. On the right is the stage showing the orange Scratch cat, with sprite settings below.">
+                    <figcaption>Figure 1: The Scratch editor. Kids drag blocks from the left into the middle to program the cat on the right. We'll tour every part in Lesson 1.2.</figcaption>
+                </figure>
+
+                <div class="card card-accent">
+                    <h4>🧩 The three words that unlock Scratch</h4>
+                    <p><strong>Sprite</strong> — a character or object (the cat is a sprite). &nbsp;
+                       <strong>Stage</strong> — the screen where the action happens. &nbsp;
+                       <strong>Blocks</strong> — the instructions you snap together to make sprites do things.</p>
+                    <p style="margin-bottom:0;">Learn these three and you can already follow along with your child.</p>
+                </div>
+            </section>
+
+            <!-- 3. Blocks vs code -->
+            <section id="blocks" class="lesson-section">
+                <h2>🎓 Learn It: Blocks vs. typing code</h2>
+                <p>"Real" coding usually means typing exact words and symbols. One wrong comma and nothing works — frustrating for adults, brutal for kids. Scratch throws that barrier away. Blocks <strong>only snap together if they make sense</strong>, so children can't create a "spelling mistake." They focus on ideas, not punctuation.</p>
+
+                <p>Here's the same simple program in typed code and in Scratch blocks:</p>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Typed code (e.g. Python)</h4>
+                        <pre><code class="language-python">when program starts:
+    move(10)
+    say("Hello!", 2)</code></pre>
+                        <p><small>Miss a colon or misspell <code>say</code> and it breaks.</small></p>
+                    </div>
+                    <div class="card">
+                        <h4>The same thing in Scratch</h4>
+                        <div class="sb-script" role="img" aria-label="Scratch script: when green flag clicked, move 10 steps, say Hello for 2 seconds">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div>
+                            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello!</span> for <span class="sb-input">2</span> seconds</div>
+                        </div>
+                        <p><small>Snaps together like LEGO. Nothing to misspell.</small></p>
+                    </div>
+                </div>
+
+                <p>Notice the colors. In Scratch, <strong>every block has a color that tells you its category</strong> — blue for movement, purple for looks, gold for events, and so on. Kids learn to "read" a program by its colors before they can read the words fluently.</p>
+
+                <ul class="sb-legend">
+                    <li><span class="sb-dot" style="background:#4C97FF"></span> Motion</li>
+                    <li><span class="sb-dot" style="background:#9966FF"></span> Looks</li>
+                    <li><span class="sb-dot" style="background:#CF63CF"></span> Sound</li>
+                    <li><span class="sb-dot" style="background:#FFBF00"></span> Events</li>
+                    <li><span class="sb-dot" style="background:#FFAB19"></span> Control</li>
+                    <li><span class="sb-dot" style="background:#5CB1D6"></span> Sensing</li>
+                    <li><span class="sb-dot" style="background:#59C059"></span> Operators</li>
+                    <li><span class="sb-dot" style="background:#FF8C1A"></span> Variables</li>
+                </ul>
+
+                <div class="card card-success">
+                    <h4>✅ Why this matters for your child</h4>
+                    <p>Because blocks can't "break" from typos, kids get to the fun part — seeing their idea come alive — almost instantly. That quick reward is exactly what keeps them coming back.</p>
+                </div>
+            </section>
+
+            <!-- 4. Why kids love it -->
+            <section id="why-love" class="lesson-section">
+                <h2>🎓 Learn It: Why kids love it</h2>
+                <p>Scratch is engineered around how children actually learn: by playing, tinkering, and showing off. Here's what makes it click:</p>
+
+                <div class="mermaid">
+                    mindmap
+                      root((Why kids love Scratch))
+                        Instant results
+                          Click and it moves
+                          No waiting
+                        Creative freedom
+                          Games
+                          Stories
+                          Animations
+                        No fear of failure
+                          Blocks can't crash
+                          Just try again
+                        Belonging
+                          Share projects
+                          Remix others' ideas
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>What kids feel</th><th>What's really happening (the learning)</th></tr></thead>
+                        <tbody>
+                            <tr><td>"I made the cat dance!"</td><td>Sequencing — putting steps in the right order</td></tr>
+                            <tr><td>"It keeps spinning forever!"</td><td>Loops — repeating actions</td></tr>
+                            <tr><td>"When I press space, it jumps!"</td><td>Events — responding to input</td></tr>
+                            <tr><td>"If it touches the wall, it bounces."</td><td>Conditionals — decision-making logic</td></tr>
+                            <tr><td>"I remixed my friend's game."</td><td>Reading and modifying existing code</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Every "I made it do X!" moment is a real computer-science concept in disguise. Your job isn't to lecture on these terms — it's to celebrate the moment and, now and then, name what they just did.</p>
+            </section>
+
+            <!-- 5. Free and safe -->
+            <section id="free-safe" class="lesson-section">
+                <h2>🎓 Learn It: Free, and made for kids</h2>
+                <ul>
+                    <li><strong>100% free.</strong> No paid tiers, no ads for products, no in-app purchases.</li>
+                    <li><strong>Two ways to use it.</strong> Online in a browser at <a href="https://scratch.mit.edu/">scratch.mit.edu</a>, or via the free downloadable <strong>Scratch app</strong> for offline use.</li>
+                    <li><strong>You can start without an account.</strong> Click "Start Creating" and play immediately — an account just lets you save and share (more in Lesson 1.2).</li>
+                    <li><strong>Built with child safety in mind.</strong> Accounts for kids use a parent's email, comments are moderated, and personal info is discouraged. We'll cover safe sharing in Module 4.</li>
+                </ul>
+                <div class="card card-warning">
+                    <h4>⚠️ One thing to know up front</h4>
+                    <p>Scratch has a <strong>community</strong> where kids can share and comment on projects. It's well-moderated and kind by design, but it <em>is</em> a form of social interaction. For now you can ignore it entirely — Module 1 stays fully offline-friendly and private. We'll set up sharing safely later, together.</p>
+                </div>
+            </section>
+
+            <!-- 6. TEACH IT -->
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: Introduce Scratch to your child</h2>
+                    <p>You've got the background. Here's how to spark your child's interest in the very first conversation — no screen required yet.</p>
+
+                    <h4>Say something like this</h4>
+                    <p class="say-this">"Want to make your own game where <em>you</em> decide the rules? There's a free thing called Scratch where you snap colorful blocks together and a little cat does whatever you tell it. Want to try making it talk?"</p>
+                    <p>Lead with <strong>their</strong> interest — a game, a joke-telling cat, a dancing character, a pet cartoon. The word "make" beats the word "learn" every time.</p>
+
+                    <h4>Age-by-age tips</h4>
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>Sit together the whole time. Consider <a href="https://www.scratchjr.org/">ScratchJr</a> (a tablet app) if reading is still tricky — it uses pictures instead of words. Keep sessions to 15–20 minutes.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>The sweet spot for Scratch. Start side-by-side, then let them drive the mouse. Cheer discoveries; resist grabbing the mouse to "fix" things.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>Give more independence. Challenge them: "Can you make it keep score?" They may outrun you fast — that's a win, not a problem.</p>
+                        </div>
+                    </div>
+
+                    <h4>Common myths to drop (yours and theirs)</h4>
+                    <ul>
+                        <li><strong>"I'm not good with computers."</strong> You don't have to be. If you can drag a block, you can help.</li>
+                        <li><strong>"Coding is only for boys / for math whizzes."</strong> Scratch is art, music, and storytelling as much as logic.</li>
+                        <li><strong>"We'll break something."</strong> You can't. There's no wrong move — only experiments.</li>
+                    </ul>
+
+                    <div class="card card-info" style="margin-bottom:0;">
+                        <h4>🎬 Your first-session goal</h4>
+                        <p>Don't aim to "teach coding" on day one. Aim for a single delighted "whoa, I did that!" That feeling is the hook. Everything else builds on it.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Quiz -->
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <p>A couple of quick questions to lock it in. Click an answer.</p>
+
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> What is the single biggest advantage of block-based coding for children?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Speed helps, but it's not the core reason.">A) Programs run faster than typed code</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Exactly — blocks only snap when valid, so kids can't make typos that break their program.">B) You can't make syntax/typing errors that break the program</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Scratch is free, but that's not about blocks vs typing.">C) It costs less money</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> In Scratch, what does a block's <em>color</em> tell you?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Colors aren't about difficulty.">A) How hard the block is to use</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right! Color = category. Blue is Motion, purple is Looks, gold is Events, and so on.">B) Which category it belongs to (Motion, Looks, Events…)</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Order comes from how you stack them, not their color.">C) The order it must run in</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> What's the best first-session goal with your child?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="That's a lot of pressure for day one.">A) Finish a complete game</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Vocabulary can wait.">B) Memorize the coding vocabulary</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — one delighted 'I did that!' is the hook everything else builds on.">C) Create one moment of "whoa, I made that!"</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Summary -->
+            <section id="summary" class="lesson-section">
+                <h2>Summary &amp; What's Next</h2>
+                <div class="card card-success">
+                    <h3>🎉 Key Takeaways</h3>
+                    <ul>
+                        <li>Scratch is a free MIT-made site where kids build games, stories, and animations by snapping colorful blocks together.</li>
+                        <li>Block coding removes typos and syntax errors, so kids reach the fun fast.</li>
+                        <li>A block's color shows its category; the three key words are <strong>sprite</strong>, <strong>stage</strong>, and <strong>blocks</strong>.</li>
+                        <li>Your role is "coding buddy," not expert. First-session goal: one "I made that!" moment.</li>
+                    </ul>
+                </div>
+
+                <h3>🚀 Next up</h3>
+                <p>Now that you know <em>what</em> Scratch is, let's open it and look around. In <strong>Lesson 1.2</strong> we'll take a guided tour of the editor — every button, panel, and that all-important green flag — so nothing feels mysterious.</p>
+
+                <div class="card card-accent" style="text-align:center;">
+                    <h3>You just took step one. 🎉</h3>
+                    <p>That wasn't so scary, was it? Keep going — the hands-on fun starts soon.</p>
+                </div>
+            </section>
+
+            <!-- Lesson nav -->
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="index.html" class="prev-lesson">← Course Home</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="lesson_02.html" class="next-lesson">Next: A Tour of the Editor →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ray De La Paz / PetalFawnStudio. An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>
