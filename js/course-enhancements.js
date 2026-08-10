@@ -71,7 +71,11 @@ function reinitMermaid(theme) {
     document.querySelectorAll('.mermaid').forEach(el => {
         // Preserve the original source
         if (!el.dataset.src) {
-            el.dataset.src = el.textContent.trim();
+            // Raw <br> in authored markup becomes a <br> DOM node that textContent drops,
+            // collapsing multi-line labels. Restore it as the literal "<br/>" Mermaid renders.
+            const tmp = el.cloneNode(true);
+            tmp.querySelectorAll('br').forEach(br => br.replaceWith('<br/>'));
+            el.dataset.src = tmp.textContent.trim();
         }
         el.removeAttribute('data-processed');
         el.innerHTML = el.dataset.src;
