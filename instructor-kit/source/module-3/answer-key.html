@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Answer Key — Module 3</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Instructor copy —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">answers &amp; solutions · not for participants</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Instructor Kit · Answer Key</div>
+    <h1>Module 3 — Answers &amp; Solutions</h1>
+    <p class="sub">Correct self-check answers with the "why," reference notes for each lab with the scripts drawn out, the full Bug Hunt solution (all four planted bugs), and coaching moves for the common wrong answers.</p>
+    <div class="meta-row"><span class="chip">Lessons <b>3.1–3.3</b></span><span class="chip"><b>12</b> quiz items</span><span class="chip"><b>3</b> labs</span><span class="chip"><b>4</b> planted bugs</span></div>
+  </header>
+
+  <!-- 3.1 -->
+  <div class="sec"><h2>3.1 · An Interactive Animated Story</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">Two sprites need to take turns talking. What coordinates them?</div><div class="opts"><div class="opt correct">A) broadcast and "when I receive"</div></div><div class="why"><b>Why:</b> the next line starts only when the cue is actually sent. Matched <code class="inline">wait</code> times drift and break.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">Which block moves a sprite smoothly over time?</div><div class="opts"><div class="opt correct">B) glide _ secs to x/y</div></div><div class="why"><b>Why:</b> <code class="inline">go to x/y</code> teleports instantly. <code class="inline">glide</code> slides over the number of seconds you give it.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">Both characters talk at the exact same time. Likely cause?</div><div class="opts"><div class="opt correct">A) Both start with "when ⚑ clicked" instead of "when I receive"</div></div><div class="why"><b>Why:</b> every green-flag script starts at the same moment. Only line 1 should use the flag.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">Where does the backdrop-changing script go?</div><div class="opts"><div class="opt correct">B) On the Stage: "when I receive night" then "switch backdrop to"</div></div><div class="why"><b>Why:</b> the Stage owns the backdrops and can listen for broadcasts just like a sprite. Click the Stage (right of the sprite list) before adding its blocks.</div></div>
+  <div class="note lab"><div class="t">Lab solution — A Conversation That Plays Itself</div>
+    <p>Reference: <code class="inline">labs/module-3/l3-1-conversation.sb3</code>. A Forest backdrop, a Cat and a Bear, and a chain of four cues: Cat on the flag → <code class="inline">line 2</code> → Bear → <code class="inline">line 3</code> → Cat → <code class="inline">line 4</code> → both glide off. Words, characters, and coordinates will vary. Check the <em>structure</em>.</p>
+    <div class="sb-row">
+      <div class="sb-script" aria-label="Cat scripts">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-motion">go to x: <span class="sb-input">-200</span> y: <span class="sb-input">-100</span></div>
+        <div class="sb-block sb-motion">glide <span class="sb-input">2</span> secs to x: <span class="sb-input">-60</span> y: <span class="sb-input">-100</span></div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi Bear!</span> for <span class="sb-input">2</span> seconds</div>
+        <div class="sb-block sb-events">broadcast <span class="sb-dropdown">line 2</span></div>
+      </div>
+      <div class="sb-script" aria-label="Bear line 2">
+        <div class="sb-block sb-events sb-hat">when I receive <span class="sb-dropdown">line 2</span></div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello Cat!</span> for <span class="sb-input">2</span> seconds</div>
+        <div class="sb-block sb-events">broadcast <span class="sb-dropdown">line 3</span></div>
+      </div>
+      <div class="sb-script" aria-label="Cat line 3">
+        <div class="sb-block sb-events sb-hat">when I receive <span class="sb-dropdown">line 3</span></div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Want to explore?</span> for <span class="sb-input">2</span> seconds</div>
+        <div class="sb-block sb-events">broadcast <span class="sb-dropdown">line 4</span></div>
+      </div>
+      <div class="sb-script" aria-label="Both on line 4">
+        <div class="sb-block sb-events sb-hat">when I receive <span class="sb-dropdown">line 4</span></div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Let's go!</span> for <span class="sb-input">1</span> seconds</div>
+        <div class="sb-block sb-motion">glide <span class="sb-input">2</span> secs to x: <span class="sb-input">240</span> y: <span class="sb-input">-100</span></div>
+      </div>
+    </div>
+    <p>(The last script goes on <em>both</em> sprites, so they leave together. The Bear's version usually skips the <code class="inline">say</code>.)</p>
+    <p><b>Common wrong answers and how to coach them:</b> both sprites talking at once → "Which of your scripts start with the flag? Only line 1 should." · a line that never plays → the <code class="inline">when I receive</code> dropdown names a different message ("line2" vs "line 2"). Open the dropdown and compare. · the line-4 glide only moves one sprite → the receiving script was added to one sprite only. · the Bear has no Bear scripts → they were built while the Cat was selected. Drag the script onto the Bear in the sprite list to copy it.</p>
+  </div>
+
+  <!-- 3.2 -->
+  <div class="sec"><h2>3.2 · A Simple Game with Variables &amp; Score</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">What is a variable?</div><div class="opts"><div class="opt correct">A) A named box that stores a value the program can change</div></div><div class="why"><b>Why:</b> it has a name (<code class="inline">score</code>) and a value (0, then 1, then 2…), like a whiteboard labeled SCORE.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">To add one point to the score, you use…</div><div class="opts"><div class="opt correct">B) change score by 1</div></div><div class="why"><b>Why:</b> <code class="inline">change</code> adds to what's already there. <code class="inline">set score to 1</code> would reset it to 1 every time.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">Where should "set score to 0" go?</div><div class="opts"><div class="opt correct">A) Right after the green flag, before the game loop</div></div><div class="why"><b>Why:</b> it should run once per game. Inside the <code class="inline">forever</code> it would wipe the score on every drop.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">You can't see the score on the stage. What do you do?</div><div class="opts"><div class="opt correct">C) Tick the checkbox next to the variable in the Variables palette</div></div><div class="why"><b>Why:</b> the checkbox toggles the live readout on the stage. (The <code class="inline">show variable</code> block does the same thing from code.)</div></div>
+  <div class="note lab"><div class="t">Lab solution — Catch the Apple</div>
+    <p>Reference: <code class="inline">labs/module-3/l3-2-catch-the-apple.sb3</code>. Two sprites (Cat, Apple) and one variable, <code class="inline">score</code>, set "For all sprites" with its stage readout showing. This file is also the <b>solution to the Bug Hunt</b>.</p>
+    <div class="sb-row">
+      <div class="sb-script" aria-label="Apple reference script">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-variables">set <span class="sb-dropdown">score</span> to <span class="sb-input">0</span></div>
+        <div class="sb-block sb-control">forever</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div>
+          <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Cat?</span></div>
+          <div class="sb-nest">
+            <div class="sb-block sb-motion">change y by <span class="sb-input">-8</span></div>
+            <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span class="sb-input" style="background:#4C97FF;color:#fff;">y position</span> &lt; -170</span> then</div>
+            <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div></div>
+          </div>
+          <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+        </div>
+      </div>
+      <div class="sb-script" aria-label="Cat reference script">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-control">forever</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#5CB1D6;color:#fff;">mouse x</span> y: <span class="sb-input">-140</span></div>
+        </div>
+      </div>
+    </div>
+    <p><b>Common wrong answers and how to coach them:</b> score jumps by several per catch → the apple lingers on the cat. Make sure the loop goes back to the top <code class="inline">go to</code> right after scoring. · score never rises → the <code class="inline">touching</code> dropdown says "mouse-pointer," or the Cat's y keeps it below the apple's path. · apple frozen at the top → they used <code class="inline">if touching edge?</code> for the bottom check. The apple starts touching the <em>top</em> edge, so it resets every frame. Use <code class="inline">y position &lt; -170</code>. · "mouse x" typed as text → it must be the round Sensing reporter dropped into the slot. · <em>Timer challenge:</em> a second green-flag script, <code class="inline">set [time left] to 30</code> → <code class="inline">repeat until &lt;(time left) = 0&gt;</code> → <code class="inline">wait 1 seconds</code>, <code class="inline">change [time left] by -1</code> → then <code class="inline">broadcast [game over]</code>, <code class="inline">stop all</code>.</p>
+  </div>
+
+  <!-- 3.3 -->
+  <div class="sec"><h2>3.3 · Debugging &amp; Remixing</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">The golden rule of debugging is…</div><div class="opts"><div class="opt correct">A) Change one thing at a time, then test</div></div><div class="why"><b>Why:</b> change five things and you'll never know which one mattered, or which one broke something new.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">What does "See Inside" do on a shared project?</div><div class="opts"><div class="opt correct">A) Opens the project's code to explore how it was made</div></div><div class="why"><b>Why:</b> it turns the whole Scratch community into a free textbook. <b>Remix</b> (signed in) is the separate step that makes your own copy.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">Your child is melting down over a stubborn bug. Best move?</div><div class="opts"><div class="opt correct">B) Have them explain it aloud, or take a short break</div></div><div class="why"><b>Why:</b> the rubber duck often surfaces the bug mid-sentence, and a break is a real debugging strategy. Grabbing the mouse ends the learning.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">Green flag clicked and nothing happens. Most likely suspect?</div><div class="opts"><div class="opt correct">B) The code is on a different sprite than you think</div></div><div class="why"><b>Why:</b> it's the first row of the usual-suspects table. Click each sprite in the sprite list and look for the script.</div></div>
+
+  <div class="note lab"><div class="t">Lab solution — The Bug Hunt</div>
+    <p>Starter: <code class="inline">labs/module-3/l3-3-bug-hunt-starter.sb3</code> is the 3.2 game with four planted bugs. Solution: <code class="inline">labs/module-3/l3-2-catch-the-apple.sb3</code> (scripts drawn above). Each bug below shows the <b>symptom</b> a pair should <em>watch</em>, the <b>cause</b>, and the <b>fix</b> with the corrected script. The symptoms overlap (with bug 4 in place, the score races even while bug 3 keeps the apple stuck at the top), so accept any order, as long as each fix was one change followed by a test.</p>
+  </div>
+
+  <div class="q"><div class="qn">Bug 1 · Cat script</div><div class="qt">Symptom: the cat ignores left–right mouse movement and slides sideways when the mouse moves <em>up and down</em>. It "drifts strangely."</div>
+    <div class="sb-row">
+      <div><div class="opt">Planted (wrong)</div>
+        <div class="sb-script" aria-label="buggy cat script">
+          <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+          <div class="sb-block sb-control">forever</div>
+          <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#5CB1D6;color:#fff;">mouse y</span> y: <span class="sb-input">-140</span></div></div>
+        </div></div>
+      <div><div class="opt correct">Fixed</div>
+        <div class="sb-script" aria-label="fixed cat script">
+          <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+          <div class="sb-block sb-control">forever</div>
+          <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#5CB1D6;color:#fff;">mouse x</span> y: <span class="sb-input">-140</span></div></div>
+        </div></div>
+    </div>
+    <div class="why"><b>Fix:</b> replace the <code class="inline">mouse y</code> reporter with <code class="inline">mouse x</code> (Sensing). The x slot needs the mouse's left–right number. <b>Coach:</b> "Move the mouse only sideways. Does the cat? Which number does the x slot get?"</div></div>
+
+  <div class="q"><div class="qn">Bug 2 · Apple script, top</div><div class="qt">Symptom: the score doesn't reset. Press the green flag again and it carries on from the last game's number. (The first game may even open with a leftover score.)</div>
+    <div class="sb-row">
+      <div><div class="opt">Planted (wrong)</div>
+        <div class="sb-script" aria-label="buggy apple top without reset">
+          <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+          <div class="sb-block sb-control">forever</div>
+          <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div><div class="sb-block sb-control">…</div></div>
+        </div></div>
+      <div><div class="opt correct">Fixed</div>
+        <div class="sb-script" aria-label="fixed apple top with reset">
+          <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+          <div class="sb-block sb-variables">set <span class="sb-dropdown">score</span> to <span class="sb-input">0</span></div>
+          <div class="sb-block sb-control">forever</div>
+          <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div><div class="sb-block sb-control">…</div></div>
+        </div></div>
+    </div>
+    <div class="why"><b>Fix:</b> add <code class="inline">set [score] to 0</code> between the hat block and <code class="inline">forever</code>. <b>Common wrong fix:</b> putting it <em>inside</em> the forever, which zeroes the score on every drop so it never climbs past 1. That's a good teachable second bug. <b>Coach:</b> "What wipes the whiteboard at the start of a game?"</div></div>
+
+  <div class="q"><div class="qn">Bug 3 · Apple script, falling loop</div><div class="qt">Symptom: the apple never falls. It sits at the top of the stage, so nothing can ever be caught. (While bug 4 is still in place, the score races up even though the apple isn't moving. That clue points at the loop.)</div>
+    <div class="sb-row">
+      <div><div class="opt">Planted (wrong)</div>
+        <div class="sb-script" aria-label="buggy change y by 8">
+          <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Cat?</span></div>
+          <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">8</span></div><div class="sb-block sb-control">…</div></div>
+        </div></div>
+      <div><div class="opt correct">Fixed</div>
+        <div class="sb-script" aria-label="fixed change y by -8">
+          <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Cat?</span></div>
+          <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-8</span></div><div class="sb-block sb-control">…</div></div>
+        </div></div>
+    </div>
+    <div class="why"><b>Fix:</b> change the <code class="inline">change y by</code> value from <code class="inline">8</code> to <code class="inline">-8</code>. Bigger y means <em>up</em>, so the apple keeps pushing into the top of the stage (Scratch holds it on-screen) instead of falling. <b>Helper to suggest:</b> tick the Apple's <b>y position</b> checkbox (bottom of Motion) and watch. The number never goes down. <b>Coach:</b> "Which way does y go when it gets bigger? Which block moves the apple up or down?"</div></div>
+
+  <div class="q"><div class="qn">Bug 4 · Apple script, nesting</div><div class="qt">Symptom: the score races upward <em>while the apple is still falling</em>, one point per step, whether or not it's caught.</div>
+    <div class="sb-row">
+      <div><div class="opt">Planted (wrong)</div>
+        <div class="sb-script" aria-label="buggy change score inside loop">
+          <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Cat?</span></div>
+          <div class="sb-nest">
+            <div class="sb-block sb-motion">change y by <span class="sb-input">-8</span></div>
+            <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span class="sb-input" style="background:#4C97FF;color:#fff;">y position</span> &lt; -170</span> then</div>
+            <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div></div>
+            <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+          </div>
+        </div></div>
+      <div><div class="opt correct">Fixed</div>
+        <div class="sb-script" aria-label="fixed change score after loop">
+          <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Cat?</span></div>
+          <div class="sb-nest">
+            <div class="sb-block sb-motion">change y by <span class="sb-input">-8</span></div>
+            <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span class="sb-input" style="background:#4C97FF;color:#fff;">y position</span> &lt; -170</span> then</div>
+            <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div></div>
+          </div>
+          <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+        </div></div>
+    </div>
+    <div class="why"><b>Fix:</b> drag <code class="inline">change [score] by 1</code> out of the repeat-until's mouth and drop it directly <em>below</em> the repeat-until (still inside <code class="inline">forever</code>). It should run once, after the catch. <b>Common wrong fix:</b> dropping it loose on the canvas or trying to attach it under <code class="inline">forever</code> (which has no bottom notch). A block that isn't connected never runs. Have them drag the script and check that the +1 moves with it. <b>Coach:</b> "How many times does the +1 run while one apple falls? Which loop is it inside?"</div></div>
+
+  <div class="note"><div class="t">Coaching the Bug Hunt as a whole</div>
+    <p><b>Pairs that fix everything by rebuilding from scratch:</b> accept it, then ask them to name the one block that was different. <b>Pairs that fix bug 3 and think the score is still broken:</b> it is. That's bug 4. Praise the one-change discipline that let them tell the two apart. <b>Pairs who rewrite the bottom check as <code class="inline">if touching edge?</code>:</b> the apple freezes at the top again, because at y: 170 it already touches the <em>top</em> edge. That's a bonus teachable moment, and it's why the reference uses <code class="inline">y position &lt; -170</code>. <b>Fully fixed check:</b> the cat follows the mouse sideways, the apple falls, a miss scores nothing and restarts at the top, a catch scores exactly 1, and a second green flag starts again at 0.</p>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 3 · Answer Key · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

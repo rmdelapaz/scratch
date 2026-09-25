@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slides — Module 1</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+  :root{--bg:#0f0b1f;--ink:#f1edfb;--ink2:#b4a9cf;--accent:#a98bff;--accent2:#7c4ddf;--lab:#34d3bd;--warn:#fbbf24;--line:#2f2650;--code:#140e2a;color-scheme:dark}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;overflow:hidden}
+  .deck{height:100%;width:100%;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 8vw;gap:20px}
+  .slide.on{display:flex}
+  h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.1;text-wrap:balance}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:clamp(.7rem,1.4vw,.95rem);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .slide h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-.02em}
+  .slide h2{font-size:clamp(1.5rem,4.2vw,2.8rem);font-weight:800;letter-spacing:-.01em}
+  .slide p.lead{font-size:clamp(1.05rem,2.4vw,1.5rem);color:var(--ink2);max-width:26ch}
+  ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  ul li{position:relative;padding-left:34px;font-size:clamp(1.05rem,2.3vw,1.6rem)}
+  ul li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:3px;background:var(--accent);transform:rotate(45deg)}
+  ul.lab li::before{background:var(--lab)}
+  code.k{font-family:"JetBrains Mono",monospace;color:#d4c4ff;font-size:.92em}
+  pre{background:var(--code);border:1px solid var(--line);border-radius:12px;padding:22px 26px;font-family:"JetBrains Mono",monospace;font-size:clamp(.85rem,1.9vw,1.3rem);line-height:1.55;overflow:auto;max-width:100%}
+  pre .k{color:#7dd3fc} pre .s{color:#86efac} pre .c{color:#8a80a8;font-style:italic}
+  .tag{display:inline-flex;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:clamp(.7rem,1.4vw,.95rem);color:var(--ink2)}
+  .tag .pill{background:var(--accent2);color:#fff;font-weight:700;border-radius:999px;padding:3px 12px;letter-spacing:.06em}
+  .tag .pill.lab{background:var(--lab);color:#062b26} .tag .pill.warn{background:var(--warn);color:#3a2a05}
+  .section{background:linear-gradient(135deg,#221640,#0f0b1f)}
+  .section .big{font-size:clamp(3rem,12vw,8rem);font-family:"Archivo";font-weight:800;color:var(--accent2);line-height:.9}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+  @media (max-width:760px){.two{grid-template-columns:1fr}}
+  .bar{position:fixed;left:0;top:0;height:4px;background:var(--accent2);width:0;transition:width .25s;z-index:5}
+  .count{position:fixed;right:16px;bottom:12px;font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--ink2);z-index:5}
+  .nav{position:fixed;inset:auto 0 0 0;display:flex;justify-content:space-between;pointer-events:none;z-index:4}
+  .nav button{pointer-events:auto;background:transparent;border:none;color:transparent;width:22vw;height:100vh;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+  /* Scratch blocks (from kit.css, sized for projection) */
+  .sb-script{display:inline-flex;flex-direction:column;align-items:flex-start;padding:14px;background:#1b1433;border:1px solid var(--line);border-radius:12px;max-width:100%;overflow-x:auto;vertical-align:top}
+  .sb-block{color:#fff;font-family:"Source Sans 3",system-ui,sans-serif;font-weight:600;font-size:clamp(1rem,2.1vw,1.45rem);line-height:1.2;padding:9px 16px;border-radius:8px;box-shadow:0 2px 0 rgba(0,0,0,.25);white-space:nowrap;display:flex;align-items:center;gap:7px}
+  .sb-block + .sb-block{margin-top:4px}
+  .sb-hat{border-radius:18px 18px 8px 8px}
+  .sb-input{background:rgba(255,255,255,.95);color:#1e293b;border-radius:100px;padding:1px 10px;font-weight:700;font-size:.85em}
+  .sb-input.sb-text{border-radius:7px}
+  .sb-dropdown{background:rgba(0,0,0,.15);color:#fff;border-radius:100px;padding:1px 22px 1px 10px;font-size:.85em;position:relative}
+  .sb-dropdown::after{content:"▾";position:absolute;right:7px;font-size:.8em}
+  .sb-flag{color:#2e9e3f;font-size:1.05em}
+  .sb-motion{background:#4C97FF}
+  .sb-looks{background:#9966FF}
+  .sb-sound{background:#CF63CF}
+  .sb-events{background:#FFBF00;color:#4d3800}
+  .sb-events .sb-input{color:#4d3800}
+  .sb-control{background:#FFAB19;color:#5c3d00}
+  .sb-control .sb-input{color:#5c3d00}
+  .sb-sensing{background:#5CB1D6}
+  .sb-operators{background:#59C059}
+  .sb-variables{background:#FF8C1A}
+  .sb-myblocks{background:#FF6680}
+  .sb-row{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chips .sb-block{margin:0}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<div class="deck" id="deck">
+
+  <section class="slide on section">
+    <div class="eyebrow">Scratch for Parents · Instructor Kit</div>
+    <h1>Module 1<br>Getting Started with Scratch</h1>
+    <p class="lead">From "what is this?" to "I made that!" in one session.</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Session 1 · today's map</div>
+    <h2>Three lessons, one cat</h2>
+    <ul>
+      <li><b>1.1</b> What Is Scratch &amp; Why Kids Love It</li>
+      <li><b>1.2</b> A Guided Tour of the Scratch Editor</li>
+      <li><b>1.3</b> Your First Project: Make the Cat Move &amp; Talk</li>
+    </ul>
+    <div class="tag"><span class="pill">RHYTHM</span> Learn it yourself → practice teaching it with a partner</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Before we start</div>
+    <h2>Get comfortable</h2>
+    <div class="two">
+      <ul>
+        <li>Open <code class="k">scratch.mit.edu</code> → <b>Create</b>. Can you see the cat?</li>
+        <li><b>No account needed</b> today</li>
+        <li>Mouse &gt; trackpad. Ask for one!</li>
+      </ul>
+      <ul>
+        <li>Too small? <code class="k">Ctrl/⌘ +</code> zooms</li>
+        <li>Phones on buzz. Step out any time</li>
+        <li>Break at the halfway mark</li>
+      </ul>
+    </div>
+    <div class="tag"><span class="pill lab">PROMISE</span> You cannot break anything in Scratch.</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Icebreaker · 90 seconds each</div>
+    <h2>Why are you here?</h2>
+    <ul>
+      <li><b>Why</b> do you want to learn this?</li>
+      <li><b>What</b> do you hope to make with your child?</li>
+      <li><b>What worries</b> you about it?</li>
+    </ul>
+    <div class="tag"><span class="pill">JOURNAL</span> This is your first entry, the "why page" in your workbook.</div>
+  </section>
+
+  <section class="slide section"><div class="big">1.1</div><h2>What Is Scratch &amp; Why Kids Love It</h2><p class="lead">Before you teach it, understand it.</p></section>
+
+  <section class="slide">
+    <div class="eyebrow">One sentence · three words</div>
+    <h2>Scratch is a free website where kids make games, animations &amp; stories by snapping blocks together</h2>
+    <ul>
+      <li><b>Sprite</b>: a character or object (the cat)</li>
+      <li><b>Stage</b>: the screen where the action happens</li>
+      <li><b>Blocks</b>: the instructions you snap together</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Blocks vs typing</div>
+    <h2>Nothing to misspell</h2>
+    <div class="two">
+      <pre><span class="c"># typed code</span>
+when program starts:
+    move(<span class="s">10</span>)
+    say(<span class="s">"Hello!"</span>, <span class="s">2</span>)</pre>
+      <div class="sb-script" role="img" aria-label="when green flag clicked, move 10 steps, say Hello! for 2 seconds">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello!</span> for <span class="sb-input">2</span> seconds</div>
+      </div>
+    </div>
+    <div class="chips" aria-label="Block categories by color">
+      <span class="sb-block sb-motion">Motion</span><span class="sb-block sb-looks">Looks</span><span class="sb-block sb-sound">Sound</span><span class="sb-block sb-events">Events</span><span class="sb-block sb-control">Control</span><span class="sb-block sb-sensing">Sensing</span><span class="sb-block sb-operators">Operators</span><span class="sb-block sb-variables">Variables</span>
+    </div>
+    <div class="tag"><span class="pill">COLOR</span> = category. Kids read programs by color first.</div>
+  </section>
+
+  <section class="slide section">
+    <div class="eyebrow">Teach-It role-play · kid card A</div>
+    <h2>The pitch</h2>
+    <ul class="lab">
+      <li>No screen. Invite your "child" in under a minute</li>
+      <li>Lead with <b>their</b> interests. <b>Make</b> beats <b>learn</b></li>
+      <li>"Want to make your own game where <i>you</i> decide the rules?"</li>
+    </ul>
+    <div class="tag"><span class="pill lab">6 MIN</span> 2 min each, swap, 1 min debrief</div>
+  </section>
+
+  <section class="slide section"><div class="big">1.2</div><h2>A Guided Tour of the Scratch Editor</h2><p class="lead">Four zones. Learn these and you've learned the editor.</p></section>
+
+  <section class="slide">
+    <div class="eyebrow">Your map · then play "Point and Name"</div>
+    <h2>The four zones</h2>
+    <ul>
+      <li><b>1 Blocks Palette</b> (left): pick instructions</li>
+      <li><b>2 Code Area</b> (middle): snap them together</li>
+      <li><b>3 Stage</b> (upper right): watch it happen, with ⚑ run and ● stop</li>
+      <li><b>4 Sprite List</b> (lower right): choose who you're coding</li>
+    </ul>
+    <div class="tag"><span class="pill warn">#1 TRAP</span> Code belongs to the <b>selected</b> sprite.</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Keep your work</div>
+    <h2>Saving &amp; accounts</h2>
+    <div class="two">
+      <ul>
+        <li><b>No account:</b> File → Save to your computer (<code class="k">.sb3</code>)</li>
+        <li>Reopen: File → Load from your computer</li>
+        <li><b>Account:</b> File → Save now</li>
+      </ul>
+      <ul>
+        <li>Kid account: <b>your</b> email as guardian</li>
+        <li>Username that hides their real name</li>
+        <li><b>Confirm the email</b> before they can share</li>
+      </ul>
+    </div>
+    <div class="tag"><span class="pill">BLOCKED?</span> The free Scratch app works offline: <code class="k">scratch.mit.edu/download</code></div>
+  </section>
+
+  <section class="slide section">
+    <div class="eyebrow">Teach-It role-play · kid card B</div>
+    <h2>The 60-second tour</h2>
+    <ul class="lab">
+      <li>"Here's your toy box. Here's where you build. Here's where the cat acts. This makes it GO!"</li>
+      <li>"How many colors of block can you find?"</li>
+      <li><b>Hands in your lap.</b> They hold the mouse</li>
+    </ul>
+    <div class="tag"><span class="pill lab">5 MIN</span> swap once · count your mouse-grabs</div>
+  </section>
+
+  <section class="slide section"><div class="big">1.3</div><h2>Your First Project</h2><p class="lead">Make the cat move and talk.</p></section>
+
+  <section class="slide">
+    <div class="eyebrow">Three blocks · a sequence</div>
+    <h2>Top to bottom, in order</h2>
+    <div class="two">
+      <div class="sb-script" role="img" aria-label="when green flag clicked, move 50 steps, say Hello! I'm Scratch Cat for 2 seconds">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-motion">move <span class="sb-input">50</span> steps</div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello! I'm Scratch Cat</span> for <span class="sb-input">2</span> seconds</div>
+      </div>
+      <ul><li><b>Gold</b> hat starts it</li><li><b>Blue</b> moves, <b>purple</b> talks</li><li>Swap them and the cat talks first</li></ul>
+    </div>
+    <div class="tag"><span class="pill warn">WATCH</span> Wait for the grey shadow before you let go, or the block won't snap.</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Lab · 12 minutes</div>
+    <h2>Build it, then make it yours</h2>
+    <ul class="lab">
+      <li>Build the three-block script and click ⚑</li>
+      <li>Your own message · 200 steps · a second <b>say</b></li>
+      <li><b>start sound Meow</b> · <b>change size by 25</b> · <b>next costume</b></li>
+      <li>Walked off the edge? <b>go to x: 0 y: 0</b> under the hat</li>
+      <li><b>Save it</b> before you stop</li>
+    </ul>
+    <div class="tag"><span class="pill lab">FILE</span> labs/module-1/l1-3-cat-move-talk.sb3</div>
+  </section>
+
+  <section class="slide section">
+    <div class="eyebrow">Teach-It role-play · kid card C</div>
+    <h2>Treasure hunt, not dictation</h2>
+    <ul class="lab">
+      <li>"Which color do you think has the moving blocks?"</li>
+      <li>"The message is yours. What should the cat say?"</li>
+      <li>"It didn't work <i>yet</i>. Why do you think it did that?"</li>
+    </ul>
+    <div class="tag"><span class="pill lab">RULE</span> The words, the number and the green flag belong to the child.</div>
+  </section>
+
+  <section class="slide section">
+    <div class="eyebrow">You wrote a program 🎉</div>
+    <h2>Try at home this week</h2>
+    <ul class="lab">
+      <li>Have the "make your own game?" chat</li>
+      <li>Your child builds the cat, hands in your lap</li>
+      <li>A coder's notebook + show someone the project</li>
+      <li>Journal: confidence number 1–10</li>
+    </ul>
+    <p class="lead" style="margin-top:10px">Next: Module 2 — timing, loops &amp; choices.</p>
+  </section>
+
+</div>
+
+<div class="count" id="count">1 / 17</div>
+<div class="nav"><button id="prev" aria-label="Previous slide"></button><button id="next" aria-label="Next slide"></button></div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const bar=document.getElementById('bar'), count=document.getElementById('count');
+  let i=0;
+  function show(n){ i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    bar.style.width=((i+1)/slides.length*100)+'%'; count.textContent=(i+1)+' / '+slides.length; }
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1);}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+  });
+  show(0);
+</script>
+</body>
+</html>

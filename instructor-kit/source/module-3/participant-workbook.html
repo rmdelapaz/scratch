@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workbook — Module 3</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Participant workbook —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">write in it · bring it to every session</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Scratch for Parents Workbook · Module 3</div>
+    <h1>Building Real Projects</h1>
+    <p class="sub">Today you build the things kids beg for: an animated story where characters take turns talking, and a real game with a score. Then you learn the skill that makes someone a real coder: calmly fixing what goes wrong.</p>
+    <div class="meta-row">
+      <span class="chip">Lessons <b>3.1–3.3</b></span>
+      <span class="chip"><b>3</b> lessons</span>
+      <span class="chip">Session <b>S3</b></span>
+      <span class="chip">Name: ____________________</span>
+    </div>
+  </header>
+
+  <div class="note">
+    <div class="t">How to use this workbook</div>
+    <p>Each lesson has <b>Key Ideas</b>, a <b>Worked Example</b> (the actual blocks), a <b>Your Turn</b> build, <b>Teach-It Practice</b> for the role-play, a <b>Self-Check</b>, and a <b>Learning Journal</b>. If a build feels hard today, that's normal. This is the biggest step up in the course. Get one piece working, then the next.</p>
+  </div>
+
+  <div class="sec"><h2>Module Project Tracker</h2><span class="rule"></span></div>
+  <ul class="tick lab">
+    <li>☐ <b>3.1</b> A two-character conversation that plays itself (broadcasts)</li>
+    <li>☐ <b>3.1</b> <em>Bonus:</em> the Stage changes the backdrop mid-story</li>
+    <li>☐ <b>3.2</b> Catch the Apple, a playable game with a live score (saved!)</li>
+    <li>☐ <b>3.3</b> Bug Hunt: all four planted bugs found and fixed</li>
+    <li>☐ <b>3.3</b> Explored one shared project with <b>See Inside</b></li>
+  </ul>
+
+  <!-- 3.1 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">3.1</span><h3>An Interactive Animated Story</h3><span class="dur">28 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Add sprites and a backdrop from the libraries</li>
+          <li>Place sprites with <code class="inline">go to</code> and move them smoothly with <code class="inline">glide</code></li>
+          <li>Make characters take turns with <code class="inline">broadcast</code> and <code class="inline">when I receive</code></li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li>The stage is a grid: <b>x</b> is left–right (−240 to 240), <b>y</b> is down–up (−180 to 180), and the centre is 0, 0. Drag a sprite and read its x/y under the stage.</li>
+          <li><code class="inline">go to x: y:</code> <b>teleports</b> (good for a starting spot). <code class="inline">glide _ secs to x: y:</code> <b>slides</b> (good for entrances).</li>
+          <li>Sprites can't see each other's scripts. A <b>broadcast</b> is an invisible signal that any sprite can send and any sprite can listen for, like a stage director calling a cue.</li>
+          <li>Only the <b>first</b> line starts with <code class="inline">when ⚑ clicked</code>. Every later line starts with <code class="inline">when I receive</code>.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example</div>
+        <div class="sb-row">
+          <div class="sb-script" aria-label="Cat sends the cue">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-motion">go to x: <span class="sb-input">-200</span> y: <span class="sb-input">-100</span></div>
+            <div class="sb-block sb-motion">glide <span class="sb-input">2</span> secs to x: <span class="sb-input">0</span> y: <span class="sb-input">-100</span></div>
+            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi Bear!</span> for <span class="sb-input">2</span> seconds</div>
+            <div class="sb-block sb-events">broadcast <span class="sb-dropdown">your turn</span></div>
+          </div>
+          <div class="sb-script" aria-label="Bear listens for the cue">
+            <div class="sb-block sb-events sb-hat">when I receive <span class="sb-dropdown">your turn</span></div>
+            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi Cat! Nice day!</span> for <span class="sb-input">2</span> seconds</div>
+          </div>
+        </div>
+        <p style="font-size:.88rem;color:var(--ink-2);margin:.2rem 0">Left: the Cat's script (sends the cue). Right: the Bear's script (listens for it). Both gold blocks are in <b>Events</b>. Choose <b>New message</b> the first time and give the cue a clear name.</p>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — A Conversation That Plays Itself</div>
+        <ol class="steps lab">
+          <li>New project. <b>Choose a Backdrop</b> (bottom-right) and pick a setting. <b>Choose a Sprite</b> and add a second character.</li>
+          <li><b>Cat</b> (<code class="inline">when ⚑ clicked</code>): say a line, then <code class="inline">broadcast [line 2]</code>.</li>
+          <li><b>Other character</b> (<code class="inline">when I receive [line 2]</code>): reply, then <code class="inline">broadcast [line 3]</code>.</li>
+          <li><b>Cat</b> (<code class="inline">when I receive [line 3]</code>): reply, then <code class="inline">broadcast [line 4]</code>.</li>
+          <li>Both (<code class="inline">when I receive [line 4]</code>): say goodbye and <code class="inline">glide</code> off together.</li>
+          <li><em>Bonus:</em> click the <b>Stage</b> and give it <code class="inline">when I receive [night]</code> → <code class="inline">switch backdrop to</code> a night scene. Have a character broadcast "night."</li>
+        </ol>
+        <p style="font-size:.92rem;margin:.2rem 0">Plan your four lines here first (who says what?):</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Teach-It practice — Story before code</div>
+        <p style="font-size:.92rem;margin:.2rem 0">The 3-step story warm-up: <b>Who?</b> (two characters, with names) → <b>Where?</b> (the backdrop) → <b>What happens?</b> (act it out loud in voices, and that becomes your script).</p>
+        <div class="say">Let's be the characters first! You be the bear, I'll be the cat. What does the cat say? …Great, now let's make Scratch say exactly that.</div>
+        <div class="say">Pick any two you like. We can come back to the library later. Who's our hero today?</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Role-play reflection:</b> What did the "child" say that surprised you? Which line got them talking?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">Two sprites need to take turns talking. What coordinates them?</div>
+          <div class="opts"><div class="opt">A) broadcast and "when I receive"</div><div class="opt">B) Carefully matched wait blocks</div><div class="opt">C) A forever loop on each</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">Which block moves a sprite smoothly over time?</div>
+          <div class="opts"><div class="opt">A) go to x/y</div><div class="opt">B) glide _ secs to x/y</div><div class="opt">C) next costume</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">Both characters talk at the exact same time. Likely cause?</div>
+          <div class="opts"><div class="opt">A) Both start with "when ⚑ clicked" instead of "when I receive"</div><div class="opt">B) The backdrop is wrong</div><div class="opt">C) The sprites are too big</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">You want the scene to turn to night when a sprite broadcasts "night." Where does the backdrop-changing script go?</div>
+          <div class="opts"><div class="opt">A) On the sprite, under "when ⚑ clicked"</div><div class="opt">B) On the Stage: "when I receive night" then "switch backdrop to"</div><div class="opt">C) You can't change backdrops during a project</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Key concepts:</b> Explain a broadcast in your own words, as if to a friend. How is it different from lining up wait blocks?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>What clicked / what's fuzzy:</b> The x/y grid? The glide entrance? Which scripts start with the flag and which with "when I receive"?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Ideas to try:</b> Sketch a story to make with your child: who's in it, where, and one scene change.</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- 3.2 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">3.2</span><h3>A Simple Game with Variables &amp; Score</h3><span class="dur">32 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Explain what a variable is and make one</li>
+          <li>Keep score with <code class="inline">set</code> and <code class="inline">change</code>, and show it on the stage</li>
+          <li>Combine loops, <code class="inline">if</code>, sensing, and operators into a real game</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li>A <b>variable</b> is a labeled box (or a whiteboard) that holds a value the program can remember and change: a score, lives, a name.</li>
+          <li><b>Make a Variable</b> is in the orange <b>Variables</b> category. Name it <code class="inline">score</code> and keep <b>For all sprites</b>. Tick its checkbox to show it live on the stage.</li>
+          <li><code class="inline">set [score] to 0</code> <b>replaces</b> the value. <code class="inline">change [score] by 1</code> <b>adds</b> to it. The round <code class="inline">(score)</code> reporter <b>reads</b> it.</li>
+          <li>Reset the score <b>once</b>, right after the green flag, <b>before</b> the game loop.</li>
+          <li>Why check <code class="inline">y position &lt; -170</code> instead of <code class="inline">touching edge?</code> The apple starts at y: 170, where it's already touching the <b>top</b> edge, so "touching edge" would send it back to the top every frame and it would never fall.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example</div>
+        <div class="sb-row">
+          <div class="sb-script" aria-label="Apple script">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-variables">set <span class="sb-dropdown">score</span> to <span class="sb-input">0</span></div>
+            <div class="sb-block sb-control">forever</div>
+            <div class="sb-nest">
+              <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div>
+              <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Cat?</span></div>
+              <div class="sb-nest">
+                <div class="sb-block sb-motion">change y by <span class="sb-input">-8</span></div>
+                <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span class="sb-input" style="background:#4C97FF;color:#fff;">y position</span> &lt; -170</span> then</div>
+                <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div></div>
+              </div>
+              <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+            </div>
+          </div>
+          <div class="sb-script" aria-label="Cat script">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-control">forever</div>
+            <div class="sb-nest">
+              <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#5CB1D6;color:#fff;">mouse x</span> y: <span class="sb-input">-140</span></div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:.88rem;color:var(--ink-2);margin:.2rem 0">Left: the <b>Apple</b>. Start at the top at a random x, fall until caught (jump back to the top if it drops past the bottom), then add a point, forever. Right: the <b>Cat</b> follows the mouse left–right along the bottom. Green = Operators, blue-green = Sensing. The bottom check puts the <b>y position</b> reporter (bottom of Motion) inside the green <b>&lt;</b> block.</p>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Catch the Apple</div>
+        <ol class="steps lab">
+          <li>Add an <b>Apple</b> sprite (keep the Cat). Make the <code class="inline">score</code> variable and tick its checkbox.</li>
+          <li>Build the Apple script. Watch the white landing shadow so each block drops into the right C-shaped mouth.</li>
+          <li>Build the Cat script. <code class="inline">mouse x</code> is a round <b>Sensing</b> block that you drop into the x slot.</li>
+          <li>Press the green flag and play. Then <b>save</b>: File → Save to your computer. You'll need it again.</li>
+          <li><em>Challenge:</em> a <code class="inline">time left</code> variable set to 30 that counts down by 1 each second, then <code class="inline">broadcast [game over]</code> and <code class="inline">stop all</code>.</li>
+        </ol>
+      </div>
+      <div class="blk"><div class="h">Teach-It practice — Design first, code second</div>
+        <p style="font-size:.92rem;margin:.2rem 0">The one-page game design: <b>Goal</b> (catch apples) · <b>Controls</b> (move the mouse) · <b>Scoring</b> (+1 per catch) · <b>Lose condition</b> (timer runs out). Explain variables with a sticky note that says "SCORE: 0" and cross it out each time.</p>
+        <div class="say">Before we code, tell me your game like you're explaining it to a friend. How do you play? How do you win? Let's write those down. Those are our to-do list.</div>
+        <div class="say">Let's put that on the "someday" list and make catching one thing perfect first.</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Role-play reflection:</b> How did you steer the "child's" huge idea down to one mechanic without saying "no"?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">What is a variable?</div>
+          <div class="opts"><div class="opt">A) A named box that stores a value the program can change</div><div class="opt">B) A block that repeats actions</div><div class="opt">C) A character on the stage</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">To add one point to the score, you use…</div>
+          <div class="opts"><div class="opt">A) set score to 1</div><div class="opt">B) change score by 1</div><div class="opt">C) set score to 0</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">Where should "set score to 0" go?</div>
+          <div class="opts"><div class="opt">A) Right after the green flag, before the game loop</div><div class="opt">B) Inside the forever loop</div><div class="opt">C) It doesn't matter</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">You made the <code class="inline">score</code> variable but can't see it on the stage. What do you do?</div>
+          <div class="opts"><div class="opt">A) Make a second variable</div><div class="opt">B) Add a say block to every sprite</div><div class="opt">C) Tick the checkbox next to the variable in the Variables palette</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Key concepts:</b> Describe a variable with your own everyday comparison. What's the difference between <em>set</em> and <em>change</em>?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Questions &amp; confusion:</b> Does the <code class="inline">repeat until</code> inside the <code class="inline">forever</code> make sense yet? Which part would you re-read?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Progress &amp; feelings:</b> This was the biggest build so far. How did it feel to juggle it all?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- 3.3 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">3.3</span><h3>Debugging &amp; Remixing</h3><span class="dur">30 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Find and fix bugs with the 4-step method</li>
+          <li>Recognize the most common Scratch bugs</li>
+          <li>Use <b>See Inside</b> and explain good remixing etiquette</li>
+          <li>Coach a frustrated child without grabbing the mouse</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li>A bug just means "not doing what I expected <em>yet</em>." The computer does exactly what the blocks say. Debugging is finding the gap between what you said and what you meant.</li>
+          <li>The 4-step loop: <b>1 Watch</b> what actually happens → <b>2 Predict</b> which block causes it → <b>3 Change ONE thing</b> → <b>4 Test</b>. Still wrong? Go round again.</li>
+          <li>Scratch's helpers: click one block to run just that piece, tick a variable's checkbox to watch it, add a temporary <code class="inline">say (score)</code>, slow things down with <code class="inline">wait</code>.</li>
+          <li><b>See Inside</b> opens any shared project's code. <b>Remix</b> (when signed in) makes your own copy. Scratch credits the original creator automatically. Change something meaningful and keep the credit.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — the usual suspects</div>
+        <table class="timing">
+          <thead><tr><th>Symptom</th><th>Usual cause</th><th>Fix</th></tr></thead>
+          <tbody>
+            <tr><td>Nothing happens</td><td>Code is on the wrong sprite</td><td>Select the right sprite in the sprite list</td></tr>
+            <tr><td>Runs once, never reacts again</td><td>An <code class="inline">if</code> with no loop around it</td><td>Wrap the check in a <code class="inline">forever</code></td></tr>
+            <tr><td>Blocks after a loop never run</td><td>Trapped below a <code class="inline">forever</code></td><td>Move them inside, or use <code class="inline">repeat until</code></td></tr>
+            <tr><td>Sprite zooms off / upside-down</td><td>Position not reset / rotation style</td><td>Add <code class="inline">go to x/y</code> at start; set rotation style to left-right</td></tr>
+            <tr><td>Score jumps by many at once</td><td>Condition stays true for many frames</td><td>Move the sprite away, or add a short wait after scoring</td></tr>
+            <tr><td>Two sprites out of sync</td><td>Relying on wait timing</td><td>Coordinate with <code class="inline">broadcast</code> / <code class="inline">when I receive</code></td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.88rem;color:var(--ink-2);margin:.2rem 0">A debugging helper in action: snap this under the green flag to see what the computer "thinks" the score is, then remove it when you're done.</p>
+        <div class="sb-script" aria-label="temporary say score debugging helper">
+          <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+          <div class="sb-block sb-control">forever</div>
+          <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input" style="background:#FF8C1A;color:#fff;">score</span></div></div>
+        </div>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — The Bug Hunt (debugging buddies)</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Open <code class="inline">l3-3-bug-hunt-starter.sb3</code> (File → Load from your computer). It's the Catch the Apple game with <b>four bugs</b> hidden in it. You can't break it: the original can always be reloaded.</p>
+        <ol class="steps lab">
+          <li><b>Driver</b> holds the mouse. <b>Navigator</b> holds this workbook and asks: <em>What did you expect? What happened instead? Which block do you think is responsible? What's one thing we could change to test that?</em></li>
+          <li>Play the game and <b>watch</b>. Try moving the mouse in different directions, watching whether the apple moves, missing on purpose, and pressing the green flag a second time.</li>
+          <li>For each bug, fill in one row below, then make <b>one</b> change and test. If it didn't help, undo it before trying the next idea.</li>
+          <li><b>Swap roles</b> after every bug. Stuck? Ask the facilitator for a hint (there are three per bug).</li>
+        </ol>
+        <p style="font-size:.92rem;margin:.6rem 0 .2rem"><b>Bug Hall of Fame</b></p>
+        <table class="timing">
+          <thead><tr><th>#</th><th>1 · What we watched (symptom)</th><th>2 · Block we predicted</th><th>3 · The one change we made</th><th>4 · Fixed?</th></tr></thead>
+          <tbody>
+            <tr><td class="t">1</td><td style="height:48px"></td><td></td><td></td><td>☐</td></tr>
+            <tr><td class="t">2</td><td style="height:48px"></td><td></td><td></td><td>☐</td></tr>
+            <tr><td class="t">3</td><td style="height:48px"></td><td></td><td></td><td>☐</td></tr>
+            <tr><td class="t">4</td><td style="height:48px"></td><td></td><td></td><td>☐</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="blk"><div class="h">Teach-It practice — Coaching through frustration</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Rubber duck:</b> have the child explain the code block by block, to you or a stuffed animal. <b>Ask, don't fix:</b> use the navigator's four questions. <b>Know when to break:</b> walking away is a real debugging strategy, not quitting.</p>
+        <div class="say">Walk me through it like I know nothing. What should this block do? …And what did it actually do?</div>
+        <div class="say">The code has a bug; you're a coder who's finding it.</div>
+        <div class="say">Let's let our brains rest. Coders do this all the time.</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Role-play reflection:</b> When did you most want to grab the mouse? What did you do instead?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">The golden rule of debugging is…</div>
+          <div class="opts"><div class="opt">A) Change one thing at a time, then test</div><div class="opt">B) Change many things at once to save time</div><div class="opt">C) Delete everything and start over</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">What does "See Inside" do on a shared project?</div>
+          <div class="opts"><div class="opt">A) Opens the project's code to explore how it was made</div><div class="opt">B) Deletes the project</div><div class="opt">C) Charges money to view</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">Your child is melting down over a stubborn bug. Best move?</div>
+          <div class="opts"><div class="opt">A) Grab the mouse and fix it for them</div><div class="opt">B) Have them explain it aloud, or take a short break</div><div class="opt">C) Tell them to try harder</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">You click the green flag and <em>nothing</em> happens, though you're sure you built the script. Most likely suspect?</div>
+          <div class="opts"><div class="opt">A) The computer is broken</div><div class="opt">B) The code is on a different sprite than you think</div><div class="opt">C) The backdrop is too dark</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Key concepts:</b> Write the 4-step method from memory. Why does changing only one thing matter so much?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>What clicked:</b> Which "usual suspect" have you already met in your own projects? Did the table explain a bug you'd fixed by luck?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Progress &amp; feelings:</b> How do you react when code breaks, and has that changed since Module 1?</p>
+        <div class="write"></div>
+      </div>
+      <div class="note lab">
+        <div class="t">Try at home this week</div>
+        <p>☐ Quietly move one block in your catch game and let your child debug it. Ask, don't fix. &nbsp;☐ Open one shared project together with See Inside and borrow one idea. &nbsp;☐ Start a "Bug Hall of Fame" page in your child's notebook. &nbsp;☐ Keep the apple game, because its ideas return in the Module 4 capstone.</p>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 3 · Participant Workbook · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

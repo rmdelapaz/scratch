@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilitator Guide — Module 3</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Instructor copy —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">contains answers, hints &amp; timing · not for participants</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Instructor Kit · Facilitator Guide</div>
+    <h1>Module 3 — Building Real Projects</h1>
+    <p class="sub">How to run the session where parents stop following steps and start building things their kids will want to show off: a two-character animated story, a real catch game with a score, and a calm method for fixing bugs, practised on a game full of planted bugs.</p>
+    <div class="meta-row">
+      <span class="chip"><b>3</b> lessons</span>
+      <span class="chip"><b>2 hrs</b> in class</span>
+      <span class="chip">Lessons <b>3.1–3.3</b></span>
+      <span class="chip">Level <b>Beginner</b></span>
+      <span class="chip">Maps to <b>Session S3</b></span>
+    </div>
+  </header>
+
+  <div class="sec"><h2>How to Use This Guide</h2><span class="rule"></span></div>
+  <ul class="tick">
+    <li>Same rhythm for every lesson: <b>Frame</b> → <b>Demo</b> → <b>Lab</b> → <b>Teach-It role-play</b> → <b>Check</b>. The run-sheet below is the clock; the lesson blocks are the content.</li>
+    <li><b>This is the busiest session.</b> Three lessons fit into two hours only if you demo tight and send people to the labs quickly. The reference <code class="inline">.sb3</code> files in <code class="inline">labs/module-3/</code> are your safety net. A participant who falls behind on 3.2 loads the finished game and still does the Bug Hunt.</li>
+    <li><b>The emotional arc matters.</b> 3.1 feels delightful, 3.2 feels hard (say so out loud: "this one is a step up"), and 3.3 turns that difficulty into a skill. Parents who struggled in 3.2 often shine in the Bug Hunt.</li>
+    <li><b>3-Saturday format:</b> this session is the morning block of Saturday 2 (S4 follows after lunch). Keep the same timings.</li>
+    <li><span style="color:var(--lab);font-weight:600">Teal</span> = hands-on, <span style="color:var(--warn);font-weight:600">amber</span> = watch-outs, dashed boxes = lines to say out loud.</li>
+  </ul>
+
+  <div class="note">
+    <div class="t">The through-line</div>
+    <p>Three projects, one arc: <b>make it → make it a game → make it work.</b> The story (3.1) teaches sprites to cooperate with <em>broadcasts</em>. The catch game (3.2) adds a <em>variable</em> and combines every block category so far. The Bug Hunt (3.3) hands back that same game with four planted bugs, so participants debug code they already understand. The Teach-It thread matches it: <em>story before code</em>, <em>design before code</em>, <em>ask, don't fix</em>.</p>
+  </div>
+
+  <div class="sec"><h2>Before the Session</h2><span class="rule"></span></div>
+  <ul class="tick">
+    <li>Copy <code class="inline">labs/module-3/</code> to every machine (or a shared drive / USB): <code class="inline">l3-1-conversation.sb3</code>, <code class="inline">l3-2-catch-the-apple.sb3</code>, <code class="inline">l3-3-bug-hunt-starter.sb3</code>. Test loading one with <b>File → Load from your computer</b>.</li>
+    <li>Print the three <b>kid cards</b> (in each lesson block below) and one <b>4-step debugging card</b> per pair (Watch → Predict → Change ONE thing → Test).</li>
+    <li>Bring mice, a few sticky notes (for the "SCORE" whiteboard demo in 3.2), and a stuffed animal for the rubber-duck demo in 3.3. It gets a laugh and people remember it.</li>
+    <li>Pair people up in advance: the Bug Hunt runs in <b>debugging-buddy pairs</b>. Mix confident and cautious participants.</li>
+  </ul>
+
+  <div class="sec"><h2>Module at a Glance</h2><span class="rule"></span></div>
+  <table class="timing">
+    <thead><tr><th>Lesson</th><th>Topic</th><th>Time</th><th>Participants leave able to…</th></tr></thead>
+    <tbody>
+      <tr><td class="t">3.1</td><td>An Interactive Animated Story</td><td class="t">28m</td><td>Stage a two-sprite conversation with <code class="inline">broadcast</code> / <code class="inline">when I receive</code></td></tr>
+      <tr><td class="t">3.2</td><td>A Simple Game with Variables &amp; Score</td><td class="t">32m</td><td>Create a <code class="inline">score</code> variable and build a playable catch game</td></tr>
+      <tr><td class="t">3.3</td><td>Debugging &amp; Remixing</td><td class="t">30m</td><td>Find and fix bugs with the 4-step method; coach a frustrated child</td></tr>
+      <tr><td class="t">—</td><td>Warm-up · break · wrap-up</td><td class="t">30m</td><td>Journal share, 10-minute break, "try at home this week"</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec"><h2>Session S3 Run-Sheet</h2><span class="rule"></span></div>
+  <table class="timing">
+    <thead><tr><th>Clock</th><th>Min</th><th>Segment</th><th>What happens</th></tr></thead>
+    <tbody>
+      <tr><td class="t">0:00</td><td class="t">10</td><td>Warm-up &amp; check-in</td><td>Journal share from S2 (one "what clicked" per table). Ask: "Who tried the arrow-key cat at home?" Phones on silent. Mice plugged in.</td></tr>
+      <tr><td class="t">0:10</td><td class="t">12</td><td>3.1 Demo</td><td>x/y grid, <code class="inline">go to</code> vs <code class="inline">glide</code>, broadcast "stage director" demo</td></tr>
+      <tr><td class="t">0:22</td><td class="t">10</td><td>3.1 Lab</td><td>Two-character conversation (broadcast chain)</td></tr>
+      <tr><td class="t">0:32</td><td class="t">6</td><td>3.1 Teach-It</td><td>Role-play: "Story before code" (kid card: Maya, 6)</td></tr>
+      <tr><td class="t">0:38</td><td class="t">12</td><td>3.2 Demo</td><td>Variable = whiteboard; make <code class="inline">score</code>; game plan; build the apple live</td></tr>
+      <tr><td class="t">0:50</td><td class="t">10</td><td>Break</td><td>Leave the game plan flowchart on screen</td></tr>
+      <tr><td class="t">1:00</td><td class="t">15</td><td>3.2 Lab</td><td>Catch the Apple game with a live score</td></tr>
+      <tr><td class="t">1:15</td><td class="t">5</td><td>3.2 Teach-It</td><td>Role-play: "Design first" and the scope trap (kid card: Theo, 10)</td></tr>
+      <tr><td class="t">1:20</td><td class="t">8</td><td>3.3 Demo</td><td>Debugging mindset, 4-step method, usual suspects, See Inside &amp; remix</td></tr>
+      <tr><td class="t">1:28</td><td class="t">17</td><td>3.3 Lab</td><td><b>Bug Hunt</b> in debugging-buddy pairs (4 planted bugs)</td></tr>
+      <tr><td class="t">1:45</td><td class="t">5</td><td>3.3 Teach-It</td><td>Role-play: "Ask, don't fix" (kid card: Priya, 9)</td></tr>
+      <tr><td class="t">1:50</td><td class="t">10</td><td>Wrap-up</td><td>Journal (5 min), Bug Hall of Fame shout-outs, try-at-home list, preview S4 (clones) and the Game Design Card homework</td></tr>
+      <tr><td class="t"></td><td class="t"><b>120</b></td><td colspan="2"><b>Total</b>: 10 + 12 + 10 + 6 + 12 + 10 + 15 + 5 + 8 + 17 + 5 + 10</td></tr>
+    </tbody>
+  </table>
+  <div class="note warn">
+    <div class="t">If you run long</div>
+    <p>Protect the Bug Hunt. Cut in this order: (1) skip the 3.1 backdrop-change challenge, (2) shorten the 3.2 lab by letting slower pairs load <code class="inline">l3-2-catch-the-apple.sb3</code> and just play it, (3) demo See Inside for 1 minute instead of 3. Never cut the wrap-up journal. It's how adults consolidate.</p>
+  </div>
+
+  <div class="sec"><h2>Lesson Plans</h2><span class="rule"></span></div>
+
+  <!-- 3.1 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">3.1</span><h3>An Interactive Animated Story</h3><span class="dur">28 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">Objectives</div>
+        <ul class="tick">
+          <li>Add multiple sprites and a backdrop from the libraries</li>
+          <li>Position sprites with <code class="inline">go to x: y:</code> and <code class="inline">glide _ secs to x: y:</code></li>
+          <li>Coordinate sprites with <code class="inline">broadcast</code> and <code class="inline">when I receive</code></li>
+          <li>Coach a child to plan the story out loud before coding it</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Teaching sequence</div>
+        <ol class="steps">
+          <li><b>Set the scene (2m).</b> New project → <b>Choose a Backdrop</b> (bottom-right, under the stage) → "Forest." <b>Choose a Sprite</b> → add a Bear. Remind them: <em>click the sprite first</em>, then add blocks.</li>
+          <li><b>The grid, teleport vs slide (4m).</b> Stage is x −240…240, y −180…180, centre 0,0. Build the entrance script live:
+            <div class="sb-script" aria-label="cat enters by gliding">
+              <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+              <div class="sb-block sb-motion">go to x: <span class="sb-input">-200</span> y: <span class="sb-input">-100</span></div>
+              <div class="sb-block sb-motion">glide <span class="sb-input">2</span> secs to x: <span class="sb-input">0</span> y: <span class="sb-input">-100</span></div>
+              <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello, forest!</span> for <span class="sb-input">2</span> seconds</div>
+            </div>
+            <div class="say">Watch the numbers under the stage change as I drag the cat. That's where x and y come from. You never have to guess them.</div></li>
+          <li><b>The problem broadcasts solve (6m).</b> Ask the room: "How does the Bear know the Cat has finished talking?" Let them suggest <code class="inline">wait</code> blocks, then point out that the timing drifts. Act it out: you are the stage director, two volunteers are Cat and Bear. Say "Cue: your turn!" and the Bear answers. Then build it: Cat gets <code class="inline">broadcast [your turn]</code> (choose <b>New message</b> and name it), Bear gets <code class="inline">when I receive [your turn]</code>.
+            <div class="say">A broadcast is an invisible shout. Any sprite can shout it, and any sprite that's listening springs into action.</div></li>
+          <li><b>Lab launch (0m, just go).</b> Show the 4-line plan on the slide and send them.</li>
+        </ol>
+      </div>
+      <div class="blk lab"><div class="h">Lab — A Conversation That Plays Itself</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Chain four lines: Cat (green flag) says a line, then <code class="inline">broadcast [line 2]</code> → Bear (<code class="inline">when I receive [line 2]</code>) replies, then <code class="inline">broadcast [line 3]</code> → Cat replies, then <code class="inline">broadcast [line 4]</code> → both glide off. Reference: <code class="inline">labs/module-3/l3-1-conversation.sb3</code>. Fast finishers: the Stage's <code class="inline">when I receive [night]</code> → <code class="inline">switch backdrop to</code> challenge.</p>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Circulate for:</b> only <em>one</em> script starts with the green flag; blocks on the wrong sprite; <code class="inline">broadcast</code> used where <code class="inline">when I receive</code> was meant (both are gold Events blocks); messages with near-identical names ("line2" vs "line 2").</p>
+      </div>
+      <div class="blk"><div class="h">Teach-It role-play — Story before code (6 min)</div>
+        <div class="note"><div class="t">Kid card · Maya, age 6</div><p>Bouncy, excited, wants to spend ten minutes scrolling the sprite library. When asked "what does the character say?" she shrugs: "I don't know." Loves doing silly voices. Gets bored if the grown-up types for more than a minute.</p></div>
+        <p style="font-size:.92rem;margin:.2rem 0">Pairs: one plays Maya, one coaches through the 3-step story warm-up: <b>Who?</b> (two characters with names) → <b>Where?</b> (backdrop) → <b>What happens?</b> (act it out in voices). Swap once if time allows.</p>
+        <div class="say">Let's be the characters first! You be the bear, I'll be the cat. What does the cat say? …Great, now let's make Scratch say exactly that.</div>
+        <div class="say">Pick any two you like. We can come back to the library later. Who's our hero today?</div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Debrief (1 line):</b> for ages 5–7, two lines each is plenty. The child picks the words, and the parent wires the broadcasts.</p>
+      </div>
+      <div class="blk warn"><div class="h">Watch-outs</div>
+        <ul class="tick">
+          <li><b>Both sprites talk at once.</b> This is the lesson's classic bug: both scripts start with <code class="inline">when ⚑ clicked</code>. Only line 1 starts on the flag. Every other line starts with <code class="inline">when I receive</code>.</li>
+          <li><b>"Where did my code go?"</b> They added blocks with the Bear selected, then clicked the Cat. Reassure them: nothing is lost, each sprite has its own code area.</li>
+          <li><b>Trackpad drag struggles</b> make broadcast dropdowns fiddly. Mice help. So does zooming the browser (Ctrl +) for anyone using reading glasses.</li>
+          <li><b>Sprite library rabbit hole.</b> Adults do it too. Give a 60-second limit on choosing sprites.</li>
+          <li><b>Glide ends off-stage</b> because of typos like <code class="inline">x: 2000</code>. Show them how to read the x/y under the stage.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Check — quiz</div>
+        <p style="font-size:.9rem;margin:.2rem 0">Answers: sprites take turns via <b>broadcast and "when I receive"</b>; smooth movement = <b><code class="inline">glide _ secs to x/y</code></b>; both talking at once = <b>both start with "when ⚑ clicked" instead of "when I receive"</b>; to change the scene, give the <b>Stage</b> <code class="inline">when I receive [night]</code> → <b><code class="inline">switch backdrop to</code></b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3.2 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">3.2</span><h3>A Simple Game with Variables &amp; Score</h3><span class="dur">32 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">Objectives</div>
+        <ul class="tick">
+          <li>Explain a variable and create one (<code class="inline">score</code>, "For all sprites")</li>
+          <li>Use <code class="inline">set [score] to 0</code> and <code class="inline">change [score] by 1</code>; show the score on the stage</li>
+          <li>Combine loops, <code class="inline">if</code>, sensing, and operators into a playable game</li>
+          <li>Coach a child to design a game on paper and avoid the scope trap</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Teaching sequence</div>
+        <ol class="steps">
+          <li><b>The whiteboard (3m).</b> Stick a note on the wall: "SCORE: 0." Pretend to catch something, cross it out, write 1.
+            <div class="say">That's a variable: a labeled box the computer remembers. <em>set</em> erases and writes a number. <em>change</em> adds to what's already there.</div></li>
+          <li><b>Make the variable (2m).</b> Variables (orange) → <b>Make a Variable</b> → <code class="inline">score</code>, keep <b>For all sprites</b> → OK. Point at the checkbox that shows it live on stage.</li>
+          <li><b>The game plan (2m).</b> Show the flowchart slide: apple starts at the top at a random x → falls → touching the cat? yes = +1 → back to top. Say it as a story before any block moves.</li>
+          <li><b>Build the apple live (4m).</b> Build it slowly and name each category as you use it (Motion, Control, Sensing, Operators, Variables). The bottom check is the green <code class="inline">&lt;</code> block from Operators with the <code class="inline">y position</code> reporter (bottom of Motion) dropped into its left slot:
+            <div class="sb-script" aria-label="apple falling and scoring script">
+              <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+              <div class="sb-block sb-variables">set <span class="sb-dropdown">score</span> to <span class="sb-input">0</span></div>
+              <div class="sb-block sb-control">forever</div>
+              <div class="sb-nest">
+                <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div>
+                <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Cat?</span></div>
+                <div class="sb-nest">
+                  <div class="sb-block sb-motion">change y by <span class="sb-input">-8</span></div>
+                  <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span class="sb-input" style="background:#4C97FF;color:#fff;">y position</span> &lt; -170</span> then</div>
+                  <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div></div>
+                </div>
+                <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+              </div>
+            </div>
+            <div class="say">Read it as a story: start at the top somewhere random, fall until the cat catches you, jump back to the top if you drop past the bottom, and when you're caught, add a point. Then do it all again, forever.</div></li>
+          <li><b>Catcher preview (1m).</b> Show the Cat script on the slide and let them build it themselves in the lab.</li>
+        </ol>
+      </div>
+      <div class="blk lab"><div class="h">Lab — Catch the Apple</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Add an Apple sprite, make <code class="inline">score</code>, build the apple script above, and give the Cat <code class="inline">when ⚑ clicked</code> → <code class="inline">forever</code> → <code class="inline">go to x: (mouse x) y: -140</code>. Play it. <b>Save it</b> (File → Save to your computer). Reference: <code class="inline">labs/module-3/l3-2-catch-the-apple.sb3</code>. Fast finishers: the 30-second <code class="inline">time left</code> timer challenge.</p>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Circulate for:</b> <code class="inline">change score by 1</code> placed <em>below</em> the repeat-until's C-mouth (not inside it); <code class="inline">touching</code> dropdown set to <b>Cat</b>, not "mouse-pointer"; <code class="inline">set score to 0</code> before the forever loop; <code class="inline">mouse x</code> (Sensing), not typed-in text; the bottom check is <code class="inline">y position &lt; -170</code>, <em>not</em> <code class="inline">touching edge?</code>.</p>
+      </div>
+      <div class="blk"><div class="h">Teach-It role-play — Design first, and the scope trap (5 min)</div>
+        <div class="note"><div class="t">Kid card · Theo, age 10</div><p>Confident, talks fast, has played a lot of games. Announces he wants to make "Minecraft but with dragons, and fifty levels, and online." Gets impatient with paper: "Can we just start?"</p></div>
+        <p style="font-size:.92rem;margin:.2rem 0">The coach walks Theo through the one-page design (<b>Goal · Controls · Scoring · Lose condition</b>) and steers him to one working mechanic, without saying "no."</p>
+        <div class="say">Before we code, tell me your game like you're explaining it to a friend. How do you play? How do you win? Let's write those down. Those are our to-do list.</div>
+        <div class="say">Dragons are awesome. Let's put fifty levels on the "someday" list and make catching <em>one</em> thing perfect first.</div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Debrief:</b> a finished tiny game beats an abandoned huge one, for the child's motivation and the parent's.</p>
+      </div>
+      <div class="blk warn"><div class="h">Watch-outs</div>
+        <ul class="tick">
+          <li><b>This lesson feels hard, so say so.</b> Four categories plus a variable is a real step up. Adults compare themselves to the fast finisher at the next table. Tell them the lesson's growth-mindset point: "Big projects feel hard for everyone. Get one piece working, then the next."</li>
+          <li><b>Nesting mistakes.</b> Dropping a block into the wrong C-mouth is the #1 error. Teach them to watch for the white "landing shadow" before releasing the mouse.</li>
+          <li><b>Score jumps by many at once:</b> the apple is still touching the cat for several frames. The <code class="inline">go to</code> the top at the start of the next loop fixes it. Check that it's there.</li>
+          <li><b>"Why not <code class="inline">touching edge?</code>"</b> Someone will swap it in for the bottom check, because it sounds right. The apple starts at y: 170, where it is <em>already touching the top edge</em>, so it's sent back to the top every frame and never falls. <code class="inline">y position &lt; -170</code> means "near the bottom" and nothing else. Don't argue it now. Park it, because it's your live debugging demo in 3.3.</li>
+          <li><b>Score never goes up:</b> the <code class="inline">touching</code> block names the wrong sprite, or the apple never reaches the cat (check the cat's y is −140 and the apple's bottom check is −170, below it).</li>
+          <li><b>Screen-time guilt</b> sometimes surfaces here ("my kid already plays too many games"). Reframe: making a game is creating, not consuming. Then move on. Don't let it take over the lab.</li>
+          <li><b>Unsaved work.</b> This game is the basis for the Bug Hunt and Module 4. Make everyone save before the role-play.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Check — quiz</div>
+        <p style="font-size:.9rem;margin:.2rem 0">Answers: a variable is <b>a named box that stores a value the program can change</b>; add a point with <b><code class="inline">change score by 1</code></b>; <code class="inline">set score to 0</code> goes <b>right after the green flag, before the game loop</b>; to see the score on the stage, <b>tick the checkbox next to the variable</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3.3 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">3.3</span><h3>Debugging &amp; Remixing</h3><span class="dur">30 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">Objectives</div>
+        <ul class="tick">
+          <li>Apply the 4-step method: <b>Watch → Predict → Change ONE thing → Test</b></li>
+          <li>Recognize the usual-suspect Scratch bugs and their fixes</li>
+          <li>Use <b>See Inside</b> on a shared project; explain remixing and its etiquette</li>
+          <li>Coach a frustrated child through a bug without taking over the mouse</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Teaching sequence</div>
+        <ol class="steps">
+          <li><b>The mindset (2m).</b>
+            <div class="say">The computer isn't wrong and it isn't being mean. It's doing exactly what the blocks say. Debugging is the detective game of finding the gap between what you said and what you meant.</div>
+            Swap "It's broken, I failed" for "Interesting, let's find out why."</li>
+          <li><b>The 4-step loop (3m).</b> Show the slide. Stress step 3: <em>change only one thing</em>. Then name Scratch's helpers: click a single block to run it, tick a variable's checkbox to watch it, add a temporary <code class="inline">say (score)</code>, slow things down with <code class="inline">wait</code>. Demo the rubber duck: explain a script to the stuffed animal and "find" a bug mid-sentence.</li>
+          <li><b>Live bug: "Why not touching edge?" (included in the 3m above, or take 1m from See Inside).</b> In your 3.2 game, swap the bottom check for <code class="inline">if touching edge?</code> and run it, thinking aloud through the four steps. <b>Watch:</b> the apple is frozen at the top. <b>Predict:</b> "It's being sent back to the top, so the <em>if</em> must be true right away. Is the apple touching an edge at y: 170?" (Yes, the top one.) <b>Change one thing:</b> put <code class="inline">y position &lt; -170</code> back. <b>Test:</b> it falls.
+            <div class="say">The block did exactly what I told it: "touching <em>any</em> edge." I meant "the bottom." That gap between what I said and what I meant is the bug.</div></li>
+          <li><b>Usual suspects + See Inside (3m).</b> Walk the table on the slide quickly (it's in the workbook). Open any shared project on scratch.mit.edu → <b>See Inside</b>. Mention that <b>Remix</b> needs a signed-in account and that Scratch credits the original creator automatically.</li>
+          <li><b>Bug Hunt launch.</b> Form debugging-buddy pairs (below) and hand out 4-step cards. Say there are <b>four</b> bugs, but not what they are.</li>
+        </ol>
+      </div>
+      <div class="blk lab"><div class="h">Lab — The Bug Hunt (17 min)</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Pairs open <code class="inline">labs/module-3/l3-3-bug-hunt-starter.sb3</code> (File → Load from your computer). It is the 3.2 catch game with <b>four planted bugs</b>. For each bug they write the symptom, their prediction, and the one change they made in the workbook's Bug Hall of Fame, then test. Solution: <code class="inline">labs/module-3/l3-2-catch-the-apple.sb3</code>.</p>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Circulate for:</b> pairs changing several blocks at once (stop them and ask "which one change are you testing?"); navigators grabbing the mouse; pairs who "fixed" a bug by rebuilding the whole script (fine, but ask them to name the one block that was wrong).</p>
+      </div>
+      <div class="blk"><div class="h">Debugging-buddy pair format</div>
+        <ul class="tick lab">
+          <li><b>Driver</b>: hands on the mouse. Only the driver touches the computer.</li>
+          <li><b>Navigator</b>: holds the 4-step card and the workbook. Asks the "ask, don't fix" questions: <em>What did you expect? What happened instead? Which block do you think is responsible? What's one thing we could change to test that?</em> Writes the Bug Hall of Fame entry.</li>
+          <li><b>Swap roles after every bug</b>, so each person drives twice and navigates twice.</li>
+          <li><b>One change, then test.</b> If a change didn't help, undo it (Ctrl/Cmd+Z or drag it back) before trying the next idea.</li>
+          <li>This is a rehearsal of home: the navigator is practising being the parent who asks instead of grabbing.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">The four planted bugs &amp; hint ladder</div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0">Give hints only when a pair asks, one rung at a time, and wait about 2 minutes between rungs. Suggest they hunt in this order (easiest to see first): <b>1 → 3 → 4 → 2</b>.</p>
+        <table class="timing">
+          <thead><tr><th>Bug</th><th>Hint 1 · Watch</th><th>Hint 2 · Predict</th><th>Hint 3 · Nearly there</th></tr></thead>
+          <tbody>
+            <tr><td><b>1</b> Cat drifts strangely</td><td>"Move the mouse only left and right. What does the cat do? Now only up and down?"</td><td>"The cat's movement lives in the Cat's script. Which block decides where it goes?"</td><td>"Look at the round reporter inside <code class="inline">go to x:</code>. Is that the mouse's left–right number?"</td></tr>
+            <tr><td><b>2</b> Score carries over</td><td>"Play a game, stop, then press the green flag again. What number does the score start at?"</td><td>"Something should wipe the whiteboard at the start of each game. Can you find it?"</td><td>"The Apple needs <code class="inline">set score to 0</code> right after the green flag, before <code class="inline">forever</code>."</td></tr>
+            <tr><td><b>3</b> Apple never falls</td><td>"Watch the apple. Is it moving? Tick its <b>y position</b> checkbox. Which way is the number going?"</td><td>"Only one block in the Apple's script moves it up or down. Find it."</td><td>"Bigger y means <em>up</em>. Look at the number in <code class="inline">change y by</code>. Which sign do you need to fall?"</td></tr>
+            <tr><td><b>4</b> Score races while falling</td><td>"Watch the score while one apple is still falling. When does it go up?"</td><td>"The +1 is running many times. Which loop is it inside?"</td><td>"<code class="inline">change score by 1</code> should run once, <em>after</em> the apple is caught. Where is it sitting?"</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0">With bug 4 still planted, the score races up even while bug 3 keeps the apple stuck at the top, so pairs often blame the wrong block. That's the point of changing one thing at a time. If a pair "fixes" things by swapping in <code class="inline">touching edge?</code>, the apple freezes again. Point them back to your live demo. Full fixes with drawn scripts are in the answer key.</p>
+      </div>
+      <div class="blk"><div class="h">Teach-It role-play — Ask, don't fix (5 min)</div>
+        <div class="note"><div class="t">Kid card · Priya, age 9</div><p>Tired after school. Her game "doesn't work" and she has tried the same thing three times. Voice rising: "I'm bad at this!" Keeps pushing the mouse toward the grown-up: "YOU do it."</p></div>
+        <p style="font-size:.92rem;margin:.2rem 0">Same pairs, fresh roles. The coach keeps their hands in their lap and uses the rubber duck, the four questions, and (if needed) a break.</p>
+        <div class="say">Walk me through it like I know nothing. What should this block do? …And what did it actually do?</div>
+        <div class="say">The code has a bug; you're a coder who's finding it. Remember the one you squashed last week?</div>
+        <div class="say">Let's let our brains rest. Coders do this all the time. We'll come back with fresh eyes.</div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Debrief:</b> "Who felt the urge to grab the mouse?" (Every hand goes up.) The biggest parent mistake is fixing it yourself. That ends the frustration and the learning at the same time.</p>
+      </div>
+      <div class="blk warn"><div class="h">Watch-outs</div>
+        <ul class="tick">
+          <li><b>Fear of breaking it.</b> Some adults won't touch the starter file. Say plainly: "You can't break this. The original is on the drive, and you can reload it any time."</li>
+          <li><b>Shotgun debugging.</b> Pairs change five blocks and "it works now." Praise the result, then ask which change mattered. They should be able to name it.</li>
+          <li><b>Loading the wrong file.</b> Someone opens their own 3.2 game, finds no bugs, and feels clever. Check the title bar says <em>bug-hunt-starter</em>.</li>
+          <li><b>Remix = cheating?</b> Parents worry about this. Everything shared on Scratch may be remixed, and credit is automatic. The line to teach is honesty: change something meaningful and keep the credit.</li>
+          <li><b>Home-device tech support</b> ("my kid's Chromebook won't…"). Park it on a sticky note for after class.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Check — quiz</div>
+        <p style="font-size:.9rem;margin:.2rem 0">Answers: golden rule = <b>change one thing at a time, then test</b>; See Inside <b>opens the project's code to explore how it was made</b>; melting-down child = <b>have them explain it aloud, or take a short break</b>; flag clicked and nothing happens = <b>the code is on the wrong sprite</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sec"><h2>Closing the Session</h2><span class="rule"></span></div>
+  <div class="note lab">
+    <div class="t">S3 wrap-up (10 min)</div>
+    <p>Five minutes of silent journaling (the prompts are in the workbook), then ask two or three pairs to read one Bug Hall of Fame entry aloud and cheer each squashed bug. Recap: <b>broadcasts let sprites take turns → a variable keeps score → Watch, Predict, Change one thing, Test.</b></p>
+    <p><b>Try at home this week:</b> quietly move one block in the catch game and let your child debug it (using the four questions, hands in your lap); open one shared project together with See Inside; save the game, because its ideas come back in the Module 4 capstone.</p>
+    <p><b>Preview S4:</b> "Next time one apple becomes a whole sky of falling stars with <em>clones</em>, and you'll make your own blocks. Homework after S4 is a Game Design Card you fill in <em>with</em> your child for Family Build Night."</p>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 3 · Facilitator Guide · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

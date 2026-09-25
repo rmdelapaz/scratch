@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Answer Key — Module 5</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Instructor copy —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">answers &amp; solutions · not for participants</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Instructor Kit · Answer Key</div>
+    <h1>Module 5 — Answers &amp; Solutions</h1>
+    <p class="sub">Correct self-check answers with the "why," plus what good looks like in each lab. Module 5 has no reference <code class="inline">.sb3</code> files: its labs are role-plays, a safety checklist, a ScratchJr build, and a next-project plan. The look-fors below double as an observer checklist for trios.</p>
+    <div class="meta-row"><span class="chip">Lessons <b>5.1–5.4</b></span><span class="chip"><b>16</b> quiz items</span><span class="chip"><b>4</b> labs + showcase</span></div>
+  </header>
+
+  <!-- 5.1 -->
+  <div class="sec"><h2>5.1 · The Art of Not Taking Over</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">What is "scaffolding" in teaching?</div><div class="opts"><div class="opt correct">A) Giving just enough help, then fading it as they gain confidence</div></div><div class="why"><b>Why:</b> like training wheels raised bit by bit. B turns the child into a spectator; C leaves them stalled.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">Which praise best builds resilience?</div><div class="opts"><div class="opt correct">B) "You kept trying different things until it worked."</div></div><div class="why"><b>Why:</b> it names a strategy the child can repeat. "You're so smart" makes the next bug feel like proof of the opposite; "that was easy" dismisses their effort.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">Your child is bored because the task is too easy. Best response?</div><div class="opts"><div class="opt correct">A) Offer a new challenge ("What if it kept score?")</div></div><div class="why"><b>Why:</b> bored = raise the bar back into productive struggle. Simplifying (B) makes boredom worse.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">"Just do it for me!" Best response?</div><div class="opts"><div class="opt correct">B) Offer to be their "hands" while they're the "boss"</div></div><div class="why"><b>Why:</b> the lesson's own answer. The child keeps all the thinking; within a session or two most kids want the mouse back. A robs the learning moment; C is "too little help."</div></div>
+  <div class="note lab"><div class="t">Lab — Hands-off coaching rounds: what good looks like</div>
+    <p>The prop is <code class="inline">labs/module-3/l3-3-bug-hunt-starter.sb3</code> (four planted bugs; the fixed version is <code class="inline">l3-2-catch-the-apple.sb3</code>) or any half-finished Star Catcher. Participants don't need to fix every bug: the goal is the coaching, not the project.</p>
+    <p><b>Look-fors:</b> coach's hands never touch the mouse or trackpad · at least three toolkit questions · a visible pause before speaking · at least one process-praise line · a "yet" · coach shrinks the step when the "child" escalates · the "child" does every drag.</p>
+  </div>
+  <div class="note"><div class="t">Worked-example bug (workbook) — the fix</div>
+    <p>The star's <em>if touching Bowl?</em> check sat above the <em>forever</em>, so it ran once, at the top of the screen. It must live inside the loop:</p>
+    <div class="sb-script">
+      <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+      <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">170</span></div>
+      <div class="sb-block sb-looks">show</div>
+      <div class="sb-block sb-control">forever</div>
+      <div class="sb-nest">
+        <div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div>
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Bowl?</span> then</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+          <div class="sb-block sb-control">delete this clone</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="note warn"><div class="t">Common wrong moves &amp; how to coach them</div>
+    <p><b>The disguised answer</b> ("Don't you think it should go inside the forever?") → "That's the answer with a question mark. Try: <em>when does it check?</em>"</p>
+    <p><b>The walk-away</b> ("Figure it out") → too little help; move one rung down the ladder, don't leave.</p>
+    <p><b>Talent praise on success</b> ("You're a genius!") → swap for what they <em>did</em>: "You read the script line by line."</p>
+    <p><b>Never shrinking the step</b> while the "child" gets louder → "What's the tiniest thing that would be a win right now?"</p>
+  </div>
+
+  <!-- 5.2 -->
+  <div class="sec"><h2>5.2 · Sharing Safely &amp; the Scratch Community</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">When is a child's Scratch project visible to the public?</div><div class="opts"><div class="opt correct">B) Only after they click "Share"</div></div><div class="why"><b>Why:</b> projects are private by default; saving (C) keeps them in the account, not public.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">Which is TRUE about the Scratch community?</div><div class="opts"><div class="opt correct">A) It's moderated, has guidelines, and has no private DMs</div></div><div class="why"><b>Why:</b> interactions are public and visible to you, and every comment can be reported, deleted, or turned off.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">Best safety habit for a young sharer?</div><div class="opts"><div class="opt correct">B) A non-identifying username, your email on the account, and regular check-ins</div></div><div class="why"><b>Why:</b> hides real identity, keeps you in the loop on account notices, and makes "show me what you made" a normal habit.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">Your child gets an unkind comment. Best first response?</div><div class="opts"><div class="opt correct">C) Read it together, report it, delete it, and talk about how it felt</div></div><div class="why"><b>Why:</b> the lesson's "team job." Consider turning comments off on that project for a while. Deleting the account (A) punishes the child; replying (B) feeds the conflict.</div></div>
+  <div class="note lab"><div class="t">Lab — Safety checklist &amp; family rules: what good looks like</div>
+    <p>A finished <code class="inline">labs/module-5/safety-checklist.html</code> plus 3–5 family rules that cover: <b>what never gets shared</b> (real name, address, school, phone, photos) · <b>where Scratch is used</b> (shared device / common room) · <b>what to do with a mean comment</b> (show a grown-up; read, report, delete together) · ideally <b>credit when remixing</b>. Rules are written <em>with</em> the child at home and signed by both.</p>
+    <p><b>Scenario role-play look-fors:</b> the coach says yes to the child's excitement before setting guard-rails · proposes a non-identifying username · uses the "before sharing" script or their own version of it · treats remixing as good, with credit.</p>
+  </div>
+  <div class="note warn"><div class="t">Common wrong answers &amp; how to coach them</div>
+    <p><b>"Kids have to share to use Scratch."</b> No: an account is optional, and projects can stay private forever.</p>
+    <p><b>Username like "EmmaJones2015".</b> Real name + birth year. Suggest interest-based names (StarChef_77).</p>
+    <p><b>Rules that are only "don'ts."</b> Add the positive rule: "If anyone's unkind, show me and we'll handle it together." That's the one that keeps kids talking to you.</p>
+  </div>
+
+  <!-- 5.3 -->
+  <div class="sec"><h2>5.3 · ScratchJr — Coding for Ages 5–7</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">How are blocks arranged in a ScratchJr script?</div><div class="opts"><div class="opt correct">B) In a horizontal row, read left to right</div></div><div class="why"><b>Why:</b> like a sentence. Scratch stacks top to bottom (A); order always matters (C).</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">React when your child touches the pet on screen?</div><div class="opts"><div class="opt correct">C) Start on Tap</div></div><div class="why"><b>Why:</b> Start on Bump fires when two characters touch; Green Flag starts when the flag is pressed.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">Best session length for a 5-year-old?</div><div class="opts"><div class="opt correct">A) About 10–15 minutes, ending while it's still fun</div></div><div class="why"><b>Why:</b> stop after a big laugh and they'll ask to do it again tomorrow. Persistence isn't learned by pushing a five-year-old to tears.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">The pet ends up bigger after every tap. Fix?</div><div class="opts"><div class="opt correct">A) Add a Shrink block (same number) or Reset Size before End</div></div><div class="why"><b>Why:</b> Grow changes size permanently; the script must undo it. From the lesson's common-problems table.</div></div>
+  <div class="note lab"><div class="t">Lab — "My Pet Says Hi": the reference row</div>
+    <div role="img" aria-label="ScratchJr script read left to right: Start on Tap, Hop 2, Grow 2, My Sound, Shrink 2, End" style="display:flex;flex-wrap:wrap;gap:4px;padding:8px;margin:8px 0;background:var(--surface);border:1px solid var(--line);border-radius:9px;-webkit-print-color-adjust:exact;print-color-adjust:exact">
+      <span style="background:#F7C948;color:#3d2e00;border-radius:14px 6px 6px 14px;padding:7px 11px;font-weight:700;font-size:.82rem">👆 Start on Tap</span>
+      <span style="background:#2F6FD6;color:#fff;border-radius:6px;padding:7px 11px;font-weight:700;font-size:.82rem">⤴️ Hop 2</span>
+      <span style="background:#7A4FD6;color:#fff;border-radius:6px;padding:7px 11px;font-weight:700;font-size:.82rem">🔼 Grow 2</span>
+      <span style="background:#2E7D32;color:#fff;border-radius:6px;padding:7px 11px;font-weight:700;font-size:.82rem">🎙️ My Sound</span>
+      <span style="background:#7A4FD6;color:#fff;border-radius:6px;padding:7px 11px;font-weight:700;font-size:.82rem">🔽 Shrink 2</span>
+      <span style="background:#C62828;color:#fff;border-radius:6px 14px 14px 6px;padding:7px 11px;font-weight:700;font-size:.82rem">⏹️ End</span>
+    </div>
+    <p><b>Stretch (two-page story):</b> page 1 — <em>Start on Green Flag → Say "Come to my house!" → Wait 10 → Go to Page 2</em>; page 2 — <em>Start on Green Flag → Move Right 3 → Say "Welcome home!" → End</em>. Go to Page only appears in the red End category once a second page exists.</p>
+    <p><b>Role-play look-fors:</b> story asked for before any block · coach reads, "child" taps · hands in lap (steadying the tablet is fine) · a laugh at the unexpected ("Whoa, that's not what we planned!") · ends on a win.</p>
+  </div>
+  <div class="note warn"><div class="t">Common problems &amp; how to coach them</div>
+    <p><b>Tapping does nothing</b> → script starts with Green Flag, or a block isn't snapped on. "Drag them until they click into one row."</p>
+    <p><b>Pet walks off the stage</b> → moves add up each run; start the row with blue <b>Go Home</b>.</p>
+    <p><b>Silent recording</b> → allow the microphone for ScratchJr in the tablet's settings.</p>
+    <p><b>A block "vanished"</b> → it was dragged back onto the palette, which deletes it. Drag a fresh one out.</p>
+    <p><b>Color mix-ups</b> ("green is Operators!") → that's Scratch. In ScratchJr green is Sound. Trust the pictures.</p>
+  </div>
+
+  <!-- 5.4 -->
+  <div class="sec"><h2>5.4 · What Comes After Scratch</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">Natural next thing to explore inside Scratch after Star Catcher?</div><div class="opts"><div class="opt correct">B) Lists, or an extension like Pen or Music</div></div><div class="why"><b>Why:</b> Scratch has years of depth; there's no rush to leave it (C).</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">Why is Scratch → Python not as scary as it sounds?</div><div class="opts"><div class="opt correct">A) The core concepts transfer; only the syntax changes</div></div><div class="why"><b>Why:</b> sequences, loops, conditionals, variables and events exist in every language. They're not identical (B), and nobody starts from zero (C).</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">Best way to keep a child's coding momentum?</div><div class="opts"><div class="opt correct">B) Follow their interests with another project they're excited about</div></div><div class="why"><b>Why:</b> interest sustains itself; pressure (A, C) burns it out.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">Where are the Pen and Music blocks?</div><div class="opts"><div class="opt correct">B) Behind the Add Extension button, bottom-left of the editor</div></div><div class="why"><b>Why:</b> extensions add whole new block categories (Pen, Music, Text to Speech, Video Sensing, micro:bit). Scratch is free: there is no paid version (C).</div></div>
+  <div class="note lab"><div class="t">Lab — Our next project: what good looks like</div>
+    <p>A named project the <b>child</b> is excited about (not the parent's plan), tied to one road-map branch. Examples: a high-score list for Star Catcher (deeper Scratch: lists) · a drawing toy (Pen extension) · a banana piano (Makey Makey) · a first Python loop (text code).</p>
+    <div class="sb-row">
+      <div class="sb-script">
+        <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
+        <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi!</span> for <span class="sb-input">1</span> seconds</div></div>
+      </div>
+      <pre class="code"><span class="k">for</span> i <span class="k">in</span> range(3):
+    print(<span class="s">"Hi!"</span>)</pre>
+    </div>
+  </div>
+  <div class="note warn"><div class="t">Common wrong answers &amp; how to coach them</div>
+    <p><b>"They should start Python at 8 so they don't fall behind."</b> Switch when curious, not on a schedule. Many kids start around 10–13; plenty stay in Scratch longer. Nothing is wasted.</p>
+    <p><b>"I can't keep up, so I'm done."</b> Your job changes, it doesn't end: audience, question-asker, cheerleader.</p>
+  </div>
+
+  <!-- Showcase -->
+  <div class="sec"><h2>S6 · Showcase &amp; Graduation</h2><span class="rule"></span></div>
+  <div class="note lab"><div class="t">What a good showcase looks like</div>
+    <p>The <b>child</b> presents and drives; the parent adds one sentence about a hands-off moment · every introduction praises process ("…who kept testing until the stars fell") · gallery-walk comments are kind, curious and specific · no photos without consent · every family leaves with a certificate, the "What Next" page, and one named next project.</p>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 5 · Answer Key · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

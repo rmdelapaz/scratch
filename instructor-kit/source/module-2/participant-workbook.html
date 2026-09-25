@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workbook — Module 2</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Participant workbook —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">write in it · bring it to every session</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Scratch for Parents Workbook · Module 2</div>
+    <h1>Core Coding Concepts</h1>
+    <p class="sub">Three ideas sit under every program ever written: steps in order, steps that repeat, and steps that choose. In this session you'll learn each one with a game away from the screen, then build it on your cat. You'll also practise how to teach it to your child.</p>
+    <div class="meta-row">
+      <span class="chip">Lessons <b>2.1–2.3</b></span>
+      <span class="chip"><b>3</b> lessons</span>
+      <span class="chip">Session <b>S2</b></span>
+      <span class="chip">Name: ____________________</span>
+    </div>
+  </header>
+
+  <div class="note">
+    <div class="t">How to use this workbook</div>
+    <p>Each lesson has <b>Key Ideas</b>, a <b>Worked Example</b> (the blocks drawn in Scratch colors), <b>Your Turn</b> build steps, a <b>Teach-It Practice</b> for the pair role-play, a <b>Self-Check</b>, and a <b>Learning Journal</b>. If your script does something surprising, you haven't failed. The computer is showing you exactly what your steps say.</p>
+  </div>
+
+  <div class="sec"><h2>Module Project Tracker</h2><span class="rule"></span></div>
+  <ul class="tick lab">
+    <li>☐ <b>Warm-up</b> — "programmed" the facilitator out the door</li>
+    <li>☐ <b>2.1</b> — a timed greeting routine (sequence + wait)</li>
+    <li>☐ <b>2.2</b> — a cat that really walks (repeat loop + costumes)</li>
+    <li>☐ <b>2.3</b> — a cat I drive with the arrow keys (forever + if)</li>
+    <li>☐ <b>At home</b> — played the robot game and an if/then round with my child</li>
+  </ul>
+
+  <!-- 2.1 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">2.1</span><h3>Sequences &amp; Timing</h3><span class="dur">33 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Explain what a sequence is and why order matters</li>
+          <li>Use the <b>wait</b> block to control timing and pacing</li>
+          <li>Build a short multi-step routine that runs like a little performance</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Warm-up — Program the Facilitator</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Write the class's final instructions that got the "robot" out the door. Circle any step that got repeated over and over.</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li>A <b>sequence</b> is a list of steps run one after another, <b>top to bottom</b>. Think of a recipe.</li>
+          <li>Computers are <b>literal</b>. Same blocks in a different order = different behavior. A surprise usually means the recipe isn't what you intended yet.</li>
+          <li><b>wait (1) seconds</b> (orange <b>Control</b>) adds pacing. Decimals like 0.5 work.</li>
+          <li><b>say … for 2 seconds</b> already pauses before the next block. Plain <b>say …</b> moves straight on.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — order changes everything</div>
+        <div class="sb-row">
+          <div class="sb-script" aria-label="move then talk">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-motion">move <span class="sb-input">100</span> steps</div>
+            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Made it!</span> for <span class="sb-input">2</span> seconds</div>
+          </div>
+          <div class="sb-script" aria-label="talk then move">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Here I go!</span> for <span class="sb-input">2</span> seconds</div>
+            <div class="sb-block sb-motion">move <span class="sb-input">100</span> steps</div>
+          </div>
+        </div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0">Left: walks, then speaks. Right: speaks, then walks. The blocks are the same and only the order is different.</p>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Build a Greeting Routine</div>
+        <ol class="steps lab">
+          <li>Start with <b>when green flag clicked</b> (Events).</li>
+          <li>Add <b>go to x: 0 y: 0</b> (Motion) so the cat always starts centered.</li>
+          <li>Add <b>say "Hi, I'm Scratchy!" for 2 seconds</b> (Looks), then <b>wait 1 seconds</b> (Control).</li>
+          <li>Add <b>move 120 steps</b>, then <b>say "Welcome to my world!" for 2 seconds</b>.</li>
+          <li><b>Challenge:</b> between the wait and the move, add <b>start sound Meow</b> and <b>next costume</b>.</li>
+        </ol>
+        <div class="sb-script" aria-label="greeting routine">
+          <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+          <div class="sb-block sb-motion">go to x: <span class="sb-input">0</span> y: <span class="sb-input">0</span></div>
+          <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi, I'm Scratchy!</span> for <span class="sb-input">2</span> seconds</div>
+          <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+          <div class="sb-block sb-motion">move <span class="sb-input">120</span> steps</div>
+          <div class="sb-block sb-looks">say <span class="sb-input sb-text">Welcome to my world!</span> for <span class="sb-input">2</span> seconds</div>
+        </div>
+      </div>
+      <div class="blk"><div class="h">Teach-It practice — the robot game</div>
+        <p style="font-size:.92rem;margin:.2rem 0">You're the robot. Your "child" gives you steps to make a sandwich, and you follow them exactly as said.</p>
+        <div class="say">I'm a robot. I only do exactly what you say, one step at a time. What's my first step?</div>
+        <div class="say">The computer is a robot just like I was. If it looks wrong, let's read our steps in order and find the mix-up.</div>
+        <p style="font-size:.92rem;margin:.4rem 0 .2rem">Reflection: when your "child" got frustrated, what did you say or do that helped?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">What is a "sequence" in coding?</div>
+          <div class="opts"><div class="opt">A) Steps carried out in order, one after another</div><div class="opt">B) Steps run in a random order</div><div class="opt">C) A step that repeats forever</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">Which category holds the <b>wait</b> block?</div>
+          <div class="opts"><div class="opt">A) Motion (blue)</div><div class="opt">B) Control (orange)</div><div class="opt">C) Looks (purple)</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">Your child's cat "freezes" for two seconds mid-routine. Most likely reason?</div>
+          <div class="opts"><div class="opt">A) The computer is broken</div><div class="opt">B) A "say for 2 seconds" or "wait" block is holding, as designed</div><div class="opt">C) The cat is moving too fast</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">What's the difference between <b>say Hello! for 2 seconds</b> and plain <b>say Hello!</b>?</div>
+          <div class="opts"><div class="opt">A) None — they're the same block</div><div class="opt">B) The timed one pauses the script before the next block; plain say moves straight on</div><div class="opt">C) Plain say only works on the stage</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <ul class="tick">
+          <li><b>Key concepts:</b> Explain a sequence using a recipe or routine from your own day.</li>
+          <li><b>What clicked:</b> When you swapped the move and say blocks, what surprised you?</li>
+          <li><b>Ideas to try:</b> A short scene (a joke, a greeting) you could turn into a timed sequence with your child.</li>
+        </ul>
+        <div class="write tall"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- 2.2 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">2.2</span><h3>Loops — Making Things Repeat</h3><span class="dur">27 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Use the <b>repeat</b> and <b>forever</b> loops</li>
+          <li>Tell what goes <b>inside</b> a loop vs <b>outside</b> it</li>
+          <li>Build a smooth walking animation, and stop a runaway forever loop</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li>A loop says "do this again and again." One loop replaces a pile of copied blocks.</li>
+          <li><b>repeat (10)</b> = a set number of times, then move on. <b>forever</b> = until you press the <b>red stop sign</b>.</li>
+          <li>Loops are <b>C-shaped</b>. <b>Only the blocks inside the mouth repeat.</b></li>
+          <li>Anything placed <em>after</em> a forever loop never runs. That's the loop doing its job.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — inside vs outside</div>
+        <div class="sb-row">
+          <div class="sb-script" aria-label="repeat 3 say Ha inside">
+            <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
+            <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Ha!</span> for <span class="sb-input">1</span> seconds</div></div>
+          </div>
+          <div class="sb-script" aria-label="repeat 3 move, then say Done once">
+            <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
+            <div class="sb-nest"><div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div></div>
+            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Done!</span> for <span class="sb-input">1</span> seconds</div>
+          </div>
+        </div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0">Left: "Ha!" three times. Right: moves three times, then says "Done!" <b>once</b>.</p>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — A Real Walking Cat</div>
+        <ol class="steps lab">
+          <li><b>when green flag clicked</b>, then <b>go to x: -200 y: 0</b> (start at the left).</li>
+          <li>Add a <b>repeat 20</b> loop (Control).</li>
+          <li>Inside the loop: <b>move 20 steps</b>, <b>next costume</b>, <b>wait 0.1 seconds</b>.</li>
+          <li>Press the green flag. Try a wait of 0.3, then 0.05. What changes?</li>
+          <li><b>Challenge:</b> wrap the walk in <b>forever</b>, add <b>if on edge, bounce</b> and <b>set rotation style [left-right]</b>.</li>
+        </ol>
+        <div class="sb-script" aria-label="walking cat">
+          <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+          <div class="sb-block sb-motion">go to x: <span class="sb-input">-200</span> y: <span class="sb-input">0</span></div>
+          <div class="sb-block sb-control">repeat <span class="sb-input">20</span></div>
+          <div class="sb-nest">
+            <div class="sb-block sb-motion">move <span class="sb-input">20</span> steps</div>
+            <div class="sb-block sb-looks">next costume</div>
+            <div class="sb-block sb-control">wait <span class="sb-input">0.1</span> seconds</div>
+          </div>
+        </div>
+      </div>
+      <div class="blk"><div class="h">Teach-It practice — spot the loop</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Your "child" has copied the same block fifteen times. Don't fix it. Ask.</p>
+        <div class="say">Brushing teeth is a loop: scrub, scrub, scrub, repeat until clean! Can you think of another loop?</div>
+        <div class="say">That works! Is there a block that could do all of those for us at once, so we don't have to make so many?</div>
+        <div class="say">Is your block inside the mouth of the C, or outside?</div>
+        <p style="font-size:.92rem;margin:.4rem 0 .2rem">Reflection: did your "child" find the loop, or did you end up showing them? What would you try differently?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">You want the cat to blink exactly 5 times. Best loop?</div>
+          <div class="opts"><div class="opt">A) repeat 5</div><div class="opt">B) forever</div><div class="opt">C) wait 5 seconds</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">Only which blocks repeat in a loop?</div>
+          <div class="opts"><div class="opt">A) All blocks in the whole script</div><div class="opt">B) Only the blocks inside the C-shape</div><div class="opt">C) Only the blue ones</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">A block placed after a "forever" loop will…</div>
+          <div class="opts"><div class="opt">A) never run</div><div class="opt">B) run first</div><div class="opt">C) alternate with the loop</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">Your walking cat zooms across the stage in a blink. Best first fix?</div>
+          <div class="opts"><div class="opt">A) Add (or lengthen) a wait inside the loop</div><div class="opt">B) Put a wait after the loop</div><div class="opt">C) Change repeat to forever</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <ul class="tick">
+          <li><b>Key concepts:</b> In your own words, repeat vs forever. Why does it matter which blocks sit inside the C? (A sketch is a fine answer.)</li>
+          <li><b>Questions &amp; confusion:</b> What still feels tricky? Loops inside loops? How wait changes speed?</li>
+          <li><b>Progress &amp; feelings:</b> What everyday "loops" could you spot with your child this week?</li>
+        </ul>
+        <div class="write tall"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- 2.3 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">2.3</span><h3>Conditionals &amp; Sensing — Making Choices</h3><span class="dur">30 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Use <b>if/then</b> and <b>if/then/else</b> to make decisions</li>
+          <li>Read Sensing blocks (touching, key pressed, mouse down)</li>
+          <li>Combine <b>forever + if</b> to check things constantly, and drive the cat with the arrow keys</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Warm-up — "If it's raining, then…"</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Write two rules from your own household: one <b>if/then</b>, and one <b>if/then/otherwise</b>.</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li><b>if &lt;&gt; then</b> (Control) runs the blocks inside <b>only when the condition is true</b>. Otherwise Scratch skips them.</li>
+          <li>The pointy <b>hexagon slot</b> takes a true/false question. Most come from light-blue <b>Sensing</b>.</li>
+          <li><b>forever + if</b> is the "game loop": it keeps asking, so the sprite reacts the instant something becomes true. Without forever, the check happens once.</li>
+          <li><b>if/then/else</b> has two mouths. Read "else" as "otherwise."</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — the game loop and two paths</div>
+        <div class="sb-row">
+          <div class="sb-script" aria-label="forever if touching mouse-pointer then start sound Meow">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-control">forever</div>
+            <div class="sb-nest">
+              <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching mouse-pointer?</span> then</div>
+              <div class="sb-nest"><div class="sb-block sb-sound">start sound <span class="sb-input sb-text">Meow</span></div></div>
+            </div>
+          </div>
+          <div class="sb-script" aria-label="if key space pressed then say Jump else say Waiting">
+            <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key space pressed?</span> then</div>
+            <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Jump!</span> for <span class="sb-input">1</span> seconds</div></div>
+            <div class="sb-block sb-control">else</div>
+            <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Waiting…</span> for <span class="sb-input">1</span> seconds</div></div>
+          </div>
+        </div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0">Read them aloud: "Forever: if touching the pointer, meow." "If space is pressed, say Jump. Otherwise, say Waiting."</p>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Drive the Cat with Arrow Keys</div>
+        <ol class="steps lab">
+          <li><b>when green flag clicked</b>, then a <b>forever</b> loop.</li>
+          <li>Inside the forever, add <b>if &lt;key right arrow pressed?&gt; then</b> with <b>change x by 10</b> inside. Test it.</li>
+          <li>Right-click the if → <b>Duplicate</b> three times. Change each to left (x −10), up (y 10), down (y −10).</li>
+          <li>Press the green flag, <b>click the stage once</b>, and drive.</li>
+          <li><b>Challenge:</b> add <b>if &lt;touching edge?&gt; then say "Ouch!"</b>.</li>
+        </ol>
+        <div class="sb-script" aria-label="arrow key control script">
+          <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+          <div class="sb-block sb-control">forever</div>
+          <div class="sb-nest">
+            <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key right arrow pressed?</span> then</div>
+            <div class="sb-nest"><div class="sb-block sb-motion">change x by <span class="sb-input">10</span></div></div>
+            <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key left arrow pressed?</span> then</div>
+            <div class="sb-nest"><div class="sb-block sb-motion">change x by <span class="sb-input">-10</span></div></div>
+            <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key up arrow pressed?</span> then</div>
+            <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">10</span></div></div>
+            <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key down arrow pressed?</span> then</div>
+            <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-10</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="blk"><div class="h">Teach-It practice — coach with questions</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Your "child" has the mouse. Keep your hands in your lap.</p>
+        <div class="say">IF it's raining, THEN we bring an umbrella. Otherwise we don't. Give me an "if/then" rule from your day!</div>
+        <div class="say">How does the cat know you pressed a key? Which color has "senses"?</div>
+        <div class="say">We want it to check all the time. What loop does that?</div>
+        <p style="font-size:.92rem;margin:.4rem 0 .2rem">Reflection: how hard was it to keep your hands off the mouse? Which question worked best?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">What shape of block fits in an "if ___ then" slot?</div>
+          <div class="opts"><div class="opt">A) A hexagon (true/false) block</div><div class="opt">B) An oval reporter block</div><div class="opt">C) A hat block</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">Why do most games wrap their "if" checks in a forever loop?</div>
+          <div class="opts"><div class="opt">A) To make the game faster</div><div class="opt">B) So the condition is checked constantly, not just once</div><div class="opt">C) To change the block colors</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">"if/then/else" is best when…</div>
+          <div class="opts"><div class="opt">A) you only act when something is true</div><div class="opt">B) you want one thing if true and a different thing otherwise</div><div class="opt">C) you want to repeat something</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">Your arrow-key script matches the example exactly, but the cat won't move. What do you try first?</div>
+          <div class="opts"><div class="opt">A) Click the stage once so it has keyboard focus</div><div class="opt">B) Restart the computer</div><div class="opt">C) Delete the forever loop</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <ul class="tick">
+          <li><b>Key concepts:</b> What is a condition? Why does an if almost always need a forever around it?</li>
+          <li><b>What clicked:</b> Reading an if aloud as a sentence? The moment the cat first moved?</li>
+          <li><b>Progress &amp; feelings:</b> You've now met sequences, loops, and conditionals. How confident do you feel compared with Session 1?</li>
+        </ul>
+        <div class="write tall"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <div class="note lab">
+    <div class="t">Try at home this week</div>
+    <p>Play the <b>robot game</b> (you're the robot, and your child programs you to make a snack). Play a round of <b>"if/then" rules</b> at dinner or in the car. Show your child the <b>arrow-key cat</b> and let them change the numbers. Save it, because you'll reuse this movement code in Module 3.</p>
+  </div>
+
+  <div class="note">
+    <div class="t">You finished Module 2 🎉</div>
+    <p>Sequences, loops, and conditionals are the three ideas behind all programming, in any language. Everything ahead builds on them. Next session: a two-character animated story and your first real game with a score.</p>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 2 · Participant Workbook · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

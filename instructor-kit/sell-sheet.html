@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teach Scratch for Parents</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="kit.css">
+<style>
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 6px; }
+  .statcard { background:var(--surface-2); border:1px solid var(--line); border-radius:10px; padding:14px 12px; text-align:center; }
+  .statcard .n { font-family:"Archivo",sans-serif; font-weight:800; font-size:1.7rem; color:var(--accent); line-height:1; }
+  .statcard .l { font-size:.72rem; color:var(--ink-3); margin-top:5px; text-transform:uppercase; letter-spacing:.04em; }
+  .tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:14px 0; }
+  .tier { border:1px solid var(--line); border-radius:var(--radius); padding:18px 18px 20px; background:var(--surface); display:flex; flex-direction:column; }
+  .tier.feature { border:2px solid var(--accent); box-shadow:var(--shadow); }
+  .tier .name { font-family:"JetBrains Mono",monospace; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); }
+  .tier .price { font-family:"Archivo",sans-serif; font-weight:800; font-size:1.9rem; margin:6px 0 2px; letter-spacing:-.02em; }
+  .tier .price span { font-size:.8rem; font-weight:500; color:var(--ink-3); }
+  .tier ul { margin:10px 0 0; }
+  .tier .who { font-size:.82rem; color:var(--ink-2); margin-bottom:2px; }
+  .badge { display:inline-block; font-family:"JetBrains Mono",monospace; font-size:.62rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--accent); border-radius:999px; padding:2px 9px; margin-bottom:8px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  @media (max-width:680px){ .stats{grid-template-columns:1fr 1fr} .tiers{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Sell sheet —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">for pitching the kit to other instructors</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Course-in-a-Box · Instructor License</div>
+    <h1>Teach Parents to Teach Scratch, Without Building the Course Yourself</h1>
+    <p class="sub">A complete, ready-to-run workshop series that takes parents and caregivers with zero coding experience from "I have no idea what this is" to building a real game <b>with</b> their child. Along the way they learn the coaching moves that keep a kid coding at home. Guides, slides, workbooks, answer keys, and Scratch projects are all included.</p>
+    <div class="stats">
+      <div class="statcard"><div class="n">5</div><div class="l">Modules</div></div>
+      <div class="statcard"><div class="n">17</div><div class="l">Lessons</div></div>
+      <div class="statcard"><div class="n">6</div><div class="l">Sessions · ~12 hrs</div></div>
+      <div class="statcard"><div class="n">11</div><div class="l">Reference Scratch projects</div></div>
+    </div>
+  </header>
+
+  <div class="sec"><h2>What You Get</h2><span class="rule"></span></div>
+  <div class="grid2">
+    <div class="blk"><div class="h">For every module (×5)</div>
+      <ul class="tick">
+        <li><b>Facilitator guide</b>: a minute-by-minute session run-sheet, live-demo scripts, and the grown-up-learner stumbles to head off</li>
+        <li><b>Teach-It role-plays</b>: kid cards and "say this" lines, so parents rehearse coaching before they try it at home</li>
+        <li><b>Participant workbook</b>: key ideas, block-by-block build steps, a learning journal, and self-checks</li>
+        <li><b>Answer key</b>: every self-check answered and explained, plus lab solution notes</li>
+        <li><b>Slide deck</b>: a self-contained projector deck with no software to install</li>
+      </ul>
+    </div>
+    <div class="blk"><div class="h">Across the kit</div>
+      <ul class="tick">
+        <li><b>6-session syllabus</b> (2 hours each), which also runs as <b>3 Saturday half-days</b>, in web and print versions</li>
+        <li><b>11 reference <code class="inline">.sb3</code> projects</b>, including a Bug Hunt starter with four planted bugs</li>
+        <li>A <b>Family Build Night</b> plan: kids join Session 5 to build <b>Star Catcher</b> with their parent</li>
+        <li><b>Participant setup guide</b> plus a celebratory <b>final assessment</b> (project + Teach-It demo) with a rubric</li>
+        <li>Role-play kid cards, a family safety checklist, and a showcase &amp; graduation plan</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec"><h2>Why Instructors Choose It</h2><span class="rule"></span></div>
+  <ul class="tick">
+    <li><b>Zero prep to teach.</b> Every session has a run-sheet that adds up to 120 minutes, with demos scripted and labs ready. You don't need to be a programmer, only a few steps ahead of the room.</li>
+    <li><b>Built for nervous grown-ups.</b> It anticipates the fear of "breaking something," trackpad struggles, reading-glasses font sizes, comparing yourself to faster peers, and phones buzzing with family logistics.</li>
+    <li><b>Two outcomes, not one.</b> Parents learn Scratch <i>and</i> learn to teach it: ask, don't tell; hands off the mouse; praise the process. That's what keeps kids coding after the class ends.</li>
+    <li><b>The night families remember.</b> Family Build Night and the Session 6 showcase put children at the center. It's the part that fills your next cohort by word of mouth.</li>
+    <li><b>A free companion course.</b> Every lesson mirrors the free online course <b>Scratch for Parents: Learn It, Then Teach It</b> (<a href="https://rays-scratch.netlify.app/">rays-scratch.netlify.app</a>), so participants can review, catch up after a missed session, and keep going at home.</li>
+  </ul>
+
+  <div class="sec"><h2>Who It's For</h2><span class="rule"></span></div>
+  <div class="meta-row">
+    <span class="chip">Public libraries</span>
+    <span class="chip">Schools &amp; PTAs</span>
+    <span class="chip">Community education</span>
+    <span class="chip">Homeschool co-ops</span>
+    <span class="chip">Coding clubs &amp; makerspaces</span>
+  </div>
+
+  <div class="sec"><h2>License &amp; Pricing</h2><span class="rule"></span></div>
+  <div class="tiers">
+    <div class="tier">
+      <div class="name">Solo</div>
+      <div class="price">[$ ___ ]<span> one-time</span></div>
+      <div class="who">One instructor · unlimited participants</div>
+      <ul class="tick">
+        <li>Full kit, all 5 modules</li>
+        <li>Print workbooks for your groups</li>
+        <li>Perpetual license</li>
+      </ul>
+    </div>
+    <div class="tier feature">
+      <div class="badge">Most popular</div>
+      <div class="name">Organization</div>
+      <div class="price">[$ ___ ]<span> one-time</span></div>
+      <div class="who">A library system, school, or district program</div>
+      <ul class="tick">
+        <li>Everything in Solo</li>
+        <li>Unlimited instructors at one organization</li>
+        <li>Best value per seat</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="name">White-label</div>
+      <div class="price">[$ ___ ]<span> one-time</span></div>
+      <div class="who">Rebrand &amp; adapt freely</div>
+      <ul class="tick">
+        <li>Everything in Organization</li>
+        <li>Add your own branding</li>
+        <li>Edit &amp; adapt the materials</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size:.85rem;color:var(--ink-3)">Optional content-updates add-on: <b>[$ ___ / yr]</b>. Library, school, and non-profit pricing available. Contact us for full license terms.</p>
+
+  <div class="note lab">
+    <div class="t">Ready to run it?</div>
+    <p>Get in touch for a sample module and licensing details.<br><b>Ray de la Paz</b> · via the contact form on the site.</p>
+  </div>
+
+  <p style="font-size:.78rem;color:var(--ink-3)">Scratch is a project of the Scratch Foundation, in collaboration with the Lifelong Kindergarten Group at the MIT Media Lab. This kit and its companion course are independent educational products and are <b>not affiliated with, sponsored by, or endorsed by the Scratch Foundation or MIT</b>.</p>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Instructor Sell Sheet · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

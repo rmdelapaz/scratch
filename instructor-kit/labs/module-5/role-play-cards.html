@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Role-Play Cards — Module 5</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+<style>
+  /* Cut-out cards (lab sheet only) */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:10px 0 18px}
+  .card{border:1.5px dashed var(--line-strong);padding:13px 15px 12px;min-height:200px;break-inside:avoid;page-break-inside:avoid;position:relative;background:var(--surface)}
+  .card .kind{font-family:"JetBrains Mono",monospace;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .card.scn .kind{color:var(--lab)}
+  .card .id{position:absolute;top:11px;right:13px;font-family:"Archivo",sans-serif;font-weight:800;font-size:.8rem;color:#fff;background:var(--accent);border-radius:999px;padding:2px 9px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .card.scn .id{background:var(--lab)}
+  .card h3{font-size:1.12rem;margin:5px 0 4px}
+  .card .mood{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.66rem;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:2px 9px;margin-bottom:5px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .card p{font-size:.86rem;margin:.25rem 0;line-height:1.4}
+  .card .lbl{font-weight:700;color:var(--ink)}
+  .card .line{font-style:italic;color:var(--ink-2)}
+  .card .use{font-family:"JetBrains Mono",monospace;font-size:.62rem;color:var(--ink-3);margin-top:6px}
+  .jrcut{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin:10px 0}
+  .jrcut span{border:1.5px dashed var(--line-strong);padding:14px 4px;text-align:center;font-weight:700;font-size:.8rem;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .jrcut i{display:block;font-style:normal;font-size:1.5rem;line-height:1.2}
+  .jrcut .tr{background:#F7C948;color:#3d2e00} .jrcut .mo{background:#2F6FD6} .jrcut .lo{background:#7A4FD6}
+  .jrcut .so{background:#2E7D32} .jrcut .co{background:#F59E0B;color:#3a2000} .jrcut .en{background:#C62828}
+  .pb{break-before:page}
+  @media print{
+    .card{min-height:0;padding:10px 13px 9px}
+    .card p{font-size:.8rem;line-height:1.33;margin:.18rem 0}
+    .card h3{font-size:1.02rem;margin:3px 0 2px}
+    .sec.pb{margin-top:0}
+  }
+  @media (max-width:680px){.cards{grid-template-columns:1fr}.jrcut{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Lab handout —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">print on card stock · cut on the dashed lines · one set per 6 participants</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Scratch for Parents · Module 5 Lab</div>
+    <h1>Teach-It Role-Play Cards</h1>
+    <p class="sub">Ten kid cards and eight scenario cards for the Session S6 role-plays, plus paper ScratchJr blocks for rooms without tablets. The partner playing the child reads a kid card and stays in character; the coach may not touch the mouse.</p>
+    <div class="meta-row">
+      <span class="chip"><b>10</b> kid cards</span>
+      <span class="chip"><b>8</b> scenario cards</span>
+      <span class="chip">Lessons <b>5.1–5.4</b></span>
+      <span class="chip">Session <b>S6</b></span>
+    </div>
+  </header>
+
+  <div class="note">
+    <div class="t">How to run a round</div>
+    <p><b>1.</b> The "child" draws a kid card, reads it silently, and holds the mouse (or tablet). <b>2.</b> The coach may draw a scenario card, or just coach the project in front of them. <b>3.</b> Four minutes. Coach with questions, process praise and "yet"; hands never on the mouse. <b>4.</b> Swap roles and draw new cards. <b>5.</b> Debrief: "Which line made you want to keep going?"</p>
+    <p><b>Play it real, not dramatic.</b> The card describes a typical behavior; you don't need to act out a meltdown for the coach to practice.</p>
+  </div>
+
+  <div class="sec"><h2>Kid Cards</h2><span class="rule"></span></div>
+  <div class="cards">
+    <div class="card"><span class="id">K1</span><div class="kind">Kid card</div><h3>Maya, 9</h3><span class="mood">frustrated</span>
+      <p><span class="lbl">Behavior:</span> Her Star Catcher stars fall but the score never goes up. After a minute she pushes the laptop toward you.</p>
+      <p><span class="lbl">Says:</span> <span class="line">"Just do it for me."</span></p>
+      <p><span class="lbl">Softens if:</span> you offer to be her "hands" while she's the boss.</p>
+      <div class="use">Best with 5.1 · scaffolding</div></div>
+    <div class="card"><span class="id">K2</span><div class="kind">Kid card</div><h3>Theo, 7</h3><span class="mood">eager · impatient</span>
+      <p><span class="lbl">Behavior:</span> Wants to grab the mouse the second you point at anything, and clicks everywhere before you finish a sentence.</p>
+      <p><span class="lbl">Says:</span> <span class="line">"I know, I know! Let me do it!"</span></p>
+      <p><span class="lbl">Softens if:</span> you let him drive and ask one short question at a time.</p>
+      <div class="use">Best with 5.1 · pacing</div></div>
+    <div class="card"><span class="id">K3</span><div class="kind">Kid card</div><h3>Priya, 11</h3><span class="mood">bored</span>
+      <p><span class="lbl">Behavior:</span> Finished the task in two minutes and is slumped in the chair, spinning the sprite.</p>
+      <p><span class="lbl">Says:</span> <span class="line">"This is boring."</span></p>
+      <p><span class="lbl">Softens if:</span> you raise the bar with a real challenge: "What if it kept score? Could you add a second level?"</p>
+      <div class="use">Best with 5.1 · productive struggle</div></div>
+    <div class="card"><span class="id">K4</span><div class="kind">Kid card</div><h3>Jonah, 9</h3><span class="mood">upset · teary</span>
+      <p><span class="lbl">Behavior:</span> His game worked yesterday; now the cat won't move and he's close to tears.</p>
+      <p><span class="lbl">Says:</span> <span class="line">"I ruined it. I'm bad at this."</span></p>
+      <p><span class="lbl">Softens if:</span> you take a short break, then shrink the step: "Let's just get it to move first."</p>
+      <div class="use">Best with 5.1 · "yet" &amp; breaks</div></div>
+    <div class="card"><span class="id">K5</span><div class="kind">Kid card</div><h3>Rosa, 8</h3><span class="mood">perfectionist</span>
+      <p><span class="lbl">Behavior:</span> One thing looks wrong, so she wants to delete the whole project and start over.</p>
+      <p><span class="lbl">Says:</span> <span class="line">"It's all wrong. I'm starting again."</span></p>
+      <p><span class="lbl">Softens if:</span> you name what already works and praise her testing, not the result.</p>
+      <div class="use">Best with 5.1 · process praise</div></div>
+    <div class="card"><span class="id">K6</span><div class="kind">Kid card</div><h3>Eli, 10</h3><span class="mood">speedy · scattered</span>
+      <p><span class="lbl">Behavior:</span> Drags in random blocks without testing, then can't tell what changed.</p>
+      <p><span class="lbl">Says:</span> <span class="line">"I added a bunch of stuff and now it's weird."</span></p>
+      <p><span class="lbl">Softens if:</span> you ask "What did you want to happen?" and suggest testing one block at a time.</p>
+      <div class="use">Best with 5.1 · question toolkit</div></div>
+    <div class="card"><span class="id">K7</span><div class="kind">Kid card</div><h3>Leo, 11</h3><span class="mood">excited</span>
+      <p><span class="lbl">Behavior:</span> Wants to share Star Catcher <em>right now</em> so his friends can play. Has picked the username "LeoMartinez2014".</p>
+      <p><span class="lbl">Says:</span> <span class="line">"Can I click Share? Everyone's going to love it!"</span></p>
+      <p><span class="lbl">Softens if:</span> you say yes to his excitement before setting the rules.</p>
+      <div class="use">Best with 5.2 · safe sharing</div></div>
+    <div class="card"><span class="id">K8</span><div class="kind">Kid card</div><h3>Ava, 5</h3><span class="mood">giggly · wiggly</span>
+      <p><span class="lbl">Behavior:</span> Can't read yet. Wants to record a burp for the puppy. Keeps dragging blocks back onto the palette (which deletes them).</p>
+      <p><span class="lbl">Says:</span> <span class="line">"Make it burp! Where did my block go?"</span></p>
+      <p><span class="lbl">Softens if:</span> you ask for her story first and read the words aloud while she taps.</p>
+      <div class="use">Best with 5.3 · ScratchJr</div></div>
+    <div class="card"><span class="id">K9</span><div class="kind">Kid card</div><h3>Mia, 6</h3><span class="mood">determined</span>
+      <p><span class="lbl">Behavior:</span> Wants to use "big Scratch" like her brother, but can't read the blocks and keeps wandering into the paint editor.</p>
+      <p><span class="lbl">Says:</span> <span class="line">"I want to do the real one, not the baby one!"</span></p>
+      <p><span class="lbl">Softens if:</span> she gets to choose, and ScratchJr becomes "your own coding app."</p>
+      <div class="use">Best with 5.3 · readiness</div></div>
+    <div class="card"><span class="id">K10</span><div class="kind">Kid card</div><h3>Sam, 12</h3><span class="mood">dismissive</span>
+      <p><span class="lbl">Behavior:</span> Has built several games and is starting to lose interest in Scratch.</p>
+      <p><span class="lbl">Says:</span> <span class="line">"Scratch is for babies. I want to do real coding."</span></p>
+      <p><span class="lbl">Softens if:</span> you show that his loops are "real" (Scratch vs Python) and ask what he wants to make.</p>
+      <div class="use">Best with 5.4 · what comes next</div></div>
+  </div>
+
+  <div class="sec pb"><h2>Scenario Cards</h2><span class="rule"></span></div>
+  <div class="cards">
+    <div class="card scn"><span class="id">S1</span><div class="kind">Scenario</div><h3>"Can I share it publicly?"</h3>
+      <p>Your child finishes a project and asks to share it with the whole Scratch community tonight.</p>
+      <p><span class="lbl">Coaching goal:</span> say yes to the excitement, then have the "before sharing" conversation: non-identifying username, no personal info, "show me any unkind comment."</p>
+      <p><span class="lbl">Try:</span> <span class="line">"Most comments are super nice! Here are our family rules first. Deal?"</span></p>
+      <div class="use">Lesson 5.2</div></div>
+    <div class="card scn"><span class="id">S2</span><div class="kind">Scenario</div><h3>"I made this!" (they didn't)</h3>
+      <p>Your child copied a game from the community, changed nothing, and calls it theirs.</p>
+      <p><span class="lbl">Coaching goal:</span> no shame. Remixing is good; crediting is what good Scratchers do. Add a thank-you in Notes and Credits, then make one change that's truly theirs.</p>
+      <p><span class="lbl">Try:</span> <span class="line">"Remixing is how lots of coders learn. Who made the original? What will you add to make it yours?"</span></p>
+      <div class="use">Lesson 5.2 · digital citizenship</div></div>
+    <div class="card scn"><span class="id">S3</span><div class="kind">Scenario</div><h3>Sibling conflict</h3>
+      <p>Two siblings are fighting over the one family computer. The younger one keeps grabbing the mouse.</p>
+      <p><span class="lbl">Coaching goal:</span> fair turns with a timer; invite the older child to the top of the scaffold ladder ("they teach"); offer the younger one ScratchJr as their own app.</p>
+      <p><span class="lbl">Try:</span> <span class="line">"You're the expert. Can you teach your sister how to make the cat talk, with her hands on the mouse?"</span></p>
+      <div class="use">Lessons 5.1 &amp; 5.3</div></div>
+    <div class="card scn"><span class="id">S4</span><div class="kind">Scenario</div><h3>An unkind comment</h3>
+      <p>A comment on your child's shared game says "this is trash." They're hurt and want to stop sharing.</p>
+      <p><span class="lbl">Coaching goal:</span> treat it as a team job: read it together, report it, delete it, talk about feelings; consider turning comments off for a while. Feedback is information, not a verdict.</p>
+      <p><span class="lbl">Try:</span> <span class="line">"That comment says more about them than your game. Let's report it together."</span></p>
+      <div class="use">Lesson 5.2</div></div>
+    <div class="card scn"><span class="id">S5</span><div class="kind">Scenario</div><h3>A selfie on the stage</h3>
+      <p>Your child wants to use a photo of their face as a sprite and add their school's name to the title before sharing.</p>
+      <p><span class="lbl">Coaching goal:</span> keep the creativity, remove the personal info: a drawn self-portrait instead of a photo, no school name. Fine for a private project; not for a shared one.</p>
+      <p><span class="lbl">Try:</span> <span class="line">"Let's draw you as a cartoon hero instead. Our rule is no real faces or school names when we share."</span></p>
+      <div class="use">Lesson 5.2 · personal info</div></div>
+    <div class="card scn"><span class="id">S6</span><div class="kind">Scenario</div><h3>All browsing, no making</h3>
+      <p>Your child has spent the whole Scratch session playing other people's games in the community.</p>
+      <p><span class="lbl">Coaching goal:</span> nudge from "let's watch" to "let's make" without a lecture; agree session lengths up front.</p>
+      <p><span class="lbl">Try:</span> <span class="line">"Which one was your favorite? What would you change if you remixed it?"</span></p>
+      <div class="use">Lesson 5.2 · healthy habits</div></div>
+    <div class="card scn"><span class="id">S7</span><div class="kind">Scenario</div><h3>Losing interest</h3>
+      <p>After a tough week of bugs, your child says they don't want to do Scratch anymore.</p>
+      <p><span class="lbl">Coaching goal:</span> follow the fire. Suggest something silly or personal (their pet, a fart-sound piano), find an audience (a grandparent demo), keep it short and end on a win.</p>
+      <p><span class="lbl">Try:</span> <span class="line">"What's something funny we could make in ten minutes?"</span></p>
+      <div class="use">Lessons 5.1 &amp; 5.4</div></div>
+    <div class="card scn"><span class="id">S8</span><div class="kind">Scenario</div><h3>They've passed you</h3>
+      <p>Your child asks how to make a high-score list, and you have no idea.</p>
+      <p><span class="lbl">Coaching goal:</span> model learning out loud. Find it together (Variables → Make a List, the Scratch Ideas page), and let them explain it back to you.</p>
+      <p><span class="lbl">Try:</span> <span class="line">"I don't know either. Let's find out together."</span></p>
+      <div class="use">Lesson 5.4</div></div>
+  </div>
+
+  <div class="sec pb"><h2>Paper ScratchJr Blocks (no tablets)</h2><span class="rule"></span></div>
+  <p style="font-size:.92rem">Print in color and cut out. Pairs lay a row on the table <b>left to right</b>, then "run" it by acting it out: the coach reads, the "child" places the blocks. Build the lesson 5.3 row: <em>Start on Tap → Hop → Grow → My Sound → Shrink → End.</em> Write the number on each block in pencil.</p>
+  <div class="jrcut">
+    <span class="tr"><i>👆</i>Start on Tap</span><span class="tr"><i>🏁</i>Start on Green Flag</span><span class="tr"><i>💥</i>Start on Bump</span>
+    <span class="mo"><i>⤴️</i>Hop __</span><span class="mo"><i>➡️</i>Move Right __</span><span class="mo"><i>🏠</i>Go Home</span>
+    <span class="lo"><i>🔼</i>Grow __</span><span class="lo"><i>🔽</i>Shrink __</span><span class="lo"><i>💬</i>Say ____</span>
+    <span class="so"><i>🎙️</i>My Sound</span><span class="so"><i>🔊</i>Pop</span><span class="co"><i>⏱️</i>Wait __</span>
+    <span class="co"><i>🔁</i>Repeat __</span><span class="en"><i>⏹️</i>End</span><span class="en"><i>♾️</i>Repeat Forever</span>
+    <span class="en"><i>📄</i>Go to Page __</span><span class="mo"><i>⬅️</i>Move Left __</span><span class="lo"><i>👻</i>Hide</span>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 5 · Role-Play Cards · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

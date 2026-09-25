@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Answer Key — Module 4</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Instructor copy —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">answers &amp; solutions · not for participants</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Scratch for Parents · Answer Key</div>
+    <h1>Module 4 — Answers &amp; Solutions</h1>
+    <p class="sub">Correct self-check answers with the "why," plus what each reference lab file contains, the scripts drawn out, and the common wrong turns with how to coach them. Questions 1–3 in each lesson come from the course's Quick Checks; Q4 is kit-only.</p>
+    <div class="meta-row"><span class="chip">Lessons <b>4.1–4.4</b></span><span class="chip"><b>16</b> quiz items</span><span class="chip"><b>4</b> lab files</span></div>
+  </header>
+
+  <!-- 4.1 -->
+  <div class="sec"><h2>4.1 · Clones — One Sprite, Many Copies</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">The original star is hidden. You make clones, but none appear. Why?</div><div class="opts"><div class="opt correct">B) Clones start hidden, just like the original, and need a "show" block</div></div><div class="why"><b>Why:</b> a clone copies everything about the original, including being hidden. Add <b>show</b> right under <b>when I start as a clone</b>.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">Which script runs only on the new clones, never on the original?</div><div class="opts"><div class="opt correct">C) when I start as a clone</div></div><div class="why"><b>Why:</b> <b>when ⚑ clicked</b> runs only on the original (clones are made after the click); <b>when I receive</b> runs on the original <em>and</em> every clone.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">The game slows, then new stars stop appearing. Most likely cause?</div><div class="opts"><div class="opt correct">A) Clones are never deleted, so they pile up toward the 300 limit</div></div><div class="why"><b>Why:</b> off-screen clones still count. Past about 300, <b>create clone</b> silently does nothing. Every clone must reach <b>delete this clone</b>.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt"><b>create clone of myself</b> inside the <b>when I start as a clone</b> script — what happens?</div><div class="opts"><div class="opt correct">B) Every clone makes another clone, flooding the screen until Scratch's limit</div></div><div class="why"><b>Why:</b> each new clone runs the clone script, so each one stamps again: a chain reaction. Coach with "Who should do the stamping — the stamp or the prints?"</div></div>
+  <div class="note lab"><div class="t">Lab solution — Falling Stars · <code class="inline">labs/module-4/l4-1-falling-stars.sb3</code></div>
+    <p>One <b>Star</b> sprite on a dark backdrop, with two scripts. Optional extras (random size, color effect, spin) are not needed for credit.</p>
+  </div>
+  <div class="sb-row">
+    <div class="sb-script" aria-label="Original: when flag clicked, hide, forever: go to random x at y 180, create clone of myself, wait 1 seconds">
+      <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+      <div class="sb-block sb-looks">hide</div>
+      <div class="sb-block sb-control">forever</div>
+      <div class="sb-nest">
+        <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">180</span></div>
+        <div class="sb-block sb-control">create clone of <span class="sb-dropdown">myself</span></div>
+        <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+      </div>
+    </div>
+    <div class="sb-script" aria-label="Clone: when I start as a clone, show, repeat until y position less than -170: change y by -5; delete this clone">
+      <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+      <div class="sb-block sb-looks">show</div>
+      <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#59C059;color:#fff;">⟨ y position ⟩ &lt; -170</span></div>
+      <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div></div>
+      <div class="sb-block sb-control">delete this clone</div>
+    </div>
+  </div>
+  <div class="blk warn"><div class="h">Common wrong answers &amp; how to coach them</div>
+    <ul class="tick">
+      <li><b>Nothing ever appears</b> → no <b>show</b> in the clone script. Ask: "The stamp is hidden. What do its prints look like?"</li>
+      <li><b>One clump of stars</b> → no <b>go to</b> before stamping, or no <b>wait</b>. Ask: "Where is the stamp when it presses down? Does it ever move?"</li>
+      <li><b>Stars vanish instantly</b> → <b>repeat until touching edge?</b>. Each star is born touching the top edge. Ask: "Where does a new star start?"</li>
+      <li><b>The original falls</b> → the falling loop is under <b>when ⚑ clicked</b>. Ask: "Is this running on the stamp, the prints, or both?"</li>
+      <li><b>y position in the wrong slot</b> (right side of <b>&lt;</b>) → the test reads "-170 &lt; y" and is true at once. Read the block aloud together, left to right.</li>
+    </ul>
+  </div>
+
+  <!-- 4.2 -->
+  <div class="sec"><h2>4.2 · My Blocks — Make Your Own Blocks</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">Where do you put the steps your new block should do?</div><div class="opts"><div class="opt correct">B) Under the pink "define" block</div></div><div class="why"><b>Why:</b> the define hat is the recipe card. The green-flag script only <em>calls</em> the block; the dialog only sets name and inputs.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">The jump works but the cat teleports instead of hopping. Likely cause?</div><div class="opts"><div class="opt correct">A) "Run without screen refresh" is ticked</div></div><div class="why"><b>Why:</b> with refresh off, Scratch skips drawing the in-between frames. Right-click the define hat → Edit → untick.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">reset game was made on the Bowl but is missing on the Star. Why?</div><div class="opts"><div class="opt correct">C) Custom blocks belong to the sprite they were made in</div></div><div class="why"><b>Why:</b> My Blocks are per sprite. Drag the define script onto the other sprite's thumbnail in the sprite list to copy it.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">How do you make the repeat use the number passed to <b>dance (times)</b>?</div><div class="opts"><div class="opt correct">B) Drag the pink times oval out of the define hat into the repeat slot</div></div><div class="why"><b>Why:</b> dragging the oval gives you a copy that holds the passed-in value. Typing "times" is just text; a new variable is a different thing and won't receive the number.</div></div>
+  <div class="note lab"><div class="t">Lab solution — Three Custom Blocks · <code class="inline">labs/module-4/l4-2-my-blocks.sb3</code></div>
+    <p>The cat sprite with the <b>jump</b> block called from <b>when space key pressed</b> and <b>when this sprite clicked</b>; <b>dance (times) times</b> called with 3 and 6; variables <b>score</b> and <b>lives</b> (For all sprites) and a <b>reset game</b> block called from the green flag. The <b>jump (height)</b> challenge is optional.</p>
+  </div>
+  <div class="sb-row">
+    <div class="sb-script" aria-label="define jump">
+      <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">jump</span></div>
+      <div class="sb-block sb-control">repeat <span class="sb-input">10</span></div>
+      <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">10</span></div></div>
+      <div class="sb-block sb-control">repeat <span class="sb-input">10</span></div>
+      <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-10</span></div></div>
+    </div>
+    <div class="sb-script" aria-label="define dance times times">
+      <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">dance <span class="sb-input" style="background:#FF6680;color:#fff;">times</span> times</span></div>
+      <div class="sb-block sb-control">repeat <span class="sb-input" style="background:#FF6680;color:#fff;">times</span></div>
+      <div class="sb-nest">
+        <div class="sb-block sb-motion">turn ↻ <span class="sb-input">15</span> degrees</div>
+        <div class="sb-block sb-control">wait <span class="sb-input">0.2</span> seconds</div>
+        <div class="sb-block sb-motion">turn ↺ <span class="sb-input">15</span> degrees</div>
+        <div class="sb-block sb-control">wait <span class="sb-input">0.2</span> seconds</div>
+      </div>
+    </div>
+    <div class="sb-script" aria-label="define reset game">
+      <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">reset game</span></div>
+      <div class="sb-block sb-variables">set <span class="sb-dropdown">score</span> to <span class="sb-input">0</span></div>
+      <div class="sb-block sb-variables">set <span class="sb-dropdown">lives</span> to <span class="sb-input">3</span></div>
+      <div class="sb-block sb-motion">go to x: <span class="sb-input">0</span> y: <span class="sb-input">-150</span></div>
+      <div class="sb-block sb-looks">show</div>
+    </div>
+  </div>
+  <div class="blk warn"><div class="h">Common wrong answers &amp; how to coach them</div>
+    <ul class="tick">
+      <li><b>"My block does nothing"</b> → steps sitting near, but not snapped under, the define hat. Drag the hat: whatever moves with it is attached.</li>
+      <li><b>Dance never repeats / repeats 0 times</b> → the word typed into the slot. Point at the pink oval: "The value lives in here — drag it out."</li>
+      <li><b>"My block disappeared"</b> → a different sprite is selected. Click the sprite it was made in.</li>
+      <li><b>reset game shows a red error / empty dropdown</b> → variables not made yet. Make <b>score</b> and <b>lives</b> first.</li>
+    </ul>
+  </div>
+
+  <!-- 4.3 -->
+  <div class="sec"><h2>4.3 · Capstone Part 1 — Plan It &amp; Build the Core</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">A huge idea with dragons, shops, and ten levels. Best first move?</div><div class="opts"><div class="opt correct">B) Pick the ONE main action, build that small version first, and save the rest for a "someday list"</div></div><div class="why"><b>Why:</b> games started by dragging blocks grow too big to finish. Shrink where you start without crushing the idea.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">Why does the original Star hide and only make clones?</div><div class="opts"><div class="opt correct">A) It's a hidden "factory." Only the clones fall and get caught</div></div><div class="why"><b>Why:</b> hidden sprites can still make clones; that's the whole job of the original. Hiding doesn't affect speed.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">Why hide and <b>play sound Pop until done</b> before <b>delete this clone</b>?</div><div class="opts"><div class="opt correct">B) Deleting a clone cuts off its sound, so it hides and finishes the pop first</div></div><div class="why"><b>Why:</b> <b>hide</b> makes the star vanish instantly (it feels caught); <b>until done</b> lets the pop finish before the clone goes.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">Which is the "smallest playable version" of Star Catcher?</div><div class="opts"><div class="opt correct">A) Bowl moves + stars fall + catching adds score</div></div><div class="why"><b>Why:</b> it's the least you can build that is still a game someone can play. Lives and GAME OVER are additions (Part 2); the card alone isn't playable.</div></div>
+  <div class="note lab"><div class="t">Lab solution — Star Catcher Part 1 · <code class="inline">labs/module-4/l4-3-star-catcher-part1.sb3</code> (also the S5 rescue file)</div>
+    <p>End of step 7. Sprites: <b>Bowl</b> and <b>Star</b> (the cat deleted) on the <b>Stars</b> backdrop. Variables <b>score</b> and <b>lives</b>, For all sprites, shown on stage. The Bowl holds <b>define reset game</b> (as in 4.2) and the movement script; the Star holds the factory and the clone script, with the <b>Pop</b> sound added. Missed stars still pile up at the bottom: that is correct for Part 1.</p>
+  </div>
+  <div class="sb-row">
+    <div class="sb-script" aria-label="Bowl movement">
+      <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+      <div class="sb-block sb-myblocks">reset game</div>
+      <div class="sb-block sb-control">forever</div>
+      <div class="sb-nest">
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key <span class="sb-dropdown">right arrow</span> pressed?</span> then</div>
+        <div class="sb-nest"><div class="sb-block sb-motion">change x by <span class="sb-input">10</span></div></div>
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key <span class="sb-dropdown">left arrow</span> pressed?</span> then</div>
+        <div class="sb-nest"><div class="sb-block sb-motion">change x by <span class="sb-input">-10</span></div></div>
+      </div>
+    </div>
+    <div class="sb-script" aria-label="Star factory">
+      <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+      <div class="sb-block sb-looks">hide</div>
+      <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+      <div class="sb-block sb-control">forever</div>
+      <div class="sb-nest">
+        <div class="sb-block sb-control">create clone of <span class="sb-dropdown">myself</span></div>
+        <div class="sb-block sb-control">wait <span class="sb-input" style="background:#59C059;color:#fff;">pick random 0.5 to 1.5</span> seconds</div>
+      </div>
+    </div>
+    <div class="sb-script" aria-label="Star clone Part 1">
+      <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+      <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">170</span></div>
+      <div class="sb-block sb-looks">show</div>
+      <div class="sb-block sb-control">forever</div>
+      <div class="sb-nest">
+        <div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div>
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching <span class="sb-dropdown">Bowl</span>?</span> then</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+          <div class="sb-block sb-looks">hide</div>
+          <div class="sb-block sb-sound">play sound <span class="sb-dropdown">Pop</span> until done</div>
+          <div class="sb-block sb-control">delete this clone</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blk warn"><div class="h">Common wrong turns &amp; how to coach them (coach the parent; let the child fix)</div>
+    <ul class="tick">
+      <li><b>Bowl won't move</b> → stage lacks keyboard focus, or the <b>if</b>s sit outside the forever. "Click the stage once." Then trace the forever's mouth with a finger.</li>
+      <li><b>A frozen star at the top</b> → the original isn't hidden. "Which star is the factory? Should we see it?"</li>
+      <li><b>Score doesn't reset on replay</b> → <b>reset game</b> not called, or placed inside the forever (score stuck at 0).</li>
+      <li><b>Pop is cut off</b> → <b>start sound</b> used, or <b>delete this clone</b> before the sound.</li>
+      <li><b>lives made "For this sprite only"</b> → looks fine now but breaks step 8. Check it at the checkpoint: a sprite-only variable's stage readout shows the sprite name first (<b>Bowl: lives</b>). Easiest fix: delete it and remake it For all sprites.</li>
+      <li><b>Design card (not graded):</b> look for one main action, a clear way to score and to lose, and a Someday List with at least one item. If a card lists five main actions, help the family circle one.</li>
+    </ul>
+  </div>
+
+  <!-- 4.4 -->
+  <div class="sec"><h2>4.4 · Capstone Part 2 — Lives, Game Over &amp; Launch Day</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">Each missed star takes 2 or 3 lives instead of 1. Likely cause?</div><div class="opts"><div class="opt correct">B) delete this clone isn't inside the lives if, so the star keeps subtracting</div></div><div class="why"><b>Why:</b> the star stays below -170 and loses a life on every trip around the forever until it's deleted. Delete must be the last block inside that <b>if</b>.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">Why does the Game Over sprite show itself before <b>stop all</b>?</div><div class="opts"><div class="opt correct">A) So the sign is already on screen when everything freezes</div></div><div class="why"><b>Why:</b> nothing runs after <b>stop all</b>. It also removes every clone, which is what we want.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">The game breaks near the finish; your child is close to tears. Best move?</div><div class="opts"><div class="opt correct">B) Point out it worked before the last change, look at just that part together, or save and stop for today</div></div><div class="why"><b>Why:</b> shrinking the bug to the last change makes it solvable, and stopping to come back fresh is a real programmer move. Taking the mouse takes the win away.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">GAME OVER is still on screen when a new game starts. The fix?</div><div class="opts"><div class="opt correct">C) Give the Game Over sprite a "when ⚑ clicked → hide" script</div></div><div class="why"><b>Why:</b> the sign stays shown after <b>stop all</b> until something hides it. Moving <b>stop all</b> first would stop the <b>show</b>; lives at 0 would end every game instantly.</div></div>
+  <div class="note lab"><div class="t">Lab solution — Star Catcher Final · <code class="inline">labs/module-4/l4-4-star-catcher-final.sb3</code></div>
+    <p>Everything in Part 1, plus: the lives <b>if</b> in the Star's clone script, a <b>game over</b> message, a painted <b>Game Over</b> sprite with the two scripts below, and a Stage music loop (<b>when ⚑ clicked → forever → play sound … until done</b>). It meets every line of the Project Completion checklist. Someday-list extras (speed-up, rocks, high score, levels) are bonuses, not requirements.</p>
+  </div>
+  <div class="sb-row">
+    <div class="sb-script" aria-label="Star clone final">
+      <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+      <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">170</span></div>
+      <div class="sb-block sb-looks">show</div>
+      <div class="sb-block sb-control">forever</div>
+      <div class="sb-nest">
+        <div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div>
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching <span class="sb-dropdown">Bowl</span>?</span> then</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+          <div class="sb-block sb-looks">hide</div>
+          <div class="sb-block sb-sound">play sound <span class="sb-dropdown">Pop</span> until done</div>
+          <div class="sb-block sb-control">delete this clone</div>
+        </div>
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span style="background:#4C97FF;border-radius:10px;padding:0 6px;">y position</span> &lt; -170</span> then</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-variables">change <span class="sb-dropdown">lives</span> by <span class="sb-input">-1</span></div>
+          <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span style="background:#FF8C1A;border-radius:10px;padding:0 6px;">lives</span> = 0</span> then</div>
+          <div class="sb-nest"><div class="sb-block sb-events">broadcast <span class="sb-dropdown">game over</span></div></div>
+          <div class="sb-block sb-control">delete this clone</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="sb-script" aria-label="Game Over: when flag clicked, hide">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-looks">hide</div>
+      </div><br>
+      <div class="sb-script" aria-label="Game Over: when I receive game over, go to front layer, show, stop all">
+        <div class="sb-block sb-events sb-hat">when I receive <span class="sb-dropdown">game over</span></div>
+        <div class="sb-block sb-looks">go to <span class="sb-dropdown">front</span> layer</div>
+        <div class="sb-block sb-looks">show</div>
+        <div class="sb-block sb-control">stop <span class="sb-dropdown">all</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="blk warn"><div class="h">Common wrong turns &amp; how to coach them</div>
+    <ul class="tick">
+      <li><b>Stars still pile up</b> → the <b>y position</b> check is outside the forever (it runs once, at birth). "Does the star ask this question once or all the way down?"</li>
+      <li><b>Lives drop by more than 1</b> → <b>delete this clone</b> outside the lives <b>if</b> (Q1).</li>
+      <li><b>GAME OVER never shows</b> → broadcast and receive use different messages, or lives never hit exactly 0 (not reset to 3, or a "For this sprite only" lives on the Bowl that the Star can't see).</li>
+      <li><b>Music stutters or overlaps</b> → <b>start sound</b> in the forever. Use <b>play sound … until done</b>.</li>
+      <li><b>Ages 5–7 skipped lives</b> → that is a complete, correct outcome. Credit the painted sign, the music, and the launch.</li>
+      <li><b>Launch day:</b> "correct" means the child explained the rules, kept hands off while someone else played, and collected one idea for the Someday List.</li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 4 · Answer Key · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

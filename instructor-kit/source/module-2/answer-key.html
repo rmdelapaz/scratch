@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Answer Key — Module 2</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Instructor copy —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">answers &amp; solutions · not for participants</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Scratch for Parents · Answer Key</div>
+    <h1>Module 2 — Answers &amp; Solutions</h1>
+    <p class="sub">Correct self-check answers with the "why," plus what each reference lab project contains and how to coach the usual wrong turns. Questions 1–3 of each lesson come from the course's Quick Checks. Q4 is new to the kit.</p>
+    <div class="meta-row"><span class="chip">Lessons <b>2.1–2.3</b></span><span class="chip"><b>12</b> quiz items</span><span class="chip"><b>3</b> labs</span></div>
+  </header>
+
+  <!-- 2.1 -->
+  <div class="sec"><h2>2.1 · Sequences &amp; Timing</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">What is a "sequence" in coding?</div><div class="opts"><div class="opt correct">A) Steps carried out in order, one after another</div></div><div class="why"><b>Why:</b> steps run top to bottom, exactly as stacked. B is wrong because order is exact, not random. C describes a loop (Lesson 2.2).</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">Which category holds the wait block?</div><div class="opts"><div class="opt correct">B) Control (orange)</div></div><div class="why"><b>Why:</b> <em>wait (1) seconds</em> is the first block in Control. Blue is Motion; purple is Looks.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">Your child's cat "freezes" for two seconds mid-routine. Most likely reason?</div><div class="opts"><div class="opt correct">B) A "say for 2 seconds" or "wait" block is holding, as designed</div></div><div class="why"><b>Why:</b> the block is doing its job. Point at the words "for 2 seconds." Adults who pick A are voicing the fear of breaking the computer. Reassure them and move on.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt"><em>say Hello! for 2 seconds</em> vs plain <em>say Hello!</em>?</div><div class="opts"><div class="opt correct">B) The timed one pauses the script before the next block; plain say moves straight on</div></div><div class="why"><b>Why:</b> the timed version shows the bubble, waits, removes it, then continues. Plain <em>say</em> leaves the bubble up and runs the next block at once. For step-by-step scenes, use the timed one.</div></div>
+  <div class="note lab"><div class="t">Lab solution — Greeting Routine</div><p>Reference: <code class="inline">labs/module-2/l2-1-greeting-routine.sb3</code>. One script on the cat sprite:</p>
+    <div class="sb-script" aria-label="greeting routine solution">
+      <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+      <div class="sb-block sb-motion">go to x: <span class="sb-input">0</span> y: <span class="sb-input">0</span></div>
+      <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi, I'm Scratchy!</span> for <span class="sb-input">2</span> seconds</div>
+      <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+      <div class="sb-block sb-motion">move <span class="sb-input">120</span> steps</div>
+      <div class="sb-block sb-looks">say <span class="sb-input sb-text">Welcome to my world!</span> for <span class="sb-input">2</span> seconds</div>
+    </div>
+    <p>Challenge version: <em>start sound (Meow)</em> and <em>next costume</em> go between the wait and the move.</p>
+    <p><b>Common wrong turns &amp; coaching:</b> (1) <em>No go to x: 0 y: 0</em>. The cat starts wherever the last run left it and eventually walks off-stage. Ask: "Where does the cat start the second time?" (2) <em>Plain say instead of say-for-seconds</em>. Both bubbles flash by, or the first is instantly replaced. Ask them to read the two block labels aloud. (3) <em>A block not snapped</em>. It sits a few pixels away and never runs. Drag the stack by its hat block; anything left behind isn't attached. (4) <em>Two green-flag scripts</em>. An old S1 script also runs, so the cat does two things at once. Right-click the code area → Clean up Blocks to find strays.</p>
+  </div>
+
+  <!-- 2.2 -->
+  <div class="sec"><h2>2.2 · Loops — Making Things Repeat</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">You want the cat to blink exactly 5 times. Best loop?</div><div class="opts"><div class="opt correct">A) repeat 5</div></div><div class="why"><b>Why:</b> you know the count. <em>forever</em> would never stop, and <em>wait 5 seconds</em> is a pause, not a loop.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">Only which blocks repeat in a loop?</div><div class="opts"><div class="opt correct">B) Only the blocks inside the C-shape</div></div><div class="why"><b>Why:</b> blocks nested in the loop's "mouth" repeat. Blocks above or below it run once. Block color has nothing to do with it.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">A block placed after a "forever" loop will…</div><div class="opts"><div class="opt correct">A) never run</div></div><div class="why"><b>Why:</b> the program never gets past <em>forever</em>. Scratch hints at this: <em>forever</em> has no notch on its bottom, so nothing can snap below it.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">The walking cat zooms across in a blink. Best first fix?</div><div class="opts"><div class="opt correct">A) Add (or lengthen) a wait inside the loop</div></div><div class="why"><b>Why:</b> the wait has to repeat with each step to slow every step. A wait after the loop only pauses once, at the end. Try 0.1–0.3.</div></div>
+  <div class="note lab"><div class="t">Lab solution — A Real Walking Cat</div><p>Reference: <code class="inline">labs/module-2/l2-2-walking-cat.sb3</code>. One script on the cat sprite (which has two costumes):</p>
+    <div class="sb-script" aria-label="walking cat solution">
+      <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+      <div class="sb-block sb-motion">go to x: <span class="sb-input">-200</span> y: <span class="sb-input">0</span></div>
+      <div class="sb-block sb-control">repeat <span class="sb-input">20</span></div>
+      <div class="sb-nest">
+        <div class="sb-block sb-motion">move <span class="sb-input">20</span> steps</div>
+        <div class="sb-block sb-looks">next costume</div>
+        <div class="sb-block sb-control">wait <span class="sb-input">0.1</span> seconds</div>
+      </div>
+    </div>
+    <p>Challenge (patrol) version. Wrapping the original repeat inside a forever works too; this is the tidier form:</p>
+    <div class="sb-script" aria-label="walking cat patrol challenge">
+      <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+      <div class="sb-block sb-motion">set rotation style <span class="sb-dropdown">left-right</span></div>
+      <div class="sb-block sb-motion">go to x: <span class="sb-input">-200</span> y: <span class="sb-input">0</span></div>
+      <div class="sb-block sb-control">forever</div>
+      <div class="sb-nest">
+        <div class="sb-block sb-motion">move <span class="sb-input">20</span> steps</div>
+        <div class="sb-block sb-motion">if on edge, bounce</div>
+        <div class="sb-block sb-looks">next costume</div>
+        <div class="sb-block sb-control">wait <span class="sb-input">0.1</span> seconds</div>
+      </div>
+    </div>
+    <p><b>Common wrong turns &amp; coaching:</b> (1) <em>next costume below the loop</em>. The cat glides with frozen legs. Ask: "Is the costume change inside the mouth, or outside?" (2) <em>No wait inside</em>. The cat teleports across. (3) <em>Upside-down cat</em> in the challenge. Add <em>set rotation style [left-right]</em>. (4) <em>A second forever script</em> keeps running after the challenge. The red stop ends it. Delete the leftover.</p>
+  </div>
+
+  <!-- 2.3 -->
+  <div class="sec"><h2>2.3 · Conditionals &amp; Sensing — Making Choices</h2><span class="rule"></span></div>
+  <div class="q"><div class="qn">Q1</div><div class="qt">What shape of block fits in an "if ___ then" slot?</div><div class="opts"><div class="opt correct">A) A hexagon (true/false) block</div></div><div class="why"><b>Why:</b> the slot is pointy and takes only true/false conditions, such as <em>touching (edge)?</em> or <em>key (space) pressed?</em>. Oval reporters give values and won't fit. Hat blocks only start scripts.</div></div>
+  <div class="q"><div class="qn">Q2</div><div class="qt">Why do most games wrap their "if" checks in a forever loop?</div><div class="opts"><div class="opt correct">B) So the condition is checked constantly, not just once</div></div><div class="why"><b>Why:</b> without the loop Scratch checks once, when the script starts, and never again. Tie it back to the warm-up: you check for rain all day, not once.</div></div>
+  <div class="q"><div class="qn">Q3</div><div class="qt">"if/then/else" is best when…</div><div class="opts"><div class="opt correct">B) you want one thing if true and a different thing otherwise</div></div><div class="why"><b>Why:</b> use else when the outcomes are opposites of the same question. The four arrow keys are separate questions, so they get four separate ifs.</div></div>
+  <div class="q"><div class="qn">Q4</div><div class="qt">Script matches the example but the cat won't move. Try first?</div><div class="opts"><div class="opt correct">A) Click the stage once so it has keyboard focus</div></div><div class="why"><b>Why:</b> key presses go to whatever part of the page was clicked last. Click the stage, then check the nesting (change → inside if → inside forever). Restarting is never the first move.</div></div>
+  <div class="note lab"><div class="t">Lab solution — Drive the Cat with Arrow Keys</div><p>Reference: <code class="inline">labs/module-2/l2-3-arrow-key-cat.sb3</code>. One script on the cat sprite:</p>
+    <div class="sb-script" aria-label="arrow key solution">
+      <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+      <div class="sb-block sb-control">forever</div>
+      <div class="sb-nest">
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key right arrow pressed?</span> then</div>
+        <div class="sb-nest"><div class="sb-block sb-motion">change x by <span class="sb-input">10</span></div></div>
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key left arrow pressed?</span> then</div>
+        <div class="sb-nest"><div class="sb-block sb-motion">change x by <span class="sb-input">-10</span></div></div>
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key up arrow pressed?</span> then</div>
+        <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">10</span></div></div>
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key down arrow pressed?</span> then</div>
+        <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-10</span></div></div>
+      </div>
+    </div>
+    <p>Challenge: a fifth if inside the same forever, <em>if &lt;touching (edge)?&gt; then say (Ouch!) for (1) seconds</em>. (While the bubble shows, the other keys pause, which is fine at this stage.)</p>
+    <p><b>Common wrong turns &amp; coaching:</b> (1) <em>if outside the forever</em>. The keys work for a split second at the start, then never again. Ask: "How often does it check?" (2) <em>x and y swapped</em>. Up moves the cat sideways. Say: "x is across, like a crossword; y is up and down." (3) <em>Wrong sign</em>. Left and down need <b>−10</b>. (4) <em>when [right arrow] key pressed</em> hat blocks instead of the loop. That also works but moves jerkily because of the keyboard-repeat delay. Accept it, then show the smoother loop version. (5) <em>No keyboard focus</em>. Click the stage.</p>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 2 · Answer Key · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

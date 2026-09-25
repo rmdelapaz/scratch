@@ -142,16 +142,20 @@
                         <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Cat?</span></div>
                         <div class="sb-nest">
                             <div class="sb-block sb-motion">change y by <span class="sb-input">-8</span></div>
-                            <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching edge?</span> then</div>
+                            <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;">⟨ y position ⟩ &lt; -170</span> then</div>
                             <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div></div>
                         </div>
                         <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
                     </div>
                 </div>
-                <p>Read it as a story: start at the top at a random x, fall until caught (bounce back to the top if it hits the bottom edge), and when the cat catches it, add a point — then do it all again, forever.</p>
+                <p>Read it as a story: start at the top at a random x, fall until caught (jump back to the top if it drops past the bottom), and when the cat catches it, add a point — then do it all again, forever.</p>
+                <div class="card card-warning">
+                    <h4>⚠️ Why not "touching edge?"</h4>
+                    <p>It's tempting to check <em>touching edge?</em> for "reached the bottom" — but the apple starts at <em>y: 170</em>, where it's already touching the <strong>top</strong> edge. Scratch would send it back to the top every single frame and it would never fall. Checking <em>y position &lt; -170</em> means "near the bottom" and nothing else. (You'll use the same trick for falling stars in Module 4.)</p>
+                </div>
                 <div class="card card-info">
                     <h4>💡 Where these came from</h4>
-                    <p><em>pick random</em> is a green <strong>Operators</strong> block. <em>touching</em> is a blue-green <strong>Sensing</strong> block. <em>repeat until</em> and <em>if</em> are <strong>Control</strong>. You're combining four categories — real programming!</p>
+                    <p><em>pick random</em> is a green <strong>Operators</strong> block. <em>touching</em> is a blue-green <strong>Sensing</strong> block; <em>y position</em> is at the bottom of <strong>Motion</strong>, and the <em>&lt;</em> (less than) block is in <strong>Operators</strong>. <em>repeat until</em> and <em>if</em> are <strong>Control</strong>. You're combining four categories — real programming!</p>
                 </div>
             </section>
 

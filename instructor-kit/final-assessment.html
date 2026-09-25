@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Assessment &amp; Rubric</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="kit.css">
+<style>
+  table.rubric { width:100%; border-collapse:collapse; margin:12px 0; font-size:.85rem; }
+  table.rubric th, table.rubric td { border:1px solid var(--line); padding:9px 11px; vertical-align:top; text-align:left; }
+  table.rubric thead th { background:var(--surface-2); font-family:"JetBrains Mono",monospace; font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-3); font-weight:600; }
+  table.rubric td.crit { font-weight:600; color:var(--ink); width:20%; }
+  table.rubric td .pts { display:block; font-family:"JetBrains Mono",monospace; font-size:.66rem; color:var(--accent); margin-top:3px; }
+  table.rubric tbody tr:nth-child(even) td { background:var(--surface); }
+  table.rubric tr.part td { background:var(--accent-soft); font-family:"JetBrains Mono",monospace; font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); font-weight:600; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  @media print { table.rubric { break-inside:auto; } table.rubric tr { break-inside:avoid; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Instructor copy —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">project + Teach-It brief, rubric &amp; scoring sheet</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Scratch for Parents · Final Assessment</div>
+    <h1>Build It, Then Teach It</h1>
+    <p class="sub">The end-of-course celebration, which is also the assessment. Each participant shows two things. They <b>built</b> a real game with their child (Star Catcher, plus one extension of their own), and they can <b>teach</b> a five-minute mini-lesson the way the course coaches it. This isn't a test to pass or fail. It's a bar to reach, with as many tries as it takes, and reaching it earns the certificate.</p>
+    <div class="meta-row">
+      <span class="chip">Covers <b>Modules 1–5</b></span>
+      <span class="chip">Part A: <b>Star Catcher</b> + extension</span>
+      <span class="chip">Part B: <b>Teach-It</b> demo</span>
+      <span class="chip">Outcome: <b>Complete</b> / not yet</span>
+    </div>
+  </header>
+
+  <div class="note">
+    <div class="t">Why it's framed as a celebration</div>
+    <p>Participants are parents and caregivers, many of whom arrived unsure whether they were "techy enough." A grade would bring back exactly the fear the course works to remove. So there are no scores out of 100, no ranking, and nothing shared publicly except what they choose to show. The rubric tells <b>you</b> whether they've met the bar and tells <b>them</b> what to try next. Every criterion has a "not yet," never a "fail."</p>
+  </div>
+
+  <div class="sec"><h2>Part A · The Project</h2><span class="rule"></span></div>
+  <p>At <b>Family Build Night (Session 5)</b>, each participant and their child build <b>Star Catcher</b> from lessons 4.3–4.4. The child directs and the parent types only when asked. Before or during Session 6, the participant adds <b>one personal extension</b> (alone, or better, with their child) and brings the project to the showcase.</p>
+
+  <div class="blk"><div class="h">Required deliverables</div>
+    <ul class="tick">
+      <li>A saved <b>Star Catcher</b> project (in a Scratch account or as an <code class="inline">.sb3</code> file) that passes the lesson 4.4 Project Completion checklist.</li>
+      <li><b>One personal extension</b> from the Someday List or their own idea: stars speed up, rocks to dodge, a high score, levels, a new sprite or sound, or anything else they dream up.</li>
+      <li>The child's <b>Game Design Card</b> (Session 4 homework), or a quick one filled in at Session 5.</li>
+    </ul>
+  </div>
+
+  <div class="grid2">
+    <div class="blk"><div class="h">Star Catcher must…</div>
+      <ul class="tick">
+        <li>Move the Bowl left and right with the arrow keys (<b>events + loops + conditionals</b>)</li>
+        <li>Keep <b>score</b> and <b>lives</b> in variables</li>
+        <li>Drop stars as <b>clones</b> from random spots, with the original hidden</li>
+        <li>Reset through a <b>My Block</b> (<code class="inline">reset game</code>)</li>
+        <li>End with a <code class="inline">game over</code> <b>broadcast</b>: GAME OVER shows and everything stops</li>
+        <li>Start a fresh game each time the green flag is pressed</li>
+      </ul>
+    </div>
+    <div class="blk"><div class="h">The reference</div>
+      <ul class="tick">
+        <li>Finished game: <code class="inline">labs/module-4/l4-4-star-catcher-final.sb3</code></li>
+        <li>Rescue file (smallest playable version): <code class="inline">labs/module-4/l4-3-star-catcher-part1.sb3</code></li>
+        <li>A family that used the rescue file is still on track. Finishing matters more than starting from blank.</li>
+        <li>The extension doesn't have to be big. It has to be <b>theirs</b>, and it has to work.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec"><h2>Part B · The Teach-It Demonstration</h2><span class="rule"></span></div>
+  <p>Each participant <b>coaches a peer playing a child</b> through a <b>5-minute mini-lesson</b> taken from the course. It's the same format as every Teach-It role-play they've practised since Session 1, so nothing here should be new.</p>
+
+  <div class="grid2">
+    <div class="blk"><div class="h">How it runs</div>
+      <ol class="steps">
+        <li>The participant <b>picks a mini-lesson</b> from any module, for example the 60-second editor tour (1.2), a <code class="inline">repeat</code> loop walk (2.2), arrow-key controls (2.3), fixing one Bug Hunt bug (3.3), or a first clone (4.1).</li>
+        <li>The partner draws a <b>kid card</b> (<code class="inline">labs/module-5/role-play-cards.html</code>) and plays that child: age, mood, and habits.</li>
+        <li>The "child" holds the mouse <b>the whole time</b>. The coach may point and ask, but may not touch it.</li>
+        <li><b>Five minutes</b> on a timer, then swap roles. You or a third participant observes and marks the teaching rubric.</li>
+      </ol>
+    </div>
+    <div class="blk"><div class="h">When to run it</div>
+      <ul class="tick">
+        <li><b>Easiest:</b> during the Session 6 hands-off coaching rounds (lesson 5.1). Stretch each round from 4 to 5 minutes and observe one pair per round.</li>
+        <li>Or observe any Teach-It role-play from <b>Sessions 2–6</b>. A strong round in Session 3 counts.</li>
+        <li>Or, for a participant who missed Session 6, a 10-minute catch-up with you as the "kid."</li>
+        <li><b>Plant one bug</b> on the kid card ("your cat won't stop moving") so every demo includes a stuck moment.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note warn">
+    <div class="t">Observe kindly</div>
+    <p>Being watched while teaching is nerve-racking, especially for someone who learned Scratch five weeks ago. Sit beside the pair, not across from them. Keep the rubric on your lap instead of a clipboard in the air, and open your feedback with what went well. If a demo goes badly, it's a practice round: offer another one.</p>
+  </div>
+
+  <div class="sec"><h2>Rubric</h2><span class="rule"></span></div>
+  <p style="font-size:.9rem;color:var(--ink-2)">Mark each criterion <b>Not yet (1)</b>, <b>Met (2)</b>, or <b>Shining (3)</b>. A participant is <b>complete</b> when every criterion is <b>Met (2) or better</b>. There is no total to reach. "Shining" is there for you to celebrate, not to rank.</p>
+  <table class="rubric">
+    <thead>
+      <tr><th>Criterion</th><th>Not yet (1)</th><th>Met (2)</th><th>Shining (3)</th></tr>
+    </thead>
+    <tbody>
+      <tr class="part"><td colspan="4">Part A · The project</td></tr>
+      <tr>
+        <td class="crit">It works <span class="pts">/3</span></td>
+        <td>The game doesn't run from the green flag, or the bowl, stars, or catching don't work yet.</td>
+        <td>Passes the 4.4 Project Completion checklist: move, catch, score, lose lives, GAME OVER, fresh restart.</td>
+        <td>Plays smoothly and has been <b>tuned</b> (speed and spacing feel fair). The child can demo it without help.</td>
+      </tr>
+      <tr>
+        <td class="crit">Uses the big ideas <span class="pts">/3</span></td>
+        <td>One or more is missing: events, loops, conditionals, variables, clones, or a My Block.</td>
+        <td>All six appear and do their job: green flag + broadcast, <code class="inline">forever</code>, <code class="inline">if</code>, <code class="inline">score</code>/<code class="inline">lives</code>, star clones, <code class="inline">reset game</code>.</td>
+        <td>The participant can <b>point to each one</b> and say in plain words what it does.</td>
+      </tr>
+      <tr>
+        <td class="crit">Personal extension <span class="pts">/3</span></td>
+        <td>No extension yet, or the extension breaks the original game.</td>
+        <td>One extension added and working (speed-up, rocks, high score, levels, or their own idea).</td>
+        <td>The extension came from the <b>child's</b> Someday List, or goes beyond the course's four suggestions.</td>
+      </tr>
+      <tr>
+        <td class="crit">Organization <span class="pts">/3</span></td>
+        <td>Sprites are still "Sprite1"/"Sprite2", or there are stray unattached blocks and duplicate scripts.</td>
+        <td>Sprites are named (Bowl, Star, Game Over), there are no stray blocks, and the project is saved and can be found again.</td>
+        <td>Scripts are tidy (right-click → <b>Clean up Blocks</b>) and a <b>comment</b> or two explains the tricky parts.</td>
+      </tr>
+      <tr class="part"><td colspan="4">Part B · The Teach-It demonstration</td></tr>
+      <tr>
+        <td class="crit">Asks, doesn't instruct <span class="pts">/3</span></td>
+        <td>Mostly gives step-by-step orders ("Drag the blue one. Now click it.").</td>
+        <td>Mostly guiding questions: "What do you think will happen?" "Where might that block live?"</td>
+        <td>Questions shrink or grow to fit the "child" (the least help that unblocks), then fade away.</td>
+      </tr>
+      <tr>
+        <td class="crit">Lets the child drive <span class="pts">/3</span></td>
+        <td>Grabs the mouse, or points so precisely that it amounts to the same thing.</td>
+        <td>Hands stay off the mouse. The "child" makes the clicks and choices.</td>
+        <td>Holds back through a real struggle and lets the "child" own the breakthrough.</td>
+      </tr>
+      <tr>
+        <td class="crit">Handles a bug calmly <span class="pts">/3</span></td>
+        <td>Fixes the bug for them, or signals frustration ("No, not like that…").</td>
+        <td>Stays calm and uses the debugging steps: watch it, predict, change one thing, test.</td>
+        <td>Frames the bug as good news ("Ooh, a mystery!") and the "child" finds the fix.</td>
+      </tr>
+      <tr>
+        <td class="crit">Age-appropriate <span class="pts">/3</span></td>
+        <td>Language or pace ignores the kid card (jargon for a 6-year-old, hand-holding for a 12-year-old).</td>
+        <td>Words, pace, and challenge fit the card's age and mood.</td>
+        <td>Adapts on the fly when the "child" gets bored, silly, or upset.</td>
+      </tr>
+      <tr>
+        <td class="crit">Ends on a win <span class="pts">/3</span></td>
+        <td>Time runs out mid-struggle, or the round ends with the coach's fix.</td>
+        <td>The "child" gets something working and hears <b>process praise</b> ("You tested it after every change!").</td>
+        <td>Adds a "yet" and a next step: "You can't make it faster <i>yet</i>. Want to try that next time?"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note lab">
+    <div class="t">Completion policy</div>
+    <p>A participant <b>completes the course</b>, and receives the certificate at the Session 6 graduation, when every criterion on the rubric is <b>Met (2) or better</b>. Anyone who isn't there yet gets one specific, kind next step per "Not yet" and another go: finish the extension at home and email the <code class="inline">.sb3</code>, or re-run the Teach-It demo with you. Nobody is held back from the showcase. Children present their games whatever the rubric says.</p>
+  </div>
+
+  <div class="sec"><h2>Scoring Sheet</h2><span class="rule"></span></div>
+  <p style="font-size:.9rem;color:var(--ink-2)">Participant: ______________________ &nbsp; Child's first name / age: ______________ &nbsp; Mini-lesson taught: ______________ &nbsp; Kid card: ____</p>
+  <table class="rubric">
+    <thead><tr><th>Criterion</th><th>Mark (1–3)</th><th>Notes · what went well · next step</th></tr></thead>
+    <tbody>
+      <tr class="part"><td colspan="3">Part A · The project</td></tr>
+      <tr><td class="crit">It works</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="crit">Uses the big ideas</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="crit">Personal extension</td><td>&nbsp;</td><td>Extension: </td></tr>
+      <tr><td class="crit">Organization</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr class="part"><td colspan="3">Part B · The Teach-It demonstration</td></tr>
+      <tr><td class="crit">Asks, doesn't instruct</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="crit">Lets the child drive</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="crit">Handles a bug calmly</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="crit">Age-appropriate</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="crit">Ends on a win</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="crit">All criteria Met (2+)? &nbsp;☐ Complete &nbsp;☐ Not yet</td><td>&nbsp;</td><td>Celebrate: </td></tr>
+    </tbody>
+  </table>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Final Assessment · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

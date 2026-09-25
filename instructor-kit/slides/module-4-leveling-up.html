@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slides — Module 4</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+  :root{--bg:#0e0b1a;--ink:#f0ecfb;--ink2:#b3a8cf;--accent:#a98bff;--accent2:#7c4ddf;--lab:#34d3bd;--warn:#fbbf24;--line:#2e2550;--code:#140f26;color-scheme:dark}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;overflow:hidden}
+  .deck{height:100%;width:100%;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 8vw;gap:20px}
+  .slide.on{display:flex}
+  h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.1;text-wrap:balance}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:clamp(.7rem,1.4vw,.95rem);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .slide h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-.02em}
+  .slide h2{font-size:clamp(1.5rem,4.2vw,2.8rem);font-weight:800;letter-spacing:-.01em}
+  .slide p.lead{font-size:clamp(1.05rem,2.4vw,1.5rem);color:var(--ink2);max-width:26ch}
+  ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  ul li{position:relative;padding-left:34px;font-size:clamp(1.05rem,2.3vw,1.6rem)}
+  ul li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:3px;background:var(--accent);transform:rotate(45deg)}
+  ul.lab li::before{background:var(--lab)}
+  code.k{font-family:"JetBrains Mono",monospace;color:#d3c4ff;font-size:.92em}
+  pre{background:var(--code);border:1px solid var(--line);border-radius:12px;padding:22px 26px;font-family:"JetBrains Mono",monospace;font-size:clamp(.85rem,1.9vw,1.3rem);line-height:1.55;overflow:auto;max-width:100%}
+  pre .k{color:#7dd3fc} pre .s{color:#86efac} pre .c{color:#7183a3;font-style:italic}
+  .tag{display:inline-flex;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:clamp(.7rem,1.4vw,.95rem);color:var(--ink2)}
+  .tag .pill{background:var(--accent2);color:#fff;font-weight:700;border-radius:999px;padding:3px 12px;letter-spacing:.06em}
+  .tag .pill.lab{background:var(--lab);color:#062b26} .tag .pill.warn{background:var(--warn);color:#3a2a05}
+  .section{background:linear-gradient(135deg,#221643,#0e0b1a)}
+  .section .big{font-size:clamp(3rem,12vw,8rem);font-family:"Archivo";font-weight:800;color:var(--accent2);line-height:.9}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+  @media (max-width:760px){.two{grid-template-columns:1fr}}
+  .bar{position:fixed;left:0;top:0;height:4px;background:var(--accent2);width:0;transition:width .25s;z-index:5}
+  .count{position:fixed;right:16px;bottom:12px;font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--ink2);z-index:5}
+  .nav{position:fixed;inset:auto 0 0 0;display:flex;justify-content:space-between;pointer-events:none;z-index:4}
+  .nav button{pointer-events:auto;background:transparent;border:none;color:transparent;width:22vw;height:100vh;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+  /* Scratch blocks (from kit.css, sized for projection) */
+  .sb-script{display:inline-flex;flex-direction:column;align-items:flex-start;padding:10px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;max-width:100%;overflow-x:auto;vertical-align:top}
+  .sb-block{color:#fff;font-family:"Source Sans 3",system-ui,sans-serif;font-weight:600;font-size:clamp(.78rem,1.45vw,1.08rem);line-height:1.2;padding:6px 13px;border-radius:7px;box-shadow:0 2px 0 rgba(0,0,0,.3);white-space:nowrap;display:flex;align-items:center;gap:6px}
+  .sb-block + .sb-block{margin-top:3px}
+  .sb-hat{border-radius:16px 16px 7px 7px}
+  .sb-nest{margin-left:18px;border-left:4px solid rgba(255,255,255,.14);padding-left:9px}
+  .sb-nest + .sb-block, .sb-block + .sb-nest{margin-top:3px}
+  .sb-input{background:rgba(255,255,255,.95);color:#1e293b;border-radius:100px;padding:1px 9px;font-weight:700;font-size:.88em}
+  .sb-input.sb-text{border-radius:6px}
+  .sb-dropdown{background:rgba(0,0,0,.18);color:#fff;border-radius:100px;padding:1px 20px 1px 9px;font-size:.88em;position:relative}
+  .sb-dropdown::after{content:"▾";position:absolute;right:7px;font-size:.8em}
+  .sb-flag{color:#2e9e3f;font-size:1.05em}
+  .sb-motion{background:#4C97FF}
+  .sb-looks{background:#9966FF}
+  .sb-sound{background:#CF63CF}
+  .sb-events{background:#FFBF00;color:#4d3800}
+  .sb-events .sb-input{color:#4d3800}
+  .sb-control{background:#FFAB19;color:#5c3d00}
+  .sb-control .sb-input{color:#5c3d00}
+  .sb-sensing{background:#5CB1D6}
+  .sb-operators{background:#59C059}
+  .sb-variables{background:#FF8C1A}
+  .sb-myblocks{background:#FF6680}
+  .sb-row{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+  .sb-sm .sb-block{font-size:clamp(.7rem,1.2vw,.92rem);padding:4px 11px}
+  .say{font-style:italic;font-size:clamp(1rem,2vw,1.35rem);border-left:4px solid var(--accent);padding:4px 0 4px 16px;color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 -->
+  <section class="slide on section">
+    <div class="eyebrow">Scratch for Parents · Instructor Kit</div>
+    <h1>Module 4<br>Leveling Up: Bigger Projects</h1>
+    <p class="lead">Clones and My Blocks tonight. Next time, your child joins you to build a real game.</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide">
+    <div class="eyebrow">Two sessions, one game</div>
+    <h2>From parts to Star Catcher</h2>
+    <div class="two">
+      <ul>
+        <li><b>S4 · grown-ups</b></li>
+        <li><b>4.1</b> Clones — one sprite, many copies</li>
+        <li><b>4.2</b> My Blocks — make your own blocks</li>
+      </ul>
+      <ul class="lab">
+        <li><b>S5 · Family Build Night</b></li>
+        <li><b>4.3</b> Plan it &amp; build the core</li>
+        <li><b>4.4</b> Lives, Game Over &amp; launch day</li>
+      </ul>
+    </div>
+    <div class="tag"><span class="pill">NOTE</span> Tonight you learn the parts. Next time you build the machine, with your child as the boss.</div>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide section"><div class="big">4.1</div><h2>Clones</h2><p class="lead">The original is the stamp. Clones are the prints.</p></section>
+
+  <!-- 4 -->
+  <section class="slide">
+    <div class="eyebrow">Two scripts, one Star sprite</div>
+    <h2>The stamp and the prints</h2>
+    <div class="sb-row">
+      <div class="sb-script" aria-label="Original star: when flag clicked, hide, forever: go to random x at y 180, create clone of myself, wait 1 seconds">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-looks">hide</div>
+        <div class="sb-block sb-control">forever</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">180</span></div>
+          <div class="sb-block sb-control">create clone of <span class="sb-dropdown">myself</span></div>
+          <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+        </div>
+      </div>
+      <div class="sb-script" aria-label="Each clone: when I start as a clone, show, repeat until y position less than -170: change y by -5; delete this clone">
+        <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+        <div class="sb-block sb-looks">show</div>
+        <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#59C059;color:#fff;">⟨ y position ⟩ &lt; -170</span></div>
+        <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div></div>
+        <div class="sb-block sb-control">delete this clone</div>
+      </div>
+    </div>
+    <div class="tag"><span class="pill warn">WATCH</span> The clone blocks are at the very bottom of Control. Scroll down.</div>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide">
+    <div class="eyebrow">Four rules · then the lab</div>
+    <h2>Stamp, prints, or both?</h2>
+    <ul>
+      <li>Clones copy everything, <b>even being hidden</b>, so start with <b>show</b></li>
+      <li>Each clone runs <b>its own copy</b> of the clone script</li>
+      <li><b>when ⚑ clicked</b> runs only on the original</li>
+      <li>About <b>300 clones</b> max: every clone must reach <b>delete this clone</b></li>
+    </ul>
+    <div class="tag"><span class="pill lab">LAB · 17 MIN</span> Falling Stars — <code class="k">labs/module-4/l4-1-falling-stars.sb3</code> · save it!</div>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide section"><div class="big">4.2</div><h2>My Blocks</h2><p class="lead">Write the steps once. Give them a name.</p></section>
+
+  <!-- 7 -->
+  <section class="slide">
+    <div class="eyebrow">The recipe card</div>
+    <h2>Define once, call anywhere</h2>
+    <div class="sb-row">
+      <div class="sb-script" aria-label="define jump: repeat 10 change y by 10; repeat 10 change y by -10">
+        <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">jump</span></div>
+        <div class="sb-block sb-control">repeat <span class="sb-input">10</span></div>
+        <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">10</span></div></div>
+        <div class="sb-block sb-control">repeat <span class="sb-input">10</span></div>
+        <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-10</span></div></div>
+      </div>
+      <div class="sb-script" aria-label="when space key pressed: jump">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-dropdown">space</span> key pressed</div>
+        <div class="sb-block sb-myblocks">jump</div>
+      </div>
+      <div class="sb-script" aria-label="when this sprite clicked: jump">
+        <div class="sb-block sb-events sb-hat">when this sprite clicked</div>
+        <div class="sb-block sb-myblocks">jump</div>
+      </div>
+    </div>
+    <div class="tag"><span class="pill warn">WATCH</span> Leave "Run without screen refresh" unticked, or the cat teleports.</div>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide">
+    <div class="eyebrow">Inputs · then the lab</div>
+    <h2>Drag the oval, don't type the word</h2>
+    <div class="two">
+      <div class="sb-script" aria-label="define dance times times: repeat times: turn right 15, wait 0.2, turn left 15, wait 0.2">
+        <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">dance <span class="sb-input" style="background:#FF6680;color:#fff;">times</span> times</span></div>
+        <div class="sb-block sb-control">repeat <span class="sb-input" style="background:#FF6680;color:#fff;">times</span></div>
+        <div class="sb-nest">
+          <div class="sb-block sb-motion">turn ↻ <span class="sb-input">15</span> degrees</div>
+          <div class="sb-block sb-control">wait <span class="sb-input">0.2</span> seconds</div>
+          <div class="sb-block sb-motion">turn ↺ <span class="sb-input">15</span> degrees</div>
+          <div class="sb-block sb-control">wait <span class="sb-input">0.2</span> seconds</div>
+        </div>
+      </div>
+      <ul class="lab">
+        <li><b>jump</b> from two scripts</li>
+        <li><b>dance 3 times</b>, then <b>dance 6 times</b></li>
+        <li><b>reset game</b>: score 0, lives 3, go to x: 0 y: -150, show</li>
+      </ul>
+    </div>
+    <div class="tag"><span class="pill lab">LAB · 15 MIN</span> <code class="k">labs/module-4/l4-2-my-blocks.sb3</code> · My Blocks belong to one sprite</div>
+  </section>
+
+  <!-- 9 -->
+  <section class="slide">
+    <div class="eyebrow">Teach-It role-play · pairs · swap at 3 min</div>
+    <h2>Ask, don't fix</h2>
+    <div class="two">
+      <div>
+        <p class="say">We hid the stamp. The prints are copies of the stamp… so what do the prints look like right now?</p>
+        <p class="say" style="margin-top:14px">Who should do the stamping — the stamp or the prints?</p>
+      </div>
+      <div>
+        <p class="say">I'm going to teach you a new word: zoomba. Now let's teach the computer a new word.</p>
+        <p class="say" style="margin-top:14px">I see those same blocks twice. What would you call what they do?</p>
+      </div>
+    </div>
+    <div class="tag"><span class="pill">KID CARDS</span> Theo, 9 (4.1) · Priya, 11 (4.2) — from your facilitator</div>
+  </section>
+
+  <!-- 10 -->
+  <section class="slide">
+    <div class="eyebrow">Homework before Family Build Night</div>
+    <h2>Fill in the Game Design Card <em>together</em></h2>
+    <ul>
+      <li>Name · player · controls · what else moves</li>
+      <li>How you <b>score</b> · how you <b>lose</b> · what happens at the end</li>
+      <li>The <b>smallest playable version</b></li>
+      <li>A <b>Someday List</b> for the big ideas</li>
+    </ul>
+    <div class="tag"><span class="pill lab">BRING IT</span> Write your child's words, not yours. It's in your workbook after Lesson 4.3.</div>
+  </section>
+
+  <!-- 11 -->
+  <section class="slide section">
+    <div class="eyebrow">Welcome to Family Build Night!</div>
+    <h1>Tonight <span style="color:var(--accent)">you</span> make a game</h1>
+    <ul>
+      <li>The <b>Director</b> decides.</li>
+      <li>The <b>Typist</b> types only when the Director says <b>"your turn."</b></li>
+      <li>The <b>Director</b> presses every green flag.</li>
+    </ul>
+    <div class="tag"><span class="pill lab">SOMEDAY LIST</span> Big idea? Put it on a sticky note. We'll add it once the stars work.</div>
+  </section>
+
+  <!-- 12 -->
+  <section class="slide section"><div class="big">4.3</div><h2>Plan It &amp; Build the Core</h2><p class="lead">Stars fall. You catch them. The score goes up.</p></section>
+
+  <!-- 13 -->
+  <section class="slide">
+    <div class="eyebrow">Green flag after every step</div>
+    <h2>Seven steps to a real game</h2>
+    <div class="two">
+      <ul class="lab">
+        <li><b>1</b> Bowl, Star, Stars backdrop</li>
+        <li><b>2</b> Variables: score, lives</li>
+        <li><b>3</b> reset game on the Bowl</li>
+        <li><b>4</b> Arrow keys move the Bowl</li>
+      </ul>
+      <ul class="lab">
+        <li><b>5</b> Star factory (hidden)</li>
+        <li><b>6</b> Each clone falls</li>
+        <li><b>7</b> Catch it: +1 and a Pop!</li>
+      </ul>
+    </div>
+    <div class="tag"><span class="pill warn">CHECKPOINT</span> Not catching stars yet? Save yours, then load <code class="k">l4-3-star-catcher-part1.sb3</code> from the desktop.</div>
+  </section>
+
+  <!-- 14 -->
+  <section class="slide section"><div class="big">4.4</div><h2>Lives, Game Over &amp; Launch Day</h2><p class="lead">First: can you beat your score from before the break?</p></section>
+
+  <!-- 15 -->
+  <section class="slide">
+    <div class="eyebrow">Steps 8–9 · the star takes the life</div>
+    <h2>Miss three and it's GAME OVER</h2>
+    <div class="sb-row sb-sm">
+      <div class="sb-script" aria-label="Inside the clone's forever loop: if y position less than -170 then change lives by -1, if lives = 0 then broadcast game over, delete this clone">
+        <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span style="background:#4C97FF;border-radius:10px;padding:0 6px;">y position</span> &lt; -170</span> then</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-variables">change <span class="sb-dropdown">lives</span> by <span class="sb-input">-1</span></div>
+          <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span style="background:#FF8C1A;border-radius:10px;padding:0 6px;">lives</span> = 0</span> then</div>
+          <div class="sb-nest"><div class="sb-block sb-events">broadcast <span class="sb-dropdown">game over</span></div></div>
+          <div class="sb-block sb-control">delete this clone</div>
+        </div>
+      </div>
+      <div class="sb-script" aria-label="Game Over sprite: when flag clicked, hide">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-looks">hide</div>
+      </div>
+      <div class="sb-script" aria-label="Game Over sprite: when I receive game over, go to front layer, show, stop all">
+        <div class="sb-block sb-events sb-hat">when I receive <span class="sb-dropdown">game over</span></div>
+        <div class="sb-block sb-looks">go to <span class="sb-dropdown">front</span> layer</div>
+        <div class="sb-block sb-looks">show</div>
+        <div class="sb-block sb-control">stop <span class="sb-dropdown">all</span></div>
+      </div>
+    </div>
+    <div class="tag"><span class="pill warn">WATCH</span> The lives <b>if</b> goes inside the clone's forever; <b>delete this clone</b> goes last inside it.</div>
+  </section>
+
+  <!-- 16 -->
+  <section class="slide">
+    <div class="eyebrow">Mini showcase · move one table left</div>
+    <h2>Launch Day 🚀</h2>
+    <ul class="lab">
+      <li>The Director <b>explains the rules</b>: "Use the arrows. Catch stars. Don't miss three!"</li>
+      <li><b>Hands off.</b> Watch someone else play your game.</li>
+      <li>Players: tell them <b>one thing you liked</b> and <b>one idea</b>.</li>
+    </ul>
+    <div class="tag"><span class="pill">NOT TONIGHT</span> Publishing online waits for Lesson 5.2: Sharing Safely.</div>
+  </section>
+
+  <!-- 17 -->
+  <section class="slide section">
+    <div class="eyebrow">Module 4 complete</div>
+    <h2>From a paper plan to launch day</h2>
+    <ul class="lab">
+      <li>Clones: a hidden stamp makes the prints</li>
+      <li>My Blocks: name it once, use it anywhere</li>
+      <li>Plan small, build the playable core, add one thing at a time</li>
+    </ul>
+    <p class="lead" style="margin-top:10px">What was the hardest part, and how did you get past it? Next: Module 5 — teaching Scratch to your child.</p>
+  </section>
+
+</div>
+
+<div class="count" id="count">1 / 17</div>
+<div class="nav"><button id="prev" aria-label="Previous slide"></button><button id="next" aria-label="Next slide"></button></div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const bar=document.getElementById('bar'), count=document.getElementById('count');
+  let i=0;
+  function show(n){ i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    bar.style.width=((i+1)/slides.length*100)+'%'; count.textContent=(i+1)+' / '+slides.length; }
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1);}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+  });
+  show(0);
+</script>
+</body>
+</html>

@@ -10,29 +10,37 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SKIP = {"script", "style", "nav", "footer", "button"}
+VOID = {"br", "img", "hr", "input", "meta", "link", "source", "wbr"}
 
 
 class Sections(HTMLParser):
     """Collect (id, heading, text) for each <section id=...> in <main>."""
     def __init__(self):
         super().__init__()
-        self.sections, self.cur, self.skip, self.in_h2 = [], None, 0, False
+        self.sections, self.cur, self.in_h2 = [], None, False
+        self.stack = []   # open tags; a truthy entry marks a skipped subtree (script, nav, Mermaid source…)
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
-        if tag in SKIP or (tag == "div" and "mermaid" in (a.get("class") or "")):
-            self.skip += 1
-        elif tag == "section" and a.get("id"):
+        if tag in VOID:
+            return
+        self.stack.append(tag in SKIP or (tag == "div" and "mermaid" in (a.get("class") or "")))
+        if tag == "section" and a.get("id"):
             self.cur = {"id": a["id"], "heading": "", "text": []}
             self.sections.append(self.cur)
         elif tag == "h2" and self.cur is not None:
             self.in_h2 = True
 
     def handle_endtag(self, tag):
-        if tag in SKIP and self.skip:
-            self.skip -= 1
-        elif tag == "h2":
+        if tag in VOID or not self.stack:
+            return
+        self.stack.pop()
+        if tag == "h2":
             self.in_h2 = False
+
+    @property
+    def skip(self):
+        return any(self.stack)
 
     def handle_data(self, data):
         if self.skip or self.cur is None:

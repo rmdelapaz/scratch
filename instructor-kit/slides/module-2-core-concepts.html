@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slides — Module 2</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+  :root{--bg:#0b1220;--ink:#eaf1fb;--ink2:#9fb2cd;--accent:#a98bff;--accent2:#7c4ddf;--lab:#34d3bd;--warn:#fbbf24;--line:#22314c;--code:#0a1526;color-scheme:dark}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;overflow:hidden}
+  .deck{height:100%;width:100%;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 8vw;gap:20px}
+  .slide.on{display:flex}
+  h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.1;text-wrap:balance}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:clamp(.7rem,1.4vw,.95rem);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .slide h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-.02em}
+  .slide h2{font-size:clamp(1.5rem,4.2vw,2.8rem);font-weight:800;letter-spacing:-.01em}
+  .slide p.lead{font-size:clamp(1.05rem,2.4vw,1.5rem);color:var(--ink2);max-width:26ch}
+  ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  ul li{position:relative;padding-left:34px;font-size:clamp(1.05rem,2.3vw,1.6rem)}
+  ul li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:3px;background:var(--accent);transform:rotate(45deg)}
+  ul.lab li::before{background:var(--lab)}
+  code.k{font-family:"JetBrains Mono",monospace;color:#d4c6ff;font-size:.92em}
+  pre{background:var(--code);border:1px solid var(--line);border-radius:12px;padding:22px 26px;font-family:"JetBrains Mono",monospace;font-size:clamp(.85rem,1.9vw,1.3rem);line-height:1.55;overflow:auto;max-width:100%}
+  pre .k{color:#7dd3fc} pre .s{color:#86efac} pre .c{color:#7183a3;font-style:italic}
+  .tag{display:inline-flex;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:clamp(.7rem,1.4vw,.95rem);color:var(--ink2)}
+  .tag .pill{background:var(--accent2);color:#fff;font-weight:700;border-radius:999px;padding:3px 12px;letter-spacing:.06em}
+  .tag .pill.lab{background:var(--lab);color:#062b26} .tag .pill.warn{background:var(--warn);color:#3a2a05}
+  .section{background:linear-gradient(135deg,#1d1640,#0b1220)}
+  .section .big{font-size:clamp(3rem,12vw,8rem);font-family:"Archivo";font-weight:800;color:var(--accent2);line-height:.9}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+  @media (max-width:760px){.two{grid-template-columns:1fr}}
+  .bar{position:fixed;left:0;top:0;height:4px;background:var(--accent2);width:0;transition:width .25s;z-index:5}
+  .count{position:fixed;right:16px;bottom:12px;font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--ink2);z-index:5}
+  .nav{position:fixed;inset:auto 0 0 0;display:flex;justify-content:space-between;pointer-events:none;z-index:4}
+  .nav button{pointer-events:auto;background:transparent;border:none;color:transparent;width:22vw;height:100vh;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+  /* Scratch blocks (from kit.css, sized for projection) */
+  .sb-script{display:inline-flex;flex-direction:column;align-items:flex-start;padding:12px;
+    background:#121a2e;border:1px solid var(--line);border-radius:12px;max-width:100%;overflow-x:auto;vertical-align:top}
+  .sb-block{color:#fff;font-family:"Source Sans 3",system-ui,sans-serif;font-weight:600;font-size:clamp(.85rem,1.7vw,1.25rem);line-height:1.2;
+    padding:8px 14px;border-radius:7px;box-shadow:0 2px 0 rgba(0,0,0,.25);white-space:nowrap;display:flex;align-items:center;gap:6px}
+  .sb-block + .sb-block{margin-top:4px}
+  .sb-hat{border-radius:16px 16px 7px 7px}
+  .sb-nest{margin-left:20px;border-left:5px solid rgba(255,255,255,.12);padding-left:10px}
+  .sb-nest + .sb-block, .sb-block + .sb-nest{margin-top:4px}
+  .sb-input{background:rgba(255,255,255,.95);color:#1e293b;border-radius:100px;padding:1px 9px;font-weight:700;font-size:.85em}
+  .sb-input.sb-text{border-radius:6px}
+  .sb-dropdown{background:rgba(0,0,0,.15);color:#fff;border-radius:100px;padding:1px 20px 1px 9px;font-size:.85em;position:relative}
+  .sb-dropdown::after{content:"▾";position:absolute;right:7px;font-size:.8em}
+  .sb-flag{color:#2e9e3f;font-size:1.05em}
+  .sb-motion{background:#4C97FF}
+  .sb-looks{background:#9966FF}
+  .sb-sound{background:#CF63CF}
+  .sb-events{background:#FFBF00;color:#4d3800}
+  .sb-events .sb-input{color:#4d3800}
+  .sb-control{background:#FFAB19;color:#5c3d00}
+  .sb-control .sb-input{color:#5c3d00}
+  .sb-sensing{background:#5CB1D6}
+  .sb-row{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+  .sb-bool{background:#5CB1D6!important;color:#fff!important}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<div class="deck" id="deck">
+
+  <section class="slide on section">
+    <div class="eyebrow">Scratch for Parents · Instructor Kit</div>
+    <h1>Module 2<br>Core Coding Concepts</h1>
+    <p class="lead">Steps in order, steps that repeat, steps that choose.</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Session S2 · today's map</div>
+    <h2>Three ideas, one cat</h2>
+    <ul>
+      <li><b>2.1</b> Sequences &amp; Timing: a greeting routine</li>
+      <li><b>2.2</b> Loops: a cat that really walks</li>
+      <li><b>2.3</b> Conditionals &amp; Sensing: a cat you drive</li>
+    </ul>
+    <div class="tag"><span class="pill">RHYTHM</span> Unplugged game → demo → build → teach-it role-play</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Unplugged warm-up</div>
+    <h2>Program the Facilitator</h2>
+    <ul class="lab">
+      <li>I'm a robot. I do <b>exactly</b> what you say, one step at a time.</li>
+      <li>Your job: get me <b>out that door</b>.</li>
+      <li>Watch for: does <b>order</b> matter? Is there a <b>shorter way</b> to say "step, step, step…"?</li>
+    </ul>
+    <div class="tag"><span class="pill lab">10 MIN</span> Every "oops" you fix is a bug you debugged.</div>
+  </section>
+
+  <section class="slide section"><div class="big">2.1</div><h2>Sequences &amp; Timing</h2><p class="lead">Computers follow your recipe to the letter.</p></section>
+  <section class="slide">
+    <div class="eyebrow">Order changes everything</div>
+    <h2>Same blocks, different show</h2>
+    <div class="sb-row">
+      <div class="sb-script" aria-label="move then talk">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-motion">move <span class="sb-input">100</span> steps</div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Made it!</span> for <span class="sb-input">2</span> seconds</div>
+      </div>
+      <div class="sb-script" aria-label="talk then move">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Here I go!</span> for <span class="sb-input">2</span> seconds</div>
+        <div class="sb-block sb-motion">move <span class="sb-input">100</span> steps</div>
+      </div>
+    </div>
+    <ul>
+      <li><b>wait (1) seconds</b> (orange Control) = your pacing tool</li>
+    </ul>
+    <div class="tag"><span class="pill warn">WATCH</span> "Frozen" cat? A say-for-2-seconds block is holding, as designed.</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Lab 2.1 · l2-1-greeting-routine.sb3</div>
+    <h2>Build a greeting routine</h2>
+    <div class="two">
+      <div class="sb-script" aria-label="greeting routine">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-motion">go to x: <span class="sb-input">0</span> y: <span class="sb-input">0</span></div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi, I'm Scratchy!</span> for <span class="sb-input">2</span> seconds</div>
+        <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+        <div class="sb-block sb-motion">move <span class="sb-input">120</span> steps</div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Welcome to my world!</span> for <span class="sb-input">2</span> seconds</div>
+      </div>
+      <ul class="lab"><li>Six blocks, top to bottom</li><li>Challenge: add <b>start sound Meow</b> + <b>next costume</b></li><li>Dropped a block by mistake? <b>Ctrl/Cmd + Z</b></li></ul>
+    </div>
+    <div class="tag"><span class="pill lab">10 MIN</span> Then pairs: the robot game.</div>
+  </section>
+
+  <section class="slide section"><div class="big">2.2</div><h2>Loops</h2><p class="lead">Why drag 20 blocks when one will do?</p></section>
+  <section class="slide">
+    <div class="eyebrow">repeat vs forever · inside the C</div>
+    <h2>Only the inside repeats</h2>
+    <div class="two">
+      <div class="sb-row">
+        <div class="sb-script" aria-label="repeat 3 say Ha">
+          <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
+          <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Ha!</span> for <span class="sb-input">1</span> seconds</div></div>
+        </div>
+        <div class="sb-script" aria-label="repeat 3 move then say Done">
+          <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
+          <div class="sb-nest"><div class="sb-block sb-motion">move <span class="sb-input">10</span> steps</div></div>
+          <div class="sb-block sb-looks">say <span class="sb-input sb-text">Done!</span> for <span class="sb-input">1</span> seconds</div>
+        </div>
+      </div>
+      <ul><li><b>repeat</b>: you know how many</li><li><b>forever</b>: until the red stop</li><li>Nothing after forever ever runs</li></ul>
+    </div>
+    <div class="tag"><span class="pill warn">WATCH</span> Trackpad trouble nesting into the C? Grab a mouse.</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Lab 2.2 · l2-2-walking-cat.sb3</div>
+    <h2>A real walking cat</h2>
+    <div class="two">
+      <div class="sb-script" aria-label="walking cat">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-motion">go to x: <span class="sb-input">-200</span> y: <span class="sb-input">0</span></div>
+        <div class="sb-block sb-control">repeat <span class="sb-input">20</span></div>
+        <div class="sb-nest">
+          <div class="sb-block sb-motion">move <span class="sb-input">20</span> steps</div>
+          <div class="sb-block sb-looks">next costume</div>
+          <div class="sb-block sb-control">wait <span class="sb-input">0.1</span> seconds</div>
+        </div>
+      </div>
+      <ul class="lab"><li>Tune the wait: 0.3? 0.05?</li><li>Challenge: <b>forever</b> + <b>if on edge, bounce</b></li><li>Upside down? <b>set rotation style [left-right]</b></li></ul>
+    </div>
+    <div class="tag"><span class="pill lab">12 MIN</span> Then pairs: spot the loop.</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Unplugged · everyday conditionals</div>
+    <h2>"If it's raining, then…"</h2>
+    <ul class="lab">
+      <li>IF the light is red… THEN ___</li>
+      <li>IF the baby is asleep… THEN ___</li>
+      <li>IF it's raining, THEN umbrella, OTHERWISE ___</li>
+      <li>Your turn: two rules from <b>your</b> house</li>
+    </ul>
+    <div class="tag"><span class="pill">THINK</span> How often do you check if it's raining: once, or all day?</div>
+  </section>
+
+  <section class="slide section"><div class="big">2.3</div><h2>Conditionals &amp; Sensing</h2><p class="lead">The moment a project becomes a game.</p></section>
+  <section class="slide">
+    <div class="eyebrow">forever + if = the game loop</div>
+    <h2>Keep asking, react instantly</h2>
+    <div class="sb-row">
+      <div class="sb-script" aria-label="forever if touching mouse-pointer then start sound Meow">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-control">forever</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-control">if <span class="sb-input sb-bool">touching mouse-pointer?</span> then</div>
+          <div class="sb-nest"><div class="sb-block sb-sound">start sound <span class="sb-input sb-text">Meow</span></div></div>
+        </div>
+      </div>
+      <div class="sb-script" aria-label="if key space pressed then say Jump else say Waiting">
+        <div class="sb-block sb-control">if <span class="sb-input sb-bool">key space pressed?</span> then</div>
+        <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Jump!</span> for <span class="sb-input">1</span> seconds</div></div>
+        <div class="sb-block sb-control">else</div>
+        <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Waiting…</span> for <span class="sb-input">1</span> seconds</div></div>
+      </div>
+    </div>
+    <div class="tag"><span class="pill">READ IT ALOUD</span> Hexagon = a true/false question (light-blue Sensing). Else = "otherwise."</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Lab 2.3 · l2-3-arrow-key-cat.sb3</div>
+    <h2>Drive the cat</h2>
+    <div class="two">
+      <div class="sb-script" aria-label="arrow key control script">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-control">forever</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-control">if <span class="sb-input sb-bool">key right arrow pressed?</span> then</div>
+          <div class="sb-nest"><div class="sb-block sb-motion">change x by <span class="sb-input">10</span></div></div>
+          <div class="sb-block sb-control">if <span class="sb-input sb-bool">key left arrow pressed?</span> then</div>
+          <div class="sb-nest"><div class="sb-block sb-motion">change x by <span class="sb-input">-10</span></div></div>
+          <div class="sb-block sb-control">if <span class="sb-input sb-bool">key up arrow pressed?</span> then</div>
+          <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">10</span></div></div>
+          <div class="sb-block sb-control">if <span class="sb-input sb-bool">key down arrow pressed?</span> then</div>
+          <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-10</span></div></div>
+        </div>
+      </div>
+      <ul class="lab"><li>Build one arrow, test, then right-click → <b>Duplicate</b></li><li>Left/right = <b>x</b>; up/down = <b>y</b></li><li>Challenge: if touching edge, say "Ouch!"</li></ul>
+    </div>
+    <div class="tag"><span class="pill warn">WATCH</span> Cat won't move? Click the stage once (keyboard focus).</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Teach-It · pair role-plays</div>
+    <h2>One plays the child, one coaches</h2>
+    <ul>
+      <li><b>2.1 Maya, 6</b>: the robot game. "I only do exactly what you say."</li>
+      <li><b>2.2 Leo, 9</b>: copied 15 blocks. "Is there a block that could do all of those?"</li>
+      <li><b>2.3 Sam, 12</b>: "too old for this." Coach with <b>questions only</b>, hands in your lap.</li>
+    </ul>
+    <div class="tag"><span class="pill">5 MIN EACH</span> Swap roles halfway. Debrief: what helped?</div>
+  </section>
+
+  <section class="slide section">
+    <div class="eyebrow">You now know the big three</div>
+    <h2>Sequence · Loop · Conditional</h2>
+    <ul class="lab">
+      <li>Steps in order, paced with <b>wait</b></li>
+      <li><b>repeat</b> / <b>forever</b>: only the inside repeats</li>
+      <li><b>forever + if</b>: the heart of every game</li>
+    </ul>
+    <p class="lead" style="margin-top:10px">At home: robot game + an if/then round. Next: a story and a real game with a score.</p>
+  </section>
+
+</div>
+
+<div class="count" id="count">1 / 15</div>
+<div class="nav"><button id="prev" aria-label="Previous slide"></button><button id="next" aria-label="Next slide"></button></div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const bar=document.getElementById('bar'), count=document.getElementById('count');
+  let i=0;
+  function show(n){ i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    bar.style.width=((i+1)/slides.length*100)+'%'; count.textContent=(i+1)+' / '+slides.length; }
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1);}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+  });
+  show(0);
+</script>
+</body>
+</html>

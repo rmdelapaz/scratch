@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilitator Guide — Module 1</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Instructor copy —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">contains answers &amp; timing · not for participants</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Scratch for Parents · Facilitator Guide</div>
+    <h1>Module 1 — Getting Started with Scratch</h1>
+    <p class="sub">How to run the first session: settle a room of nervous grown-ups, get everyone into the Scratch editor (account or not), tour it as a game, and end with every parent's cat walking and talking. The goal for Session 1 is confidence, not coverage.</p>
+    <div class="meta-row">
+      <span class="chip"><b>3</b> lessons</span>
+      <span class="chip"><b>2 hrs</b> teaching</span>
+      <span class="chip">Lessons <b>1.1–1.3</b></span>
+      <span class="chip">Level <b>Beginner</b></span>
+      <span class="chip">Maps to <b>Session S1</b></span>
+    </div>
+  </header>
+
+  <div class="sec"><h2>How to Use This Guide</h2><span class="rule"></span></div>
+  <ul class="tick">
+    <li>Same rhythm every lesson: <b>Frame</b> → <b>Learn It</b> (live demo) → <b>Lab</b> → <b>Teach-It role-play</b> → <b>Check</b>. Participants learn it themselves first, then practice coaching a "child" played by their partner.</li>
+    <li><b>Session 1 is mostly about fear.</b> Your participants are adults with zero coding experience; many haven't been a "student" in decades. Every minute you spend making them feel safe here buys you an hour of attention later.</li>
+    <li><b>Demo on the projector, then hands on.</b> Never ask a room to follow along while you talk fast. Show it once, slowly; then they do it while you circulate.</li>
+    <li>The workbook mirrors this guide. Point participants to the matching page before each lab so the steps are in front of them.</li>
+    <li><span style="color:var(--lab);font-weight:600">Teal</span> = hands-on, <span style="color:var(--warn);font-weight:600">amber</span> = watch-outs. <span class="mono" style="font-size:.8rem;color:var(--accent)">SAY:</span> boxes are lines to read aloud, or for participants to use when coaching.</li>
+  </ul>
+
+  <div class="note">
+    <div class="t">The through-line</div>
+    <p>Module 1 runs from "What is this?" to "I made that." Lesson 1.1 gives participants three words (<b>sprite, stage, blocks</b>) and one mindset (<b>"…yet"</b>). Lesson 1.2 gives them a map of the editor. Lesson 1.3 gives them their first working program, a cat that walks and says hello. Each lesson also rehearses one parenting move: the <em>pitch</em> (1.1), the <em>60-second tour</em> (1.2) and <em>coaching with questions</em> (1.3). Every parent should leave with a saved project and a first journal entry.</p>
+  </div>
+
+  <div class="sec"><h2>Before Session 1 — Room &amp; Account Logistics</h2><span class="rule"></span></div>
+  <div class="grid2">
+    <div class="blk"><div class="h">One week before</div>
+      <ul class="tick">
+        <li><b>Test the network from the actual room.</b> Open <code class="inline">scratch.mit.edu</code> → <b>Create</b>. The page loading isn't enough: check that the cat <em>appears</em> and that the sprite library (cat "+" button) shows pictures. School and library filters often allow the site but block its asset servers, so the editor opens with no cat.</li>
+        <li><b>If anything is blocked:</b> ask IT to allow <code class="inline">*.scratch.mit.edu</code>. If they can't do it in time, install the free <b>Scratch app</b> (<code class="inline">scratch.mit.edu/download</code>, for Windows, macOS, ChromeOS and Android tablets) on the room machines. Also bring a USB stick with the installers.</li>
+        <li><b>Send the "before you come" note:</b> bring a laptop and charger if you have one; bring a mouse; bring reading glasses; <b>no account needed</b>, but if you want one, sign up at home and confirm the email first.</li>
+      </ul>
+    </div>
+    <div class="blk"><div class="h">Room kit</div>
+      <ul class="tick">
+        <li><b>USB mice</b>, at least one per three participants. Trackpad drag-and-drop is the #1 physical barrier for adults.</li>
+        <li>Seats in <b>pairs</b> (role-plays start in Lesson 1.1). Put the projector where everyone can see it without twisting round.</li>
+        <li>Printed workbooks, pens, name tents.</li>
+        <li>Printed <b>kid cards</b> for the three role-plays in this guide (cut apart, one set per pair).</li>
+        <li>A sticky note of the Wi-Fi password on every table.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note warn">
+    <div class="t">Accounts — what to tell the room</div>
+    <p><b>Accounts are optional in Module 1.</b> Anyone can click <b>Create</b> and build without signing in. The only difference is saving: without an account, use <b>File → Save to your computer</b> (downloads an <code class="inline">.sb3</code> file); with one, <b>File → Save now</b> saves to the cloud.</p>
+    <p><b>Parent-email confirmation.</b> When someone joins, Scratch sends a confirmation email: to the adult's own address, or to a parent/guardian's address for a child's account. Until the link in that email is clicked, the account can save but <b>can't share or comment</b>. If someone signs up in class, have them confirm on their phone before they leave. Warn that the email sometimes lands in spam or promotions.</p>
+    <p><b>Kid accounts are homework, not class work.</b> Parents create them at home, with their child, using their own email as the guardian address and a username that doesn't reveal the child's real name. Sharing safety is covered properly in Lesson 5.2 (Session 6).</p>
+    <p><b>Organizations:</b> a school or library running many kids' accounts can apply for a free Scratch <b>Teacher Account</b>, which creates student accounts without individual emails. Mention it if a teacher asks, but don't set one up during the session.</p>
+  </div>
+
+  <div class="sec"><h2>Module at a Glance</h2><span class="rule"></span></div>
+  <table class="timing">
+    <thead><tr><th>Segment</th><th>Topic</th><th>Time</th><th>Participants leave able to…</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Warm-up</td><td>Arrival, devices, accounts + "why are you here?" icebreaker</td><td class="t">15m</td><td>Sit at a working machine, know the account options, and name why they came</td></tr>
+      <tr><td class="t">1.1</td><td>What Is Scratch &amp; Why Kids Love It</td><td class="t">25m</td><td>Say what Scratch is in one sentence; pitch it to their child</td></tr>
+      <tr><td class="t">1.2</td><td>A Guided Tour of the Scratch Editor</td><td class="t">33m</td><td>Name the four zones, find any block, save a project</td></tr>
+      <tr><td class="t">Break</td><td>—</td><td class="t">10m</td><td>—</td></tr>
+      <tr><td class="t">1.3</td><td>Your First Project: Make the Cat Move &amp; Talk</td><td class="t">27m</td><td>Build, run, change and fix a three-block program</td></tr>
+      <tr><td class="t">Wrap-up</td><td>Journal + "try at home this week"</td><td class="t">10m</td><td>Leave with a saved project, a journal entry, and one thing to do at home</td></tr>
+      <tr><td class="t"><b>Total</b></td><td></td><td class="t"><b>120m</b></td><td>Alternative format: as the first half of Saturday 1 in a 3 × half-day series, then run S2 after lunch.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec"><h2>Session S1 Run-Sheet</h2><span class="rule"></span></div>
+  <table class="timing">
+    <thead><tr><th>Clock</th><th>Min</th><th>Segment</th><th>What you do</th></tr></thead>
+    <tbody>
+      <tr><td class="t">0:00–0:10</td><td class="t">10</td><td>Arrival &amp; check-in</td><td>Greet at the door; mouse and workbook on every seat. Everyone opens <code class="inline">scratch.mit.edu</code> → <b>Create</b> and checks the cat appears. Go over the account options (see the box above). Housekeeping: restrooms, the break at 0:58, "phones on buzz; step out for family calls whenever you need to."</td></tr>
+      <tr><td class="t">0:10–0:15</td><td class="t">5</td><td>Icebreaker: "Why are you here?"</td><td>Pairs, 90 seconds each: name, child's age, and <em>one</em> answer from the workbook's journal "why page". Then take 3–4 volunteers for the room. You go first.</td></tr>
+      <tr><td class="t">0:15–0:32</td><td class="t">17</td><td>1.1 Learn It</td><td>What Scratch is · sprite / stage / blocks · blocks vs typed code · color = category · "yet"</td></tr>
+      <tr><td class="t">0:32–0:38</td><td class="t">6</td><td>1.1 Teach-It role-play</td><td>"The pitch", with kid card A</td></tr>
+      <tr><td class="t">0:38–0:40</td><td class="t">2</td><td>1.1 Check</td><td>Show of hands on the 4 self-check items</td></tr>
+      <tr><td class="t">0:40–0:58</td><td class="t">18</td><td>1.2 Learn It + lab</td><td>The four zones · "Point and Name" game · green flag / stop · the wrong-sprite trap</td></tr>
+      <tr><td class="t">0:58–1:08</td><td class="t">10</td><td>Break</td><td>Stay at the front for account and home-device questions</td></tr>
+      <tr><td class="t">1:08–1:16</td><td class="t">8</td><td>1.2 Saving &amp; accounts</td><td>Save to your computer + reload it · Save now · kid-account walkthrough (on screen only) · offline app</td></tr>
+      <tr><td class="t">1:16–1:21</td><td class="t">5</td><td>1.2 Teach-It role-play</td><td>"The 60-second tour", with kid card B</td></tr>
+      <tr><td class="t">1:21–1:23</td><td class="t">2</td><td>1.2 Check</td><td>Show of hands</td></tr>
+      <tr><td class="t">1:23–1:31</td><td class="t">8</td><td>1.3 Live demo</td><td>Build the cat script block by block on the projector</td></tr>
+      <tr><td class="t">1:31–1:43</td><td class="t">12</td><td>1.3 Lab</td><td>Build it, then "Make it yours" challenges; save</td></tr>
+      <tr><td class="t">1:43–1:48</td><td class="t">5</td><td>1.3 Teach-It role-play</td><td>"Treasure hunt, not dictation", with kid card C</td></tr>
+      <tr><td class="t">1:48–1:50</td><td class="t">2</td><td>1.3 Check</td><td>Show of hands</td></tr>
+      <tr><td class="t">1:50–2:00</td><td class="t">10</td><td>Wrap-up</td><td>Journal (5m) · 2–3 shares · "try at home this week" · confidence number 1–10 · save and confirm the file is where you think it is</td></tr>
+      <tr><td class="t"></td><td class="t"><b>120</b></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <div class="t">Icebreaker: "Why are you here?" (5 min)</div>
+    <p>This is the Lesson 1.1 "first journal entry" said out loud. It does two jobs: it tells you who's in the room (child ages, hopes, worries), and it lets nervous adults hear that the person next to them is nervous too. In pairs, each person gets 90 seconds to answer <b>one</b> of these:</p>
+    <ul class="tick">
+      <li><b>Why</b> do you want to learn this? (a curious kid, a school requirement, your own itch)</li>
+      <li><b>What</b> do you hope to make with your child? (a game, a dancing birthday card, a story starring the dog)</li>
+      <li><b>What worries</b> you about it? (not techy enough, a frustrated child, screen time)</li>
+    </ul>
+    <p>Model it first with a real, slightly vulnerable answer of your own. When volunteers share worries, <b>write them on a flip-chart and keep it up all series</b>. In Session 6 you'll cross them off together. Don't try to solve screen-time guilt now; say "Great one. We'll come back to that in Module 5."</p>
+  </div>
+
+  <div class="sec"><h2>Lesson Plans</h2><span class="rule"></span></div>
+
+  <!-- 1.1 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">1.1</span><h3>What Is Scratch &amp; Why Kids Love It</h3><span class="dur">25 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">Objectives</div>
+        <ul class="tick">
+          <li>Explain, in one sentence, what Scratch is</li>
+          <li>Describe how block-based coding differs from typed code</li>
+          <li>List three reasons Scratch is great for young learners</li>
+          <li>Introduce Scratch to their child with confidence</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Teaching sequence</div>
+        <ol class="steps">
+          <li><b>The one-sentence definition (3m).</b> Put it on the slide and have the room read it aloud together: <em>"Scratch is a free website where kids make their own games, animations and stories by snapping together colorful blocks instead of typing code."</em> Made by the MIT Media Lab, run by the non-profit Scratch Foundation, available in 70+ languages, no ads, no in-app purchases.</li>
+          <li><b>Three words (3m).</b> Point at the projector: <b>sprite</b> (the cat, a character or object), <b>stage</b> (the screen where the action happens), <b>blocks</b> (the instructions you snap together). "Learn these three and you can already follow along with your child."</li>
+          <li><b>Blocks vs typing, live (5m).</b> Script: <em>"In typed code, one missing colon and nothing works. Watch."</em> Show the Python-style snippet on the slide. Then build <b>when ⚑ clicked → move 10 steps → say Hello! for 2 seconds</b> in about 20 seconds. <em>"Blocks only snap together if they make sense, so there's nothing to misspell."</em> Then try to force a hat block <em>under</em> a move block to show that it won't go.</li>
+          <li><b>Color = category (2m).</b> Blue Motion, purple Looks, pink Sound, gold Events, orange Control, light-blue Sensing, green Operators, dark-orange Variables. "Kids read a program by its colors before they can read the words."</li>
+          <li><b>What kids feel vs what they're learning (2m).</b> "I made the cat dance!" = sequencing; "it keeps spinning forever" = loops; "when I press space it jumps" = events. <em>"Your job isn't to lecture on these terms. Celebrate the moment, and now and then name it."</em></li>
+          <li><b>Growth mindset: "yet" (2m).</b> Look back at the worries flip-chart. <em>"'I'm not a computer person' becomes 'I'm not a computer person <b>yet</b>.' Your kids learn how to handle frustration by watching you hit a bug and shrug."</em></li>
+        </ol>
+      </div>
+      <div class="blk lab"><div class="h">Lab — Click around (folded into the demo)</div>
+        <p style="font-size:.92rem;margin:.2rem 0">No build file. During step 3, participants have the editor open and drag any one block into the middle and click it. That's the whole lab: prove to themselves that nothing breaks.</p>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Circulate for:</b> anyone frozen with hands off the mouse ("Go on, drag anything, you can't break it"); trackpad strugglers (give them a mouse <em>now</em>, not in Lesson 1.3).</p>
+      </div>
+      <div class="blk lab"><div class="h">Teach-It role-play — "The pitch" (6 min)</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Partner A plays the child from the kid card; Partner B makes the pitch. <b>No screen</b>, just a conversation. Swap after 2 minutes, then debrief for 1 minute.</p>
+        <div class="note"><div class="t">Kid card A — Maya, 9</div><p><b>Mood:</b> Skeptical. Just got home, a bit tired. <b>Typical behavior:</b> "Coding is boring, it's just maths." Loves drawing and making up stories about the cat next door. Warms up if the idea is <em>hers</em>.</p></div>
+        <div class="say">"Want to make your own game where <em>you</em> decide the rules? There's a free thing called Scratch where you snap colorful blocks together and a little cat does whatever you tell it. Want to try making it talk?"</div>
+        <div class="say">"You like drawing. In Scratch you can draw your own character and make it move."</div>
+        <div class="say">"I'm learning it too, so I'll probably get stuck. Maybe you can help me."</div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Debrief question:</b> "Kids, which line made you curious? Which one sounded like school?" (It's almost always the word <b>learn</b>. "<b>Make</b> beats <b>learn</b> every time.")</p>
+      </div>
+      <div class="blk warn"><div class="h">Watch-outs</div>
+        <ul class="tick">
+          <li><b>"I'm not a computer person."</b> Answer it head-on: "If you can drag a block, you can help." Never say "this is easy". To someone who is struggling that sounds like "so you must be slow."</li>
+          <li><b>Comparing with faster peers.</b> Some participants already have Scratch-mad kids and will race ahead. Give them the side job of "table helper", which turns speed into something useful for the room.</li>
+          <li><b>Screen-time guilt</b> comes up early. Acknowledge it and park it: making things in Scratch is <em>creative</em> screen time, and Module 5 is about exactly this.</li>
+          <li><b>The community question.</b> "Can strangers message my kid?" Scratch has a moderated community for sharing and comments, but Module 1 never touches it. Everything today stays private. Full coverage in Lesson 5.2.</li>
+          <li><b>ScratchJr confusion.</b> Parents of 5–7-year-olds will ask. ScratchJr is a separate picture-based tablet app, covered in Lesson 5.3. For now, younger kids sit beside the parent.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Check — quiz</div>
+        <p style="font-size:.9rem;margin:.2rem 0">Answers: the biggest advantage of blocks is <b>no syntax or typing errors that break the program</b> (B); a block's color tells you its <b>category</b> (B); the best first-session goal is <b>one "whoa, I made that!" moment</b> (C); <em>new:</em> the three key words are <b>sprite, stage, blocks</b>, and the cat is a <b>sprite</b> (B).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1.2 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">1.2</span><h3>A Guided Tour of the Scratch Editor</h3><span class="dur">33 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">Objectives</div>
+        <ul class="tick">
+          <li>Open the Scratch editor, with or without an account</li>
+          <li>Name the four main areas of the editor and what each does</li>
+          <li>Find any block using the colored category menu</li>
+          <li>Use the green flag and the stop button</li>
+          <li>Save their work, and know how to set up a safe kid account</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Teaching sequence</div>
+        <ol class="steps">
+          <li><b>The map (4m).</b> Show the four-zone slide, then the real editor. <b>1 Blocks Palette</b> (left: pick instructions) → <b>2 Code Area</b> (middle: snap them together) → <b>3 Stage</b> (upper right: watch it happen) → <b>4 Sprite List</b> (lower right: choose who you're coding). <em>"Four zones. Learn these and you've learned the editor."</em></li>
+          <li><b>"Point and Name" game (10m).</b> See the box below. It turns the tour into a game so nobody has to sit through a lecture.</li>
+          <li><b>Green flag &amp; red stop (2m).</b> Flag = run every <b>when ⚑ clicked</b> script. Stop = halt everything. "Your child will press stop a lot, and that's healthy experimenting." Show the small / large / full-screen stage buttons.</li>
+          <li><b>The #1 beginner trap (2m).</b> Live: add the Scratch-library "Dog2" (or any) sprite, select it, and show that the cat's code seems to "vanish". <em>"Code belongs to whichever sprite is selected. Nine times out of ten, 'my code isn't working' means the wrong sprite is selected."</em></li>
+          <li><i>— Break (10m) —</i></li>
+          <li><b>Code / Costumes / Sounds tabs (2m).</b> Click the cat's Costumes tab: two walking costumes. "Switching costumes is how animation works. We'll use that in Module 2."</li>
+          <li><b>Saving, for real (4m).</b> Everyone does <b>File → Save to your computer</b>, finds the <code class="inline">.sb3</code> in Downloads, then <b>File → Load from your computer</b> to reopen it. Anyone signed in also uses <b>File → Save now</b>. Point out that the offline Scratch app uses the same File menu, so files move freely between the app and the website.</li>
+          <li><b>Kid-account walkthrough (2m, on screen only).</b> Click <b>Join Scratch</b> and walk through it without submitting: username that doesn't reveal the real name, password you both can find, birth month/year, <b>parent/guardian email</b>, then the confirmation email. "Do this at home <em>with</em> your child."</li>
+        </ol>
+      </div>
+      <div class="note lab">
+        <div class="t">"Point and Name" game (10 min)</div>
+        <p><b>Round 1: you call, they point (3m).</b> Call out a name and everyone points at the screen, finger on the glass. Go faster as you go: "Stage!" "Blocks palette!" "Green flag!" "Sprite list!" "The Looks category!" "The Costumes tab!" "The stop button!" "Where's the cat's name?" You can see at a glance who's lost, so walk over.</p>
+        <p><b>Round 2: you point, they name (3m).</b> Point at zones on the projector and the room calls out the name. Then point at a colored dot and have them call the category <em>and</em> say one block it holds.</p>
+        <p><b>Round 3: in pairs, find it (4m).</b> Partners take turns challenging each other: "Find a block that plays a sound." "Find the block that starts a program." (gold Events → <b>when ⚑ clicked</b>) "How many colors of dot are there?" (nine, including the pink My Blocks.) Whoever finds it drags it into the code area and clicks it once to see what it does.</p>
+        <p>Keep it light and competitive. When they're done, say: <em>"That's exactly the game you'll play with your child."</em></p>
+      </div>
+      <div class="blk lab"><div class="h">Lab — Save &amp; reload drill</div>
+        <p style="font-size:.92rem;margin:.2rem 0">No build file. Everyone leaves the break with a project saved as a <code class="inline">.sb3</code> (or saved to their account) and has reopened it once. This habit matters more than any block.</p>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Circulate for:</b> files saved somewhere the person can't find again (walk them to Downloads); a shared library computer that wipes files on logout (have them email the <code class="inline">.sb3</code> to themselves); account sign-ups waiting on an unconfirmed email.</p>
+      </div>
+      <div class="blk lab"><div class="h">Teach-It role-play — "The 60-second tour" (5 min)</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Now at the screen. Partner A is the child and holds the mouse; Partner B gives the tour <b>with hands in their lap</b>. Swap once (2m each), then debrief for 1 minute.</p>
+        <div class="note"><div class="t">Kid card B — Leo, 6</div><p><b>Mood:</b> Excited, wiggly. <b>Typical behavior:</b> Can't read most of the block words yet. Clicks everything fast, including the cat, and loses interest in anything longer than a sentence. Loves pressing big buttons.</p></div>
+        <div class="say">"See these four parts? Over here are the blocks. That's your toy box. In the middle is where you build. Up here is where the cat does what you say. And this green flag makes it GO. Want to press it?"</div>
+        <div class="say">"How many colors of block can you find? Let's count the dots."</div>
+        <div class="say">"Can you teach <em>me</em> the four parts?" (older kids)</div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Debrief question:</b> "Coaches, did your hand go for the mouse? How many times?" Name the rule: <b>hands in your lap</b>. Point with a finger, ask a question, let them click. For a 6-year-old, use nicknames ("toy box", "GO button") and skip the vocabulary.</p>
+      </div>
+      <div class="blk warn"><div class="h">Watch-outs</div>
+        <ul class="tick">
+          <li><b>Code on the wrong sprite.</b> This is the classic mistake. From today on, it's the first thing to check whenever something "doesn't work".</li>
+          <li><b>"I deleted everything!"</b> Usually the wrong sprite is selected. Otherwise, right-click the code area → <b>Undo</b>, or <b>Edit → Restore Sprite</b> for a deleted sprite. Show this calmly, once.</li>
+          <li><b>Browser zoom and small text.</b> Adults squint at the tiny block text. Teach <b>Ctrl/⌘ +</b> to zoom the page, and the <b>+ / −</b> magnifier buttons at the bottom-right of the code area.</li>
+          <li><b>The language globe.</b> Someone will click it and switch to another language. It's the globe icon at top-left; switch back from there.</li>
+          <li><b>Home-device questions</b> ("Will this run on our old iPad?"). Scratch runs in any modern browser, but a tablet's touch drag is fiddly and there's no app for iPad (use the browser). Offer to answer at the break so the room keeps moving.</li>
+          <li><b>Mixing up the website and the app.</b> The editor is the same in both. Only saving differs: an account lives on the website; the app saves files.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Check — quiz</div>
+        <p style="font-size:.9rem;margin:.2rem 0">Answers: nothing happens when you run it → <b>the code is on a different sprite from the one selected</b> (B); the button that runs the project is <b>the green flag</b> (A); category colors help you <b>find the kind of block you need in the palette</b> (B); <em>new:</em> without an account, you keep your work with <b>File → Save to your computer</b> (C).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1.3 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">1.3</span><h3>Your First Project: Make the Cat Move &amp; Talk</h3><span class="dur">27 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">Objectives</div>
+        <ul class="tick">
+          <li>Drag, drop and snap blocks together to build a script</li>
+          <li>Start a program with the <b>when ⚑ clicked</b> event</li>
+          <li>Combine Motion and Looks blocks to make a sprite act</li>
+          <li>Test, tweak and troubleshoot a simple project</li>
+          <li>Coach their child through building it themselves</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Teaching sequence — live demo script</div>
+        <ol class="steps">
+          <li><b>Show the destination (1m).</b> Run the finished program from the reference file. <em>"Three blocks. That's a complete, working program. Let's build it one block at a time."</em> Everyone opens a fresh project with the cat <b>selected</b> in the sprite list.</li>
+          <li><b>The hat (1m).</b> <em>"Gold Events. Drag <b>when ⚑ clicked</b> into the middle. It's called a hat because it sits on top and starts everything."</em></li>
+          <li><b>Move (2m).</b> <em>"Blue Motion. Drag <b>move 10 steps</b> under the hat. Watch for the grey shadow, and let go when you see it."</em> Deliberately drop one a little too far away and show that the flag does nothing. Then snap it and click the flag: the cat moves a tiny bit.</li>
+          <li><b>Say (2m).</b> <em>"Purple Looks. Drag <b>say Hello! for 2 seconds</b> under the move block."</em> Click the white oval and type <b>Hello! I'm Scratch Cat</b>. Click the <b>10</b> and change it to <b>50</b>. Run it.</li>
+          <li><b>Sequence (2m).</b> <em>"Scratch runs blocks top to bottom, one after another. That's called a sequence. Swap the order and the cat talks first, then walks."</em> Drag the say block above move and run it to prove it. Then show the reset: add <b>go to x: 0 y: 0</b> right after the hat so the cat stops marching off the edge.</li>
+        </ol>
+        <div class="sb-row">
+          <div class="sb-script" role="img" aria-label="Finished script: when green flag clicked, move 50 steps, say Hello! I'm Scratch Cat for 2 seconds">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-motion">move <span class="sb-input">50</span> steps</div>
+            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello! I'm Scratch Cat</span> for <span class="sb-input">2</span> seconds</div>
+          </div>
+          <div class="sb-script" role="img" aria-label="With reset and walking costume: when green flag clicked, go to x 0 y 0, move 50 steps, next costume, say Hello! I'm Scratch Cat for 2 seconds">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-motion">go to x: <span class="sb-input">0</span> y: <span class="sb-input">0</span></div>
+            <div class="sb-block sb-motion">move <span class="sb-input">50</span> steps</div>
+            <div class="sb-block sb-looks">next costume</div>
+            <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hello! I'm Scratch Cat</span> for <span class="sb-input">2</span> seconds</div>
+          </div>
+        </div>
+      </div>
+      <div class="blk lab"><div class="h">Lab — Make the Cat Move &amp; Talk (12 min)</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Build the three-block script, run it, then pick "Make it yours" challenges from the workbook: change the message to a joke; change 50 to 200; add a second <b>say</b>; <b>start sound Meow</b>; <b>change size by 25</b>; <b>turn ↻ 15 degrees</b>; <b>next costume</b> for a step of walking. Finish by saving. Reference: <code class="inline">labs/module-1/l1-3-cat-move-talk.sb3</code>.</p>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Circulate for:</b> blocks that <em>look</em> attached but aren't (drag the hat and see whether everything comes with it); the cat piling up at the right edge; typing into the wrong oval; a participant who's done in 3 minutes (give them the "walk <em>and</em> look like walking" challenge, then make them a table helper).</p>
+      </div>
+      <div class="blk lab"><div class="h">Teach-It role-play — "Treasure hunt, not dictation" (5 min)</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Partner A is the child and drives; Partner B coaches the build using only <b>questions</b>, with no direct instructions like "drag the move block". Swap once, then debrief for 1 minute.</p>
+        <div class="note"><div class="t">Kid card C — Sam, 11</div><p><b>Mood:</b> Impatient and confident. <b>Typical behavior:</b> "Can we just make a game?" Clicks ahead before you finish talking. Types silly messages and tests the limits. Goes quiet and says "this is dumb" when a block won't snap.</p></div>
+        <div class="say">"We want the cat to walk. Which color do you think has the moving blocks?"</div>
+        <div class="say">"The message is yours. What should the cat say?"</div>
+        <div class="say">"Hmm, it didn't work <em>yet</em>. Interesting! Why do you think it did that?"</div>
+        <div class="say">"Can you make the cat cross the stage and say two things?" (goal, not steps, for age 12+)</div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Debrief question:</b> "What did the coach do when the block wouldn't snap?" Praise any coach who stayed calm and asked a question. Remind them: <b>the words, the number and the green flag belong to the child.</b> End on a high: they show the project to someone.</p>
+      </div>
+      <div class="blk warn"><div class="h">Watch-outs</div>
+        <ul class="tick">
+          <li><b>Trackpad drag.</b> Holding a click while moving is hard on a trackpad, so blocks drop in the wrong place. Hand over a mouse. On a trackpad, suggest a firm press-and-hold, or three-finger drag on a Mac.</li>
+          <li><b>Clicking a block runs it.</b> A single click on any block or stack runs it once, even without the flag. That's handy for testing, but it confuses people who expected the flag only.</li>
+          <li><b>Cat walks off-screen.</b> Every run adds 50 more steps. Fix it by dragging the cat back, or with <b>go to x: 0 y: 0</b> after the hat.</li>
+          <li><b>Upside-down cat</b> after the turn challenge. Set rotation style to left-right in the sprite info (direction). It's covered properly later, so just fix it for them.</li>
+          <li><b>say vs say … for 2 seconds.</b> The plain <b>say</b> block leaves the speech bubble up. The lesson uses the timed version.</li>
+          <li><b>"I'm so slow."</b> Say it plainly to the room: dragging feels clumsy for the first hour for everyone, and by Lesson 2.2 it's automatic.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Check — quiz</div>
+        <p style="font-size:.9rem;margin:.2rem 0">Answers: top of the script → <b>when ⚑ clicked</b> (B); a stack runs <b>top to bottom, in order</b> (A); the cat moves but won't talk → <b>is the "say" block snapped onto the stack?</b> (B); <em>new:</em> swap move and say and the cat <b>talks first, then walks</b> (C).</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sec"><h2>Closing the Session</h2><span class="rule"></span></div>
+  <div class="note lab">
+    <div class="t">S1 wrap-up (10 min)</div>
+    <p><b>Journal (5m).</b> Workbook journal prompts for 1.3, plus the confidence number from 1–10. Tell them to write it down, because they'll compare it in Session 6. <b>Share (2m).</b> Two or three people read one line. <b>Try at home this week (2m):</b> (1) have the "want to make your own game?" chat; (2) let your child build the cat program, hands in your lap; (3) give them a "coder's notebook"; (4) optional: create a kid account together and confirm the email. <b>Last minute:</b> everyone checks their <code class="inline">.sb3</code> is saved where they can find it. Preview S2: "Next time the cat stops doing one thing and starts <em>behaving</em>, with timing, loops and choices."</p>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 1 · Facilitator Guide · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

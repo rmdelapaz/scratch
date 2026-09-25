@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilitator Guide — Module 2</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Instructor copy —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">contains answers &amp; timing · not for participants</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Scratch for Parents · Facilitator Guide</div>
+    <h1>Module 2 — Core Coding Concepts</h1>
+    <p class="sub">How to teach the three ideas under every program ever written: sequences, loops, and conditionals. Each one starts away from the screen, with a game the adults can later play at home. By the end, parents have a walking cat, a cat they drive with the arrow keys, and words for explaining both to a child.</p>
+    <div class="meta-row">
+      <span class="chip"><b>3</b> lessons</span>
+      <span class="chip"><b>~90 min</b> teaching</span>
+      <span class="chip">Lessons <b>2.1–2.3</b></span>
+      <span class="chip">Level <b>Beginner</b></span>
+      <span class="chip">Maps to <b>Session S2</b></span>
+    </div>
+  </header>
+
+  <div class="sec"><h2>How to Use This Guide</h2><span class="rule"></span></div>
+  <ul class="tick">
+    <li>Every lesson follows the same shape: <b>Unplugged</b> (the idea off the screen) → <b>Teach</b> (a short live demo) → <b>Lab</b> (they build it) → <b>Teach-It</b> (pairs role-play teaching a child) → <b>Check</b>. Module 2 leans hardest on the unplugged part. The two off-screen games are what parents take home, so give them their full time.</li>
+    <li><b>Project the editor zoomed in.</b> Use the <b>+</b> magnifier at the bottom-right of the code area (and browser zoom) so the back row can read block text. Tell the room they can zoom too; many will need to and won't ask.</li>
+    <li><b>Have mice ready.</b> Nesting blocks inside the "mouth" of a C-shaped loop or <em>if</em> is the hardest drag in the course so far. On a trackpad it can feel impossible. Put a basket of USB mice on the front table.</li>
+    <li><b>Red stop sign, early and often.</b> Before the first <em>forever</em>, show that the red stop above the stage ends everything. People who are afraid of breaking the computer relax once they've seen it.</li>
+    <li><span style="color:var(--lab);font-weight:600">Teal</span> = hands-on, <span style="color:var(--warn);font-weight:600">amber</span> = watch-outs, <span style="color:var(--accent);font-weight:600">purple</span> = concept / Teach-It.</li>
+  </ul>
+
+  <div class="note">
+    <div class="t">The through-line</div>
+    <p>One cat, three upgrades. It <b>performs</b> a timed greeting (sequence), <b>walks</b> across the stage with moving legs (loop), then <b>obeys the arrow keys</b> (forever + if). Name the pattern at the end of the session: "Steps in order, steps that repeat, steps that choose. Those three ideas are in every app on your phone." The arrow-key script comes back in Module 3's games, so ask everyone to save it.</p>
+  </div>
+
+  <div class="sec"><h2>Module at a Glance</h2><span class="rule"></span></div>
+  <table class="timing">
+    <thead><tr><th>Lesson</th><th>Topic</th><th>Time</th><th>Parents leave able to…</th></tr></thead>
+    <tbody>
+      <tr><td class="t">2.1</td><td>Sequences &amp; Timing</td><td class="t">33m</td><td>Explain that order changes behavior; pace a routine with <em>wait</em>; run the robot game</td></tr>
+      <tr><td class="t">2.2</td><td>Loops — Making Things Repeat</td><td class="t">27m</td><td>Choose <em>repeat</em> vs <em>forever</em>; put the right blocks inside the C; animate a walk</td></tr>
+      <tr><td class="t">2.3</td><td>Conditionals &amp; Sensing</td><td class="t">30m</td><td>Build <em>forever + if</em> checks; read a condition aloud; drive the cat with arrow keys</td></tr>
+      <tr><td class="t">—</td><td>Check-in · break · wrap-up</td><td class="t">30m</td><td>Journal share, 10-min break, quick-check round and "try at home"</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec"><h2>Session S2 Run-Sheet (120 min)</h2><span class="rule"></span></div>
+  <table class="timing">
+    <thead><tr><th>Clock</th><th>Min</th><th>Segment</th><th>What happens</th></tr></thead>
+    <tbody>
+      <tr><td class="t">0:00</td><td class="t">10</td><td>Welcome &amp; check-in</td><td>Phones on silent. Two or three volunteers read one line from their 1.3 journal. Ask: "Did anyone show the moving cat to a child? What did they say?" Make sure everyone can open their S1 project.</td></tr>
+      <tr><td class="t">0:10</td><td class="t">10</td><td><b>Unplugged:</b> Program the Facilitator</td><td>The room gives you instructions to walk to the door. You follow them literally. This brings out sequence, order, and loops (see 2.1).</td></tr>
+      <tr><td class="t">0:20</td><td class="t">8</td><td>2.1 Teach</td><td>Live demo: swap move/say order; knock-knock joke with and without <em>wait</em>.</td></tr>
+      <tr><td class="t">0:28</td><td class="t">10</td><td>2.1 Lab</td><td>Greeting routine (<code class="inline">l2-1-greeting-routine.sb3</code>).</td></tr>
+      <tr><td class="t">0:38</td><td class="t">5</td><td>2.1 Teach-It</td><td>Pairs: the robot game with a kid card.</td></tr>
+      <tr><td class="t">0:43</td><td class="t">10</td><td>2.2 Teach</td><td>The hard way vs the loop way; <em>repeat</em> vs <em>forever</em>; inside vs outside the C.</td></tr>
+      <tr><td class="t">0:53</td><td class="t">10</td><td><b>Break</b></td><td>Leave the projector on the walking-cat script so early returners can start.</td></tr>
+      <tr><td class="t">1:03</td><td class="t">12</td><td>2.2 Lab</td><td>Walking cat (<code class="inline">l2-2-walking-cat.sb3</code>). Fast finishers: the forever-patrol challenge.</td></tr>
+      <tr><td class="t">1:15</td><td class="t">5</td><td>2.2 Teach-It</td><td>Pairs: spot-the-loop + the "is there a block that could do all these?" question.</td></tr>
+      <tr><td class="t">1:20</td><td class="t">5</td><td><b>Unplugged:</b> "If it's raining, then…"</td><td>Everyday-conditionals call-and-response (see 2.3).</td></tr>
+      <tr><td class="t">1:25</td><td class="t">8</td><td>2.3 Teach</td><td>if/then, Sensing hexagons, the forever + if game loop, if/then/else.</td></tr>
+      <tr><td class="t">1:33</td><td class="t">12</td><td>2.3 Lab</td><td>Arrow-key cat (<code class="inline">l2-3-arrow-key-cat.sb3</code>).</td></tr>
+      <tr><td class="t">1:45</td><td class="t">5</td><td>2.3 Teach-It</td><td>Pairs: coach the arrow-key build using questions only.</td></tr>
+      <tr><td class="t">1:50</td><td class="t">10</td><td>Wrap-up</td><td>Quick-check round (hands up A/B/C for 2–3 questions), 3-minute journal, "try at home this week," preview Module 3.</td></tr>
+      <tr><td class="t" colspan="2"><b>120</b></td><td colspan="2" style="color:var(--ink-3)">Saturday half-day format: S1 + S2 run back to back, so this becomes the second half of Day 1. Use the lunch break as the "break" row and keep everything else as written.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note warn">
+    <div class="t">If you're running behind</div>
+    <p>Protect the two unplugged games and the 2.3 lab. They carry the module. Cut in this order: the 2.2 forever-patrol challenge (make it homework), then the 2.1 lab challenge (sound + costume), then trim each Teach-It to a single round. Never cut the wrap-up journal. That habit is how parents keep going between sessions.</p>
+  </div>
+
+  <div class="sec"><h2>Lesson Plans</h2><span class="rule"></span></div>
+
+  <!-- 2.1 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">2.1</span><h3>Sequences &amp; Timing</h3><span class="dur">33 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">Objectives</div>
+        <ul class="tick">
+          <li>Explain a sequence as steps carried out in order, top to bottom, followed literally</li>
+          <li>Show that the same blocks in a different order behave differently</li>
+          <li>Use <b>wait (1) seconds</b> (Control) for pacing, and know that <b>say … for 2 seconds</b> already pauses</li>
+          <li>Run the "robot game" with a child to teach sequencing away from the screen</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Teaching sequence</div>
+        <ol class="steps">
+          <li><b>Unplugged warm-up: Program the Facilitator (10m).</b> Stand on the far side of the room from the door. Say: <span class="say">"I'm a robot. I can only do exactly what you tell me, one instruction at a time. Your job: get me out that door."</span> Follow every instruction <em>literally</em>. "Walk to the door" → "I don't know 'walk to'. Give me steps." "Take a step" → one tiny shuffle. "Turn" → "Which way? How far?" Let them run into your literalness a few times, then write their instructions on the whiteboard as a numbered list. Draw out three things as they come up:
+            <br>• <b>Order matters.</b> Swap "turn right" and "take 3 steps" on the board and walk the new version into a wall.
+            <br>• <b>Precision matters.</b> "Turn" needs a direction and an amount, the way <em>turn 15 degrees</em> has a number in it.
+            <br>• <b>The loop seed.</b> Someone will say "step, step, step, step…" Stop and ask: <span class="say">"Is there a shorter way to say that?"</span> Someone offers "take 8 steps" or "keep walking until you reach the door." Write it down and circle it: "Hold that thought. That's next hour's lesson."
+            <br>End by opening the door and asking what went wrong along the way. Every answer is a bug they found and fixed. That was debugging.</li>
+          <li><b>Order changes everything (4m).</b> Live demo on a fresh project: <em>when green flag clicked → move (100) steps → say (Made it!) for (2) seconds</em>. Run it. Drag the say block above the move. Run again. <span class="say">"Same blocks, different order, different show. The computer did what we said, not what we meant. Nothing broke. It showed us exactly what our recipe says."</span></li>
+          <li><b>The wait block (4m).</b> Open the orange Control category; <em>wait (1) seconds</em> is at the top. Build the knock-knock joke without waits, run it, then add <em>wait (1) seconds</em> between lines. Point at the words "for 2 seconds" on the say block. That block holds by itself. Plain <em>say</em> doesn't. Launch the lab.</li>
+          <li><b>Lab (10m)</b> then <b>Teach-It role-play (5m)</b>, both below.</li>
+        </ol>
+      </div>
+      <div class="blk lab"><div class="h">Lab — Build a Greeting Routine</div>
+        <p style="font-size:.92rem;margin:.2rem 0">A four-beat welcome on the cat: <em>when green flag clicked → go to x: (0) y: (0) → say (Hi, I'm Scratchy!) for (2) seconds → wait (1) seconds → move (120) steps → say (Welcome to my world!) for (2) seconds</em>. Challenge: add <em>start sound (Meow)</em> and <em>next costume</em> between the wait and the move. Reference: <code class="inline">labs/module-2/l2-1-greeting-routine.sb3</code>.</p>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Circulate for:</b> blocks that <em>look</em> stacked but aren't snapped (a gap means that block never runs, so drag it closer until it clicks); a missing <em>go to x: 0 y: 0</em> (the cat walks off the stage after two runs); leftover S1 scripts that also start on the green flag and fight the new one.</p>
+      </div>
+      <div class="blk"><div class="h">Teach-It role-play — the robot game</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Pairs. One partner is the child and one is the parent. Hand the "child" the kid card. The parent asks the child to "program" them to make a peanut-butter sandwich (mime it), then follows each step hilariously literally. Swap roles for the last minute.</p>
+        <div class="note"><div class="t">Kid card — Maya, age 6</div><p>Giggly, loves being in charge. Can't read "seconds" yet. Gives huge instructions ("make the sandwich!") and gets frustrated when the robot doesn't "just know." Wants to press the green flag again and again.</p></div>
+        <div class="say">I'm a robot. I only do exactly what you say, one step at a time. What's my first step?</div>
+        <div class="say">You said "put peanut butter on the bread," so I put the whole jar on the bread! How can we change that step?</div>
+        <div class="say">The computer is a robot just like I was. If it looks wrong, let's read our steps in order and find the mix-up.</div>
+        <p style="font-size:.88rem;color:var(--ink-2);margin:.2rem 0">Debrief (30s): "What did the parent do when Maya got frustrated?" The answer to listen for: <em>laughed with her, then shrank the step</em>. Nobody said she was wrong.</p>
+      </div>
+      <div class="blk warn"><div class="h">Watch-outs</div>
+        <ul class="tick">
+          <li><b>"My cat is frozen!"</b> It's almost always a <em>say … for 2 seconds</em> holding, as designed. Read the block aloud with them. Don't let anyone restart their laptop over it.</li>
+          <li><b>Dragging from the middle of a stack.</b> Grabbing a block takes <em>every block below it</em> along with it. That's a feature, but it surprises adults. Demo it once on purpose.</li>
+          <li><b>Deleting by accident.</b> A block dropped back onto the palette disappears. <b>Ctrl/Cmd + Z</b> (or right-click the code area) brings it back. Say so before the lab.</li>
+          <li><b>Self-comparison.</b> Faster neighbours finish the challenge while others are still snapping block 3. Say out loud: <span class="say">"The challenge is optional. Everyone's goal today is the six blocks."</span></li>
+          <li><b>"The robot game is babyish."</b> Some adults feel silly playing it. Remind them they're rehearsing a game for their kid, not being tested on it. For older kids at home, flip the roles: the child is the robot and catches the adult's bugs.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Check — quiz</div>
+        <p style="font-size:.9rem;margin:.2rem 0">Answers: a sequence = <b>A) steps carried out in order, one after another</b>; <em>wait</em> lives in <b>B) Control (orange)</b>; cat "freezes" 2 seconds = <b>B) a say-for-2-seconds or wait block holding, as designed</b>; <em>say … for 2 seconds</em> vs plain <em>say</em> = <b>B) the timed one pauses the script before the next block; plain say moves straight on</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.2 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">2.2</span><h3>Loops — Making Things Repeat</h3><span class="dur">27 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">Objectives</div>
+        <ul class="tick">
+          <li>Use <b>repeat (10)</b> and <b>forever</b> (Control) and choose between them</li>
+          <li>Explain that only the blocks inside the C-shape repeat</li>
+          <li>Build a walking animation with <em>move</em> + <em>next costume</em> + <em>wait</em> inside a loop</li>
+          <li>Stop a runaway <em>forever</em> with the red stop sign</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Teaching sequence</div>
+        <ol class="steps">
+          <li><b>The hard way first (3m).</b> Point back at the circled line from the warm-up ("step, step, step…"). Drag in four <em>move (10) steps</em> blocks and pretend to reach for sixteen more. Groan. Then swap in <em>repeat (20)</em> with one move inside. <span class="say">"One loop replaces twenty blocks. And changing 20 to 100 takes one second."</span></li>
+          <li><b>repeat vs forever (4m).</b> Both are orange Control blocks shaped like a C. <em>repeat</em> = you know how many times. <em>forever</em> = until someone presses stop. Put a <em>say (Done!)</em> block <em>after</em> a forever loop and show that it never runs. Now press the red stop sign. <span class="say">"Forever means forever. The stop sign is always your way out, and you can't break anything with it."</span></li>
+          <li><b>Inside vs outside the C (3m).</b> Build the two comparison scripts: <em>repeat 3 { say Ha! }</em> vs <em>repeat 3 { move 10 } then say Done!</em>. Run both. Point at the mouth of the C: "Inside repeats, outside runs once." Show how to drop a block into the mouth so the C stretches to fit. Launch the lab.</li>
+          <li><b>Lab (12m, after the break)</b> then <b>Teach-It role-play (5m)</b>.</li>
+        </ol>
+      </div>
+      <div class="blk lab"><div class="h">Lab — A Real Walking Cat</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><em>when green flag clicked → go to x: (-200) y: (0) → repeat (20) { move (20) steps · next costume · wait (0.1) seconds }</em>. The cat strides across with moving legs. Let them tune the wait to feel speed change. Challenge: wrap the walk in <em>forever</em>, add <em>if on edge, bounce</em> and <em>set rotation style [left-right]</em> so it patrols back and forth. Reference: <code class="inline">labs/module-2/l2-2-walking-cat.sb3</code>.</p>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Circulate for:</b> <em>next costume</em> or <em>wait</em> sitting <em>below</em> the loop instead of inside it (the cat glides with frozen legs, or zooms across in a blink); a missing <em>go to</em> start position; upside-down cats in the challenge (rotation style).</p>
+      </div>
+      <div class="blk"><div class="h">Teach-It role-play — spot the loop</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Round 1 (2m): the "parent" plays spot-the-loop out loud. Round 2 (3m): the "child" has built a script with the same block copied many times. The parent may only ask questions and must not fix anything.</p>
+        <div class="note"><div class="t">Kid card — Leo, age 9</div><p>Proud of his work. He's copy-pasted <em>move (10) steps</em> fifteen times and it works. He bristles at "that's wrong." He likes counting and races.</p></div>
+        <div class="say">Brushing teeth is a loop: scrub, scrub, scrub, repeat until clean! Can you think of another loop?</div>
+        <div class="say">That works! Is there a block that could do all of those for us at once, so we don't have to make so many?</div>
+        <div class="say">Is your block inside the mouth of the C, or outside?</div>
+        <p style="font-size:.88rem;color:var(--ink-2);margin:.2rem 0">Debrief: "Did Leo find the loop himself?" If the parent ended up dragging the block in for him, that's normal for a first try. Name it kindly and point ahead to 5.1, "The Art of Not Taking Over."</p>
+      </div>
+      <div class="blk warn"><div class="h">Watch-outs</div>
+        <ul class="tick">
+          <li><b>Trackpad nesting.</b> Dropping a block <em>into</em> the C mouth is a precise drag. If someone's block keeps landing below the loop, hand them a mouse before they conclude they're "not a computer person."</li>
+          <li><b>Fear of forever.</b> Some adults won't press the green flag on a forever script. Stand beside them, click the red stop together once, and move on.</li>
+          <li><b>"The cat zooms across in a blink."</b> The <em>wait</em> is missing or sits outside the loop. Put <em>wait (0.1)</em> inside and try 0.2 or 0.3.</li>
+          <li><b>Upside-down cat</b> (challenge). By default a sprite rotates all the way around. Add <em>set rotation style [left-right]</em> at the top.</li>
+          <li><b>Break-time drift.</b> Phones come out at the break and family logistics take over. Restart the lab on time with the script already on the projector. Latecomers can copy it without asking.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Check — quiz</div>
+        <p style="font-size:.9rem;margin:.2rem 0">Answers: blink exactly 5 times = <b>A) repeat 5</b>; only <b>B) the blocks inside the C-shape</b> repeat; a block after <em>forever</em> will <b>A) never run</b>; cat zooms across in a blink = <b>A) add or lengthen a wait inside the loop</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.3 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">2.3</span><h3>Conditionals &amp; Sensing — Making Choices</h3><span class="dur">30 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">Objectives</div>
+        <ul class="tick">
+          <li>Use <b>if &lt;&gt; then</b> and <b>if &lt;&gt; then / else</b> (Control) to make decisions</li>
+          <li>Read the hexagon Sensing blocks: <em>touching (mouse-pointer)?</em>, <em>key (space) pressed?</em>, <em>mouse down?</em>, <em>touching color?</em></li>
+          <li>Combine <b>forever + if</b>, the "game loop," so a check runs constantly</li>
+          <li>Teach if/then through everyday rules and a drive-the-cat game</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Teaching sequence</div>
+        <ol class="steps">
+          <li><b>Unplugged: "If it's raining, then…" (5m).</b> Call-and-response. You say the "if," the room shouts the "then": <span class="say">"IF it's raining…" (umbrella!) "IF the light is red…" (stop!) "IF the baby is asleep…" (whisper!)</span> Then add "otherwise": "IF it's raining, THEN umbrella, OTHERWISE…" (sunglasses!). Now each pair writes two rules from their own household on a sticky note: one if/then and one if/then/otherwise. Collect three or four and read them aloud. Finish with the point that matters: <span class="say">"Your kids already live by conditionals. Bedtime, screen time, dessert. Today we just give them the block."</span> One follow-up question sets up the game loop: "How often do you check whether it's raining? Once in the morning, or all day?" The answer is <em>all day, constantly</em>. Hold on to that.</li>
+          <li><b>if/then + Sensing (3m).</b> Show <em>if &lt;touching (edge)?&gt; then { say (Ouch!) for (1) seconds }</em>. Point at the pointy hexagon slot: it only accepts a true/false question, and those come mostly from the light-blue Sensing category. Read it aloud as a sentence.</li>
+          <li><b>forever + if, the game loop (3m).</b> Build <em>when green flag clicked → forever { if &lt;touching (mouse-pointer)?&gt; then { start sound (Meow) } }</em>. Hover over the cat and it meows. Now pull the if <em>out</em> of the forever and run it again: it checks once at the start and never again. <span class="say">"Remember the rain question? All day. That's what forever does. It keeps asking."</span></li>
+          <li><b>if/then/else (2m).</b> Two mouths: top when true, bottom when false. Read it aloud with "otherwise." Kids find that friendlier than "else." Launch the lab.</li>
+          <li><b>Lab (12m)</b> then <b>Teach-It role-play (5m)</b>.</li>
+        </ol>
+      </div>
+      <div class="blk lab"><div class="h">Lab — Drive the Cat with Arrow Keys</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><em>when green flag clicked → forever { four if/then blocks: key (right arrow) pressed? → change x by (10); left arrow → change x by (-10); up arrow → change y by (10); down arrow → change y by (-10) }</em>. Suggest building one arrow, testing it, then right-click → <b>Duplicate</b> the if block and change the dropdown and number. Challenge: "if touching (edge)?, say Ouch!" Reference: <code class="inline">labs/module-2/l2-3-arrow-key-cat.sb3</code>.</p>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0"><b>Circulate for:</b> an <em>if</em> sitting below the forever instead of inside it; <em>change x</em> vs <em>change y</em> mixed up (left/right = x, up/down = y); the "wrong" sign on a number (−10 is left/down); stage without keyboard focus (they have to click the stage once).</p>
+      </div>
+      <div class="blk"><div class="h">Teach-It role-play — coach with questions</div>
+        <p style="font-size:.92rem;margin:.2rem 0">The "child" drives the mouse and keyboard. The "parent" keeps their hands in their lap and may only ask questions. Goal: one working arrow key.</p>
+        <div class="note"><div class="t">Kid card — Sam, age 12</div><p>A little too cool for this: "Scratch is for little kids." Wants to make "a real game." Types fast, skips reading, and gets annoyed when the cat doesn't move. He's forgotten to click the stage.</p></div>
+        <div class="say">How does the cat know you pressed a key? Which color has "senses"?</div>
+        <div class="say">We want it to check all the time, not just once. What loop does that?</div>
+        <div class="say">This forever-plus-if pattern is how real games work. Every game you play is checking things like this many times a second.</div>
+        <p style="font-size:.88rem;color:var(--ink-2);margin:.2rem 0">Debrief: "What made Sam lean in?" Usually it's hearing it connected to real games. For younger children (5–7), the lesson says a single if is plenty: "if touching the pointer, meow."</p>
+      </div>
+      <div class="blk warn"><div class="h">Watch-outs</div>
+        <ul class="tick">
+          <li><b>"My cat won't move!"</b> Check keyboard focus first: <b>click the stage once</b>. Next, check the nesting: change → inside if → inside forever.</li>
+          <li><b>Laptop arrow keys.</b> Some small keyboards have tiny or shared arrow keys (Fn). If someone struggles to press them, let them pick other keys in the dropdown (for example w/a/s/d).</li>
+          <li><b>Three levels of nesting.</b> Blocks inside blocks inside blocks is the first real "hold it in your head" moment, and it feels clumsy for almost everyone. Say so before they start. Praise the persistence out loud.</li>
+          <li><b>Home-device questions</b> ("will this work on my kid's Chromebook / iPad?"). Park them on a "parking lot" sheet and answer at the break or after the session. Don't derail the lab.</li>
+          <li><b>Operators temptation.</b> A keen participant asks about <em>and</em>/<em>or</em>. That's great for 12+, but save it. Operators arrive naturally in Lesson 3.2.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Check — quiz</div>
+        <p style="font-size:.9rem;margin:.2rem 0">Answers: what fits an "if ___ then" slot = <b>A) a hexagon (true/false) block</b>; games wrap ifs in forever <b>B) so the condition is checked constantly, not just once</b>; if/then/else is best when <b>B) you want one thing if true and a different thing otherwise</b>; correct script but cat won't move = <b>A) click the stage so it has keyboard focus</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sec"><h2>Closing the Module</h2><span class="rule"></span></div>
+  <div class="note lab">
+    <div class="t">Module 2 wrap-up (10 min)</div>
+    <p><b>Quick-check round (3m):</b> read 2–3 quiz questions and have the room vote A/B/C with fingers. <b>Journal (4m):</b> the 2.3 "progress &amp; feelings" prompt: how confident do you feel compared with Session 1? <b>Try at home this week (2m):</b> play the robot game and a round of if/then rules at dinner or in the car, and show your child the arrow-key cat. Let them change the numbers. <b>Preview (1m):</b> "Sequences, loops, conditionals: you now know the three ideas under all programming. Next session we put them together into a story and a real game with a score."</p>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 2 · Facilitator Guide · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

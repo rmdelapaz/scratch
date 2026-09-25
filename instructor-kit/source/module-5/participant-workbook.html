@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workbook — Module 5</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Participant workbook —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">write in it · bring it to every session</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Scratch for Parents Workbook · Module 5</div>
+    <h1>Teaching Scratch to Your Child</h1>
+    <p class="sub">You can code in Scratch now. This module is about the harder craft: helping your child learn without doing it for them, sharing safely, coaching a very young coder in ScratchJr, and choosing what comes next. It ends with a showcase and your graduation.</p>
+    <div class="meta-row">
+      <span class="chip">Lessons <b>5.1–5.4</b></span>
+      <span class="chip"><b>4</b> lessons · Session S6</span>
+      <span class="chip">Name: ____________________</span>
+    </div>
+  </header>
+
+  <div class="note">
+    <div class="t">How to use this workbook</div>
+    <p>Each lesson has <b>Key Ideas</b>, a <b>Worked Example</b>, a <b>Your Turn</b> activity, <b>Teach-It Practice</b> (the say-this lines you'll rehearse in pairs), a <b>Self-Check</b>, a <b>Learning Journal</b> and <b>Notes</b>. There's very little coding here. The practice is in the role-plays and the journal, and nobody is grading your parenting.</p>
+  </div>
+
+  <div class="sec"><h2>Module Project Tracker</h2><span class="rule"></span></div>
+  <ul class="tick lab">
+    <li>☐ <b>5.1</b> — coached a partner through a bug with my hands off the mouse</li>
+    <li>☐ <b>5.2</b> — completed the safety checklist and drafted our family sharing rules</li>
+    <li>☐ <b>5.3</b> — built "My Pet Says Hi" in ScratchJr (or planned it on paper)</li>
+    <li>☐ <b>5.4</b> — named our family's next project and where it leads on the road map</li>
+    <li>☐ <b>S6</b> — final journal entry written; showcase and graduation 🎓</li>
+  </ul>
+
+  <!-- 5.1 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">5.1</span><h3>The Art of Not Taking Over</h3><span class="dur">20 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Give the <b>least help that unblocks</b> your child, then fade it</li>
+          <li>Ask a guiding question instead of giving the answer</li>
+          <li>Praise effort and strategy, and teach the word <b>"yet"</b></li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li><b>The struggle is the lesson.</b> Fixing it for them quietly says "this is too hard for you."</li>
+          <li><b>Scaffolding</b> is help that fades: <em>I lead → they lead, I prompt → they do it, I watch → they teach me or a sibling.</em></li>
+          <li><b>Question toolkit:</b> What do you want to happen? What happened instead? Which block is in charge of that? What could we try to test it? Where have we seen this before?</li>
+          <li><b>Praise the process</b> ("You tested one block at a time"), not the talent ("You're a genius"). Add <b>"…yet"</b> to every "I can't."</li>
+          <li><b>Productive struggle:</b> bored → raise the bar; frustrated → shrink the step; boiling over → take a break (a real strategy, not a failure).</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — coaching a real bug</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Your child's Star Catcher stars fall, but the score never goes up. Here's the star clone's script:</p>
+        <div class="sb-script">
+          <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+          <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">170</span></div>
+          <div class="sb-block sb-looks">show</div>
+          <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Bowl?</span> then</div>
+          <div class="sb-nest">
+            <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+            <div class="sb-block sb-control">delete this clone</div>
+          </div>
+          <div class="sb-block sb-control">forever</div>
+          <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div></div>
+        </div>
+        <p style="font-size:.92rem;margin:.4rem 0">You see it instantly: the <em>if touching Bowl?</em> check runs <b>once</b>, at the top of the screen, before the star falls. It belongs inside the <em>forever</em>. Don't say that. Climb the help ladder one rung at a time and stop as soon as your child is moving again:</p>
+        <ol class="steps">
+          <li>"What do you want to happen when a star hits the bowl?"</li>
+          <li>"Which script is in charge of the score?"</li>
+          <li>"Let's read the star's script out loud. When does it check for the bowl?"</li>
+          <li>"What would happen if the check were inside the loop?"</li>
+          <li><em>Last resort:</em> point to the <em>if</em> block and the <em>forever</em> block. They still do the dragging.</li>
+        </ol>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Hands-off coaching rounds</div>
+        <ol class="steps lab">
+          <li>Pair up. The "child" draws a kid card and holds the mouse. The coach may not touch the mouse or trackpad.</li>
+          <li>Open the buggy project your facilitator provides. Coach for 4 minutes using only questions and process praise.</li>
+          <li>Swap roles, draw a new card, repeat.</li>
+        </ol>
+      </div>
+      <div class="blk"><div class="h">Teach-It practice</div>
+        <div class="say">What do you want to happen? … And what happened instead?</div>
+        <div class="say">How about I'm your hands and you're the boss? I'll only drag the blocks you point to.</div>
+        <div class="say">You kept trying different things until it worked.</div>
+        <div class="say">You can't make the stars fall… yet. Let's just get one to move first.</div>
+        <p style="font-size:.92rem;margin:.4rem 0">Role-play reflection: the moment I most wanted to grab the mouse was… and what I said instead was…</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">What is "scaffolding" in teaching?</div>
+          <div class="opts"><div class="opt">A) Giving just enough help, then fading it as they gain confidence</div><div class="opt">B) Doing the hard parts for them</div><div class="opt">C) Leaving them entirely on their own</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">Which praise best builds resilience?</div>
+          <div class="opts"><div class="opt">A) "You're so smart!"</div><div class="opt">B) "You kept trying different things until it worked."</div><div class="opt">C) "See, that was easy!"</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">Your child is bored because the task is too easy. Best response?</div>
+          <div class="opts"><div class="opt">A) Offer a new challenge ("What if it kept score?")</div><div class="opt">B) Make it simpler</div><div class="opt">C) Stop the session</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">After a frustrating stretch, your child pushes the laptop at you: "Just do it for me!" Best response?</div>
+          <div class="opts"><div class="opt">A) Take the mouse and fix it quickly so they don't get upset</div><div class="opt">B) Offer to be their "hands" while they're the "boss": you drag only the blocks they name</div><div class="opt">C) Tell them to figure it out alone and leave the room</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Key concepts:</b> In your own words, what is scaffolding? What's the difference between praising the process and praising the person?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>What clicked:</b> Think back to Family Build Night. Was there a moment you grabbed the mouse? What might a guiding question have sounded like instead?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Ideas to try:</b> Two toolkit questions and one "yet" sentence for your sticky note on the computer:</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- 5.2 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">5.2</span><h3>Sharing Safely &amp; the Scratch Community</h3><span class="dur">18 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Set up a Scratch account the safe way (or decide not to need one yet)</li>
+          <li>Explain "private until shared" and the community's protections</li>
+          <li>Write family sharing rules and have the "before sharing" talk</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li>Scratch is run by a <b>non-profit</b>, collects minimal data, and asks for a <b>parent/guardian email</b>.</li>
+          <li>Projects are <b>private until your child clicks Share</b>. Sharing is a choice, and an account is optional (File → Save to your computer works without one).</li>
+          <li>The community is <b>moderated</b>, has short kid-readable <b>Community Guidelines</b>, and has <b>no private messaging</b>.</li>
+          <li>Comment controls: <b>Report</b>, turn comments <b>off</b>, <b>delete</b> comments, report and block unwanted users.</li>
+          <li>It's still the internet: shared device or common room, regular check-ins, and "show me any mean comment."</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — one family's sharing rules</div>
+        <div class="note lab">
+          <div class="t">The Rivera family Scratch rules</div>
+          <p>1. Our username never has a real name, school, or birth year. <b>(StarChef_77 ✓ · LeoMartinez2014 ✗)</b></p>
+          <p>2. No real name, address, school, phone number, or photos of us in projects or comments.</p>
+          <p>3. Scratch lives on the family laptop in the kitchen.</p>
+          <p>4. If anyone is ever unkind, we show a grown-up and handle it together: read it, report it, delete it.</p>
+          <p>5. When we remix, we say thank you in the Notes and Credits.</p>
+          <p style="margin-top:.4rem"><em>Signed: Leo ______ &nbsp; Mom ______</em></p>
+        </div>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Safety checklist &amp; family rules</div>
+        <ol class="steps lab">
+          <li>Tick through the one-page <b>Scratch Safety Checklist</b> your facilitator hands out.</li>
+          <li>Draft three or four rules for your family below. At home, rewrite them with your child and both sign.</li>
+        </ol>
+        <div class="write tall"></div>
+      </div>
+      <div class="blk"><div class="h">Teach-It practice</div>
+        <div class="say">When we share your project, other kids around the world can see it and leave comments. Most are super nice! Our family rules: we never share private stuff, and if anyone's ever unkind, you show me and we handle it together. Deal?</div>
+        <div class="say">Let's write a comment together: kind, curious, specific. "I love how the dragon breathes fire — how did you do that?"</div>
+        <div class="say">Not everyone will love everything we make, and that's okay. We learn from helpful notes and ignore unkind ones.</div>
+        <p style="font-size:.92rem;margin:.4rem 0">Role-play reflection: my scenario card was… and the line that worked best was…</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">When is a child's Scratch project visible to the public?</div>
+          <div class="opts"><div class="opt">A) As soon as it's created</div><div class="opt">B) Only after they click "Share"</div><div class="opt">C) The moment it's saved</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">Which is TRUE about the Scratch community?</div>
+          <div class="opts"><div class="opt">A) It's moderated, has guidelines, and has no private DMs</div><div class="opt">B) Kids can privately message anyone</div><div class="opt">C) Comments can't be controlled</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">Best safety habit for a young sharer?</div>
+          <div class="opts"><div class="opt">A) Use their real full name as the username</div><div class="opt">B) A non-identifying username, your email on the account, and regular check-ins</div><div class="opt">C) Share everything publicly with no supervision</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">Your child gets an unkind comment on a shared project. What's the best first response?</div>
+          <div class="opts"><div class="opt">A) Delete their account so it never happens again</div><div class="opt">B) Reply to the commenter and defend the project</div><div class="opt">C) Read it together, report it, delete it, and talk about how it felt</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>What clicked:</b> Which fact most eased (or sharpened) a worry you had: no private messaging, turning comments off, the Report button?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Progress &amp; feelings:</b> How do you feel about your child being part of an online community: excited, nervous, both? Which project would be a good first one to share together?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- 5.3 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">5.3</span><h3>ScratchJr — Coding for Ages 5–7</h3><span class="dur">17 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Explain how ScratchJr differs from Scratch</li>
+          <li>Build a tap-to-talk pet with a recorded sound</li>
+          <li>Run a short, playful session with a 4–7-year-old</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li>ScratchJr is a <b>free tablet app</b> (iPad, Android, Chromebook) with <b>picture blocks</b>, so no reading is needed.</li>
+          <li>Blocks snap into a <b>row read left to right</b>, like a sentence. Motion numbers count <b>grid squares</b>.</li>
+          <li>Six colors: <b>yellow</b> Triggering · <b>blue</b> Motion · <b>purple</b> Looks · <b>green</b> Sound · <b>orange</b> Control · <b>red</b> End. (Not the same as Scratch: trust the pictures.)</li>
+          <li>Up to <b>four pages</b> per project, turned with <b>Go to Page</b>. Projects stay on the device: no online community.</li>
+          <li>Coach in <b>10–15-minute</b> sessions: story first, you read, they tap, lots of silly sounds.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — "My Pet Says Hi"</div>
+        <div role="img" aria-label="ScratchJr script read left to right: Start on Tap, Hop 2, Grow 2, My Sound, Shrink 2, End" style="display:flex;flex-wrap:wrap;gap:4px;padding:8px;margin:10px 0;background:var(--surface-2);border:1px solid var(--line);border-radius:9px;-webkit-print-color-adjust:exact;print-color-adjust:exact">
+          <span style="background:#F7C948;color:#3d2e00;border-radius:14px 6px 6px 14px;padding:7px 11px;font-weight:700;font-size:.82rem">👆 Start on Tap</span>
+          <span style="background:#2F6FD6;color:#fff;border-radius:6px;padding:7px 11px;font-weight:700;font-size:.82rem">⤴️ Hop 2</span>
+          <span style="background:#7A4FD6;color:#fff;border-radius:6px;padding:7px 11px;font-weight:700;font-size:.82rem">🔼 Grow 2</span>
+          <span style="background:#2E7D32;color:#fff;border-radius:6px;padding:7px 11px;font-weight:700;font-size:.82rem">🎙️ My Sound</span>
+          <span style="background:#7A4FD6;color:#fff;border-radius:6px;padding:7px 11px;font-weight:700;font-size:.82rem">🔽 Shrink 2</span>
+          <span style="background:#C62828;color:#fff;border-radius:6px 14px 14px 6px;padding:7px 11px;font-weight:700;font-size:.82rem">⏹️ End</span>
+        </div>
+        <p style="font-size:.92rem;margin:.2rem 0">Tap the pet: it hops, puffs up, says hi in a real voice, and settles back down. <b>Shrink</b> matters: without it the pet grows bigger with every tap. It's the same thinking as your first Scratch cat (an event, a sequence, a sound), laid out sideways. A rough Scratch equivalent stacks top to bottom (a "hop" becomes up, then back down):</p>
+        <div class="sb-script">
+          <div class="sb-block sb-events sb-hat">when this sprite clicked</div>
+          <div class="sb-block sb-motion">change y by <span class="sb-input">20</span></div>
+          <div class="sb-block sb-looks">change size by <span class="sb-input">20</span></div>
+          <div class="sb-block sb-sound">play sound <span class="sb-dropdown">recording1</span> until done</div>
+          <div class="sb-block sb-looks">change size by <span class="sb-input">-20</span></div>
+          <div class="sb-block sb-motion">change y by <span class="sb-input">-20</span></div>
+        </div>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Build it on a tablet</div>
+        <ol class="steps lab">
+          <li>Open ScratchJr → house icon → big <b>+</b>. Tap <b>+</b> beside the characters and pick an animal.</li>
+          <li>Yellow: drag <b>Start on Tap</b>. Blue: snap <b>Hop</b> on its right. Purple: <b>Grow</b>. Tap the pet to test.</li>
+          <li>Green: tap the microphone, record "Hi! I'm your pet!", accept, and snap the sound on.</li>
+          <li>Purple: <b>Shrink</b>. Red: <b>End</b>. Tap the pet.</li>
+          <li><em>Stretch:</em> add page 2 (+ in the page strip) and end page 1's green-flag script with <b>Go to Page</b>.</li>
+        </ol>
+        <p style="font-size:.92rem;margin:.3rem 0">No tablet? Plan a tiny two-page story your child could tell, one block per box:</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Teach-It practice</div>
+        <div class="say">Tell me a tiny story first. Who's in it, and what happens?</div>
+        <div class="say">Which picture looks like jumping? … Yes, the hop! What comes next?</div>
+        <div class="say">Whoa, that's not what we planned! What should we try?</div>
+        <div class="say">You made the puppy do that! You told it what to do, and it listened. That's what coders do.</div>
+        <p style="font-size:.92rem;margin:.4rem 0">Role-play reflection: keeping my hands in my lap with a "five-year-old" felt… The thing that made them laugh was…</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">How are blocks arranged in a ScratchJr script?</div>
+          <div class="opts"><div class="opt">A) Stacked top to bottom</div><div class="opt">B) In a horizontal row, read left to right</div><div class="opt">C) In any order; the app sorts them</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">You want the pet to react when your child touches it on the screen. Which block starts the script?</div>
+          <div class="opts"><div class="opt">A) Start on Bump</div><div class="opt">B) Start on Green Flag</div><div class="opt">C) Start on Tap</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">What's the best length for a ScratchJr session with a 5-year-old?</div>
+          <div class="opts"><div class="opt">A) About 10–15 minutes, ending while it's still fun</div><div class="opt">B) An hour, so they finish the whole project</div><div class="opt">C) Until they get frustrated, so they learn persistence</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">Every time your child taps the pet, it ends up bigger than before. What's the fix?</div>
+          <div class="opts"><div class="opt">A) Add a Shrink block (same number) or Reset Size before End</div><div class="opt">B) Swap Start on Tap for Start on Green Flag</div><div class="opt">C) Add a second Grow block</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Key concepts:</b> How is a ScratchJr row like a Scratch stack, and how is it different?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Questions &amp; confusion:</b> What tripped you up (the mismatched colors, pages, the microphone)? Check it before your child sits down.</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- 5.4 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">5.4</span><h3>What Comes After Scratch</h3><span class="dur">10 min</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Place ScratchJr, Scratch, hardware and text code on one road map</li>
+          <li>Name what's still ahead inside Scratch (lists, extensions)</li>
+          <li>Explain why the jump to Python is mostly syntax</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li><b>Road map:</b> ScratchJr (5–7) → Scratch (8+) → deeper Scratch, physical computing, or text languages. There's no single correct path.</li>
+          <li><b>Still ahead in Scratch:</b> <b>lists</b> (Variables → Make a List) and <b>extensions</b> via the <b>Add Extension</b> button, bottom-left: Pen, Music, Text to Speech, Video Sensing, micro:bit.</li>
+          <li><b>Beyond the screen:</b> Makey Makey (7+), LEGO robotics (8+), micro:bit (9+).</li>
+          <li><b>The concepts transfer.</b> Sequences, loops, conditionals, variables and events exist in every language.</li>
+          <li><b>Momentum comes from interest.</b> One more exciting project beats rushing to the next tool.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — the same loop, two ways</div>
+        <div class="sb-row">
+          <div class="sb-script">
+            <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
+            <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi!</span> for <span class="sb-input">1</span> seconds</div></div>
+          </div>
+          <pre class="code"><span class="k">for</span> i <span class="k">in</span> range(3):
+    print(<span class="s">"Hi!"</span>)</pre>
+        </div>
+        <p style="font-size:.92rem;margin:.2rem 0">Same loop, same count, same message. Your child already owns the idea; Python just types it.</p>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Our next project</div>
+        <p style="font-size:.92rem;margin:.2rem 0">What is your child excited to make next? Which branch of the road map does it lead to (deeper Scratch, hardware, text code)?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Teach-It practice</div>
+        <div class="say">Look how far you've come. Remember when we made the cat just say hello? Now look what you can build. What do you want to make next?</div>
+        <div class="say">Could you add a second level?</div>
+        <div class="say">I don't know either. Let's find out together.</div>
+        <p style="font-size:.92rem;margin:.4rem 0">Role-play reflection: how would you answer "Scratch is for babies, I want to do real coding"?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">Your child built Star Catcher with clones and a My Block. What's a natural next thing to explore inside Scratch?</div>
+          <div class="opts"><div class="opt">A) Nothing — they've learned all of Scratch</div><div class="opt">B) Lists, or an extension like Pen or Music</div><div class="opt">C) They must switch to Python right away</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">Why is moving from Scratch to Python not as scary as it sounds?</div>
+          <div class="opts"><div class="opt">A) The core concepts transfer; only the syntax changes</div><div class="opt">B) Python and Scratch are exactly the same</div><div class="opt">C) You start completely from zero</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">Best way to keep a child's coding momentum?</div>
+          <div class="opts"><div class="opt">A) Push them to the next tool as fast as possible</div><div class="opt">B) Follow their interests with another project they're excited about</div><div class="opt">C) Require an hour of coding daily</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">Where do you find the Pen and Music blocks in the Scratch editor?</div>
+          <div class="opts"><div class="opt">A) In the Looks category</div><div class="opt">B) Behind the Add Extension button, bottom-left of the editor</div><div class="opt">C) They're only in the paid version</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal — your final entry</div>
+        <p style="font-size:.92rem;margin:.2rem 0">First, flip back to your very first entry from Lesson 1.1 and read it slowly.</p>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Your why:</b> What did you hope to create with your child back then? Did you make it, or something even better?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Your worry:</b> How big does it feel now? Cross it off if you've earned it.</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Your number:</b> In Lesson 1.1 you rated your confidence 1–10. What's your number today? What moved it most?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Progress &amp; feelings:</b> How has coding together changed your relationship with your child, or how they handle hard things?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- What Next handout -->
+  <div class="sec"><h2>What Next — Take-Home Page</h2><span class="rule"></span></div>
+  <div class="note lab">
+    <div class="t">Trusted next resources (from Lesson 5.4)</div>
+    <p><b>Scratch Ideas &amp; Tutorials</b> — scratch.mit.edu/ideas · official, step-by-step, free</p>
+    <p><b>Scratch offline app</b> — scratch.mit.edu/download · code without internet (Windows, Mac, ChromeOS, Android)</p>
+    <p><b>ScratchJr</b> — for ages 5–7 (Lesson 5.3)</p>
+    <p><b>micro:bit</b> — microbit.org · physical computing that works with Scratch</p>
+    <p><b>Code.org</b> — free courses across ages, block-based and beyond</p>
+    <p><b>Scratch for Parents</b> — scratch.mit.edu/parents · privacy and safety, straight from the source</p>
+    <p><b>Your local library or school</b> — often runs free coding clubs. Ask!</p>
+  </div>
+  <table class="timing">
+    <thead><tr><th>If your child loves…</th><th>Try next</th></tr></thead>
+    <tbody>
+      <tr><td>Drawing &amp; animation</td><td>The paint editor for original costumes; the <b>Pen</b> extension for a drawing toy</td></tr>
+      <tr><td>Music &amp; noise</td><td>The <b>Music</b> extension (instruments, drums); a Makey Makey banana piano</td></tr>
+      <tr><td>Games</td><td>A second level, a boss, or a <b>high-score list</b> (Variables → Make a List)</td></tr>
+      <tr><td>Building things</td><td>micro:bit with the Scratch micro:bit extension; LEGO robotics</td></tr>
+      <tr><td>"Real" typed code</td><td>A first Python loop; tools that show blocks and text side by side</td></tr>
+      <tr><td>Teaching others</td><td>ScratchJr with a younger sibling or cousin; a school or library coding club</td></tr>
+    </tbody>
+  </table>
+  <div class="blk"><div class="h">Our family's next project</div>
+    <div class="write"></div>
+  </div>
+  <div class="note">
+    <div class="t">Keep being the buddy</div>
+    <p>Even as they surpass you (they will!), your curiosity and your "show me what you made" stay just as valuable. You don't need to keep up with the code to keep cheering the coder. Every lesson stays online at rays-scratch.netlify.app to revisit whenever you like.</p>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 5 · Participant Workbook · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

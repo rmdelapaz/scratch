@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workbook — Module 4</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../kit.css">
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="lbl">Participant workbook —</span>
+  <button type="button" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <span class="hint">write in it · bring it to every session</span>
+</div>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="kit-eyebrow">Scratch for Parents Workbook · Module 4</div>
+    <h1>Leveling Up: Bigger Projects</h1>
+    <p class="sub">In Session 4 you learn two power tools: clones (one sprite, many copies) and My Blocks (your own custom blocks). In Session 5, Family Build Night, you and your child use them to plan and build Star Catcher together, then show it off.</p>
+    <div class="meta-row">
+      <span class="chip">Lessons <b>4.1–4.4</b></span>
+      <span class="chip"><b>4</b> lessons · <b>2</b> sessions</span>
+      <span class="chip">Name: ____________________</span>
+    </div>
+  </header>
+
+  <div class="note">
+    <div class="t">How to use this workbook</div>
+    <p>Each lesson has <b>Key Ideas</b>, a <b>Worked Example</b> drawn in Scratch blocks, <b>Your Turn</b> build steps, <b>Teach-It Practice</b>, a <b>Self-Check</b>, and a <b>Learning Journal</b>. The <b>Game Design Card</b> (page after Lesson 4.3's notes) is your homework between S4 and S5: fill it in <em>with your child</em>, and bring it to Family Build Night.</p>
+  </div>
+
+  <div class="sec"><h2>Module Project Tracker</h2><span class="rule"></span></div>
+  <ul class="tick lab">
+    <li>☐ <b>4.1</b> (S4) — a sky of falling star clones, saved for the capstone</li>
+    <li>☐ <b>4.2</b> (S4) — custom blocks: <b>jump</b>, <b>dance (times)</b>, and <b>reset game</b></li>
+    <li>☐ <b>Homework</b> — Game Design Card filled in with my child</li>
+    <li>☐ <b>4.3</b> (S5) — Star Catcher Part 1: bowl moves, stars fall, catching scores</li>
+    <li>☐ <b>4.4</b> (S5) — Star Catcher finished: lives, GAME OVER, launch day</li>
+  </ul>
+
+  <!-- 4.1 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">4.1</span><h3>Clones — One Sprite, Many Copies</h3><span class="dur">40 min · S4</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Explain a clone using the rubber-stamp idea</li>
+          <li>Use <b>create clone of myself</b>, <b>when I start as a clone</b>, and <b>delete this clone</b></li>
+          <li>Build a hidden "stamp" that keeps making clones, and clean them up</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li>A <b>clone</b> is a copy of a sprite made <em>while the program runs</em>. The original is the <b>stamp</b>; clones are the <b>prints</b>.</li>
+          <li>All three clone blocks are at the <b>very bottom of Control</b>.</li>
+          <li>A clone copies everything, <b>including being hidden</b>. Start every clone script with <b>show</b>.</li>
+          <li><b>when ⚑ clicked</b> runs only on the original. <b>when I start as a clone</b> runs only on each new clone.</li>
+          <li>Scratch allows about <b>300 clones</b>. Every clone needs a way to reach <b>delete this clone</b>.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — the stamp and the prints</div>
+        <div class="sb-row">
+          <div class="sb-script" aria-label="Original star: when flag clicked, hide, forever: go to x pick random -220 to 220, y 180; create clone of myself; wait 1 seconds">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-looks">hide</div>
+            <div class="sb-block sb-control">forever</div>
+            <div class="sb-nest">
+              <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">180</span></div>
+              <div class="sb-block sb-control">create clone of <span class="sb-dropdown">myself</span></div>
+              <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+            </div>
+          </div>
+          <div class="sb-script" aria-label="Each clone: when I start as a clone, show, repeat until y position less than -170: change y by -5; delete this clone">
+            <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+            <div class="sb-block sb-looks">show</div>
+            <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#59C059;color:#fff;">⟨ y position ⟩ &lt; -170</span></div>
+            <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div></div>
+            <div class="sb-block sb-control">delete this clone</div>
+          </div>
+        </div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0">Left: the stamp (the original, hidden). Right: what every print does. Both scripts go on the <b>same Star sprite</b>.</p>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Falling Stars</div>
+        <ol class="steps lab">
+          <li>New project. Hover the cat-face button (bottom right) → <b>Choose a Sprite</b> → <b>Star</b>. Pick a dark backdrop (Stars or Night City).</li>
+          <li>Build the stamp script. Click the green flag: <b>nothing appears, and that's correct</b>.</li>
+          <li>Build the clone script. The <b>&lt;</b> block is in green Operators; drop blue <b>y position</b> (bottom of Motion) in its left slot and type -170.</li>
+          <li>Click the flag: stars rain down. Press stop: they all vanish. <b>Save it.</b></li>
+          <li>Make it yours: <b>wait 0.3</b> for a meteor shower; <b>turn ↻ 5 degrees</b> inside the repeat; <b>set size to (pick random 30 to 100) %</b> before <b>show</b>.</li>
+        </ol>
+      </div>
+      <div class="blk lab"><div class="h">Teach-It practice — Stamps and prints</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Make it physical first (a rubber stamp, or a cookie cutter and play-dough). When the stamp script shows nothing, <b>don't fix it</b>. Ask:</p>
+        <p class="say">Where's the stamp now? In my hand, not on the paper. What should each print do after it lands?</p>
+        <p class="say">We hid the stamp. The prints are copies of the stamp… so what do the prints look like right now?</p>
+        <p class="say">Who should do the stamping — the stamp or the prints?</p>
+        <p style="font-size:.92rem;margin:.4rem 0 .2rem">After the role-play: which question helped your "child" find the bug? What did you want to do instead?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">The original star is hidden. You make clones, but none appear on the stage. Why?</div>
+          <div class="opts"><div class="opt">A) Scratch only allows one clone at a time</div><div class="opt">B) Clones start hidden, just like the original, and need a "show" block</div><div class="opt">C) Clones must be switched on in the settings</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">Which script runs only on the new clones, never on the original?</div>
+          <div class="opts"><div class="opt">A) when ⚑ clicked</div><div class="opt">B) when I receive [message]</div><div class="opt">C) when I start as a clone</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">Your falling-stars game gets slower and slower, then new stars stop appearing. The most likely cause?</div>
+          <div class="opts"><div class="opt">A) Clones are never deleted, so they pile up toward the 300 limit</div><div class="opt">B) The "wait 1 seconds" block is too long</div><div class="opt">C) The backdrop is too dark</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">A child puts <b>create clone of myself</b> inside the <b>when I start as a clone</b> script. What happens?</div>
+          <div class="opts"><div class="opt">A) Exactly one extra clone appears</div><div class="opt">B) Every clone makes another clone, flooding the screen until Scratch's limit</div><div class="opt">C) Scratch shows an error message</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Key concepts:</b> In your own words, how is a clone different from the original? What does each clone block do?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Questions &amp; confusion:</b> Which rule still feels slippery: what clones copy, which hats run where, or why deleting matters?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Ideas to try:</b> What else comes in crowds (fish, balloons, falling pizza)? Sketch the stamp and the prints.</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- 4.2 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">4.2</span><h3>My Blocks — Make Your Own Blocks</h3><span class="dur">35 min · S4</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Make a custom block with <b>My Blocks → Make a Block</b></li>
+          <li>Put its steps under the pink <b>define</b> hat and use it from any script in that sprite</li>
+          <li>Add an input so one block can behave differently each time</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li>A custom block is a <b>recipe card</b>: write the steps once, give them a name, then use the name. Programmers call it a <b>function</b>.</li>
+          <li>Whatever is snapped under <b>define</b> is what the block does. Using the block is called <b>calling</b> it.</li>
+          <li>An <b>input</b> is a slot you fill each time (e.g. how many times to dance). To use it, <b>drag the pink oval out of the define hat</b>; don't type the word.</li>
+          <li>Leave <b>Run without screen refresh</b> unticked, or animations happen instantly.</li>
+          <li>My Blocks belong to <b>one sprite</b>. Drag the define script onto another sprite to copy it.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — define once, call anywhere</div>
+        <div class="sb-row">
+          <div class="sb-script" aria-label="define jump: repeat 10 change y by 10; repeat 10 change y by -10">
+            <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">jump</span></div>
+            <div class="sb-block sb-control">repeat <span class="sb-input">10</span></div>
+            <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">10</span></div></div>
+            <div class="sb-block sb-control">repeat <span class="sb-input">10</span></div>
+            <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-10</span></div></div>
+          </div>
+          <div class="sb-script" aria-label="when space key pressed: jump">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-dropdown">space</span> key pressed</div>
+            <div class="sb-block sb-myblocks">jump</div>
+          </div>
+          <div class="sb-script" aria-label="define dance times times: repeat times: turn right 15, wait 0.2, turn left 15, wait 0.2">
+            <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">dance <span class="sb-input" style="background:#FF6680;color:#fff;">times</span> times</span></div>
+            <div class="sb-block sb-control">repeat <span class="sb-input" style="background:#FF6680;color:#fff;">times</span></div>
+            <div class="sb-nest">
+              <div class="sb-block sb-motion">turn ↻ <span class="sb-input">15</span> degrees</div>
+              <div class="sb-block sb-control">wait <span class="sb-input">0.2</span> seconds</div>
+              <div class="sb-block sb-motion">turn ↺ <span class="sb-input">15</span> degrees</div>
+              <div class="sb-block sb-control">wait <span class="sb-input">0.2</span> seconds</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Three custom blocks</div>
+        <ol class="steps lab">
+          <li>New project with the cat. <b>My Blocks</b> → <b>Make a Block</b> → type <b>jump</b> → OK. Build the define script above. Call it from <b>when space key pressed</b> <em>and</em> <b>when this sprite clicked</b>.</li>
+          <li>Make <b>dance</b>: <b>Add an input (number or text)</b> named <b>times</b>, then <b>Add a label</b> "times." Drag the <b>times</b> oval into the repeat. Call <b>dance 3 times</b>, <b>say Ta-da! for 1 seconds</b>, <b>dance 6 times</b> under the green flag.</li>
+          <li>Make variables <b>score</b> and <b>lives</b> (For all sprites). Then build <b>reset game</b>:</li>
+        </ol>
+        <div class="sb-row">
+          <div class="sb-script" aria-label="define reset game: set score to 0, set lives to 3, go to x 0 y -150, show">
+            <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">reset game</span></div>
+            <div class="sb-block sb-variables">set <span class="sb-dropdown">score</span> to <span class="sb-input">0</span></div>
+            <div class="sb-block sb-variables">set <span class="sb-dropdown">lives</span> to <span class="sb-input">3</span></div>
+            <div class="sb-block sb-motion">go to x: <span class="sb-input">0</span> y: <span class="sb-input">-150</span></div>
+            <div class="sb-block sb-looks">show</div>
+          </div>
+          <div class="sb-script" aria-label="when flag clicked: reset game">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-myblocks">reset game</div>
+          </div>
+        </div>
+        <p style="font-size:.9rem;color:var(--ink-2);margin:.2rem 0">You'll use <b>reset game</b> again at Family Build Night. Challenge: <b>jump (height)</b>, using <b>(height / 10)</b> going up.</p>
+      </div>
+      <div class="blk lab"><div class="h">Teach-It practice — New words for the computer</div>
+        <p style="font-size:.92rem;margin:.2rem 0">Start away from the screen with a "new word" game, then let your child find the repeated blocks and name the block themselves (silly names stick).</p>
+        <p class="say">I'm going to teach you a new word: zoomba. Zoomba means clap twice and spin around. Ready? Zoomba! Now let's teach the computer a new word.</p>
+        <p class="say">I see those same blocks twice. What would you call what they do? What if that were one block with that name?</p>
+        <p class="say">The value lives in this pink oval. Drag it out and see what happens.</p>
+        <p style="font-size:.92rem;margin:.4rem 0 .2rem">After the role-play: how did you respond to "copying is faster, why bother?"</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">Where do you put the steps that your new block should do?</div>
+          <div class="opts"><div class="opt">A) Under the "when ⚑ clicked" block</div><div class="opt">B) Under the pink "define" block</div><div class="opt">C) Inside the Make a Block dialog</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">Your jump block works, but the cat seems to teleport instead of hopping. The likely cause?</div>
+          <div class="opts"><div class="opt">A) "Run without screen refresh" is ticked</div><div class="opt">B) The block has no input</div><div class="opt">C) It's in the wrong sprite</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">You made a reset game block on the Bowl sprite, but it's missing when you click the Star sprite. Why?</div>
+          <div class="opts"><div class="opt">A) The project wasn't saved</div><div class="opt">B) Block names can't have spaces</div><div class="opt">C) Custom blocks belong to the sprite they were made in</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">In <b>define dance (times) times</b>, how do you make the repeat use the number you pass in?</div>
+          <div class="opts"><div class="opt">A) Type the word "times" into the repeat slot</div><div class="opt">B) Drag the pink times oval out of the define hat into the repeat slot</div><div class="opt">C) Make a new variable named times</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Key concepts:</b> What's the difference between the define block and using the block? What does an input add?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Ideas to try:</b> Name one block you wish Scratch had. Could you build it now?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Progress &amp; feelings:</b> How does it feel to make blocks instead of just using them?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- 4.3 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">4.3</span><h3>Capstone Part 1 — Plan It &amp; Build the Core</h3><span class="dur">S5 · Family Build Night</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Plan a game on paper with a Game Design Card and a Someday List</li>
+          <li>Build the <b>smallest playable version</b> of Star Catcher first</li>
+          <li>Share the work: your child <b>directs</b>, you <b>type</b> only when asked</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li><b>Plan before you code:</b> brainstorm → pick ONE small idea → sketch it → list the pieces → build the smallest playable version → add one thing at a time.</li>
+          <li>Big ideas that arrive mid-build go on the <b>Someday List</b>. "Not now" becomes "yes, later."</li>
+          <li>The original Star is a <b>hidden factory</b>: it makes clones; only clones fall and get caught.</li>
+          <li><b>Test after every step.</b> If it worked a minute ago, the bug is in the last thing you added.</li>
+          <li>A clone that is deleted stops its sound, so a caught star <b>hides</b>, <b>plays its sound until done</b>, then deletes itself.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — the three core scripts</div>
+        <div class="sb-row">
+          <div class="sb-script" aria-label="Bowl: when flag clicked, reset game, forever: if right arrow pressed change x by 10; if left arrow pressed change x by -10">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-myblocks">reset game</div>
+            <div class="sb-block sb-control">forever</div>
+            <div class="sb-nest">
+              <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key <span class="sb-dropdown">right arrow</span> pressed?</span> then</div>
+              <div class="sb-nest"><div class="sb-block sb-motion">change x by <span class="sb-input">10</span></div></div>
+              <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">key <span class="sb-dropdown">left arrow</span> pressed?</span> then</div>
+              <div class="sb-nest"><div class="sb-block sb-motion">change x by <span class="sb-input">-10</span></div></div>
+            </div>
+          </div>
+          <div class="sb-script" aria-label="Star original: when flag clicked, hide, wait 1, forever: create clone of myself, wait pick random 0.5 to 1.5 seconds">
+            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+            <div class="sb-block sb-looks">hide</div>
+            <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+            <div class="sb-block sb-control">forever</div>
+            <div class="sb-nest">
+              <div class="sb-block sb-control">create clone of <span class="sb-dropdown">myself</span></div>
+              <div class="sb-block sb-control">wait <span class="sb-input" style="background:#59C059;color:#fff;">pick random 0.5 to 1.5</span> seconds</div>
+            </div>
+          </div>
+          <div class="sb-script" aria-label="Star clone: when I start as a clone, go to random x at y 170, show, forever: change y by -5, if touching Bowl then change score by 1, hide, play sound Pop until done, delete this clone">
+            <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+            <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">170</span></div>
+            <div class="sb-block sb-looks">show</div>
+            <div class="sb-block sb-control">forever</div>
+            <div class="sb-nest">
+              <div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div>
+              <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching <span class="sb-dropdown">Bowl</span>?</span> then</div>
+              <div class="sb-nest">
+                <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+                <div class="sb-block sb-looks">hide</div>
+                <div class="sb-block sb-sound">play sound <span class="sb-dropdown">Pop</span> until done</div>
+                <div class="sb-block sb-control">delete this clone</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Star Catcher Part 1 (press the flag after every step)</div>
+        <ol class="steps lab">
+          <li><b>Set the stage.</b> New project; right-click the cat → delete. Add <b>Bowl</b> and <b>Star</b>; pick the <b>Stars</b> backdrop.</li>
+          <li><b>Variables.</b> Make <b>score</b> and <b>lives</b>, <b>For all sprites</b>, both ticked to show on stage.</li>
+          <li><b>reset game on the Bowl.</b> Same block as Lesson 4.2 (set score 0, lives 3, go to x: 0 y: -150, show).</li>
+          <li><b>Move the Bowl.</b> The left script above. Click the stage, then tap the arrows.</li>
+          <li><b>Star factory.</b> The middle script, on the Star.</li>
+          <li><b>Each clone falls.</b> The right script <em>without</em> the <b>if</b>. Stars pile up at the bottom for now; that's expected.</li>
+          <li><b>Catch the stars.</b> Add the <b>Pop</b> sound (Sounds tab), then the <b>if touching Bowl?</b> part.</li>
+        </ol>
+        <div class="note lab"><div class="t">✅ Checkpoint — smallest playable version</div><p>Stars fall, you catch them, the score climbs. That's a real game. Type <b>Star Catcher</b> in the title box and save (<b>File → Save now</b>, or <b>File → Save to your computer</b>). Behind? That's normal with a child driving; your facilitator has a rescue file so you can carry on together.</p></div>
+      </div>
+      <div class="blk lab"><div class="h">Teach-It practice — Build it as a team</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Director</b> (your child): decides what the game is, how it looks, and whether a change is right; presses every green flag. <b>Typist</b> (you): takes the mouse for fiddly bits, only when asked, narrates, and hands it straight back.</p>
+        <p class="say">You're the boss of this game. I'm your helper. Tell me what you want, and if you want me to do a tricky part, just say "your turn."</p>
+        <p class="say">Okay, I'm finding "change x by"... it's in blue Motion... snapping it inside the if. Your turn — press the flag and see if it worked!</p>
+        <p class="say">Ooh, rocks too? Someday List! We'll add it once the stars work.</p>
+        <p style="font-size:.92rem;margin:.4rem 0 .2rem">After Family Build Night: when was it hardest not to grab the mouse? What did you do instead?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">Your child has a huge game idea with dragons, shops, and ten levels. What's the best first move?</div>
+          <div class="opts"><div class="opt">A) Open Scratch and start building all of it</div><div class="opt">B) Pick the ONE main action, build that small version first, and save the rest for a "someday list"</div><div class="opt">C) Tell them it's too hard and pick your own idea</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">In Star Catcher, why does the original Star sprite hide and only make clones?</div>
+          <div class="opts"><div class="opt">A) It's a hidden "factory." Only the clones fall and get caught</div><div class="opt">B) Hidden sprites run faster</div><div class="opt">C) So it can't make clones by accident</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">When a star is caught, why does the clone hide and <b>play sound Pop until done</b> before <b>delete this clone</b>?</div>
+          <div class="opts"><div class="opt">A) The score only counts after a sound plays</div><div class="opt">B) Deleting a clone cuts off its sound, so it hides and finishes the pop first</div><div class="opt">C) Scratch can't delete a visible clone</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">Which is the "smallest playable version" of Star Catcher?</div>
+          <div class="opts"><div class="opt">A) Bowl moves + stars fall + catching adds score</div><div class="opt">B) The whole game, including lives and GAME OVER</div><div class="opt">C) The design card and sketch, before any code</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Key concepts:</b> What is the "smallest playable version," and why build it first?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>What clicked:</b> Which piece fit better than expected: the star factory, <b>reset game</b>, or the catch check?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Progress &amp; feelings:</b> How did director/typist feel for you? For your child?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <!-- GAME DESIGN CARD (printable, blank) -->
+  <section class="lesson" style="break-before:page">
+    <div class="lesson-head"><span class="lcode">Card</span><h3>🃏 Game Design Card</h3><span class="dur">homework · fill in with your child</span></div>
+    <div class="lesson-body">
+      <p style="font-size:.92rem;margin:.2rem 0">Fill this in <b>together</b>, in <b>your child's words</b>. Treat it as a conversation, not a form: "If you explained this game to your friend, what would you say?" Bring it to Family Build Night.</p>
+      <table class="timing" style="font-size:.95rem">
+        <thead><tr><th style="width:38%">Question</th><th>Our answer</th></tr></thead>
+        <tbody>
+          <tr><td><b>Game name</b></td><td style="height:40px"></td></tr>
+          <tr><td><b>Who is the player?</b></td><td style="height:40px"></td></tr>
+          <tr><td><b>Controls:</b> how do you move?</td><td style="height:40px"></td></tr>
+          <tr><td><b>What else moves?</b></td><td style="height:40px"></td></tr>
+          <tr><td><b>How do you score?</b></td><td style="height:40px"></td></tr>
+          <tr><td><b>How do you lose?</b></td><td style="height:40px"></td></tr>
+          <tr><td><b>What happens at the end?</b></td><td style="height:40px"></td></tr>
+          <tr><td><b>Smallest playable version</b></td><td style="height:52px"></td></tr>
+          <tr><td><b>Someday list</b> (later ideas)</td><td style="height:52px"></td></tr>
+        </tbody>
+      </table>
+      <div class="blk"><div class="h">Sketch box — draw the stage: where the player starts, what moves, arrows for movement</div>
+        <div style="border:2px solid var(--line-strong);border-radius:8px;height:230px;position:relative"><span style="position:absolute;right:10px;bottom:6px;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--ink-3)">480 × 360 stage</span></div>
+      </div>
+      <div class="grid2">
+        <div class="blk"><div class="h">Checklist of pieces (sprites, variables, rules)</div>
+          <ul class="tick" style="font-size:.92rem">
+            <li>☐ ______________________</li><li>☐ ______________________</li><li>☐ ______________________</li><li>☐ ______________________</li><li>☐ ______________________</li><li>☐ ______________________</li><li>☐ ______________________</li>
+          </ul>
+        </div>
+        <div class="blk"><div class="h">Best scores</div>
+          <ul class="tick" style="font-size:.92rem">
+            <li>Designer: ____________ score: ______</li>
+            <li>Typist: ______________ score: ______</li>
+            <li>Launch-day player: _______ score: ______</li>
+          </ul>
+          <p style="font-size:.86rem;color:var(--ink-2);margin:.4rem 0">Launch-day player liked:</p><div class="write" style="min-height:56px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4.4 -->
+  <section class="lesson">
+    <div class="lesson-head"><span class="lcode">4.4</span><h3>Capstone Part 2 — Lives, Game Over &amp; Launch Day</h3><span class="dur">S5 · Family Build Night</span></div>
+    <div class="lesson-body">
+      <div class="blk"><div class="h">By the end you can</div>
+        <ul class="tick">
+          <li>Pick up a saved project by <b>playing it first</b></li>
+          <li>Use a lives check inside the clone and <b>broadcast game over</b></li>
+          <li>Show a GAME OVER sign, then <b>stop all</b>; tune the game until it feels right</li>
+          <li>Hold a launch day where your child explains the game and watches someone play</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Key ideas</div>
+        <ul class="tick">
+          <li>The <b>star</b> knows it was missed, so the star takes the life. <b>delete this clone</b> goes <b>last inside that if</b>, so each miss costs exactly one life.</li>
+          <li>A <b>broadcast</b> lets one sprite tell another "it's over." The Game Over sprite <b>shows first</b>, then runs <b>stop all</b>, which freezes everything and removes all clones.</li>
+          <li><b>Tuning</b> numbers (fall speed, wait between stars) turns a working game into a fun one.</li>
+          <li>Start by playing; <b>stop on a win</b>, never mid-bug.</li>
+        </ul>
+      </div>
+      <div class="blk"><div class="h">Worked example — misses cost lives, then GAME OVER</div>
+        <div class="sb-row">
+          <div class="sb-script" aria-label="Star clone final: forever: change y by -5; if touching Bowl then score, hide, pop, delete; if y position less than -170 then change lives by -1, if lives = 0 then broadcast game over, delete this clone">
+            <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+            <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">170</span></div>
+            <div class="sb-block sb-looks">show</div>
+            <div class="sb-block sb-control">forever</div>
+            <div class="sb-nest">
+              <div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div>
+              <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching <span class="sb-dropdown">Bowl</span>?</span> then</div>
+              <div class="sb-nest">
+                <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+                <div class="sb-block sb-looks">hide</div>
+                <div class="sb-block sb-sound">play sound <span class="sb-dropdown">Pop</span> until done</div>
+                <div class="sb-block sb-control">delete this clone</div>
+              </div>
+              <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span style="background:#4C97FF;border-radius:10px;padding:0 6px;">y position</span> &lt; -170</span> then</div>
+              <div class="sb-nest">
+                <div class="sb-block sb-variables">change <span class="sb-dropdown">lives</span> by <span class="sb-input">-1</span></div>
+                <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span style="background:#FF8C1A;border-radius:10px;padding:0 6px;">lives</span> = 0</span> then</div>
+                <div class="sb-nest"><div class="sb-block sb-events">broadcast <span class="sb-dropdown">game over</span></div></div>
+                <div class="sb-block sb-control">delete this clone</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="sb-script" aria-label="Game Over sprite: when flag clicked, hide">
+              <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+              <div class="sb-block sb-looks">hide</div>
+            </div><br>
+            <div class="sb-script" aria-label="Game Over sprite: when I receive game over, go to front layer, show, stop all">
+              <div class="sb-block sb-events sb-hat">when I receive <span class="sb-dropdown">game over</span></div>
+              <div class="sb-block sb-looks">go to <span class="sb-dropdown">front</span> layer</div>
+              <div class="sb-block sb-looks">show</div>
+              <div class="sb-block sb-control">stop <span class="sb-dropdown">all</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blk lab"><div class="h">Your turn — Finish Star Catcher (steps 8–10)</div>
+        <ol class="steps lab">
+          <li><b>Play one round first.</b> Beat your score from before the break.</li>
+          <li><b>Step 8 — a miss costs a life.</b> Add the second <b>if</b> inside the clone's forever, under the catch <b>if</b>. For <b>game over</b>, open the broadcast dropdown → <b>New message</b>.</li>
+          <li><b>Step 9 — GAME OVER.</b> <b>Paint</b> a new sprite, write GAME OVER with the Text tool, name it <b>Game Over</b>, add its two scripts.</li>
+          <li><b>Step 10 — music &amp; tuning.</b> Stage → Sounds → a <em>Loops</em> sound; <b>when ⚑ clicked → forever → play sound (loop) until done</b>. Too hard? <b>-5 → -3</b>. Too easy? The opposite.</li>
+        </ol>
+        <div class="note lab"><div class="t">✅ Project Completion</div>
+          <p>☐ Bowl moves left and right · ☐ Green flag resets score to 0 and lives to 3 · ☐ Original star hidden; clones fall from random spots · ☐ Catching adds 1 and plays a sound · ☐ A miss removes 1 life and the star disappears · ☐ At 0 lives GAME OVER appears and everything stops · ☐ Green flag starts a fresh game · ☐ Project saved</p>
+        </div>
+      </div>
+      <div class="blk lab"><div class="h">Teach-It practice — Finish strong &amp; Launch Day</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Launch Day:</b> pick a player → the Director explains the rules first → <b>hands off</b>, don't explain for them → ask the player for one thing they liked and one idea (it goes on the Someday List).</p>
+        <p class="say">Before we add anything — can you beat your high score from last time? Show me!</p>
+        <p class="say">It worked before we added this part, so the problem is only in this part. Let's read it together, one block at a time.</p>
+        <p class="say">Let's save it and fix it with fresh eyes tomorrow. That's a real programmer move.</p>
+        <p style="font-size:.92rem;margin:.4rem 0 .2rem">Ask your child: "What was the hardest part, and how did you get past it?" Write their answer here, in their words:</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Self-check</div>
+        <div class="q"><div class="qn">Q1</div><div class="qt">Each missed star is taking away 2 or 3 lives instead of 1. What's the likely cause?</div>
+          <div class="opts"><div class="opt">A) lives starts at 3 instead of 1</div><div class="opt">B) delete this clone isn't inside the lives if, so the star keeps subtracting</div><div class="opt">C) The Pop sound is too long</div></div></div>
+        <div class="q"><div class="qn">Q2</div><div class="qt">Why does the Game Over sprite show itself before running <b>stop all</b>?</div>
+          <div class="opts"><div class="opt">A) So the sign is already on screen when everything freezes</div><div class="opt">B) It doesn't matter; the order is just style</div><div class="opt">C) Because stop all would otherwise make more clones</div></div></div>
+        <div class="q"><div class="qn">Q3</div><div class="qt">Right before the finish, the game breaks and your child is close to tears. Best move?</div>
+          <div class="opts"><div class="opt">A) Quietly take the mouse and fix it for them</div><div class="opt">B) Point out it worked before the last change, look at just that part together, or save and stop for today</div><div class="opt">C) Start a new project from scratch</div></div></div>
+        <div class="q"><div class="qn">Q4</div><div class="qt">You press the green flag for a new game, but GAME OVER is still on the screen. The fix?</div>
+          <div class="opts"><div class="opt">A) Move stop all above show</div><div class="opt">B) Set lives to 0 in reset game</div><div class="opt">C) Give the Game Over sprite a "when ⚑ clicked → hide" script</div></div></div>
+      </div>
+      <div class="blk"><div class="h">Learning journal</div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Key concepts:</b> What does the broadcast do in Star Catcher, and why does the lives check live inside the star clone?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Ideas to try:</b> What did your launch-day player suggest? What would your child's next game be?</p>
+        <div class="write"></div>
+        <p style="font-size:.92rem;margin:.2rem 0"><b>Progress &amp; feelings:</b> Looking back over Module 4, what are you proudest of? How did your child's confidence change from Part 1 to launch day?</p>
+        <div class="write"></div>
+      </div>
+      <div class="blk"><div class="h">Notes</div><div class="notes-lines"></div></div>
+    </div>
+  </section>
+
+  <div class="note">
+    <div class="t">You finished Module 4 🎉</div>
+    <p>Clones, custom blocks, and a complete game taken from a paper plan to launch day with your child. <b>Try at home this week:</b> add one Someday List item together (one feature, test, save), or start a fresh Game Design Card for your child's own game. Next session: teaching Scratch to your child, starting with the art of not taking over.</p>
+  </div>
+
+  <div class="foot">
+    <div class="who"><b>Ray de la Paz</b><span class="bio">© 2026 Ray de la Paz · Scratch for Parents: Learn It, Then Teach It</span></div>
+    <div class="ver">Module 4 · Participant Workbook · v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>

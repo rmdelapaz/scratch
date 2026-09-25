@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slides — Module 3</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+  :root{--bg:#0f0b1f;--ink:#f1edfb;--ink2:#b3a8cf;--accent:#a98bff;--accent2:#7c4ddf;--lab:#34d3bd;--warn:#fbbf24;--line:#2e2550;--code:#150f2b;color-scheme:dark}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;overflow:hidden}
+  .deck{height:100%;width:100%;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 8vw;gap:20px}
+  .slide.on{display:flex}
+  h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.1;text-wrap:balance}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:clamp(.7rem,1.4vw,.95rem);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .slide h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-.02em}
+  .slide h2{font-size:clamp(1.5rem,4.2vw,2.8rem);font-weight:800;letter-spacing:-.01em}
+  .slide p.lead{font-size:clamp(1.05rem,2.4vw,1.5rem);color:var(--ink2);max-width:26ch}
+  ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  ul li{position:relative;padding-left:34px;font-size:clamp(1.05rem,2.3vw,1.6rem)}
+  ul li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:3px;background:var(--accent);transform:rotate(45deg)}
+  ul.lab li::before{background:var(--lab)}
+  code.k{font-family:"JetBrains Mono",monospace;color:#d6c8ff;font-size:.92em}
+  pre{background:var(--code);border:1px solid var(--line);border-radius:12px;padding:22px 26px;font-family:"JetBrains Mono",monospace;font-size:clamp(.85rem,1.9vw,1.3rem);line-height:1.55;overflow:auto;max-width:100%}
+  pre .k{color:#7dd3fc} pre .s{color:#86efac} pre .c{color:#7183a3;font-style:italic}
+  .tag{display:inline-flex;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:clamp(.7rem,1.4vw,.95rem);color:var(--ink2)}
+  .tag .pill{background:var(--accent2);color:#fff;font-weight:700;border-radius:999px;padding:3px 12px;letter-spacing:.06em}
+  .tag .pill.lab{background:var(--lab);color:#062b26} .tag .pill.warn{background:var(--warn);color:#3a2a05}
+  .section{background:linear-gradient(135deg,#231845,#0f0b1f)}
+  .section .big{font-size:clamp(3rem,12vw,8rem);font-family:"Archivo";font-weight:800;color:var(--accent2);line-height:.9}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+  @media (max-width:760px){.two{grid-template-columns:1fr}}
+  .bar{position:fixed;left:0;top:0;height:4px;background:var(--accent2);width:0;transition:width .25s;z-index:5}
+  .count{position:fixed;right:16px;bottom:12px;font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--ink2);z-index:5}
+  .nav{position:fixed;inset:auto 0 0 0;display:flex;justify-content:space-between;pointer-events:none;z-index:4}
+  .nav button{pointer-events:auto;background:transparent;border:none;color:transparent;width:22vw;height:100vh;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+  /* Scratch blocks (from kit.css, sized for projection) */
+  .sb-script{display:inline-flex;flex-direction:column;align-items:flex-start;padding:12px;
+    background:var(--code);border:1px solid var(--line);border-radius:12px;max-width:100%;overflow-x:auto;vertical-align:top}
+  .sb-block{color:#fff;font-family:"Source Sans 3",system-ui,sans-serif;font-weight:600;font-size:clamp(.8rem,1.7vw,1.15rem);line-height:1.2;
+    padding:8px 14px;border-radius:7px;box-shadow:0 2px 0 rgba(0,0,0,.25);white-space:nowrap;display:flex;align-items:center;gap:6px}
+  .sb-block + .sb-block{margin-top:3px}
+  .sb-hat{border-radius:16px 16px 7px 7px}
+  .sb-nest{margin-left:18px;border-left:5px solid rgba(255,255,255,.12);padding-left:9px}
+  .sb-nest + .sb-block, .sb-block + .sb-nest{margin-top:3px}
+  .sb-input{background:rgba(255,255,255,.95);color:#1e293b;border-radius:100px;padding:1px 9px;font-weight:700;font-size:.85em}
+  .sb-input.sb-text{border-radius:6px}
+  .sb-dropdown{background:rgba(0,0,0,.15);color:#fff;border-radius:100px;padding:1px 20px 1px 9px;font-size:.85em;position:relative}
+  .sb-dropdown::after{content:"▾";position:absolute;right:7px;font-size:.8em}
+  .sb-flag{color:#2e9e3f;font-size:1.05em}
+  .sb-motion{background:#4C97FF}
+  .sb-looks{background:#9966FF}
+  .sb-sound{background:#CF63CF}
+  .sb-events{background:#FFBF00;color:#4d3800}
+  .sb-events .sb-input{color:#4d3800}
+  .sb-control{background:#FFAB19;color:#5c3d00}
+  .sb-control .sb-input{color:#5c3d00}
+  .sb-sensing{background:#5CB1D6}
+  .sb-operators{background:#59C059}
+  .sb-variables{background:#FF8C1A}
+  .sb-myblocks{background:#FF6680}
+  .sb-row{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<div class="deck" id="deck">
+
+  <section class="slide on section">
+    <div class="eyebrow">Scratch for Parents · Instructor Kit</div>
+    <h1>Module 3<br>Building Real Projects</h1>
+    <p class="lead">A story, a game, and the calm skill of fixing both.</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Session S3 · today's map</div>
+    <h2>Make it → make it a game → make it work</h2>
+    <ul>
+      <li><b>3.1</b> An Interactive Animated Story: broadcasts</li>
+      <li><b>3.2</b> A Simple Game with Variables &amp; Score</li>
+      <li><b>3.3</b> Debugging &amp; Remixing, plus the <b>Bug Hunt</b></li>
+    </ul>
+    <div class="tag"><span class="pill">NOTE</span> 3.2 is a step up for everyone. Get one piece working, then the next.</div>
+  </section>
+
+  <!-- 3.1 -->
+  <section class="slide section"><div class="big">3.1</div><h2>An Interactive Animated Story</h2><p class="lead">Two characters, one backdrop, perfect timing.</p></section>
+  <section class="slide">
+    <div class="eyebrow">go to · glide · broadcast</div>
+    <h2>The stage director's cue</h2>
+    <div class="sb-row">
+      <div class="sb-script" aria-label="Cat sends the cue">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-motion">go to x: <span class="sb-input">-200</span> y: <span class="sb-input">-100</span></div>
+        <div class="sb-block sb-motion">glide <span class="sb-input">2</span> secs to x: <span class="sb-input">0</span> y: <span class="sb-input">-100</span></div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi Bear!</span> for <span class="sb-input">2</span> seconds</div>
+        <div class="sb-block sb-events">broadcast <span class="sb-dropdown">your turn</span></div>
+      </div>
+      <div class="sb-script" aria-label="Bear listens">
+        <div class="sb-block sb-events sb-hat">when I receive <span class="sb-dropdown">your turn</span></div>
+        <div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi Cat! Nice day!</span> for <span class="sb-input">2</span> seconds</div>
+      </div>
+    </div>
+    <ul><li><code class="k">go to</code> teleports · <code class="k">glide</code> slides</li><li>A broadcast is an invisible shout that any sprite can hear</li></ul>
+  </section>
+  <section class="slide">
+    <div class="eyebrow">Lab · 10 min</div>
+    <h2>A conversation that plays itself</h2>
+    <ul class="lab">
+      <li><b>Cat</b> (flag): say a line → <code class="k">broadcast line 2</code></li>
+      <li><b>Bear</b> (receive line 2): reply → <code class="k">broadcast line 3</code></li>
+      <li><b>Cat</b> (receive line 3): reply → <code class="k">broadcast line 4</code></li>
+      <li><b>Both</b> (receive line 4): glide off together</li>
+    </ul>
+    <div class="tag"><span class="pill warn">WATCH</span> Only line 1 starts with the green flag. Everything else starts with "when I receive."</div>
+  </section>
+
+  <!-- 3.2 -->
+  <section class="slide section"><div class="big">3.2</div><h2>A Simple Game with Variables &amp; Score</h2><p class="lead">Meet the variable, a box that remembers.</p></section>
+  <section class="slide">
+    <div class="eyebrow">A variable is a whiteboard</div>
+    <h2>SCORE: <s>0</s> <s>1</s> 2</h2>
+    <div class="two">
+      <div class="sb-script" aria-label="variable blocks">
+        <div class="sb-block sb-variables">set <span class="sb-dropdown">score</span> to <span class="sb-input">0</span></div>
+        <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+        <div class="sb-block sb-variables" style="border-radius:100px">score</div>
+      </div>
+      <ul><li><b>set</b> = erase and write</li><li><b>change</b> = add to what's there</li><li>Tick the checkbox to show it on stage</li></ul>
+    </div>
+    <div class="tag"><span class="pill">GAME PLAN</span> Apple falls from a random x → touching the cat? +1 → back to the top.</div>
+  </section>
+  <section class="slide">
+    <div class="eyebrow">Two scripts, one game</div>
+    <h2>The apple and the catcher</h2>
+    <div class="sb-row">
+      <div class="sb-script" aria-label="Apple script">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-variables">set <span class="sb-dropdown">score</span> to <span class="sb-input">0</span></div>
+        <div class="sb-block sb-control">forever</div>
+        <div class="sb-nest">
+          <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div>
+          <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Cat?</span></div>
+          <div class="sb-nest">
+            <div class="sb-block sb-motion">change y by <span class="sb-input">-8</span></div>
+            <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span class="sb-input" style="background:#4C97FF;color:#fff;">y position</span> &lt; -170</span> then</div>
+            <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -200 to 200</span> y: <span class="sb-input">170</span></div></div>
+          </div>
+          <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+        </div>
+      </div>
+      <div class="sb-script" aria-label="Cat script">
+        <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+        <div class="sb-block sb-control">forever</div>
+        <div class="sb-nest"><div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#5CB1D6;color:#fff;">mouse x</span> y: <span class="sb-input">-140</span></div></div>
+      </div>
+    </div>
+    <div class="tag"><span class="pill warn">WHY NOT "touching edge?"</span> At y: 170 the apple already touches the <b>top</b> edge, so it would never fall.</div>
+  </section>
+  <section class="slide">
+    <div class="eyebrow">Lab · 15 min</div>
+    <h2>Catch the Apple</h2>
+    <ul class="lab">
+      <li>Add an Apple · make <code class="k">score</code> (For all sprites) · tick its box</li>
+      <li>Build the Apple script, then the Cat script</li>
+      <li>Play it, then <b>save it</b>: File → Save to your computer</li>
+      <li>Fast finishers: a 30-second <code class="k">time left</code> timer</li>
+    </ul>
+    <div class="tag"><span class="pill warn">WATCH</span> The +1 goes <b>below</b> the repeat-until, not inside it.</div>
+  </section>
+
+  <!-- 3.3 -->
+  <section class="slide section"><div class="big">3.3</div><h2>Debugging &amp; Remixing</h2><p class="lead">Bugs aren't the enemy. They're the job.</p></section>
+  <section class="slide">
+    <div class="eyebrow">The 4-step method</div>
+    <h2>Watch → Predict → Change ONE thing → Test</h2>
+    <div class="two">
+      <ul><li><b>1 Watch</b> what actually happens</li><li><b>2 Predict</b> which block causes it</li><li><b>3 Change ONE thing</b></li><li><b>4 Test</b>. Still wrong? Go round again.</li></ul>
+      <ul class="lab"><li>Click one block to run it</li><li>Tick a variable's checkbox</li><li>Temporary <code class="k">say (score)</code></li><li><b>See Inside</b> any shared project</li></ul>
+    </div>
+    <div class="tag"><span class="pill">REFRAME</span> Not "it's broken," but "interesting, let's find out why."</div>
+  </section>
+  <section class="slide">
+    <div class="eyebrow">The usual suspects</div>
+    <h2>90% of Scratch bugs</h2>
+    <ul>
+      <li>Nothing happens → code is on the <b>wrong sprite</b></li>
+      <li>Runs once, never again → an <code class="k">if</code> with <b>no loop</b></li>
+      <li>Blocks never run → trapped <b>below a forever</b></li>
+      <li>Score jumps by many → condition <b>stays true</b> for many frames</li>
+      <li>Sprites out of sync → use <b>broadcasts</b>, not waits</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <div class="eyebrow">Lab · 17 min · debugging buddies</div>
+    <h2>The Bug Hunt: 4 bugs hidden</h2>
+    <div class="two">
+      <ul class="lab"><li>Open <code class="k">l3-3-bug-hunt-starter.sb3</code></li><li><b>Driver</b> holds the mouse</li><li><b>Navigator</b> asks and writes</li><li><b>Swap</b> after every bug</li></ul>
+      <ul><li>What did you expect?</li><li>What happened instead?</li><li>Which block is responsible?</li><li>One change to test it?</li></ul>
+    </div>
+    <div class="tag"><span class="pill lab">TIP</span> Move the mouse every way, watch the apple, miss on purpose, press the flag twice.</div>
+  </section>
+  <section class="slide">
+    <div class="eyebrow">Teach-It role-plays · kid cards</div>
+    <h2>Three coaching moves</h2>
+    <ul>
+      <li><b>Maya, 6</b> · "Let's be the characters first! You be the bear…" <span style="color:var(--ink2)">(story before code)</span></li>
+      <li><b>Theo, 10</b> · "Tell me your game like you're explaining it to a friend." <span style="color:var(--ink2)">(design first)</span></li>
+      <li><b>Priya, 9</b> · "Walk me through it like I know nothing." <span style="color:var(--ink2)">(ask, don't fix)</span></li>
+    </ul>
+    <div class="tag"><span class="pill warn">WATCH</span> The biggest parent mistake is grabbing the mouse. Sit on your hands.</div>
+  </section>
+  <section class="slide">
+    <div class="eyebrow">After the hunt · debrief</div>
+    <h2>The four bugs we squashed</h2>
+    <ul class="lab">
+      <li>Cat used <code class="k">mouse y</code> → needs <code class="k">mouse x</code></li>
+      <li>No <code class="k">set score to 0</code> → the score carried over</li>
+      <li><code class="k">change y by 8</code> → the apple never fell (needs <code class="k">-8</code>)</li>
+      <li><code class="k">change score by 1</code> inside the falling loop → move it below</li>
+    </ul>
+  </section>
+
+  <section class="slide section">
+    <div class="eyebrow">You can now build and fix</div>
+    <h2>Module 3 done</h2>
+    <ul class="lab">
+      <li>Broadcasts make sprites take turns</li>
+      <li>A variable keeps score</li>
+      <li>Watch · Predict · Change one thing · Test</li>
+    </ul>
+    <p class="lead" style="margin-top:10px">This week: break one block and let your child fix it. Next: Module 4, clones &amp; My Blocks.</p>
+  </section>
+
+</div>
+
+<div class="count" id="count">1 / 16</div>
+<div class="nav"><button id="prev" aria-label="Previous slide"></button><button id="next" aria-label="Next slide"></button></div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const bar=document.getElementById('bar'), count=document.getElementById('count');
+  let i=0;
+  function show(n){ i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    bar.style.width=((i+1)/slides.length*100)+'%'; count.textContent=(i+1)+' / '+slides.length; }
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1);}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+  });
+  show(0);
+</script>
+</body>
+</html>

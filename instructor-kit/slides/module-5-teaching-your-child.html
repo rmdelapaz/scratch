@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slides — Module 5</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+  :root{--bg:#0b1220;--ink:#eaf1fb;--ink2:#9fb2cd;--accent:#a98bff;--accent2:#7c4ddf;--lab:#34d3bd;--warn:#fbbf24;--line:#22314c;--code:#0a1526;color-scheme:dark}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;overflow:hidden}
+  .deck{height:100%;width:100%;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 8vw;gap:20px}
+  .slide.on{display:flex}
+  h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.1;text-wrap:balance}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:clamp(.7rem,1.4vw,.95rem);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .slide h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-.02em}
+  .slide h2{font-size:clamp(1.5rem,4.2vw,2.8rem);font-weight:800;letter-spacing:-.01em}
+  .slide p.lead{font-size:clamp(1.05rem,2.4vw,1.5rem);color:var(--ink2);max-width:26ch}
+  ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  ul li{position:relative;padding-left:34px;font-size:clamp(1.05rem,2.3vw,1.6rem)}
+  ul li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:3px;background:var(--accent);transform:rotate(45deg)}
+  ul.lab li::before{background:var(--lab)}
+  code.k{font-family:"JetBrains Mono",monospace;color:#d3c4ff;font-size:.92em}
+  pre{background:var(--code);border:1px solid var(--line);border-radius:12px;padding:22px 26px;font-family:"JetBrains Mono",monospace;font-size:clamp(.85rem,1.9vw,1.3rem);line-height:1.55;overflow:auto;max-width:100%}
+  pre .k{color:#7dd3fc} pre .s{color:#86efac} pre .c{color:#7183a3;font-style:italic}
+  .tag{display:inline-flex;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:clamp(.7rem,1.4vw,.95rem);color:var(--ink2)}
+  .tag .pill{background:var(--accent2);color:#fff;font-weight:700;border-radius:999px;padding:3px 12px;letter-spacing:.06em}
+  .tag .pill.lab{background:var(--lab);color:#062b26} .tag .pill.warn{background:var(--warn);color:#3a2a05}
+  .section{background:linear-gradient(135deg,#231644,#0b1220)}
+  .section .big{font-size:clamp(3rem,12vw,8rem);font-family:"Archivo";font-weight:800;color:var(--accent2);line-height:.9}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+  @media (max-width:760px){.two{grid-template-columns:1fr}}
+  .bar{position:fixed;left:0;top:0;height:4px;background:var(--accent2);width:0;transition:width .25s;z-index:5}
+  .count{position:fixed;right:16px;bottom:12px;font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--ink2);z-index:5}
+  .nav{position:fixed;inset:auto 0 0 0;display:flex;justify-content:space-between;pointer-events:none;z-index:4}
+  .nav button{pointer-events:auto;background:transparent;border:none;color:transparent;width:22vw;height:100vh;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+  /* Scratch blocks (from kit.css, sized for projection) */
+  .sb-script{display:inline-flex;flex-direction:column;align-items:flex-start;padding:12px;background:#111b2e;border:1px solid var(--line);border-radius:12px;max-width:100%;overflow-x:auto}
+  .sb-block{color:#fff;font-family:"Source Sans 3",system-ui,sans-serif;font-weight:600;font-size:clamp(.9rem,1.9vw,1.3rem);line-height:1.2;padding:9px 16px;border-radius:8px;box-shadow:0 2px 0 rgba(0,0,0,.25);white-space:nowrap;display:flex;align-items:center;gap:7px}
+  .sb-block + .sb-block{margin-top:4px}
+  .sb-hat{border-radius:18px 18px 8px 8px}
+  .sb-nest{margin-left:22px;border-left:5px solid rgba(255,255,255,.12);padding-left:10px}
+  .sb-nest + .sb-block, .sb-block + .sb-nest{margin-top:4px}
+  .sb-input{background:rgba(255,255,255,.95);color:#1e293b;border-radius:100px;padding:1px 10px;font-weight:700;font-size:.85em}
+  .sb-input.sb-text{border-radius:6px}
+  .sb-dropdown{background:rgba(0,0,0,.15);color:#fff;border-radius:100px;padding:1px 22px 1px 10px;font-size:.85em;position:relative}
+  .sb-dropdown::after{content:"▾";position:absolute;right:7px;font-size:.8em}
+  .sb-motion{background:#4C97FF} .sb-looks{background:#9966FF} .sb-sound{background:#CF63CF}
+  .sb-events{background:#FFBF00;color:#4d3800} .sb-control{background:#FFAB19;color:#5c3d00} .sb-control .sb-input{color:#5c3d00}
+  .sb-sensing{background:#5CB1D6} .sb-operators{background:#59C059} .sb-variables{background:#FF8C1A}
+  /* ScratchJr picture blocks (from lesson 5.3) */
+  .jr{display:flex;flex-wrap:wrap;gap:6px}
+  .jr span{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:92px;padding:10px 12px;border-radius:10px;font-weight:700;font-size:clamp(.8rem,1.6vw,1.05rem);color:#fff;box-shadow:0 2px 0 rgba(0,0,0,.3)}
+  .jr i{font-style:normal;font-size:1.5em;line-height:1}
+  .jr .tr{background:#F7C948;color:#3d2e00;border-radius:20px 10px 10px 20px} .jr .mo{background:#2F6FD6} .jr .lo{background:#7A4FD6}
+  .jr .so{background:#2E7D32} .jr .en{background:#C62828;border-radius:10px 20px 20px 10px}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<div class="deck" id="deck">
+
+  <section class="slide on section">
+    <div class="eyebrow">Scratch for Parents · Instructor Kit</div>
+    <h1>Module 5<br>Teaching Scratch to Your Child</h1>
+    <p class="lead">You can code now. Tonight: the craft of helping without taking over.</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Session S6 · tonight</div>
+    <h2>Four lessons, then a celebration</h2>
+    <ul>
+      <li><b>5.1</b> The Art of Not Taking Over</li>
+      <li><b>5.2</b> Sharing Safely &amp; the Scratch Community</li>
+      <li><b>5.3</b> ScratchJr — Coding for Ages 5–7</li>
+      <li><b>5.4</b> What Comes After Scratch</li>
+      <li><b>🎓</b> Showcase &amp; graduation (kids arrive at 1:35)</li>
+    </ul>
+    <div class="tag"><span class="pill">THROUGH-LINE</span> The child drives. The grown-up coaches.</div>
+  </section>
+
+  <section class="slide section"><div class="big">5.1</div><h2>The Art of Not Taking Over</h2><p class="lead">The struggle is the lesson.</p></section>
+  <section class="slide">
+    <div class="eyebrow">Scaffolding · help that fades</div>
+    <h2>Give the least help that unblocks</h2>
+    <ul>
+      <li><b>I lead</b> → <b>they lead, I prompt</b> → <b>they do it, I watch</b> → <b>they teach me</b></li>
+      <li>Too little: <em>"Figure it out."</em> (walks away)</li>
+      <li>Just right: <em>"Which category might have a move block?"</em></li>
+      <li>Too much: <em>"Drag the blue block here."</em></li>
+    </ul>
+    <div class="tag"><span class="pill warn">WATCH</span> See the fix? Count to five. Ask a question instead.</div>
+  </section>
+  <section class="slide">
+    <div class="eyebrow">Ask, don't tell · praise the process</div>
+    <h2>Questions keep them thinking</h2>
+    <div class="two">
+      <ul>
+        <li>What do you want to happen?</li>
+        <li>What happened instead?</li>
+        <li>Which block is in charge of that?</li>
+        <li>What could we try to test it?</li>
+      </ul>
+      <ul class="lab">
+        <li>"You kept trying different things until it worked."</li>
+        <li>"You tested one block at a time."</li>
+        <li>"You can't make them fall… <b>yet</b>."</li>
+      </ul>
+    </div>
+    <div class="tag"><span class="pill warn">GO EASY</span> "You're a genius!" · "See, that was easy!"</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Teach-It role-play · how it works</div>
+    <h2>One child, one coach, hands off</h2>
+    <ul class="lab">
+      <li>The "child" draws a <b>kid card</b> and holds the mouse</li>
+      <li>The coach <b>never touches</b> the mouse or trackpad</li>
+      <li>4 minutes, then <b>swap</b> and draw a new card</li>
+      <li>Trio? The third person watches for questions, praise, "yet"</li>
+    </ul>
+    <div class="tag"><span class="pill lab">LAB</span> labs/module-5/role-play-cards.html · buggy project from Module 3</div>
+  </section>
+
+  <section class="slide section"><div class="big">5.2</div><h2>Sharing Safely</h2><p class="lead">Private until your child clicks Share.</p></section>
+  <section class="slide">
+    <div class="eyebrow">How the community works</div>
+    <h2>Safer than typical social media</h2>
+    <div class="two">
+      <ul>
+        <li>Non-profit, minimal data, <b>parent email</b></li>
+        <li>Nothing public until <b>Share</b> — and an account is optional</li>
+        <li>Moderated, with kid-readable guidelines</li>
+      </ul>
+      <ul>
+        <li><b>Report</b> · comments <b>off</b> · <b>delete</b></li>
+        <li><b>No private messaging</b> — all visible to you</li>
+      </ul>
+    </div>
+    <div class="tag"><span class="pill warn">STILL THE INTERNET</span> Shared room · regular check-ins · "show me any mean comment"</div>
+  </section>
+  <section class="slide">
+    <div class="eyebrow">Lab · family plan</div>
+    <h2>Checklist + family sharing rules</h2>
+    <ul class="lab">
+      <li>Tick through the one-page <b>Scratch Safety Checklist</b></li>
+      <li>Draft 3–4 rules: what never gets shared · where Scratch lives · what to do with a mean comment</li>
+      <li>Draw a <b>scenario card</b> and rehearse the "before sharing" talk</li>
+    </ul>
+    <div class="tag"><span class="pill lab">LAB</span> labs/module-5/safety-checklist.html</div>
+  </section>
+
+  <section class="slide section"><div class="big">5.3</div><h2>ScratchJr</h2><p class="lead">Picture blocks for ages 5–7. No reading needed.</p></section>
+  <section class="slide">
+    <div class="eyebrow">Lab · "My Pet Says Hi"</div>
+    <h2>A row, read left to right</h2>
+    <div class="jr" role="img" aria-label="ScratchJr row: Start on Tap, Hop 2, Grow 2, My Sound, Shrink 2, End">
+      <span class="tr"><i>👆</i>Start on Tap</span><span class="mo"><i>⤴️</i>Hop 2</span><span class="lo"><i>🔼</i>Grow 2</span>
+      <span class="so"><i>🎙️</i>My Sound</span><span class="lo"><i>🔽</i>Shrink 2</span><span class="en"><i>⏹️</i>End</span>
+    </div>
+    <ul>
+      <li>Yellow starts · blue moves · purple looks · <b>green is Sound</b> · orange control · red ends</li>
+      <li>Coach: <b>10–15 min</b> · story first · <b>you read, they tap</b></li>
+    </ul>
+    <div class="tag"><span class="pill warn">WATCH</span> Grow with no Shrink = a pet that gets bigger every tap.</div>
+  </section>
+
+  <section class="slide section"><div class="big">5.4</div><h2>What Comes After Scratch</h2><p class="lead">The concepts transfer. Follow their fire.</p></section>
+  <section class="slide">
+    <div class="eyebrow">The bridge to text code</div>
+    <h2>Same loop, just typed</h2>
+    <div class="two">
+      <div class="sb-script">
+        <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
+        <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi!</span> for <span class="sb-input">1</span> seconds</div></div>
+      </div>
+      <pre><span class="k">for</span> i <span class="k">in</span> range(3):
+    print(<span class="s">"Hi!"</span>)</pre>
+    </div>
+    <ul>
+      <li>Deeper Scratch: <b>lists</b> · <b>Add Extension</b> → Pen, Music, micro:bit</li>
+      <li>Beyond the screen: Makey Makey · micro:bit · LEGO robotics</li>
+    </ul>
+    <div class="tag"><span class="pill lab">LAB</span> Workbook: name your family's next project</div>
+  </section>
+
+  <section class="slide section">
+    <div class="eyebrow">Showcase &amp; graduation</div>
+    <h2>The coders present. The grown-ups cheer.</h2>
+    <ul class="lab">
+      <li>Children show one thing they're proud of</li>
+      <li>Parents: "A moment I kept my hands off the mouse was…"</li>
+      <li>Comments: kind, curious, specific</li>
+    </ul>
+    <div class="tag"><span class="pill">🎓</span> Certificates · "What Next" page · one next project each</div>
+  </section>
+
+  <section class="slide section">
+    <div class="eyebrow">You did it</div>
+    <h2>Learn it → build it → teach it</h2>
+    <ul class="lab">
+      <li>Scaffold, ask, praise the process, say "yet"</li>
+      <li>Share safely, with family rules</li>
+      <li>ScratchJr for the little ones</li>
+      <li>One more exciting project beats rushing ahead</li>
+    </ul>
+    <p class="lead" style="margin-top:10px">Keep asking: "Show me what you made."</p>
+  </section>
+
+</div>
+
+<div class="count" id="count">1 / 15</div>
+<div class="nav"><button id="prev" aria-label="Previous slide"></button><button id="next" aria-label="Next slide"></button></div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const bar=document.getElementById('bar'), count=document.getElementById('count');
+  let i=0;
+  function show(n){ i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    bar.style.width=((i+1)/slides.length*100)+'%'; count.textContent=(i+1)+' / '+slides.length; }
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1);}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+  });
+  show(0);
+</script>
+</body>
+</html>
