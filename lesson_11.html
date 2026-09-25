@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Keep your child safe on Scratch — accounts and privacy, sharing projects, the moderated community, comments, and healthy digital habits. A parent safety lesson.">
-    <meta name="author" content="Ray De La Paz">
-    <title>Lesson 4.2: Sharing Safely &amp; the Scratch Community — Scratch for Parents</title>
+    <meta name="description" content="Make your own Scratch blocks with My Blocks — name a chunk of code, add inputs, and reuse it. A parent-friendly introduction to functions, with a jump block, a dance block, and a reset game block.">
+    <meta name="author" content="Ray de la Paz">
+    <title>Lesson 4.2: My Blocks — Make Your Own Blocks — Scratch for Parents</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <script type="module">
@@ -40,31 +40,28 @@
         </div>
     </nav>
 
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#modules">Module 4</a></li>
-            <li aria-current="page">Lesson 4.2</li>
-        </ul>
-    </nav>
 
     <main id="main-content">
         <div class="container">
             <header>
-                <h1>🛡️ Lesson 4.2: Sharing Safely &amp; the Scratch Community</h1>
-                <p class="lead">Scratch has a huge online community — one of its best features and the part parents worry about most. Here's exactly how it works, what protections exist, and how to set your child up to share safely and kindly.</p>
+                <h1>🧩 Lesson 4.2: My Blocks — Make Your Own Blocks</h1>
+                <p class="lead">What if Scratch doesn't have the block you want? Make it yourself! In this lesson you'll bundle a chunk of code into a brand-new block with its own name, like <strong>jump</strong> or <strong>reset game</strong>. Programmers have a name for this, and it's one of the most useful ideas in coding.</p>
 
                 <div class="card card-info">
-                    <h2>🎯 Learning Objectives</h2>
+                    <h2>📚 What You'll Learn</h2>
+                    <p>By the end of this lesson, you will be able to:</p>
                     <ul>
-                        <li>Understand Scratch accounts, privacy, and what data is collected</li>
-                        <li>Know how sharing works — private by default until <em>you</em> share</li>
-                        <li>Explain the moderated community and comment controls</li>
-                        <li>Set healthy sharing habits and good digital citizenship</li>
+                        <li>Explain why naming a chunk of code makes projects easier to read and reuse</li>
+                        <li>Create a custom block with the <strong>My Blocks</strong> category and the <strong>Make a Block</strong> dialog</li>
+                        <li>Attach steps to the <strong>define</strong> hat block and use your new block anywhere in that sprite</li>
+                        <li>Add an <strong>input</strong> so one block can behave differently each time</li>
+                        <li>Coach your child to spot repeated code and turn it into their own block</li>
                     </ul>
-                    <p><strong>Estimated Time:</strong> 30 minutes &nbsp;•&nbsp; <strong>Audience:</strong> you (then a chat with your child)</p>
+                    <p><strong>Estimated Time:</strong> 35 minutes &nbsp;•&nbsp; <strong>Project:</strong> a <em>jump</em> block, a <em>dance (times)</em> block, and a <em>reset game</em> block</p>
                     <div class="age-badges">
-                        <span class="age-badge">Guidance for all ages</span>
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
                     </div>
                 </div>
             </header>
@@ -77,197 +74,358 @@
                 </summary>
                 <nav aria-label="Table of Contents">
                     <ol>
-                        <li><a href="#accounts" class="toc-link">Accounts &amp; privacy</a></li>
-                        <li><a href="#private" class="toc-link">Private by default</a></li>
-                        <li><a href="#community" class="toc-link">The moderated community</a></li>
-                        <li><a href="#comments" class="toc-link">Comments &amp; controls</a></li>
-                        <li><a href="#citizen" class="toc-link">Teach It: Digital citizenship</a></li>
-                        <li><a href="#habits" class="toc-link">Healthy habits</a></li>
+                        <li><a href="#why" class="toc-link">Learn It: Why make your own blocks?</a></li>
+                        <li><a href="#make" class="toc-link">Learn It: The Make a Block dialog</a></li>
+                        <li><a href="#define" class="toc-link">Learn It: The define block</a></li>
+                        <li><a href="#jump" class="toc-link">Try It: A jump block</a></li>
+                        <li><a href="#inputs" class="toc-link">Try It: Add an input</a></li>
+                        <li><a href="#reset" class="toc-link">Try It: A reset game block</a></li>
+                        <li><a href="#fixes" class="toc-link">Common problems &amp; fixes</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: New words for the computer</a></li>
                         <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#journal" class="toc-link">Learning Journal</a></li>
                         <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
                     </ol>
                 </nav>
             </details>
 
-            <section id="accounts" class="lesson-section">
-                <h2>🎓 Accounts &amp; privacy</h2>
-                <p>Scratch is run by a non-profit and takes children's privacy seriously (it complies with children's privacy laws like COPPA in the US). When your child signs up, Scratch asks for <strong>a parent/guardian email</strong> and collects minimal information.</p>
+            <!-- Why -->
+            <section id="why" class="lesson-section">
+                <h2>🎓 Learn It: Why make your own blocks?</h2>
+                <p>By now your projects are getting bigger. You've probably noticed that scripts grow long, and that the <em>same little group of blocks</em> shows up again and again: a jump here, the same jump there, another copy for when the cat touches something. Long, repetitive scripts are hard to read, and when you want to change the jump you have to hunt down every copy.</p>
 
-                <figure class="shot">
-                    <img class="screenshot" src="images/scratch_parents_page.png" alt="The official Scratch for Parents page, with information for parents and guardians about how Scratch works and how to keep children safe.">
-                    <figcaption>Figure 1: The official <a href="https://scratch.mit.edu/parents/">Scratch for Parents</a> page — your best reference for privacy and safety specifics, straight from the source.</figcaption>
-                </figure>
+                <blockquote>Think of a recipe card that says <strong>"Make pancakes."</strong> Those two words stand for a whole list of steps: crack the eggs, whisk, pour, flip. Once the card is written, you just say "make pancakes" and everybody knows what to do.</blockquote>
 
-                <div class="card card-success">
-                    <h4>✅ Set up the account the safe way</h4>
-                    <ul>
-                        <li>Use a <strong>username that hides real identity</strong> (no full name, school, or birth year).</li>
-                        <li>Enter <strong>your</strong> email as the parent contact — you'll get account notices.</li>
-                        <li>Choose a password together and keep it somewhere you both can find it.</li>
-                        <li>Remind them: never share real name, address, school, phone, or photos in projects or comments.</li>
-                    </ul>
-                </div>
-            </section>
+                <p>A custom block works the same way. You write the steps <strong>once</strong>, give them a name, and from then on one block stands for all of them. It's like teaching a dog a new trick: you practice the steps together, then you only have to say "roll over."</p>
 
-            <section id="private" class="lesson-section">
-                <h2>🎓 Private by default</h2>
-                <p>A crucial reassurance: <strong>projects are NOT public until your child explicitly clicks “Share.”</strong> Everything they build stays private to their account until then. Nothing is broadcast to the world by accident.</p>
+                <p>Programmers call a named chunk of code a <strong>function</strong> (or sometimes a <strong>procedure</strong>). You don't need to use those words with your child, but it's nice to know that when you make a block in Scratch, you're doing exactly what professional coders do in Python or JavaScript every day.</p>
+
                 <div class="mermaid">
                     flowchart LR
-                        A["Create a project"] --> B["Saved to account<br/>(private)"]
-                        B -->|child clicks Share| C["Visible in the community"]
-                        B -->|never shares| D["Stays private forever"]
-                        style A fill:#4C97FF,color:#fff,stroke:#333
-                        style B fill:#59C059,color:#fff,stroke:#333
-                        style C fill:#FFAB19,color:#5c3d00,stroke:#333
-                        style D fill:#e2e8f0,color:#1e293b,stroke:#333
+                        A["when 🟩 clicked: jump"] --> J["jump"]
+                        B["when space key pressed: jump"] --> J
+                        C["when this sprite clicked: jump"] --> J
+                        J --> D["define jump: the steps live here, written once"]
+                        style A fill:#FFBF00,color:#4d3800,stroke:#333
+                        style B fill:#FFBF00,color:#4d3800,stroke:#333
+                        style C fill:#FFBF00,color:#4d3800,stroke:#333
+                        style J fill:#FF6680,color:#fff,stroke:#333
+                        style D fill:#FF6680,color:#fff,stroke:#333
                 </div>
+                <p>Three different scripts each say "jump," but the actual jumping steps exist in only one place. Change them there, and every jump changes at once.</p>
+            </section>
+
+            <!-- Make a Block -->
+            <section id="make" class="lesson-section">
+                <h2>🎓 Learn It: The Make a Block dialog</h2>
+                <p>Scroll to the bottom of the block categories and click the pink <strong>My Blocks</strong> circle. It starts nearly empty except for one button: <strong>Make a Block</strong>. Click it and a dialog box opens with a pink block in the middle that says <em>block name</em>.</p>
+
+                <ol class="steps">
+                    <li>
+                        <h3 style="margin-top:0;">Name your block</h3>
+                        <p>Click in the pink block and type a name that says what it <em>does</em>, like <strong>jump</strong>. A good name is short and uses an action word.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Add an input (optional)</h3>
+                        <p>Below the block are three buttons. <strong>Add an input (number or text)</strong> puts a slot in your block so you can hand it a value each time you use it, like how many times to dance. You'll name the slot, for example <em>times</em>. (The second input button, <strong>boolean</strong>, is for yes/no values. You can skip it for now.)</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Add a label (optional)</h3>
+                        <p><strong>Add a label</strong> adds plain words between inputs so the block reads like a sentence, for example <em>dance</em> (times) <em>times</em>.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Decide on "Run without screen refresh"</h3>
+                        <p>Normally Scratch pauses to redraw the stage each time through a loop, which is how you get to <em>watch</em> things move. Tick this box and Scratch runs the whole block in one go and only shows the end result. That's handy for quick setup work, but it makes animations happen instantly (you never see the jump!). <strong>Leave it unticked</strong> unless you have a reason.</p>
+                    </li>
+                </ol>
+                <p>Click <strong>OK</strong>. Two things appear: your new block in the My Blocks palette, and a pink <strong>define</strong> hat block in the code area.</p>
+            </section>
+
+            <!-- Define -->
+            <section id="define" class="lesson-section">
+                <h2>🎓 Learn It: The define block</h2>
+                <p>The <strong>define</strong> block is your recipe card. Whatever you snap underneath it is what your new block does. On its own, a define script never runs; it waits until some other script <em>uses</em> the block.</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>📝 The recipe (define)</h4>
+                        <div class="sb-script" role="img" aria-label="define jump, with nothing attached yet">
+                            <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">jump</span></div>
+                        </div>
+                        <p><small>The steps go under here.</small></p>
+                    </div>
+                    <div class="card">
+                        <h4>🗣️ Using it (the call)</h4>
+                        <div class="sb-script" role="img" aria-label="when green flag clicked, jump">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-myblocks">jump</div>
+                        </div>
+                        <p><small>Drag it from My Blocks like any other block.</small></p>
+                    </div>
+                </div>
+                <p>Programmers call using the block <strong>calling</strong> it: the green flag script "calls" jump, Scratch jumps over to the define script, runs its steps, then comes back and carries on.</p>
+            </section>
+
+            <!-- Jump -->
+            <section id="jump" class="lesson-section">
+                <h2>🛠️ Try It: Mini-project 1 — a jump block</h2>
+                <p>Start a new project (or use the cat from earlier lessons). Make a block named <strong>jump</strong> with no inputs and screen refresh left unticked. Then build this under the define hat:</p>
+                <div class="sb-script" role="img" aria-label="define jump: repeat 10 change y by 10, then repeat 10 change y by -10">
+                    <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">jump</span></div>
+                    <div class="sb-block sb-control">repeat <span class="sb-input">10</span></div>
+                    <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">10</span></div></div>
+                    <div class="sb-block sb-control">repeat <span class="sb-input">10</span></div>
+                    <div class="sb-nest"><div class="sb-block sb-motion">change y by <span class="sb-input">-10</span></div></div>
+                </div>
+                <p>Up ten little steps, down ten little steps. Now give the player a way to use it:</p>
+                <div class="sb-script" role="img" aria-label="when space key pressed, jump">
+                    <div class="sb-block sb-events sb-hat">when <span class="sb-dropdown">space</span> key pressed</div>
+                    <div class="sb-block sb-myblocks">jump</div>
+                </div>
+                <p>Press the space bar and the cat hops. Here's the payoff: add a <strong>when this sprite clicked → jump</strong> script too. Two ways to jump, one set of jumping steps. Want a higher jump? Change the define script once, and both scripts get the new jump.</p>
+            </section>
+
+            <!-- Inputs -->
+            <section id="inputs" class="lesson-section">
+                <h2>🛠️ Try It: Mini-project 2 — add an input</h2>
+                <p>An input lets the same block do slightly different things. Click <strong>Make a Block</strong>, type <strong>dance</strong>, click <strong>Add an input (number or text)</strong> and name it <em>times</em>, then click <strong>Add a label</strong> and type <em>times</em>. Click OK.</p>
+                <p>Look closely at the new define block: it contains a round pink <strong>times</strong> oval. That oval is the input's value. <strong>Drag it out of the define block</strong> (you'll get a copy) and drop it into the repeat slot:</p>
+                <div class="sb-script" role="img" aria-label="define dance times times: repeat times, turn right 15 degrees, wait 0.2 seconds, turn left 15 degrees, wait 0.2 seconds">
+                    <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">dance <span class="sb-input" style="background:#FF6680;color:#fff;">times</span> times</span></div>
+                    <div class="sb-block sb-control">repeat <span class="sb-input" style="background:#FF6680;color:#fff;">times</span></div>
+                    <div class="sb-nest">
+                        <div class="sb-block sb-motion">turn ↻ <span class="sb-input">15</span> degrees</div>
+                        <div class="sb-block sb-control">wait <span class="sb-input">0.2</span> seconds</div>
+                        <div class="sb-block sb-motion">turn ↺ <span class="sb-input">15</span> degrees</div>
+                        <div class="sb-block sb-control">wait <span class="sb-input">0.2</span> seconds</div>
+                    </div>
+                </div>
+                <p>Now the block in your palette has a white slot. Type any number when you use it:</p>
+                <div class="sb-script" role="img" aria-label="when green flag clicked, dance 3 times, say Ta-da for 1 second, dance 6 times">
+                    <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                    <div class="sb-block sb-myblocks">dance <span class="sb-input">3</span> times</div>
+                    <div class="sb-block sb-looks">say <span class="sb-input sb-text">Ta-da!</span> for <span class="sb-input">1</span> seconds</div>
+                    <div class="sb-block sb-myblocks">dance <span class="sb-input">6</span> times</div>
+                </div>
+                <p>Back in the recipe analogy, the input is "how many pancakes?" The steps stay the same; the number changes.</p>
+
+                <details class="card">
+                    <summary>💡 Challenge: make <em>jump (height)</em></summary>
+                    <p>Edit your jump block (right-click the define block → <strong>Edit</strong>) and add a number input called <em>height</em>. Inside, use the green Operators block <strong>(height / 10)</strong> as the "change y by" amount going up, and <strong>(0 − (height / 10))</strong> going down. Now <em>jump (50)</em> is a small hop and <em>jump (150)</em> is a leap.</p>
+                </details>
+            </section>
+
+            <!-- Reset -->
+            <section id="reset" class="lesson-section">
+                <h2>🛠️ Try It: A reset game block</h2>
+                <p>Custom blocks aren't only for actions. Some of the most useful ones simply tidy up. Every game needs to put things back to the start when you press the green flag, and that setup list gets long. Wrap it in a block called <strong>reset game</strong>:</p>
+                <div class="sb-script" role="img" aria-label="define reset game: set score to 0, set lives to 3, go to x 0 y -150, show">
+                    <div class="sb-block sb-myblocks sb-hat">define <span class="sb-input" style="background:#FF4D6A;color:#fff;">reset game</span></div>
+                    <div class="sb-block sb-variables">set <span class="sb-dropdown">score</span> to <span class="sb-input">0</span></div>
+                    <div class="sb-block sb-variables">set <span class="sb-dropdown">lives</span> to <span class="sb-input">3</span></div>
+                    <div class="sb-block sb-motion">go to x: <span class="sb-input">0</span> y: <span class="sb-input">-150</span></div>
+                    <div class="sb-block sb-looks">show</div>
+                </div>
+                <div class="sb-script" role="img" aria-label="when green flag clicked, reset game">
+                    <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                    <div class="sb-block sb-myblocks">reset game</div>
+                </div>
+                <p>(You'll need to make the <em>score</em> and <em>lives</em> variables first, as in Lesson 3.2.) Now the green flag script reads like plain English. Anyone can glance at it and know what happens first.</p>
+
+                <div class="card card-accent">
+                    <h4>⭐ You'll use this in the capstone</h4>
+                    <p>In <strong>Lesson 4.3</strong> you and your child build <strong>Star Catcher</strong>: a bowl slides along the bottom catching falling stars (made with the clones from Lesson 4.1). The bowl's <strong>reset game</strong> block is exactly this one. Keep this project handy!</p>
+                </div>
+
                 <div class="card card-info">
-                    <h4>💡 You can code without ever sharing</h4>
-                    <p>If you'd rather keep everything private for now, that's completely fine — your child can create, save, and enjoy Scratch indefinitely without sharing a single project. Sharing is a choice, not a requirement.</p>
+                    <h4>💡 My Blocks belong to one sprite</h4>
+                    <p>A custom block only shows up in the palette of the sprite you made it in. Click a different sprite and it's gone. To reuse it, drag the <strong>define</strong> script onto the other sprite's picture in the sprite list (it copies), and the block appears there too.</p>
                 </div>
             </section>
 
-            <section id="community" class="lesson-section">
-                <h2>🎓 The moderated community</h2>
-                <p>When a project is shared, others can view it, "love" it, favorite it, remix it, and comment. Scratch works hard to keep this space kind: there's active moderation, community guidelines, and easy reporting.</p>
-
-                <figure class="shot">
-                    <img class="screenshot" src="images/scratch_community_guidelines.png" alt="The Scratch Community Guidelines page, listing expectations like being respectful, being constructive, and keeping personal info private.">
-                    <figcaption>Figure 2: The <a href="https://scratch.mit.edu/community_guidelines">Community Guidelines</a> — short, kid-readable, and worth reading together.</figcaption>
-                </figure>
-
-                <p>The guidelines boil down to a few kind, sensible rules:</p>
-                <ul>
-                    <li><strong>Be respectful</strong> — treat others how you'd want to be treated.</li>
-                    <li><strong>Be constructive</strong> — give helpful feedback, not put-downs.</li>
-                    <li><strong>Keep personal info private</strong> — yours and everyone else's.</li>
-                    <li><strong>Be honest</strong> — credit others' work when you remix.</li>
-                    <li><strong>Help keep the site friendly</strong> — report anything that isn't.</li>
-                </ul>
-            </section>
-
-            <section id="comments" class="lesson-section">
-                <h2>🎓 Comments &amp; controls</h2>
-                <p>Comments are the main way kids interact. A few things that make this safer than typical social media:</p>
+            <!-- Fixes -->
+            <section id="fixes" class="lesson-section">
+                <h2>🐛 Common problems &amp; fixes</h2>
                 <div class="table-wrap">
                     <table>
-                        <thead><tr><th>Control</th><th>What it does</th></tr></thead>
+                        <thead><tr><th>What you see</th><th>Likely cause</th><th>Fix</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>Report button</strong></td><td>Flags any comment or project for the moderation team.</td></tr>
-                            <tr><td><strong>Turn comments off</strong></td><td>Your child can disable comments on their own projects entirely.</td></tr>
-                            <tr><td><strong>Delete comments</strong></td><td>They control comments on their projects and profile.</td></tr>
-                            <tr><td><strong>Block/ignore</strong></td><td>Unwanted interactions can be reported and users blocked.</td></tr>
-                            <tr><td><strong>No private messaging</strong></td><td>There are no hidden DMs — interactions are public and visible to you.</td></tr>
+                            <tr><td>Using the block does nothing</td><td>The define block has nothing attached, or the steps are sitting loose nearby</td><td>Drag the steps until they snap <em>under</em> the define hat</td></tr>
+                            <tr><td>The input is always blank or 0</td><td>The oval was taken from somewhere else (like a variable), not from the define block, or it was left inside the define block and never placed</td><td>Drag the round input oval <em>out of the define block itself</em> into the slot where you need it</td></tr>
+                            <tr><td>My block isn't in the palette</td><td>A different sprite is selected; My Blocks belong to one sprite</td><td>Select the sprite you made it in, or drag the define script onto the other sprite</td></tr>
+                            <tr><td>The jump or dance happens instantly</td><td>"Run without screen refresh" is ticked</td><td>Right-click the define block → <strong>Edit</strong> → untick it</td></tr>
+                            <tr><td>Can't delete the define block</td><td>The block is still being used somewhere</td><td>Remove every use of the block first, then drag the define script to the palette</td></tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="card card-warning">
-                    <h4>⚠️ It's still the internet</h4>
-                    <p>Moderation is strong but not perfect, and any social space can bring criticism or the occasional unkind comment. Keep the account on a shared device or in a common room, check in regularly, and make it normal to show you a mean comment so you can report it together.</p>
+
+                <div class="card growth-card">
+                    <h4>🌱 Growth mindset: going back isn't going backward</h4>
+                    <p>Cleaning up code that already works can feel like wasted effort, or like admitting the first version was "wrong." It isn't. Professional programmers call this <strong>refactoring</strong>, and they do it constantly, because every project teaches you a better way to write the next one. When your child reopens an old game and spots a repeated chunk, say it out loud: <em>"Look how much you've grown — you can see things now you couldn't see last month."</em> And let them hear you say the same about your own projects.</p>
                 </div>
             </section>
 
-            <section id="citizen" class="lesson-section">
-                <h2>💬 Teach It: Digital citizenship</h2>
+            <!-- TEACH IT -->
+            <section id="teach" class="lesson-section">
                 <div class="teach-panel">
-                    <p>Scratch is many kids' first online community — a wonderful, low-stakes place to practice being a good digital citizen, with you alongside.</p>
-                    <h4>The conversation to have before sharing</h4>
-                    <p class="say-this">"When we share your project, other kids around the world can see it and leave comments. Most are super nice! But our family rules are: we never share private stuff — our real name, where we live, our school — and if anyone's ever unkind, you show me and we handle it together. Deal?"</p>
+                    <h2 style="border:0;padding:0;">💬 Teach It: New words for the computer</h2>
+                    <p>For kids, the big idea isn't "functions." It's that <em>they</em> get to invent new words and the computer learns them. That's powerful, and they can feel it.</p>
 
-                    <h4>Model kind commenting</h4>
-                    <p>Write a comment together on a project you both like. Praise something specific: "I love how the dragon breathes fire — how did you do that?" Kind, curious, specific — the gold standard.</p>
+                    <h4>Start with a game of "new word"</h4>
+                    <p>Before touching the computer, play it out loud:</p>
+                    <p class="say-this">"I'm going to teach you a new word: <em>zoomba</em>. Zoomba means clap twice and spin around. Ready? Zoomba! …Now let's teach the <em>computer</em> a new word."</p>
 
-                    <h4>Handle criticism gracefully</h4>
-                    <p>Someone <em>will</em> eventually leave a "meh" comment. Frame it early: "Not everyone will love everything we make, and that's okay. We can learn from helpful notes and ignore unkind ones."</p>
+                    <h4>Let them find the repeats</h4>
+                    <p>When a script has the same group of blocks in two places, don't point it out. Ask:</p>
+                    <p class="say-this">"I see those same blocks twice. What would you call what they do? What if that were one block with that name?"</p>
+                    <ul>
+                        <li><strong>The name is theirs.</strong> "boing" instead of "jump" is perfect. Silly names get remembered.</li>
+                        <li><strong>The number is theirs.</strong> With an input, let them try dance 1, dance 20, dance 100 and see what happens.</li>
+                    </ul>
 
                     <div class="card-grid">
                         <div class="card">
                             <h4>👧 Ages 5–7</h4>
-                            <p>Keep it private, or share only with family. They don't need the public community yet — focus on making.</p>
+                            <p>Frame it as "teaching the computer a new word." You build the define script together; they choose the name and use the new block from the palette. Skip inputs for now.</p>
                         </div>
                         <div class="card">
                             <h4>🧒 Ages 8–11</h4>
-                            <p>Good age to start sharing <em>with your supervision</em>. Read comments together at first. Practice writing kind ones.</p>
+                            <p>They can build jump and dance on their own. Introduce inputs with dance (times), and challenge them to invent a block for their own sprite, like <em>sneeze</em> or <em>celebrate</em>.</p>
                         </div>
                         <div class="card">
                             <h4>🧑 Ages 12+</h4>
-                            <p>More independence, with clear expectations. Talk about online reputation, crediting remixes, and not oversharing.</p>
+                            <p>Have them <strong>refactor</strong> their Lesson 3.2 game: find the setup and repeated chunks and replace them with named blocks. Ask them to explain why the new version is easier to change.</p>
                         </div>
+                    </div>
+
+                    <div class="card card-warning" style="margin-bottom:0;">
+                        <h4>⚠️ Common kid bug</h4>
+                        <p>They type the input's name into a slot instead of dragging the oval out of the define block, so Scratch sees the <em>word</em> "times," not the number. Point at the pink oval: "The value lives in here — drag it out."</p>
                     </div>
                 </div>
             </section>
 
-            <section id="habits" class="lesson-section">
-                <h2>🎓 Healthy habits</h2>
-                <ul>
-                    <li><strong>Balance making vs. browsing.</strong> Creating is the goal; endless scrolling through others' games less so. Nudge toward "let's make" over "let's watch."</li>
-                    <li><strong>Time boundaries.</strong> Agree on session lengths up front, just like any screen time.</li>
-                    <li><strong>Shared space.</strong> Keep Scratch on a family device or in a common area, especially early on.</li>
-                    <li><strong>Regular check-ins.</strong> "Show me what you made!" doubles as fun bonding <em>and</em> light supervision.</li>
-                    <li><strong>Know the off switch.</strong> You can review your child's account via the parent email and Scratch's account tools whenever you like.</li>
-                </ul>
-            </section>
-
+            <!-- Quiz -->
             <section id="quiz" class="lesson-section">
                 <h2>🎯 Quick Check</h2>
                 <div class="card quiz-container">
                     <div class="quiz-question">
-                        <p><strong>Question 1:</strong> When is a child's Scratch project visible to the public?</p>
+                        <p><strong>Question 1:</strong> Where do you put the steps that your new block should do?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="false" data-hint="Not automatic.">A) As soon as it's created</button>
-                            <button class="quiz-option" data-correct="true" data-explanation="Right — projects are private until the child explicitly clicks Share.">B) Only after they click "Share"</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Saving keeps it private.">C) The moment it's saved</button>
+                            <button class="quiz-option" data-correct="false" data-hint="The green flag script uses the block; it doesn't hold its steps.">A) Under the “when 🟩 clicked” block</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — the define hat is the recipe card. Whatever is snapped under it is what the block does.">B) Under the pink “define” block</button>
+                            <button class="quiz-option" data-correct="false" data-hint="The dialog only sets the name and inputs.">C) Inside the Make a Block dialog</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
+
                     <div class="quiz-question">
-                        <p><strong>Question 2:</strong> Which is TRUE about the Scratch community?</p>
+                        <p><strong>Question 2:</strong> Your jump block works, but the cat seems to teleport instead of hopping. What's the likely cause?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="true" data-explanation="Correct — it's moderated, has guidelines, and no private messaging.">A) It's moderated, has guidelines, and has no private DMs</button>
-                            <button class="quiz-option" data-correct="false" data-hint="There are no hidden DMs.">B) Kids can privately message anyone</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Comments can be turned off and reported.">C) Comments can't be controlled</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — with screen refresh off, Scratch skips drawing the in-between steps. Edit the block and untick it.">A) “Run without screen refresh” is ticked</button>
+                            <button class="quiz-option" data-correct="false" data-hint="A missing input wouldn't change how smooth it looks.">B) The block has no input</button>
+                            <button class="quiz-option" data-correct="false" data-hint="If the block were in the wrong sprite, it wouldn't run at all.">C) It's in the wrong sprite</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
+
                     <div class="quiz-question">
-                        <p><strong>Question 3:</strong> Best safety habit for a young sharer?</p>
+                        <p><strong>Question 3:</strong> You made a <em>reset game</em> block on the Bowl sprite, but it's missing when you click the Star sprite. Why?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="false" data-hint="Real names should stay private.">A) Use their real full name as the username</button>
-                            <button class="quiz-option" data-correct="true" data-explanation="Yes — a non-identifying username, your email, and shared check-ins.">B) A non-identifying username, your email on the account, and regular check-ins</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Unsupervised early sharing isn't ideal.">C) Share everything publicly with no supervision</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Saving doesn't affect which sprite sees the block.">A) The project wasn't saved</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Names can be anything — that's not it.">B) Block names can't have spaces</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Correct — My Blocks belong to one sprite. Drag the define script onto the other sprite to copy it.">C) Custom blocks belong to the sprite they were made in</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
                 </div>
             </section>
 
+            <!-- Journal -->
+            <section id="journal" class="lesson-section">
+                <h2>📓 Learning Journal</h2>
+                <div class="card journal-card">
+                    <h3>Take five minutes to write it down</h3>
+                    <p>A notebook, a notes app, or the back of an envelope — anything works. Writing things down helps them stick, and later you'll be able to look back and see how far you've come.</p>
+                    <ol>
+                        <li><strong>Key concepts:</strong> In your own words, what's the difference between the <em>define</em> block and <em>using</em> the block? What does an input add?</li>
+                        <li><strong>What clicked:</strong> Was it the recipe-card idea, seeing two scripts share one jump, or watching dance 3 turn into dance 6 with one number?</li>
+                        <li><strong>Questions &amp; confusion:</strong> Is dragging the input oval out of the define block still fuzzy? Screen refresh? Write down exactly where you got stuck.</li>
+                        <li><strong>Ideas to try:</strong> Name one block you wish Scratch had. Could you build it now as a custom block?</li>
+                        <li><strong>Progress &amp; feelings:</strong> How does it feel to be <em>making</em> blocks instead of just using them? What name did your child pick for their first block?</li>
+                    </ol>
+                    <p class="journal-tip">💡 <strong>Teach It tip:</strong> Have your child start a "dictionary" page in their coder's notebook: each custom block they invent, with its name and a drawing of what it does.</p>
+                </div>
+            </section>
+
+            <!-- Summary -->
             <section id="summary" class="lesson-section">
                 <h2>Summary &amp; What's Next</h2>
                 <div class="card card-success">
-                    <h3>🎉 Key Takeaways</h3>
+                    <h3>🎓 Key Takeaways</h3>
                     <ul>
-                        <li>Scratch minimizes data, uses a parent email, and is built for kids' privacy.</li>
-                        <li>Projects are <strong>private until shared</strong> — sharing is always a choice.</li>
-                        <li>The community is moderated, guideline-based, and has no private messaging.</li>
-                        <li>Set a non-identifying username, keep it a shared space, and talk about kind, safe behavior.</li>
+                        <li>A custom block names a chunk of code so you write it <strong>once</strong> and use it anywhere; programmers call this a <strong>function</strong>.</li>
+                        <li><strong>My Blocks → Make a Block</strong> lets you choose a name, inputs, and labels; leave <strong>Run without screen refresh</strong> unticked for animations.</li>
+                        <li>The steps go under the <strong>define</strong> hat; drag the input oval out of the define block to use its value.</li>
+                        <li>My Blocks belong to one sprite; drag the define script onto another sprite to share it.</li>
                     </ul>
                 </div>
-                <p><small>For the definitive, up-to-date details, always check the official <a href="https://scratch.mit.edu/parents/">Scratch for Parents</a> and <a href="https://scratch.mit.edu/privacy_policy">Privacy Policy</a> pages.</small></p>
-                <h3>🚀 Next up</h3>
-                <p>Your child is coding, creating, and sharing safely. Where does the adventure go from here? In <strong>Lesson 4.3</strong> — the course finale — we map what comes after Scratch, from ScratchJr for littles to real text-based languages.</p>
+
+                <div class="summary-grid">
+                    <div class="card">
+                        <h4>🏅 What You've Accomplished</h4>
+                        <ul>
+                            <li>Made your first custom block and used it from two scripts</li>
+                            <li>Built a block with an input that changes its behavior</li>
+                            <li>Wrote a <em>reset game</em> block ready for the capstone</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>📋 Before the Next Lesson</h4>
+                        <ul>
+                            <li>Save your project with the <em>reset game</em> block</li>
+                            <li>Reopen your falling-star clones project from Lesson 4.1</li>
+                            <li>Ask your child for one idea to add to a catching game</li>
+                            <li>Write your journal entry</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <h3>❓ Common Questions at This Stage</h3>
+                    <details>
+                        <summary>Is this too advanced for my 6-year-old?</summary>
+                        <p>Not the idea. Young kids understand "teaching the computer a new word" right away. Skip inputs and screen refresh, build the define script together, and let them enjoy using the block they named.</p>
+                    </details>
+                    <details>
+                        <summary>When should we make a custom block instead of just copying blocks?</summary>
+                        <p>A good rule of thumb: if you've copied the same group of blocks twice, or a script is too long to see on screen, give that chunk a name. But there's no penalty for waiting — you can always turn working code into a block later.</p>
+                    </details>
+                    <details>
+                        <summary>I renamed my block and now things look different. Did I break something?</summary>
+                        <p>Probably not. When you edit a block (right-click the define block → Edit), Scratch updates every place it's used automatically. That's one of the big advantages over copied blocks, which you'd have to fix one by one.</p>
+                    </details>
+                </div>
+
+                <h3>🔭 Looking Ahead</h3>
+                <p>Next is the big one. In <strong>Lesson 4.3: Capstone — Plan &amp; Build a Game Together</strong>, you'll combine everything from this course into <strong>Star Catcher</strong>: arrow-key controls, falling star clones, score and lives variables, your <em>reset game</em> block, and a proper Game Over. You'll plan it on paper with your child first, then build it side by side.</p>
+
+                <div class="card card-info encourage-card">
+                    <h4>💛 Encouragement for the Journey</h4>
+                    <p style="margin-bottom:0;">You're no longer just using the tools Scratch gives you — you're making your own. That's a real shift, and one many adults never get to. Your child gets to watch you do it, too.</p>
+                </div>
             </section>
 
             <nav class="lesson-nav" aria-label="Lesson Navigation">
-                <a href="lesson_10.html" class="prev-lesson">← Previous: The Art of Not Taking Over</a>
+                <a href="lesson_10.html" class="prev-lesson">← Previous: Clones — One Sprite, Many Copies</a>
                 <a href="index.html" class="home-link">🏠 Home</a>
-                <a href="lesson_12.html" class="next-lesson">Next: What Comes After Scratch →</a>
+                <a href="lesson_12.html" class="next-lesson">Next: Capstone — Plan &amp; Build a Game Together →</a>
             </nav>
         </div>
     </main>
 
     <footer class="site-footer">
-        <p>An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <p>© 2026 Ray de la Paz. Scratch for Parents. All rights reserved.</p>
+        <p><small>An independent course — not affiliated with the Scratch Foundation or MIT. Scratch is a project of the Scratch Foundation.</small></p>
         <div class="footer-links">
             <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
             <a href="https://scratch.mit.edu/">Scratch</a>

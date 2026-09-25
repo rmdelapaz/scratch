@@ -171,42 +171,51 @@ function initSearchFunctionality() {
     const results = document.getElementById('search-results');
     if (!input || !results) return;
 
-    const index = [];
-    document.querySelectorAll('h1, h2, h3, p, li').forEach((el, i) => {
-        index.push({ id: i, text: el.textContent.toLowerCase(), element: el, type: el.tagName.toLowerCase() });
-    });
+    // Course-wide index built by scripts/build_search_index.py
+    let index = null;
+    fetch('search-index.json')
+        .then(r => (r.ok ? r.json() : []))
+        .then(data => {
+            index = [];
+            data.forEach(lesson => lesson.sections.forEach(sec => index.push({
+                url: `${lesson.url}#${sec.id}`,
+                where: `${lesson.label}: ${lesson.title}`,
+                heading: sec.heading,
+                text: `${sec.heading} ${sec.text}`,
+                lower: `${sec.heading} ${sec.text}`.toLowerCase()
+            })));
+        })
+        .catch(() => { index = []; });
+
+    const escapeHtml = str => str.replace(/[&<>"']/g, c =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
     input.addEventListener('input', debounce(e => {
         const q = e.target.value.toLowerCase().trim();
         if (q.length < 2) { results.style.display = 'none'; return; }
+        if (!index) {
+            results.innerHTML = '<div class="search-result-item">Loading…</div>';
+            results.style.display = 'block';
+            return;
+        }
 
-        const hits = index.filter(item => item.text.includes(q)).slice(0, 10);
+        const hits = index.filter(item => item.lower.includes(q)).slice(0, 10);
         if (!hits.length) {
             results.innerHTML = '<div style="padding:0.75rem 1rem;color:var(--text-light);">No results found</div>';
             results.style.display = 'block';
             return;
         }
 
+        const re = new RegExp(escapeRegExp(escapeHtml(q)), 'gi');
         results.innerHTML = hits.map(h => {
-            const idx = h.text.indexOf(q);
-            const start = Math.max(0, idx - 30);
-            const end = Math.min(h.text.length, idx + q.length + 30);
-            let excerpt = (start > 0 ? '…' : '') + h.text.substring(start, end) + (end < h.text.length ? '…' : '');
-            excerpt = excerpt.replace(new RegExp(q, 'gi'), '<mark>$&</mark>');
-            return `<div class="search-result-item" data-idx="${h.id}"><small style="color:var(--text-light);">${h.type}</small> ${excerpt}</div>`;
+            const idx = h.lower.indexOf(q);
+            const start = Math.max(0, idx - 40);
+            const end = Math.min(h.text.length, idx + q.length + 40);
+            const excerpt = (start > 0 ? '…' : '') + escapeHtml(h.text.substring(start, end)).replace(re, '<mark>$&</mark>') + (end < h.text.length ? '…' : '');
+            return `<a class="search-result-item" href="${escapeHtml(h.url)}"><small style="color:var(--text-light);">${escapeHtml(h.where)} › ${escapeHtml(h.heading)}</small><br>${excerpt}</a>`;
         }).join('');
         results.style.display = 'block';
-
-        results.querySelectorAll('.search-result-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const el = index[item.dataset.idx].element;
-                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                el.classList.add('highlight');
-                setTimeout(() => el.classList.remove('highlight'), 2000);
-                input.value = '';
-                results.style.display = 'none';
-            });
-        });
     }, 200));
 
     document.addEventListener('click', e => {

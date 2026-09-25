@@ -4,23 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sequences and timing in Scratch — why order matters, using the wait block, and building a short routine. A parent-friendly Module 2 lesson.">
-    <meta name="author" content="Ray De La Paz">
+    <meta name="author" content="Ray de la Paz">
     <title>Lesson 2.1: Sequences &amp; Timing — Scratch for Parents</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/png" href="favicon.png">
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        window.__mermaid = mermaid;
-        const isDark = localStorage.getItem('theme') === 'dark' ||
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: isDark ? 'dark' : 'default',
-            themeVariables: isDark
-                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
-                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
-        });
-    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
@@ -40,13 +27,6 @@
         </div>
     </nav>
 
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#modules">Module 2</a></li>
-            <li aria-current="page">Lesson 2.1</li>
-        </ul>
-    </nav>
 
     <main id="main-content">
         <div class="container">
@@ -55,7 +35,7 @@
                 <p class="lead">The most fundamental idea in all of coding is deceptively simple: computers do things <em>in order</em>. This lesson makes that idea concrete — and adds the "pause" button that turns a rushed jumble into a performance.</p>
 
                 <div class="card card-info">
-                    <h2>🎯 Learning Objectives</h2>
+                    <h2>📚 What You'll Learn</h2>
                     <ul>
                         <li>Explain what a <strong>sequence</strong> is and why order matters</li>
                         <li>Use the <strong>wait</strong> block to control timing and pacing</li>
@@ -85,6 +65,7 @@
                         <li><a href="#build" class="toc-link">Try It: Build a greeting routine</a></li>
                         <li><a href="#teach" class="toc-link">Teach It: The "robot game"</a></li>
                         <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#journal" class="toc-link">Learning Journal</a></li>
                         <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
                     </ol>
                 </nav>
@@ -126,6 +107,11 @@
                     <h4>✅ Try the experiment</h4>
                     <p>Build one, run it, then drag the blocks to swap their order and run again. Feeling the difference is worth more than reading about it.</p>
                 </div>
+
+                <div class="card growth-card">
+                    <h4>🌱 Growth mindset: the computer isn't judging you — it's giving you feedback</h4>
+                    <p>When a script does something surprising, it's easy to think "I got it wrong." A more useful way to see it: the computer just showed you, very precisely, what your recipe <em>actually</em> says. That's free information. Swap two blocks, run it again, and compare — that loop of <strong>try, look, adjust</strong> is exactly how experienced coders work, too. Say it out loud when it happens to you: <em>"Oh, interesting — it did what I told it, not what I meant. Let's fix the recipe."</em> Your child will learn that a surprise is a clue to follow, not a reason to give up.</p>
+                </div>
             </section>
 
             <section id="wait" class="lesson-section">
@@ -133,7 +119,7 @@
                 <p>Computers are <em>fast</em> — often too fast. Without pauses, several actions blur into one instant. The <strong>“wait 1 seconds”</strong> block (from the orange <strong>Control</strong> category) is how you add breathing room, comic timing, and drama.</p>
 
                 <figure class="shot">
-                    <img class="screenshot" src="images/scratch_palette_control.png" alt="The Control category palette showing blocks including 'wait 1 seconds', 'repeat 10', 'forever', 'if then', and 'if then else'." style="max-width:330px;">
+                    <img loading="lazy" decoding="async" width="640" height="1524" class="screenshot" src="images/scratch_palette_control.webp" alt="The Control category palette showing blocks including 'wait 1 seconds', 'repeat 10', 'forever', 'if then', and 'if then else'." style="max-width:330px;">
                     <figcaption>Figure 1: The <strong>Control</strong> palette. The <em>wait</em> block is right at the top.</figcaption>
                 </figure>
 
@@ -239,10 +225,26 @@
                 </div>
             </section>
 
+            <section id="journal" class="lesson-section">
+                <h2>📓 Learning Journal</h2>
+                <div class="card journal-card">
+                    <h3>Take five minutes to write it down</h3>
+                    <p>Date a new entry, label it "Lesson 2.1," and give each prompt a line or two.</p>
+                    <ol>
+                        <li><strong>Key concepts:</strong> Explain a <em>sequence</em> using a recipe or routine from your own day. Why does a computer follow it so literally?</li>
+                        <li><strong>What clicked:</strong> When you swapped the order of the move and say blocks, what surprised you? Did the wait block change how the greeting felt?</li>
+                        <li><strong>Questions &amp; confusion:</strong> Anything about timing still puzzling — like why a "say … for 2 seconds" block already pauses on its own?</li>
+                        <li><strong>Ideas to try:</strong> Write out a short scene (a joke, a greeting, a mini play) you could turn into a timed sequence next time.</li>
+                        <li><strong>Progress &amp; feelings:</strong> How did the robot game go? Who laughed first — you or your child?</li>
+                    </ol>
+                    <p class="journal-tip">💡 <strong>Teach It tip:</strong> Have your child write (or draw) the robot-game instructions in their coder's notebook as numbered steps. Then read them back and follow them <em>exactly</em> — spotting the missing step together is a perfect first taste of debugging.</p>
+                </div>
+            </section>
+
             <section id="summary" class="lesson-section">
                 <h2>Summary &amp; What's Next</h2>
                 <div class="card card-success">
-                    <h3>🎉 Key Takeaways</h3>
+                    <h3>🎓 Key Takeaways</h3>
                     <ul>
                         <li>A <strong>sequence</strong> runs top-to-bottom; order changes behavior.</li>
                         <li>The <strong>wait</strong> block (Control) controls pacing and timing.</li>
@@ -250,20 +252,63 @@
                         <li>The off-screen "robot game" teaches sequencing better than any lecture.</li>
                     </ul>
                 </div>
-                <h3>🚀 Next up</h3>
-                <p>Copy-pasting the same block ten times is nobody's idea of fun. In <strong>Lesson 2.2</strong> we meet <strong>loops</strong> — the blocks that repeat actions for you — and finally make the cat <em>truly</em> walk.</p>
+
+                <div class="summary-grid">
+                    <div class="card">
+                        <h4>🏅 What You've Accomplished</h4>
+                        <ul>
+                            <li>Proved to yourself that block order changes behavior</li>
+                            <li>Used the wait block to pace a joke and a greeting</li>
+                            <li>Built a multi-step greeting routine from scratch</li>
+                            <li>Played the robot game to teach sequencing away from the screen</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>📋 Before the Next Lesson</h4>
+                        <ul>
+                            <li>Save your greeting routine — we'll build on the cat's walk next time</li>
+                            <li>Let your child write their own knock-knock joke with waits</li>
+                            <li>Write your journal entry</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <h3>❓ Common Questions at This Stage</h3>
+                    <details>
+                        <summary>What's the difference between “say … for 2 seconds” and plain “say …”?</summary>
+                        <p>“Say … for 2 seconds” shows the speech bubble, waits two seconds, removes it, and only <em>then</em> lets the next block run — so it acts like a built-in pause. Plain “say …” pops the bubble up and moves straight on, leaving it there until something else changes it. For step-by-step scenes, the “for … seconds” version is usually what you want.</p>
+                    </details>
+                    <details>
+                        <summary>Can I use half a second or less in the wait block?</summary>
+                        <p>Yes. Type any decimal, like <strong>0.5</strong> or <strong>0.2</strong>. Small waits are great for quick animations; longer ones (2–3 seconds) are good for giving a viewer time to read.</p>
+                    </details>
+                    <details>
+                        <summary>My child thinks the robot game is "too babyish." Should I skip it?</summary>
+                        <p>Flip the roles and raise the stakes: let them write the instructions for <em>you</em>, then follow them hilariously literally. Older kids love catching an adult "bug," and it teaches exactly the same idea. You can also skip straight to the screen — the Try It routine covers the concept too.</p>
+                    </details>
+                </div>
+
+                <h3>🔭 Looking Ahead</h3>
+                <p>Copy-pasting the same block ten times is nobody's idea of fun. In <strong>Lesson 2.2: Loops — Making Things Repeat</strong> we meet <strong>loops</strong> — the blocks that repeat actions for you — and finally make the cat <em>truly</em> walk.</p>
+
+                <div class="card card-info encourage-card">
+                    <h4>💛 Encouragement for the Journey</h4>
+                    <p style="margin-bottom:0;">You've just learned the idea that sits under every program ever written: steps, in order. It may feel simple — that's because you understand it now. Everything ahead builds on this foundation.</p>
+                </div>
             </section>
 
             <nav class="lesson-nav" aria-label="Lesson Navigation">
-                <a href="lesson_03.html" class="prev-lesson">← Previous: Your First Project</a>
+                <a href="lesson_03.html" class="prev-lesson">← Previous: Your First Project — Make the Cat Move &amp; Talk</a>
                 <a href="index.html" class="home-link">🏠 Home</a>
-                <a href="lesson_05.html" class="next-lesson">Next: Loops →</a>
+                <a href="lesson_05.html" class="next-lesson">Next: Loops — Making Things Repeat →</a>
             </nav>
         </div>
     </main>
 
     <footer class="site-footer">
-        <p>An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <p>© 2026 Ray de la Paz. Scratch for Parents. All rights reserved.</p>
+        <p><small>An independent course — not affiliated with the Scratch Foundation or MIT. Scratch is a project of the Scratch Foundation.</small></p>
         <div class="footer-links">
             <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
             <a href="https://scratch.mit.edu/">Scratch</a>

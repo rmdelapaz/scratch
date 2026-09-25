@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="How to teach Scratch to your child without taking over — scaffolding, asking instead of telling, praising effort, and handling frustration. A parent teaching-craft lesson.">
-    <meta name="author" content="Ray De La Paz">
-    <title>Lesson 4.1: The Art of Not Taking Over — Scratch for Parents</title>
+    <meta name="description" content="Learn Scratch clones — create clone of myself, when I start as a clone, and delete this clone — by building a shower of falling stars. A parent-friendly lesson with teaching tips for every age.">
+    <meta name="author" content="Ray de la Paz">
+    <title>Lesson 4.1: Clones — One Sprite, Many Copies — Scratch for Parents</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <script type="module">
@@ -40,31 +40,28 @@
         </div>
     </nav>
 
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#modules">Module 4</a></li>
-            <li aria-current="page">Lesson 4.1</li>
-        </ul>
-    </nav>
 
     <main id="main-content">
         <div class="container">
             <header>
-                <h1>🤲 Lesson 4.1: The Art of Not Taking Over</h1>
-                <p class="lead">You've got the Scratch skills. Now for the harder craft: helping your child learn without doing it <em>for</em> them. This lesson is about teaching — the questions, the pacing, and the sit-on-your-hands patience that turn a helper into a great coach.</p>
+                <h1>⭐ Lesson 4.1: Clones — One Sprite, Many Copies</h1>
+                <p class="lead">Welcome to Module 4! Real games are crowded — a sky full of raindrops, a swarm of enemies, a shower of stars. In this lesson you'll learn how one sprite can stamp out as many copies of itself as you need, and you'll build a sky of falling stars that becomes the heart of our capstone game.</p>
 
                 <div class="card card-info">
-                    <h2>🎯 Learning Objectives</h2>
+                    <h2>📚 What You'll Learn</h2>
+                    <p>By the end of this lesson, you will be able to:</p>
                     <ul>
-                        <li>Use <strong>scaffolding</strong> to give just enough help, then fade it</li>
-                        <li>Ask guiding questions instead of giving answers</li>
-                        <li>Praise <strong>effort and process</strong>, not just results</li>
-                        <li>Turn frustration ("productive struggle") into learning, not tears</li>
+                        <li>Explain what a <strong>clone</strong> is, using the rubber-stamp idea</li>
+                        <li>Use the three clone blocks: <strong>create clone of myself</strong>, <strong>when I start as a clone</strong>, and <strong>delete this clone</strong></li>
+                        <li>Use the "hidden original makes clones in a forever loop" pattern</li>
+                        <li>Know what a clone copies from the original — and why you must clean clones up</li>
+                        <li>Coach your child through their first "many things at once" project</li>
                     </ul>
-                    <p><strong>Estimated Time:</strong> 25 minutes &nbsp;•&nbsp; <strong>Coding needed:</strong> none — this one's for you</p>
+                    <p><strong>Estimated Time:</strong> 40 minutes &nbsp;•&nbsp; <strong>Project:</strong> a shower of falling stars</p>
                     <div class="age-badges">
-                        <span class="age-badge">Applies to all ages</span>
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
                     </div>
                 </div>
             </header>
@@ -77,182 +74,399 @@
                 </summary>
                 <nav aria-label="Table of Contents">
                     <ol>
-                        <li><a href="#why" class="toc-link">Why "not taking over" matters</a></li>
-                        <li><a href="#scaffold" class="toc-link">Scaffolding: help that fades</a></li>
-                        <li><a href="#ask" class="toc-link">Ask, don't tell</a></li>
-                        <li><a href="#praise" class="toc-link">Praise the process</a></li>
-                        <li><a href="#struggle" class="toc-link">Productive struggle</a></li>
-                        <li><a href="#motivate" class="toc-link">Keeping the spark alive</a></li>
+                        <li><a href="#why" class="toc-link">Learn It: Why one sprite isn't enough</a></li>
+                        <li><a href="#blocks" class="toc-link">Learn It: The three clone blocks</a></li>
+                        <li><a href="#rules" class="toc-link">Learn It: How clones behave</a></li>
+                        <li><a href="#stars" class="toc-link">Try It: Build falling stars</a></li>
+                        <li><a href="#tweak" class="toc-link">Try It: Make it yours</a></li>
+                        <li><a href="#fixes" class="toc-link">Common problems &amp; fixes</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Stamps and prints</a></li>
                         <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#journal" class="toc-link">Learning Journal</a></li>
                         <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
                     </ol>
                 </nav>
             </details>
 
+            <!-- Why -->
             <section id="why" class="lesson-section">
-                <h2>Why "not taking over" matters</h2>
-                <p>When we grab the mouse and fix the bug, we get a working project — and rob our child of the exact moment learning happens. The struggle <em>is</em> the lesson. Your goal isn't a polished project; it's a child who believes "I can figure things out."</p>
-                <blockquote>Every time you solve it for them, you quietly teach: "this is too hard for you." Every time you help them solve it themselves, you teach: "you are a person who solves hard things."</blockquote>
+                <h2>🎓 Learn It: Why one sprite isn't enough</h2>
+                <p>Remember the apple game from Lesson 3.2? One apple fell at a time. That works, but it's a bit lonely. What if you wanted <em>twenty</em> apples raining down at once?</p>
+                <p>The obvious answer is to duplicate the apple sprite twenty times. Kids try this all the time, and it does work — right up until you want to change something. Make the apples fall faster, and now you're editing twenty sprites. Miss one and it behaves differently from the rest. Your sprite list becomes a mile long, and the project turns into a chore.</p>
+                <p><strong>Clones</strong> fix this. A clone is a copy of a sprite that Scratch makes <em>while the program is running</em>. You write the code once, in one sprite, and that sprite makes as many copies as it needs — then throws them away when they're done.</p>
+
+                <blockquote>Think of a <strong>rubber stamp</strong>. The stamp itself stays in your hand; you never see it on the paper. Each time you press it down, you get a <strong>print</strong>. Change the stamp, and every print after that changes too. In Scratch, the original sprite is the stamp, and clones are the prints.</blockquote>
+
             </section>
 
-            <section id="scaffold" class="lesson-section">
-                <h2>🎓 Scaffolding: help that fades</h2>
-                <p><strong>Scaffolding</strong> means giving just enough support to keep your child moving, then removing it bit by bit as they gain confidence — like training wheels you gradually raise. Aim to give the <em>least</em> help that unblocks them.</p>
-                <div class="mermaid">
-                    flowchart LR
-                        A["Do it together<br/>(I lead)"] --> B["They lead,<br/>I prompt"]
-                        B --> C["They do it,<br/>I watch"]
-                        C --> D["They teach<br/>me / a sibling"]
-                        style A fill:#4C97FF,color:#fff,stroke:#333
-                        style B fill:#5CB1D6,color:#fff,stroke:#333
-                        style C fill:#59C059,color:#fff,stroke:#333
-                        style D fill:#9966FF,color:#fff,stroke:#333
-                </div>
+            <!-- Blocks -->
+            <section id="blocks" class="lesson-section">
+                <h2>🎓 Learn It: The three clone blocks</h2>
+                <p>All three live at the very bottom of the orange <strong>Control</strong> category. Scroll down past the loops and <em>if</em> blocks and you'll find them.</p>
+
+                <figure class="shot">
+                    <img loading="lazy" decoding="async" width="640" height="1524" class="screenshot" src="images/scratch_palette_control.webp" alt="The Control palette in Scratch: wait, repeat, forever, if, if-else, wait until, repeat until, and stop all, with the 'when I start as a clone' hat block just appearing at the very bottom." style="max-width:330px;">
+                    <figcaption>Figure 1: Scroll to the bottom of Control. “when I start as a clone” peeks in at the bottom; “create clone of myself” and “delete this clone” sit just below it.</figcaption>
+                </figure>
+
                 <div class="table-wrap">
                     <table>
-                        <thead><tr><th>Too little help</th><th>Just-right (scaffold)</th><th>Too much help</th></tr></thead>
+                        <thead><tr><th>Block</th><th>What it does</th><th>Stamp analogy</th></tr></thead>
                         <tbody>
-                            <tr><td>"Figure it out." (walks away)</td><td>"Which category might have a 'move' block?"</td><td>"Drag the blue move block here." (or does it)</td></tr>
-                            <tr><td>Child stalls, gives up</td><td>Child stays in the driver's seat</td><td>Child becomes a spectator</td></tr>
+                            <tr><td><strong>create clone of [myself]</strong></td><td>Makes a new copy of the sprite right now. The dropdown can also clone a <em>different</em> sprite.</td><td>Press the stamp down</td></tr>
+                            <tr><td><strong>when I start as a clone</strong></td><td>A hat block. Only a brand-new clone runs the script under it — the original never does.</td><td>What each print does after it lands</td></tr>
+                            <tr><td><strong>delete this clone</strong></td><td>Removes the clone that runs it. (Nothing happens if the original runs it.)</td><td>Wipe the print away</td></tr>
                         </tbody>
                     </table>
                 </div>
-            </section>
 
-            <section id="ask" class="lesson-section">
-                <h2>🎓 Ask, don't tell</h2>
-                <p>Questions keep your child thinking; answers end the thinking. Build a small toolkit of go-to prompts:</p>
-                <div class="teach-panel">
-                    <h4>Your question toolkit</h4>
-                    <p class="say-this">"What do you <em>want</em> to happen?"</p>
-                    <p class="say-this">"What happened <em>instead</em>?"</p>
-                    <p class="say-this">"Which block do you think is in charge of that?"</p>
-                    <p class="say-this">"What could we try to test that idea?"</p>
-                    <p class="say-this">"Where have we seen something like this before?"</p>
-                    <p style="margin-bottom:0;">Notice none of these give the answer. They hand your child the <em>next step of thinking</em> — which is the real skill.</p>
-                </div>
-                <div class="card card-warning">
-                    <h4>⚠️ The "helpful" reflex to resist</h4>
-                    <p>You'll see the fix instantly and want to blurt it out. Pause. Count to five. Ask a question instead. That five-second gap is where your child's problem-solving muscle grows.</p>
-                </div>
-            </section>
-
-            <section id="praise" class="lesson-section">
-                <h2>🎓 Praise the process, not the talent</h2>
-                <p>Decades of research (Carol Dweck's work on "growth mindset") show <em>what</em> we praise shapes how kids handle challenge. Praise fixed traits ("you're so smart") and kids avoid risks that might prove otherwise. Praise effort and strategy and they lean into hard things.</p>
                 <div class="card-grid">
-                    <div class="card card-success">
-                        <h4>✅ Say this</h4>
-                        <ul>
-                            <li>"You kept trying different things until it worked."</li>
-                            <li>"That was clever how you tested one block at a time."</li>
-                            <li>"You didn't give up when it got tricky."</li>
-                            <li>"How did you figure that out?"</li>
-                        </ul>
+                    <div class="card">
+                        <h4>The original (the stamp)</h4>
+                        <div class="sb-script" aria-label="Original sprite script: when green flag clicked, hide, forever: create clone of myself, wait 1 seconds">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-looks">hide</div>
+                            <div class="sb-block sb-control">forever</div>
+                            <div class="sb-nest">
+                                <div class="sb-block sb-control">create clone of <span class="sb-dropdown">myself</span></div>
+                                <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card card-warning">
-                        <h4>⚠️ Go easy on this</h4>
-                        <ul>
-                            <li>"You're a genius!"</li>
-                            <li>"You're so naturally good at this."</li>
-                            <li>"See, that was easy!" (it wasn't, to them)</li>
-                            <li>Praising only the finished product</li>
-                        </ul>
+                    <div class="card">
+                        <h4>Each clone (the prints)</h4>
+                        <div class="sb-script" aria-label="Clone script: when I start as a clone, show, do something, delete this clone">
+                            <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+                            <div class="sb-block sb-looks">show</div>
+                            <div class="sb-block sb-looks">say <span class="sb-input sb-text">I'm a copy!</span> for <span class="sb-input">2</span> seconds</div>
+                            <div class="sb-block sb-control">delete this clone</div>
+                        </div>
                     </div>
                 </div>
-            </section>
 
-            <section id="struggle" class="lesson-section">
-                <h2>🎓 Productive struggle (the good kind)</h2>
-                <p>There's a sweet spot between "so easy it's boring" and "so hard it's crushing." In that zone — sometimes called productive struggle or "flow" — kids are challenged but capable. Your job is to keep them in it.</p>
+                <p>This two-script shape is the <strong>pattern</strong> you'll use for almost every clone project: the original hides and makes clones in a forever loop with a <em>wait</em>; each clone shows itself, does its job, and deletes itself. The <em>wait</em> matters — without it, the loop would make clones as fast as the computer can go and hit the limit in a split second.</p>
+
                 <div class="mermaid">
                     flowchart TD
-                        A["Too easy → boredom"] -->|add a challenge| B["Just right → flow ✨"]
-                        C["Too hard → frustration"] -->|break it into steps| B
-                        style A fill:#e2e8f0,color:#1e293b,stroke:#333
-                        style B fill:#59C059,color:#fff,stroke:#333
-                        style C fill:#ef4444,color:#fff,stroke:#333
+                        A["🟩 Green flag clicked"] --> B["Original hides — the stamp stays out of sight"]
+                        B --> C["create clone of myself"]
+                        C --> D["wait 1 second"]
+                        D --> C
+                        C -.-> E["New clone appears"]
+                        E --> F["when I start as a clone: show"]
+                        F --> G["Clone does its job — falls, moves, talks"]
+                        G --> H["delete this clone"]
+                        style A fill:#FFBF00,color:#4d3800,stroke:#333
+                        style B fill:#9966FF,color:#fff,stroke:#333
+                        style C fill:#FFAB19,color:#5c3d00,stroke:#333
+                        style D fill:#FFAB19,color:#5c3d00,stroke:#333
+                        style E fill:#e2e8f0,color:#1e293b,stroke:#333
+                        style F fill:#9966FF,color:#fff,stroke:#333
+                        style G fill:#4C97FF,color:#fff,stroke:#333
+                        style H fill:#FFAB19,color:#5c3d00,stroke:#333
                 </div>
+                <p>The left side of that picture loops forever; the right side happens once <em>for every single clone</em>, all at the same time.</p>
+            </section>
+
+            <!-- Rules -->
+            <section id="rules" class="lesson-section">
+                <h2>🎓 Learn It: How clones behave</h2>
+                <p>A handful of rules explain almost every clone surprise. Read them once now; you'll recognize them the moment something odd happens.</p>
                 <ul>
-                    <li><strong>Bored?</strong> Raise the bar: "What if it kept score?" "Can you add a second level?"</li>
-                    <li><strong>Frustrated?</strong> Shrink the step: "Let's just get it to move first. One thing at a time."</li>
-                    <li><strong>Boiling over?</strong> Take a break — a real, respected debugging strategy, not a failure.</li>
+                    <li><strong>Each clone runs its own copy of the scripts.</strong> Twenty clones means twenty copies of the "when I start as a clone" script running side by side, each one minding its own business.</li>
+                    <li><strong>A clone starts exactly where the original is</strong> — same spot, same direction, same costume, same size, same color effect. That's why we move the original <em>before</em> stamping: wherever the stamp is, the print lands.</li>
+                    <li><strong>A clone copies "hidden" too.</strong> If the original is hidden, every clone is born hidden. That's why the clone script starts with <em>show</em>.</li>
+                    <li><strong>"when 🟩 clicked" runs only on the original.</strong> Clones are created after the flag is clicked, so they miss it. Put clone behavior under <em>when I start as a clone</em>.</li>
+                    <li><strong>Some hats run on everyone.</strong> Blocks like <em>when I receive</em> and <em>when this sprite clicked</em> run on the original <em>and</em> every clone. Handy later, surprising at first.</li>
+                    <li><strong>Scratch allows about 300 clones at once.</strong> After that, <em>create clone</em> quietly does nothing. Clones that fall off-screen but are never deleted still count, so the game slows down and new ones stop appearing. Always give each clone a way to <em>delete this clone</em>.</li>
+                    <li><strong>The red stop sign (or a new green flag) deletes every clone.</strong> You always get a clean slate.</li>
                 </ul>
             </section>
 
-            <section id="motivate" class="lesson-section">
-                <h2>🎓 Keeping the spark alive</h2>
-                <ul>
-                    <li><strong>Follow their interests.</strong> A kid who loves cats will out-code any assignment about spreadsheets. Let the projects be <em>theirs</em>.</li>
-                    <li><strong>Keep sessions short and positive.</strong> End on a win, not on a bug. 20–30 focused minutes beats a grinding hour.</li>
-                    <li><strong>Make it social.</strong> Have them demo to a grandparent or friend. An audience is rocket fuel.</li>
-                    <li><strong>Let it be silly.</strong> Fart sounds and exploding cats are perfectly valid computer science. Joy is the goal.</li>
-                    <li><strong>Model your own learning.</strong> "I don't know either — let's find out together" is one of the most powerful things you can say.</li>
-                </ul>
+            <!-- Stars -->
+            <section id="stars" class="lesson-section">
+                <h2>🛠️ Try It: Build falling stars</h2>
+                <p>Let's put the pattern to work. We'll make stars appear at random spots along the top of the stage and drift down to the bottom, one new star every second.</p>
+
                 <div class="card card-info">
-                    <h4>💡 You don't have to know the answer</h4>
-                    <p>Being a great coding parent isn't about expertise — it's about curiosity and encouragement. "Let's figure it out together" models exactly the mindset you're trying to grow.</p>
+                    <h4>💡 Before you start</h4>
+                    <p>Start a new project. Hover over the cat face button in the bottom-right corner, click <strong>Choose a Sprite</strong>, and pick <strong>Star</strong>. Delete the cat if you like. A dark backdrop such as <em>Stars</em> or <em>Night City</em> makes the stars pop.</p>
+                </div>
+
+                <ol class="steps">
+                    <li>
+                        <h3 style="margin-top:0;">Program the stamp (the original)</h3>
+                        <p>With the Star selected, build this. The original hides, then forever: jumps to a random spot along the top, stamps a clone there, and waits a second.</p>
+                        <div class="sb-script" aria-label="Star original script: when green flag clicked, hide, forever: go to x pick random -220 to 220, y 180; create clone of myself; wait 1 seconds">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-looks">hide</div>
+                            <div class="sb-block sb-control">forever</div>
+                            <div class="sb-nest">
+                                <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">180</span></div>
+                                <div class="sb-block sb-control">create clone of <span class="sb-dropdown">myself</span></div>
+                                <div class="sb-block sb-control">wait <span class="sb-input">1</span> seconds</div>
+                            </div>
+                        </div>
+                        <p>Click the green flag now. Nothing visible happens — and that's correct! The clones are being made, but they're all hidden, like prints made with invisible ink.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Program the prints (each clone)</h3>
+                        <p>In the <em>same</em> Star sprite, start a second script. Each clone shows itself, falls until it's near the bottom, then deletes itself.</p>
+                        <div class="sb-script" aria-label="Star clone script: when I start as a clone, show, repeat until y position is less than -170: change y by -5; then delete this clone">
+                            <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+                            <div class="sb-block sb-looks">show</div>
+                            <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#59C059;color:#fff;">⟨ y position ⟩ &lt; -170</span></div>
+                            <div class="sb-nest">
+                                <div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div>
+                            </div>
+                            <div class="sb-block sb-control">delete this clone</div>
+                        </div>
+                        <p>The <em>less-than</em> block is green (<strong>Operators</strong>); drop the blue <em>y position</em> reporter from the bottom of <strong>Motion</strong> into its left slot and type -170 on the right.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Run it</h3>
+                        <p>Click the green flag. Every second a new star appears somewhere along the top and glides down, while the earlier stars keep falling. Press stop and they all vanish at once.</p>
+                    </li>
+                </ol>
+
+                <div class="card card-warning">
+                    <h4>🤔 Why not "until touching edge"?</h4>
+                    <p>It's tempting, but each star is <em>born</em> at the top of the stage — already touching the edge. It would delete itself instantly and you'd see nothing. Checking the <em>y position</em> means "stop when you're near the bottom," which is exactly what we want.</p>
+                </div>
+
+                <div class="card card-success">
+                    <h4>✅ Hold on to this project!</h4>
+                    <p>Save it (or <em>File → Save to your computer</em>). These falling stars are the heart of <strong>Star Catcher</strong>, the game you'll plan and build together in Lesson 4.3. There, a bowl will slide along the bottom, each clone will check "am I touching the bowl?" to score a point, and stars that reach the bottom will cost a life.</p>
                 </div>
             </section>
 
+            <!-- Tweak -->
+            <section id="tweak" class="lesson-section">
+                <h2>🛠️ Try It: Make it yours</h2>
+                <p>Because every clone runs its own script, you can make each one a little different. Add these inside the clone script, right after <em>show</em>:</p>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>🎨 Easy</h4>
+                        <ul>
+                            <li>Change <em>wait 1</em> to <em>wait 0.3</em> — a meteor shower!</li>
+                            <li>Change <em>-5</em> to <em>-2</em> for slow, dreamy stars.</li>
+                            <li>Add <em>turn ↻ 5 degrees</em> inside the repeat so they spin as they fall.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>🔥 A bit more</h4>
+                        <ul>
+                            <li>Random sizes: <em>set size to (pick random 30 to 100) %</em>.</li>
+                            <li>Random colors: <em>change color effect by (pick random 0 to 200)</em>.</li>
+                            <li>Random speeds: make a <em>For this sprite only</em> variable called <em>speed</em>, set it to <em>pick random -2 to -8</em>, then <em>change y by speed</em>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sb-script" aria-label="Clone script with random size and color: when I start as a clone, set size to pick random 30 to 100 percent, change color effect by pick random 0 to 200, show, then fall and delete">
+                    <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+                    <div class="sb-block sb-looks">set size to <span class="sb-input" style="background:#59C059;color:#fff;">pick random 30 to 100</span> %</div>
+                    <div class="sb-block sb-looks">change <span class="sb-dropdown">color</span> effect by <span class="sb-input" style="background:#59C059;color:#fff;">pick random 0 to 200</span></div>
+                    <div class="sb-block sb-looks">show</div>
+                    <div class="sb-block sb-control">repeat until <span class="sb-input" style="background:#59C059;color:#fff;">⟨ y position ⟩ &lt; -170</span></div>
+                    <div class="sb-nest">
+                        <div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div>
+                    </div>
+                    <div class="sb-block sb-control">delete this clone</div>
+                </div>
+
+                <details class="card">
+                    <summary>💡 Challenge: snow and bubbles</summary>
+                    <p><strong>Snow:</strong> paint a small white circle sprite, make clones fall slowly, and add <em>change x by (pick random -2 to 2)</em> inside the loop so each flake drifts.</p>
+                    <p><strong>Bubbles:</strong> flip it upside down. Stamp clones along the <em>bottom</em> (y: -180), have each one <em>change y by 3</em> until its y position is greater than 170, and add <em>change ghost effect by 2</em> so they fade as they rise. Same pattern, opposite direction — proof that you've learned the <em>idea</em>, not just the recipe.</p>
+                </details>
+            </section>
+
+            <!-- Fixes -->
+            <section id="fixes" class="lesson-section">
+                <h2>🐛 Common problems &amp; fixes</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>What you see</th><th>Likely cause</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td>Nothing appears at all</td><td>The original is hidden, so the clones are born hidden — and the clone script never says <em>show</em></td><td>Put <em>show</em> right under <em>when I start as a clone</em></td></tr>
+                            <tr><td>Stars pile up in one spot, or a huge clump appears</td><td>The original never moves before stamping, or there's no <em>wait</em> in the forever loop</td><td>Add <em>go to x: (pick random) y: 180</em> before <em>create clone</em>, and a <em>wait</em> after it</td></tr>
+                            <tr><td>Game gets slower and slower, then new stars stop appearing</td><td>Clones are never deleted, so they pile up toward the 300 limit</td><td>End every clone's life with <em>delete this clone</em></td></tr>
+                            <tr><td>Stars vanish the instant they appear</td><td>Using <em>repeat until touching edge</em> — they start touching the top edge</td><td>Use <em>repeat until y position &lt; -170</em> instead</td></tr>
+                            <tr><td>The original falls too, or clones behave strangely</td><td>The falling code is under <em>when 🟩 clicked</em> (original only), or under <em>when I receive</em> (runs on everyone)</td><td>Move clone behavior under <em>when I start as a clone</em></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <blockquote>When clones misbehave, ask one question first: <em>"Is this code running on the stamp, on the prints, or on both?"</em> It solves most clone mysteries.</blockquote>
+
+                <div class="card growth-card">
+                    <h4>🌱 Growth mindset: confusion is the feeling of your brain stretching</h4>
+                    <p>Clones are the first idea in this course where lots of things happen at once, and it's normal for your head to feel a little crowded. That fuzzy feeling isn't a sign you've hit your limit — it's what learning something genuinely new feels like. Adults often hide that feeling from kids. Try the opposite: say out loud, <em>"This part is tricky for me. Let's slow down and figure out which stars are doing what."</em> Your child learns that "tricky" is something you work through, not something that means you're bad at it.</p>
+                </div>
+            </section>
+
+            <!-- TEACH IT -->
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: Stamps and prints</h2>
+                    <p>Clones are abstract. Your job is to make them physical before they become code.</p>
+
+                    <h4>Start with a real stamp</h4>
+                    <p>If you have a rubber stamp, a potato stamp, or even a cookie cutter and play-dough, use it. Stamp a few prints, then ask:</p>
+                    <p class="say-this">"Where's the stamp now? It's in my hand, not on the paper. In Scratch, the original star hides like the stamp, and all the stars you see falling are prints. What should each print do after it lands?"</p>
+
+                    <h4>Let them discover the "invisible ink" bug</h4>
+                    <p>When they first run the stamp script and see nothing, resist fixing it. Ask:</p>
+                    <p class="say-this">"We hid the stamp. The prints are copies of the stamp… so what do you think the prints look like right now?"</p>
+                    <p>Working out that the clones are hidden too — and need a <em>show</em> — is a huge "aha," and far stickier than being told.</p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>Watching copies pop into existence feels like magic, and that's enough. Keep to the stamp analogy and skip the rules about limits. You build the scripts; they pick the sprite, the backdrop, and how fast the stars fall.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>They can build both scripts with you nearby. Offer the random size and color challenge — seeing every star come out different shows that each clone runs its own copy of the code.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>Challenge them to spawn <em>enemies</em>: clones that come in from the right side and move toward the player, with a Game Over if one touches them. Ask them to explain why their clones get deleted, and what would happen if they didn't.</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-warning" style="margin-bottom:0;">
+                        <h4>⚠️ Common kid bug</h4>
+                        <p>Kids often put <em>create clone of myself</em> inside the clone's <em>own</em> script. Each clone then makes another clone, which makes another… and the screen floods until it hits the 300 limit. It's a great teaching moment: "Who should be doing the stamping — the stamp or the prints?"</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz -->
             <section id="quiz" class="lesson-section">
                 <h2>🎯 Quick Check</h2>
                 <div class="card quiz-container">
                     <div class="quiz-question">
-                        <p><strong>Question 1:</strong> What is "scaffolding" in teaching?</p>
+                        <p><strong>Question 1:</strong> The original star is hidden. You make clones, but none appear on the stage. Why?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="true" data-explanation="Yes — just-enough support that you gradually remove.">A) Giving just enough help, then fading it as they gain confidence</button>
-                            <button class="quiz-option" data-correct="false" data-hint="That's taking over.">B) Doing the hard parts for them</button>
-                            <button class="quiz-option" data-correct="false" data-hint="That's under-helping.">C) Leaving them entirely on their own</button>
+                            <button class="quiz-option" data-correct="false" data-hint="The clones really are being made — think about what they copy from the original.">A) Scratch only allows one clone at a time</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — clones copy the original, including being hidden. Add 'show' under 'when I start as a clone'.">B) Clones start hidden, just like the original, and need a “show” block</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Clones work in any project — no setting to turn on.">C) Clones must be switched on in the settings</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
+
                     <div class="quiz-question">
-                        <p><strong>Question 2:</strong> Which praise best builds resilience?</p>
+                        <p><strong>Question 2:</strong> Which script runs only on the new clones, never on the original?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="false" data-hint="Praising fixed traits can backfire.">A) "You're so smart!"</button>
-                            <button class="quiz-option" data-correct="true" data-explanation="Right — praising effort and strategy encourages taking on challenges.">B) "You kept trying different things until it worked."</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Dismisses the real effort it took.">C) "See, that was easy!"</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That one runs only on the original — clones are created after the flag is clicked.">A) when 🟩 clicked</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Broadcasts reach the original and every clone.">B) when I receive [message]</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Correct — 'when I start as a clone' runs once for each new clone, and never for the original.">C) when I start as a clone</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
+
                     <div class="quiz-question">
-                        <p><strong>Question 3:</strong> Your child is bored because the task is too easy. Best response?</p>
+                        <p><strong>Question 3:</strong> Your falling-stars game gets slower and slower, and then new stars stop appearing. The most likely cause?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="true" data-explanation="Yes — raise the challenge to get back into 'flow'.">A) Offer a new challenge ("What if it kept score?")</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Boredom means it's too easy, not too hard.">B) Make it simpler</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Ending abruptly wastes their momentum.">C) Stop the session</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — clones that are never deleted pile up toward Scratch's limit of about 300. End each clone with 'delete this clone'.">A) Clones are never deleted, so they pile up toward the 300 limit</button>
+                            <button class="quiz-option" data-correct="false" data-hint="The wait slows the stamping down; it doesn't cause a slowdown over time.">B) The “wait 1 seconds” block is too long</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Backdrops don't affect how many clones can exist.">C) The backdrop is too dark</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
                 </div>
             </section>
 
+            <!-- Journal -->
+            <section id="journal" class="lesson-section">
+                <h2>📓 Learning Journal</h2>
+                <div class="card journal-card">
+                    <h3>Take five minutes to write it down</h3>
+                    <p>Clones are a big step up. Writing it down now, while it's fresh, will make Lesson 4.3 much easier.</p>
+                    <ol>
+                        <li><strong>Key concepts:</strong> In your own words, what's the difference between the original sprite and a clone? What does each of the three clone blocks do?</li>
+                        <li><strong>What clicked:</strong> Was it the stamp idea? The moment the first star fell? Realizing why the clones were invisible?</li>
+                        <li><strong>Questions &amp; confusion:</strong> Which rule still feels slippery — what clones copy, which hats run where, or why deleting matters?</li>
+                        <li><strong>Ideas to try:</strong> Something else that could come in crowds: fish, balloons, zombies, falling pizza? Sketch how the stamp and prints would work.</li>
+                        <li><strong>Progress &amp; feelings:</strong> How did it feel to manage many things at once? How did your child react when the sky filled with stars?</li>
+                    </ol>
+                    <p class="journal-tip">💡 <strong>Teach It tip:</strong> Have your child draw a big stamp with arrows pointing to lots of little stars, and label them "original" and "clones." Explaining that picture back to you is great proof they understand.</p>
+                </div>
+            </section>
+
+            <!-- Summary -->
             <section id="summary" class="lesson-section">
                 <h2>Summary &amp; What's Next</h2>
                 <div class="card card-success">
-                    <h3>🎉 Key Takeaways</h3>
+                    <h3>🎓 Key Takeaways</h3>
                     <ul>
-                        <li>The struggle is the lesson — resist fixing it for them.</li>
-                        <li><strong>Scaffold</strong>: give the least help that unblocks, then fade it.</li>
-                        <li>Ask guiding questions; praise effort and strategy, not talent.</li>
-                        <li>Keep them in "productive struggle," follow their interests, and end on a win.</li>
+                        <li>A <strong>clone</strong> is a copy of a sprite made while the program runs — the original is the stamp, clones are the prints.</li>
+                        <li>The pattern: the original <strong>hides</strong> and runs <strong>create clone of myself</strong> in a forever loop with a <strong>wait</strong>; each clone uses <strong>when I start as a clone</strong> to <strong>show</strong>, do its job, and <strong>delete this clone</strong>.</li>
+                        <li>Clones start where the original is and copy its costume, size, effects, and visibility.</li>
+                        <li>"when 🟩 clicked" runs only on the original. Scratch allows about 300 clones, so always delete the ones you're done with.</li>
                     </ul>
                 </div>
-                <h3>🚀 Next up</h3>
-                <p>As your child grows more confident, they'll want to share their creations with the world. In <strong>Lesson 4.2</strong> we set that up <em>safely</em> — accounts, privacy, the community, and healthy habits.</p>
+
+                <div class="summary-grid">
+                    <div class="card">
+                        <h4>🏅 What You've Accomplished</h4>
+                        <ul>
+                            <li>Used all three clone blocks in a real project</li>
+                            <li>Built a shower of falling stars from a single sprite</li>
+                            <li>Learned the rules that explain most clone bugs</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>📋 Before the Next Lesson</h4>
+                        <ul>
+                            <li>Save your falling-stars project — you'll reuse it in Lesson 4.3</li>
+                            <li>Try one "make it yours" change with your child</li>
+                            <li>Write your journal entry</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <h3>❓ Common Questions at This Stage</h3>
+                    <details>
+                        <summary>Is my child too young for clones?</summary>
+                        <p>Not for enjoying them. Young kids love watching copies appear and can happily choose the sprite and speed while you build. The deeper rules — what clones copy, why deletion matters — usually land around age 8 or 9. There's no rush.</p>
+                    </details>
+                    <details>
+                        <summary>Can a clone tell which copy it is?</summary>
+                        <p>Yes, with a variable made "For this sprite only." Each clone gets its own private copy of that variable, so you can give every clone its own speed or ID number. We touched on this in the random-speed challenge; it's a great next step for older kids.</p>
+                    </details>
+                    <details>
+                        <summary>Should we just duplicate sprites instead? It seems simpler.</summary>
+                        <p>For two or three characters that each behave differently, duplicating is perfectly fine. Clones win when you need many of the <em>same</em> thing, or an unknown number of them. If you catch yourself making Star4 and Star5, it's time for clones.</p>
+                    </details>
+                </div>
+
+                <h3>🔭 Looking Ahead</h3>
+                <p>Projects are getting bigger, and so are the scripts. In <strong>Lesson 4.2: My Blocks — Make Your Own Blocks</strong>, you'll learn to bundle a stack of blocks into one custom block with a name you choose, like <em>jump</em> or <em>reset game</em>. Then, in Lesson 4.3, your falling stars and your custom blocks come together in <strong>Star Catcher</strong>.</p>
+
+                <div class="card card-info encourage-card">
+                    <h4>💛 Encouragement for the Journey</h4>
+                    <p style="margin-bottom:0;">A few weeks ago you'd never snapped two blocks together. Today you told a computer to create, move, and clean up dozens of objects on its own. That's a real programming idea, and you understand it well enough to teach it.</p>
+                </div>
+                <p style="text-align:center;">
+                    <a href="index.html" class="button">🏠 Back to Course Home</a>
+                </p>
             </section>
 
             <nav class="lesson-nav" aria-label="Lesson Navigation">
                 <a href="lesson_09.html" class="prev-lesson">← Previous: Debugging &amp; Remixing</a>
                 <a href="index.html" class="home-link">🏠 Home</a>
-                <a href="lesson_11.html" class="next-lesson">Next: Sharing Safely →</a>
+                <a href="lesson_11.html" class="next-lesson">Next: My Blocks — Make Your Own Blocks →</a>
             </nav>
         </div>
     </main>
 
     <footer class="site-footer">
-        <p>An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <p>© 2026 Ray de la Paz. Scratch for Parents. All rights reserved.</p>
+        <p><small>An independent course — not affiliated with the Scratch Foundation or MIT. Scratch is a project of the Scratch Foundation.</small></p>
         <div class="footer-links">
             <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
             <a href="https://scratch.mit.edu/">Scratch</a>

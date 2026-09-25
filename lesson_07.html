@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Build an interactive animated story in Scratch — multiple sprites, backdrops, and broadcasts for scene changes. A parent-friendly Module 3 project lesson.">
-    <meta name="author" content="Ray De La Paz">
+    <meta name="author" content="Ray de la Paz">
     <title>Lesson 3.1: An Interactive Animated Story — Scratch for Parents</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -40,13 +40,6 @@
         </div>
     </nav>
 
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#modules">Module 3</a></li>
-            <li aria-current="page">Lesson 3.1</li>
-        </ul>
-    </nav>
 
     <main id="main-content">
         <div class="container">
@@ -55,14 +48,16 @@
                 <p class="lead">Time to build something your child will want to show off: a little animated scene with two characters who talk to each other, on a real backdrop. You'll meet the magic block that lets sprites work as a team — the broadcast.</p>
 
                 <div class="card card-info">
-                    <h2>🎯 Learning Objectives</h2>
+                    <h2>📚 What You'll Learn</h2>
+                    <p>By the end of this lesson, you will be able to:</p>
                     <ul>
                         <li>Add multiple sprites and a backdrop from the libraries</li>
                         <li>Position sprites with <strong>go to</strong> and <strong>glide</strong></li>
                         <li>Coordinate sprites with <strong>broadcast</strong> and <strong>when I receive</strong></li>
                         <li>Stage a two-character conversation that plays itself</li>
+                        <li>Coach your child to plan a story out loud before coding it</li>
                     </ul>
-                    <p><strong>Estimated Time:</strong> 45 minutes &nbsp;•&nbsp; <strong>Builds on:</strong> Module 2</p>
+                    <p><strong>Estimated Time:</strong> 45 minutes &nbsp;•&nbsp; <strong>Builds on:</strong> Module 2 &nbsp;•&nbsp; <strong>Project:</strong> a two-character animated conversation</p>
                     <div class="age-badges">
                         <span class="age-badge">Ages 5–7 (with help)</span>
                         <span class="age-badge">Ages 8–11</span>
@@ -85,6 +80,7 @@
                         <li><a href="#convo" class="toc-link">Try It: A conversation that plays itself</a></li>
                         <li><a href="#teach" class="toc-link">Teach It: Story before code</a></li>
                         <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#journal" class="toc-link">Learning Journal</a></li>
                         <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
                     </ol>
                 </nav>
@@ -100,11 +96,11 @@
 
                 <div class="card-grid">
                     <figure class="shot" style="margin:0;">
-                        <img class="screenshot" src="images/scratch_sprite_library.png" alt="The Choose a Sprite library, a grid of characters with category filters like Animals, People, Fantasy, Dance, and a search box.">
+                        <img loading="lazy" decoding="async" width="1400" height="840" class="screenshot" src="images/scratch_sprite_library.webp" alt="The Choose a Sprite library, a grid of characters with category filters like Animals, People, Fantasy, Dance, and a search box.">
                         <figcaption>The sprite library — hundreds of ready characters.</figcaption>
                     </figure>
                     <figure class="shot" style="margin:0;">
-                        <img class="screenshot" src="images/scratch_backdrop_library.png" alt="The Choose a Backdrop library, a grid of background scenes with category filters.">
+                        <img loading="lazy" decoding="async" width="1400" height="840" class="screenshot" src="images/scratch_backdrop_library.webp" alt="The Choose a Backdrop library, a grid of background scenes with category filters.">
                         <figcaption>The backdrop library — pick your setting.</figcaption>
                     </figure>
                 </div>
@@ -182,6 +178,10 @@
                     <summary>💡 Challenge: change the backdrop mid-story</summary>
                     <p>The Stage can receive broadcasts too. Give the Stage a script: <em>when I receive "night"</em> → <strong>switch backdrop to</strong> a night scene. Then have a sprite broadcast "night" at the story's turning point. Instant scene change!</p>
                 </details>
+                <div class="card growth-card">
+                    <h4>🌱 Growth mindset: first drafts are supposed to be rough</h4>
+                    <p>Your first story will probably have a line that fires too early, a character facing the wrong way, or a glide that ends up off-stage. That's not a failed story — it's a first draft, and every animator, author, and filmmaker works in drafts. Play it, notice one thing to improve, fix it, play it again. Say this out loud with your child: <em>"Version one is done! What should version two make better?"</em> Treating a project as something you revise, rather than something you get right the first time, takes the pressure off both of you.</p>
+                </div>
             </section>
 
             <section id="teach" class="lesson-section">
@@ -250,10 +250,28 @@
                 </div>
             </section>
 
+            <!-- Journal -->
+            <section id="journal" class="lesson-section">
+                <h2>📓 Learning Journal</h2>
+                <div class="card journal-card">
+                    <h3>Take five minutes to write it down</h3>
+                    <p>Grab the same notebook or notes app you've been using. A few honest lines now will make the next lesson easier — and give you a record of how far you've come.</p>
+                    <ol>
+                        <li><strong>Key concepts:</strong> Explain a <em>broadcast</em> in your own words, as if to a friend. How is it different from lining up <em>wait</em> blocks?</li>
+                        <li><strong>What clicked:</strong> Was it the x/y grid finally making sense, the glide entrance, or the moment the second sprite answered on cue?</li>
+                        <li><strong>Questions &amp; confusion:</strong> Are you clear on which scripts start with <em>when 🟩 clicked</em> and which start with <em>when I receive</em>? Anything about the Stage having its own code feel fuzzy?</li>
+                        <li><strong>Ideas to try:</strong> Sketch a story you'd like to make next: who's in it, where it happens, and one scene change you'd trigger with a broadcast.</li>
+                        <li><strong>Progress &amp; feelings:</strong> This is your first multi-sprite project. How did acting out the story first change the way your child approached the coding?</li>
+                    </ol>
+                    <p class="journal-tip">💡 <strong>Teach It tip:</strong> Keep your child's story plan — the characters, setting, and acted-out lines — in their coder's notebook. A simple comic-strip storyboard (one box per broadcast) is a great way for them to plan the next one.</p>
+                </div>
+            </section>
+
+            <!-- Summary -->
             <section id="summary" class="lesson-section">
                 <h2>Summary &amp; What's Next</h2>
                 <div class="card card-success">
-                    <h3>🎉 Key Takeaways</h3>
+                    <h3>🎓 Key Takeaways</h3>
                     <ul>
                         <li>Add sprites and backdrops from the libraries; each sprite has its own code.</li>
                         <li><strong>go to</strong> teleports; <strong>glide</strong> slides smoothly.</li>
@@ -261,8 +279,54 @@
                         <li>Plan the story out loud <em>before</em> coding it.</li>
                     </ul>
                 </div>
-                <h3>🚀 Next up</h3>
-                <p>Stories are wonderful, but kids often dream of <em>games</em>. In <strong>Lesson 3.2</strong> we build one — with a <strong>variable</strong> to keep score. Get ready to catch some falling apples.</p>
+
+                <div class="summary-grid">
+                    <div class="card">
+                        <h4>🏅 What You've Accomplished</h4>
+                        <ul>
+                            <li>Built a project with multiple sprites and a backdrop</li>
+                            <li>Placed and moved sprites precisely with <strong>go to</strong> and <strong>glide</strong></li>
+                            <li>Used <strong>broadcasts</strong> to make characters take turns reliably</li>
+                            <li>Coached a "story first, code second" project with your child</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>📋 Before the Next Lesson</h4>
+                        <ul>
+                            <li>Save the story project and give it a good title</li>
+                            <li>Try the backdrop-change challenge, even with just one scene change</li>
+                            <li>Ask your child what kind of <em>game</em> they'd love to make — you'll need it next lesson</li>
+                            <li>Write your journal entry</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <h3>❓ Common Questions at This Stage</h3>
+                    <details>
+                        <summary>Our story got long and the scripts are hard to follow. Any tips?</summary>
+                        <p>Name every broadcast clearly (<em>line 2</em>, <em>scene: night</em>) and keep each sprite's scripts in a tidy column. Right-click the code area and choose <em>Clean up Blocks</em> to line everything up. Long stories are just many short cue-and-response pairs.</p>
+                    </details>
+                    <details>
+                        <summary>Can we record our own voices for the characters?</summary>
+                        <p>Yes! In a sprite's <strong>Sounds</strong> tab, hover over the Choose a Sound button and pick the microphone to record. Then use <em>play sound until done</em> in place of (or alongside) a <em>say</em> block. Kids love hearing their own voices come out of a character.</p>
+                    </details>
+                    <details>
+                        <summary>My child wants to skip the planning and just start coding. Should I insist?</summary>
+                        <p>Keep the plan tiny instead of skipping it — "Who's in it, where are they, and what's the first line?" takes one minute. Kids who start with no plan often get stuck on a blank screen; a one-minute plan gives them somewhere to go.</p>
+                    </details>
+                </div>
+
+                <h3>🔭 Looking Ahead</h3>
+                <p>In <strong>Lesson 3.2: A Simple Game with Variables &amp; Score</strong>, you'll build the kind of project kids beg for — a real catch game. You'll meet the <em>variable</em>, the labeled box that remembers a score, and combine loops, if, sensing, and random numbers into something genuinely fun to play. Get ready to catch some falling apples.</p>
+
+                <div class="card card-info encourage-card">
+                    <h4>💛 Encouragement for the Journey</h4>
+                    <p style="margin-bottom:0;">You just directed a little animated film — cast, set, and cues. Coordinating several things at once is a real step up, and you did it. Every story your child makes from here builds on what you set up today.</p>
+                </div>
+                <p style="text-align:center;">
+                    <a href="index.html" class="button">🏠 Back to Course Home</a>
+                </p>
             </section>
 
             <nav class="lesson-nav" aria-label="Lesson Navigation">
@@ -274,7 +338,8 @@
     </main>
 
     <footer class="site-footer">
-        <p>An independent course — not affiliated with the Scratch Foundation or MIT.</p>
+        <p>© 2026 Ray de la Paz. Scratch for Parents. All rights reserved.</p>
+        <p><small>An independent course — not affiliated with the Scratch Foundation or MIT. Scratch is a project of the Scratch Foundation.</small></p>
         <div class="footer-links">
             <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
             <a href="https://scratch.mit.edu/">Scratch</a>
