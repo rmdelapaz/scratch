@@ -3,24 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="How to teach Scratch to your child without taking over — scaffolding, asking instead of telling, praising effort, and handling frustration. A parent teaching-craft lesson.">
+    <meta name="description" content="Capstone Part 2: finish Star Catcher in Scratch with lives, a Game Over broadcast, sound and polish, then hold a launch day with your child. The Module 4 finale.">
     <meta name="author" content="Ray de la Paz">
-    <title>Lesson 5.1: The Art of Not Taking Over — Scratch for Parents</title>
+    <title>Lesson 4.4: Capstone Part 2 — Lives, Game Over &amp; Launch Day — Scratch for Parents</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/png" href="favicon.png">
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        window.__mermaid = mermaid;
-        const isDark = localStorage.getItem('theme') === 'dark' ||
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: isDark ? 'dark' : 'default',
-            themeVariables: isDark
-                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
-                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
-        });
-    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
@@ -44,22 +31,24 @@
     <main id="main-content">
         <div class="container">
             <header>
-                <h1>🤲 Lesson 5.1: The Art of Not Taking Over</h1>
-                <p class="lead">Welcome to <strong>Module 5: Teaching Scratch to Your Child</strong>. You've got the Scratch skills — you even built Star Catcher together in the capstone. Now for the harder craft: helping your child learn without doing it <em>for</em> them. This lesson is about teaching — the questions, the pacing, and the sit-on-your-hands patience that turn a helper into a great coach.</p>
+                <h1>🏁 Lesson 4.4: Capstone Part 2 — Lives, Game Over &amp; Launch Day</h1>
+                <p class="lead">Last time you built a playable Star Catcher. Today you finish it: missed stars cost lives, a big GAME OVER ends the round, a little polish makes it feel real, and then your child shows it off on launch day.</p>
 
                 <div class="card card-info">
                     <h2>📚 What You'll Learn</h2>
                     <p>By the end of this lesson, you will be able to:</p>
                     <ul>
-                        <li>Use <strong>scaffolding</strong> to give just enough help, then fade it</li>
-                        <li>Ask guiding questions instead of giving answers</li>
-                        <li>Praise <strong>effort and process</strong>, not just results</li>
-                        <li>Turn frustration ("productive struggle") into learning, not tears</li>
-                        <li>Teach your child growth-mindset language — including the power of "yet"</li>
+                        <li>Reopen a saved project and pick up where you left off</li>
+                        <li>Use a <em>lives</em> variable and an <em>if</em> inside a clone to end the game</li>
+                        <li>Send a <strong>broadcast</strong> that shows a Game Over sprite and stops everything</li>
+                        <li>Playtest and <strong>tune</strong> a game until it feels right</li>
+                        <li>Keep a second sitting fun and hold a launch day with your child</li>
                     </ul>
-                    <p><strong>Estimated Time:</strong> 25 minutes &nbsp;•&nbsp; <strong>Coding needed:</strong> none — this one's for you</p>
+                    <p><strong>Estimated Time:</strong> 35 minutes &nbsp;•&nbsp; <strong>Project:</strong> Star Catcher, finished — score, lives, Game Over, and polish</p>
                     <div class="age-badges">
-                        <span class="age-badge">Applies to all ages</span>
+                        <span class="age-badge">Ages 5–7 (with help)</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
                     </div>
                 </div>
             </header>
@@ -72,160 +61,266 @@
                 </summary>
                 <nav aria-label="Table of Contents">
                     <ol>
-                        <li><a href="#why" class="toc-link">Why "not taking over" matters</a></li>
-                        <li><a href="#scaffold" class="toc-link">Scaffolding: help that fades</a></li>
-                        <li><a href="#ask" class="toc-link">Ask, don't tell</a></li>
-                        <li><a href="#praise" class="toc-link">Praise the process</a></li>
-                        <li><a href="#struggle" class="toc-link">Productive struggle</a></li>
-                        <li><a href="#motivate" class="toc-link">Keeping the spark alive</a></li>
+                        <li><a href="#recap" class="toc-link">Where we left off</a></li>
+                        <li><a href="#build" class="toc-link">Try It: Lives, Game Over &amp; polish</a></li>
+                        <li><a href="#theirs" class="toc-link">Try It: Make it theirs</a></li>
+                        <li><a href="#launch" class="toc-link">Launch Day</a></li>
+                        <li><a href="#fixes" class="toc-link">Common problems &amp; fixes</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Finish strong</a></li>
                         <li><a href="#quiz" class="toc-link">Quick Check</a></li>
                         <li><a href="#journal" class="toc-link">Learning Journal</a></li>
-                        <li><a href="#summary" class="toc-link">Summary &amp; What's Next</a></li>
+                        <li><a href="#summary" class="toc-link">Summary &amp; Module 4 Complete</a></li>
                     </ol>
                 </nav>
             </details>
 
-            <section id="why" class="lesson-section">
-                <h2>Why "not taking over" matters</h2>
-                <p>When we grab the mouse and fix the bug, we get a working project — and rob our child of the exact moment learning happens. The struggle <em>is</em> the lesson. Your goal isn't a polished project; it's a child who believes "I can figure things out."</p>
-                <blockquote>Every time you solve it for them, you quietly teach: "this is too hard for you." Every time you help them solve it themselves, you teach: "you are a person who solves hard things."</blockquote>
+            <!-- Recap -->
+            <section id="recap" class="lesson-section">
+                <h2>🎬 Where we left off</h2>
+                <p>First, <strong>open your saved project</strong>. If you saved online, click <strong>My Stuff</strong> (the folder icon at the top of scratch.mit.edu) and choose <em>Star Catcher</em>. If you saved a file, open the editor and choose <strong>File → Load from your computer</strong>, then pick the <em>.sb3</em> file.</p>
+                <p>Play one round together before touching any code. In Part 1 you built:</p>
+                <ul>
+                    <li><strong>Bowl:</strong> calls <em>reset game</em>, then slides with the arrow keys.</li>
+                    <li><strong>Star (original):</strong> hides and keeps making clones.</li>
+                    <li><strong>Star (each clone):</strong> falls, and if it touches the Bowl, scores and pops:</li>
+                </ul>
+                <div class="sb-script" role="img" aria-label="Where Part 1 ended, the Star clone script: when I start as a clone, go to random x at y 170, show, forever: change y by -5; if touching Bowl then change score by 1, hide, play sound Pop until done, delete this clone">
+                    <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+                    <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">170</span></div>
+                    <div class="sb-block sb-looks">show</div>
+                    <div class="sb-block sb-control">forever</div>
+                    <div class="sb-nest">
+                        <div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div>
+                        <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Bowl?</span> then</div>
+                        <div class="sb-nest">
+                            <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+                            <div class="sb-block sb-looks">hide</div>
+                            <div class="sb-block sb-sound">play sound <span class="sb-dropdown">Pop</span> until done</div>
+                            <div class="sb-block sb-control">delete this clone</div>
+                        </div>
+                    </div>
+                </div>
+                <p>What's missing? Missed stars pile up, <em>lives</em> never changes, and the game never ends. Those are today's jobs.</p>
             </section>
 
-            <section id="scaffold" class="lesson-section">
-                <h2>🎓 Scaffolding: help that fades</h2>
-                <p><strong>Scaffolding</strong> means giving just enough support to keep your child moving, then removing it bit by bit as they gain confidence — like training wheels you gradually raise. Aim to give the <em>least</em> help that unblocks them.</p>
-                <div class="mermaid">
-                    flowchart LR
-                        A["Do it together<br/>(I lead)"] --> B["They lead,<br/>I prompt"]
-                        B --> C["They do it,<br/>I watch"]
-                        C --> D["They teach<br/>me / a sibling"]
-                        style A fill:#4C97FF,color:#fff,stroke:#333
-                        style B fill:#5CB1D6,color:#fff,stroke:#333
-                        style C fill:#59C059,color:#fff,stroke:#333
-                        style D fill:#9966FF,color:#fff,stroke:#333
+            <!-- Build -->
+            <section id="build" class="lesson-section">
+                <h2>🛠️ Try It: Lives, Game Over &amp; polish</h2>
+                <p>The numbering continues from Part 1, so today is <strong>steps 8–10</strong>. Test after each one; with a child driving, expect about double the times shown.</p>
+
+                <ol class="steps" style="counter-reset: step 7;">
+                    <li>
+                        <h3 style="margin-top:0;">Missing a star costs a life <small>(about 5 min)</small></h3>
+                        <p>On the Star, add a second <em>if</em> inside the clone's forever loop, under the catching <em>if</em>. A clone that falls past the bowl takes a life and deletes itself; if that was the last life, it announces Game Over:</p>
+                        <div class="sb-script" role="img" aria-label="Full Star clone script: when I start as a clone, go to random x at the top, show, forever: change y by -5; if touching Bowl then change score by 1, hide, play sound Pop until done, delete this clone; if y position less than -170 then change lives by -1, if lives equals 0 then broadcast game over, delete this clone">
+                            <div class="sb-block sb-control sb-hat">when I start as a clone</div>
+                            <div class="sb-block sb-motion">go to x: <span class="sb-input" style="background:#59C059;color:#fff;">pick random -220 to 220</span> y: <span class="sb-input">170</span></div>
+                            <div class="sb-block sb-looks">show</div>
+                            <div class="sb-block sb-control">forever</div>
+                            <div class="sb-nest">
+                                <div class="sb-block sb-motion">change y by <span class="sb-input">-5</span></div>
+                                <div class="sb-block sb-control">if <span class="sb-input" style="background:#5CB1D6;color:#fff;">touching Bowl?</span> then</div>
+                                <div class="sb-nest">
+                                    <div class="sb-block sb-variables">change <span class="sb-dropdown">score</span> by <span class="sb-input">1</span></div>
+                                    <div class="sb-block sb-looks">hide</div>
+                                    <div class="sb-block sb-sound">play sound <span class="sb-dropdown">Pop</span> until done</div>
+                                    <div class="sb-block sb-control">delete this clone</div>
+                                </div>
+                                <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span style="background:#4C97FF;border-radius:10px;padding:0 6px;">y position</span> &lt; -170</span> then</div>
+                                <div class="sb-nest">
+                                    <div class="sb-block sb-variables">change <span class="sb-dropdown">lives</span> by <span class="sb-input">-1</span></div>
+                                    <div class="sb-block sb-control">if <span class="sb-input" style="background:#59C059;color:#fff;"><span style="background:#FF8C1A;border-radius:10px;padding:0 6px;">lives</span> = 0</span> then</div>
+                                    <div class="sb-nest"><div class="sb-block sb-events">broadcast <span class="sb-dropdown">game over</span></div></div>
+                                    <div class="sb-block sb-control">delete this clone</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>The green <strong>less than</strong> block is in <strong>Operators</strong>; drop the blue <strong>y position</strong> reporter (bottom of Motion) into its left slot. For <em>game over</em>, open the broadcast dropdown and choose <strong>New message</strong>.</p>
+                        <p>Why check lives <em>inside the star</em>? The star is the one that knows it was missed, so it's the natural place to notice the last life. <em>delete this clone</em> sits last in that <em>if</em>, so each miss costs exactly one life.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Show GAME OVER <small>(about 5 min)</small></h3>
+                        <p>Click <strong>Paint</strong> (the brush under Choose a Sprite), write <strong>GAME OVER</strong> with the Text tool, and name the sprite <em>Game Over</em>. Give it two scripts:</p>
+                        <div class="card-grid">
+                            <div>
+                                <div class="sb-script" role="img" aria-label="Game Over sprite: when green flag clicked, hide">
+                                    <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                                    <div class="sb-block sb-looks">hide</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="sb-script" role="img" aria-label="Game Over sprite: when I receive game over, go to front layer, show, stop all">
+                                    <div class="sb-block sb-events sb-hat">when I receive <span class="sb-dropdown">game over</span></div>
+                                    <div class="sb-block sb-looks">go to <span class="sb-dropdown">front</span> layer</div>
+                                    <div class="sb-block sb-looks">show</div>
+                                    <div class="sb-block sb-control">stop <span class="sb-dropdown">all</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p><em>stop all</em> freezes everything and removes every clone, but GAME OVER stays visible because it was shown first. The green flag hides it for the next game.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Add music, then playtest and tune <small>(about 7 min)</small></h3>
+                        <p>Click the <strong>Stage</strong> (bottom right), open its <strong>Sounds</strong> tab, and choose a sound from the library's <strong>Loops</strong> category. Then give the Stage this script:</p>
+                        <div class="sb-script" role="img" aria-label="Stage script: when green flag clicked, forever play sound (your music loop) until done">
+                            <div class="sb-block sb-events sb-hat">when <span class="sb-flag">⚑</span> clicked</div>
+                            <div class="sb-block sb-control">forever</div>
+                            <div class="sb-nest">
+                                <div class="sb-block sb-sound">play sound <span class="sb-dropdown">your music loop</span> until done</div>
+                            </div>
+                        </div>
+                        <p>Now play three games. Too hard? Change <em>-5</em> to <em>-3</em>, or lengthen the wait between stars. Too easy? Do the opposite. This is called <strong>tuning</strong>, and kids love it.</p>
+                    </li>
+                </ol>
+
+                <div class="card card-success">
+                    <h4>✅ Project Completion</h4>
+                    <p>Tick these off together:</p>
+                    <ul>
+                        <li>☐ The bowl moves left and right with the arrow keys</li>
+                        <li>☐ The green flag resets score to 0 and lives to 3 (via <em>reset game</em>)</li>
+                        <li>☐ The original star stays hidden; clones fall from random spots</li>
+                        <li>☐ Catching a star adds 1 to score and plays a sound</li>
+                        <li>☐ A missed star removes 1 life and disappears</li>
+                        <li>☐ At 0 lives, GAME OVER appears and everything stops</li>
+                        <li>☐ Pressing the green flag again starts a fresh game</li>
+                        <li>☐ The project is saved (<em>File → Save now</em>, or <em>Save to your computer</em>)</li>
+                    </ul>
                 </div>
+            </section>
+
+            <!-- Make it theirs -->
+            <section id="theirs" class="lesson-section">
+                <h2>🛠️ Try It: Make it theirs</h2>
+                <p>Bring out the someday list. Your child picks <strong>one</strong> item, adds it, tests it, and only then picks another.</p>
+
+                <details class="card">
+                    <summary>🌟 If you want to go further: stars speed up</summary>
+                    <p>Make a <em>speed</em> variable; add <strong>set speed to 3</strong> to <em>reset game</em>. Replace <em>change y by -5</em> with <strong>change y by (0 − speed)</strong>, and add <strong>change speed by 0.2</strong> next to <em>change score by 1</em>. Every catch speeds things up.</p>
+                </details>
+
+                <details class="card">
+                    <summary>🌟 If you want to go further: rocks to dodge</summary>
+                    <p><strong>Duplicate</strong> the Star and give it a rock costume. In its clone script, <em>touching Bowl</em> does <strong>change lives by -1</strong> (plus the <em>lives = 0</em> check) instead of scoring; a rock reaching the bottom just deletes itself.</p>
+                </details>
+
+                <details class="card">
+                    <summary>🌟 If you want to go further: a high score</summary>
+                    <p>Make a <em>high score</em> variable. In the Game Over sprite, before <em>stop all</em>, add <strong>if score &gt; high score then set high score to score</strong>. Keep it out of <em>reset game</em> so it survives between games.</p>
+                </details>
+
+                <details class="card">
+                    <summary>🌟 If you want to go further: levels</summary>
+                    <p>Make a <em>level</em> variable, set to 1 in <em>reset game</em>. In the Bowl's forever loop, add <strong>if score = 10 and level = 1 then set level to 2, switch backdrop</strong>. Level 3 uses the same pattern with a bigger score.</p>
+                </details>
+            </section>
+
+            <!-- Launch -->
+            <section id="launch" class="lesson-section">
+                <h2>🚀 Launch Day</h2>
+                <p>When the checklist is complete, hold a launch. It takes five minutes, and it's what your child will remember:</p>
+                <ol>
+                    <li><strong>Pick a player.</strong> A sibling, grandparent, neighbor, or someone on a video call.</li>
+                    <li><strong>The designer explains the rules first,</strong> just like on the design card: "Use the arrows. Catch stars. Don't miss three!"</li>
+                    <li><strong>Hands off.</strong> Your child watches someone play their game; don't explain for them.</li>
+                    <li><strong>Ask the player for one thing they liked and one idea.</strong> The idea goes on the someday list.</li>
+                </ol>
+                <p>Publishing to the Scratch website is a separate decision with its own safety choices. <a href="lesson_15.html">Lesson 5.2: Sharing Safely &amp; the Scratch Community</a> walks you through it; until then, show it off in person.</p>
+            </section>
+
+            <!-- Fixes -->
+            <section id="fixes" class="lesson-section">
+                <h2>🐛 Common problems &amp; fixes</h2>
                 <div class="table-wrap">
                     <table>
-                        <thead><tr><th>Too little help</th><th>Just-right (scaffold)</th><th>Too much help</th></tr></thead>
+                        <thead><tr><th>What you see</th><th>Likely cause</th><th>Fix</th></tr></thead>
                         <tbody>
-                            <tr><td>"Figure it out." (walks away)</td><td>"Which category might have a 'move' block?"</td><td>"Drag the blue move block here." (or does it)</td></tr>
-                            <tr><td>Child stalls, gives up</td><td>Child stays in the driver's seat</td><td>Child becomes a spectator</td></tr>
+                            <tr><td>Stars still pile up at the bottom</td><td>The <em>y position &lt; -170</em> check is outside the forever</td><td>Put it inside the clone's forever loop, with <em>delete this clone</em> inside the if</td></tr>
+                            <tr><td>Lives drop by more than 1 per miss</td><td><em>delete this clone</em> isn't inside the lives if</td><td>Make it the last block inside that if</td></tr>
+                            <tr><td>GAME OVER never shows</td><td>Broadcast and receive messages don't match, or lives never reach exactly 0</td><td>Pick the same <em>game over</em> message in both; check <em>reset game</em> sets lives to 3</td></tr>
+                            <tr><td>GAME OVER is showing when a new game starts</td><td>The Game Over sprite has no green-flag <em>hide</em></td><td>Add <em>when 🟩 clicked → hide</em> to that sprite</td></tr>
+                            <tr><td>Music overlaps itself or stutters</td><td><em>start sound</em> used in the forever</td><td>Use <em>play sound … until done</em> so each loop finishes first</td></tr>
                         </tbody>
                     </table>
                 </div>
-            </section>
-
-            <section id="ask" class="lesson-section">
-                <h2>🎓 Ask, don't tell</h2>
-                <p>Questions keep your child thinking; answers end the thinking. Build a small toolkit of go-to prompts:</p>
-                <div class="teach-panel">
-                    <h4>Your question toolkit</h4>
-                    <p class="say-this">"What do you <em>want</em> to happen?"</p>
-                    <p class="say-this">"What happened <em>instead</em>?"</p>
-                    <p class="say-this">"Which block do you think is in charge of that?"</p>
-                    <p class="say-this">"What could we try to test that idea?"</p>
-                    <p class="say-this">"Where have we seen something like this before?"</p>
-                    <p style="margin-bottom:0;">Notice none of these give the answer. They hand your child the <em>next step of thinking</em> — which is the real skill.</p>
-                </div>
-                <div class="card card-warning">
-                    <h4>⚠️ The "helpful" reflex to resist</h4>
-                    <p>You'll see the fix instantly and want to blurt it out. Pause. Count to five. Ask a question instead. That five-second gap is where your child's problem-solving muscle grows.</p>
-                </div>
-            </section>
-
-            <section id="praise" class="lesson-section">
-                <h2>🎓 Praise the process, not the talent</h2>
-                <p>Decades of research (Carol Dweck's work on "growth mindset") show <em>what</em> we praise shapes how kids handle challenge. Praise fixed traits ("you're so smart") and kids avoid risks that might prove otherwise. Praise effort and strategy and they lean into hard things.</p>
-                <div class="card-grid">
-                    <div class="card card-success">
-                        <h4>✅ Say this</h4>
-                        <ul>
-                            <li>"You kept trying different things until it worked."</li>
-                            <li>"That was clever how you tested one block at a time."</li>
-                            <li>"You didn't give up when it got tricky."</li>
-                            <li>"How did you figure that out?"</li>
-                        </ul>
-                    </div>
-                    <div class="card card-warning">
-                        <h4>⚠️ Go easy on this</h4>
-                        <ul>
-                            <li>"You're a genius!"</li>
-                            <li>"You're so naturally good at this."</li>
-                            <li>"See, that was easy!" (it wasn't, to them)</li>
-                            <li>Praising only the finished product</li>
-                        </ul>
-                    </div>
-                </div>
+                <blockquote>If it worked before step 8 and doesn't now, the bug is in step 8. That's the gift of building one piece at a time.</blockquote>
 
                 <div class="card growth-card">
-                    <h4>🌱 Growth mindset: teach your child the power of "yet"</h4>
-                    <p>So far in this course, "yet" has been a word for <em>you</em>. Now hand it to your child. When they say <em>"I can't make the stars fall,"</em> add one word: <em>"You can't make them fall… <strong>yet</strong>."</em> That tiny word turns a verdict into a to-do list. Say it often enough and you'll hear them start saying it to themselves.</p>
-                    <p>Pair it with process praise. "You're so smart!" feels kind, but it quietly tells a child that success proves smartness — so the next bug feels like proof of the opposite. "You tested one block at a time until you found it" tells them <em>what they did</em>, which is something they can do again. Try explaining it to them plainly:</p>
-                    <p class="say-this">"Your brain is like a muscle — it grows when things are tricky, not when they're easy. When coding feels hard, that's your brain getting stronger. You haven't figured it out <em>yet</em>."</p>
-                    <p style="margin-bottom:0;">And model it: let them hear you say, "I got stuck on clones at first too — I just kept trying things." Your honest struggle is the most convincing lesson in the room.</p>
+                    <h4>🌱 Growth mindset: finishing is its own skill</h4>
+                    <p>The last stretch is often the hardest: the "wow" moments are behind you, and bugs feel personal because you're <em>so close</em>. That's normal. Name it out loud: <em>"This is the finishing part. It's slower, and that's okay. One more fix."</em> Kids who watch a grown-up push calmly through the last 10% learn that finishing is practiced, not inborn.</p>
                 </div>
             </section>
 
-            <section id="struggle" class="lesson-section">
-                <h2>🎓 Productive struggle (the good kind)</h2>
-                <p>There's a sweet spot between "so easy it's boring" and "so hard it's crushing." In that zone — sometimes called productive struggle or "flow" — kids are challenged but capable. Your job is to keep them in it.</p>
-                <div class="mermaid">
-                    flowchart TD
-                        A["Too easy → boredom"] -->|add a challenge| B["Just right → flow ✨"]
-                        C["Too hard → frustration"] -->|break it into steps| B
-                        style A fill:#e2e8f0,color:#1e293b,stroke:#333
-                        style B fill:#59C059,color:#fff,stroke:#333
-                        style C fill:#ef4444,color:#fff,stroke:#333
+            <!-- TEACH IT -->
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: Finish strong</h2>
+                    <p>The director/typist roles still apply. What's new is keeping energy up and handling frustration near the finish.</p>
+
+                    <h4>Restart the momentum</h4>
+                    <p>Don't open with "okay, step 8." Open by playing, which reminds your child they already made something that works:</p>
+                    <p class="say-this">"Before we add anything — can you beat your high score from last time? Show me!"</p>
+
+                    <h4>Stop on a win</h4>
+                    <p>If energy fades, stop right after something works, never mid-bug. Step 8 working is a fine place to pause.</p>
+
+                    <h4>When frustration hits near the end</h4>
+                    <p>A broken game right before the finish can bring tears. Slow down and make the bug small:</p>
+                    <p class="say-this">"It worked before we added this part, so the problem is only in this part. Let's read it together, one block at a time."</p>
+                    <p>If they're past the point of fun, it's fine to say "let's save it and fix it with fresh eyes tomorrow." That's a real programmer move.</p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👧 Ages 5–7</h4>
+                            <p>Lives are optional. If you add them, you build while they watch the number drop. They paint the GAME OVER sign and pick the music. Launch day is the star event.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 8–11</h4>
+                            <p>They build steps 8–10 with you reading aloud. Let them do all the tuning, and let them choose one someday item on their own.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧑 Ages 12+</h4>
+                            <p>Give them the checklist and let them finish solo. Then challenge them: plan a <em>new</em> game with a fresh design card, using the same routine.</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-success" style="margin-bottom:0;">
+                        <h4>🌟 End on a high</h4>
+                        <p>Launch day <em>is</em> the high. Afterward, ask your child, "What was the hardest part, and how did you get past it?" Their answer is the real lesson of the capstone.</p>
+                    </div>
                 </div>
-                <ul>
-                    <li><strong>Bored?</strong> Raise the bar: "What if it kept score?" "Can you add a second level?"</li>
-                    <li><strong>Frustrated?</strong> Shrink the step: "Let's just get it to move first. One thing at a time."</li>
-                    <li><strong>Boiling over?</strong> Take a break — a real, respected debugging strategy, not a failure.</li>
-                </ul>
             </section>
 
-            <section id="motivate" class="lesson-section">
-                <h2>🎓 Keeping the spark alive</h2>
-                <ul>
-                    <li><strong>Follow their interests.</strong> A kid who loves cats will out-code any assignment about spreadsheets. Let the projects be <em>theirs</em>.</li>
-                    <li><strong>Keep sessions short and positive.</strong> End on a win, not on a bug. 20–30 focused minutes beats a grinding hour.</li>
-                    <li><strong>Make it social.</strong> Have them demo to a grandparent or friend. An audience is rocket fuel.</li>
-                    <li><strong>Let it be silly.</strong> Fart sounds and exploding cats are perfectly valid computer science. Joy is the goal.</li>
-                    <li><strong>Model your own learning.</strong> "I don't know either — let's find out together" is one of the most powerful things you can say.</li>
-                </ul>
-                <div class="card card-info">
-                    <h4>💡 You don't have to know the answer</h4>
-                    <p>Being a great coding parent isn't about expertise — it's about curiosity and encouragement. "Let's figure it out together" models exactly the mindset you're trying to grow.</p>
-                </div>
-            </section>
-
+            <!-- Quiz -->
             <section id="quiz" class="lesson-section">
                 <h2>🎯 Quick Check</h2>
                 <div class="card quiz-container">
                     <div class="quiz-question">
-                        <p><strong>Question 1:</strong> What is "scaffolding" in teaching?</p>
+                        <p><strong>Question 1:</strong> Each missed star is taking away 2 or 3 lives instead of 1. What's the likely cause?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="true" data-explanation="Yes — just-enough support that you gradually remove.">A) Giving just enough help, then fading it as they gain confidence</button>
-                            <button class="quiz-option" data-correct="false" data-hint="That's taking over.">B) Doing the hard parts for them</button>
-                            <button class="quiz-option" data-correct="false" data-hint="That's under-helping.">C) Leaving them entirely on their own</button>
+                            <button class="quiz-option" data-correct="false" data-hint="The starting value doesn't affect how much each miss subtracts.">A) <em>lives</em> starts at 3 instead of 1</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — without 'delete this clone' inside that if, the star stays below the line and loses a life on every trip around the loop.">B) <em>delete this clone</em> isn't inside the lives <em>if</em>, so the star keeps subtracting</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Sounds don't change variables.">C) The Pop sound is too long</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
+
                     <div class="quiz-question">
-                        <p><strong>Question 2:</strong> Which praise best builds resilience?</p>
+                        <p><strong>Question 2:</strong> Why does the Game Over sprite <em>show</em> itself before running <em>stop all</em>?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="false" data-hint="Praising fixed traits can backfire.">A) "You're so smart!"</button>
-                            <button class="quiz-option" data-correct="true" data-explanation="Right — praising effort and strategy encourages taking on challenges.">B) "You kept trying different things until it worked."</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Dismisses the real effort it took.">C) "See, that was easy!"</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Correct — stop all freezes everything, so the sign must already be visible when it runs.">A) So the sign is already on screen when everything freezes</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Order matters here — nothing runs after stop all.">B) It doesn't matter; the order is just style</button>
+                            <button class="quiz-option" data-correct="false" data-hint="stop all actually removes clones.">C) Because stop all would otherwise make more clones</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
+
                     <div class="quiz-question">
-                        <p><strong>Question 3:</strong> Your child is bored because the task is too easy. Best response?</p>
+                        <p><strong>Question 3:</strong> Right before the finish, the game breaks and your child is close to tears. Best move?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="true" data-explanation="Yes — raise the challenge to get back into 'flow'.">A) Offer a new challenge ("What if it kept score?")</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Boredom means it's too easy, not too hard.">B) Make it simpler</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Ending abruptly wastes their momentum.">C) Stop the session</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Fixing it yourself takes the win away from them.">A) Quietly take the mouse and fix it for them</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — shrink the problem to the last change, and it's fine to save and come back fresh.">B) Point out it worked before the last change, look at just that part together, or save and stop for today</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Starting over throws away everything that worked.">C) Start a new project from scratch</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
@@ -237,46 +332,51 @@
                 <h2>📓 Learning Journal</h2>
                 <div class="card journal-card">
                     <h3>Take five minutes to write it down</h3>
-                    <p>This lesson has no code, so your journal is where the practice happens. Be honest — nobody is grading your parenting.</p>
+                    <p>This closes Module 4, so leave room for a look back at the whole project.</p>
                     <ol>
-                        <li><strong>Key concepts:</strong> In your own words, what is <em>scaffolding</em>? What's the difference between praising the <em>process</em> and praising the <em>person</em>?</li>
-                        <li><strong>What clicked:</strong> Think back to building Star Catcher or an earlier project together. Was there a moment you grabbed the mouse? What might a guiding question have sounded like instead?</li>
-                        <li><strong>Questions &amp; confusion:</strong> Where is the line between "productive struggle" and "too frustrated" for <em>your</em> child? What signs tell you they've crossed it?</li>
-                        <li><strong>Ideas to try:</strong> Pick two questions from the toolkit and one "yet" sentence you'll use in your next session. Write them on a sticky note for the computer.</li>
-                        <li><strong>Progress &amp; feelings:</strong> Which is harder for you — staying quiet when you see the fix, or watching your child struggle? Why do you think that is?</li>
+                        <li><strong>Key concepts:</strong> In your own words, what does a <strong>broadcast</strong> do in Star Catcher, and why does the lives check live inside the star clone?</li>
+                        <li><strong>What clicked:</strong> Which moment made it feel like a "real" game: the lives counting down, GAME OVER appearing, or the music?</li>
+                        <li><strong>Questions &amp; confusion:</strong> Which part could you <em>not</em> yet rebuild from memory?</li>
+                        <li><strong>Ideas to try:</strong> What did your launch-day player suggest? What would your child's <em>next</em> game be?</li>
+                        <li><strong>Progress &amp; feelings:</strong> Looking back over all of Module 4 (clones, My Blocks, and a two-part game), what are you proudest of? How did your child's confidence change from Part 1 to launch day?</li>
                     </ol>
-                    <p class="journal-tip">💡 <strong>Teach It tip:</strong> Invite your child to add a "Yet List" page to their coder's notebook: things they can't do in Scratch <em>yet</em>. Revisit it every few weeks and let them cross items off — nothing makes growth more visible.</p>
+                    <p class="journal-tip">💡 <strong>Teach It tip:</strong> Have your child add a drawing or screenshot of the finished game, with their best score and their launch-day player's name, next to the design card. It's page one of their game design portfolio.</p>
                 </div>
             </section>
 
+            <!-- Summary -->
             <section id="summary" class="lesson-section">
-                <h2>Summary &amp; What's Next</h2>
+                <h2>Summary &amp; Module 4 Complete 🎉</h2>
                 <div class="card card-success">
                     <h3>🎓 Key Takeaways</h3>
                     <ul>
-                        <li>The struggle is the lesson — resist fixing it for them.</li>
-                        <li><strong>Scaffold</strong>: give the least help that unblocks, then fade it.</li>
-                        <li>Ask guiding questions; praise effort and strategy, not talent.</li>
-                        <li>Keep them in "productive struggle," follow their interests, and end on a win.</li>
-                        <li>Teach the word <strong>"yet"</strong> — and model it with your own mistakes.</li>
+                        <li>A clone can check its own fate: missed stars subtract a life and delete themselves.</li>
+                        <li>A <strong>broadcast</strong> lets one sprite tell another "it's over"; show the sign, then <em>stop all</em>.</li>
+                        <li><strong>Tuning</strong> numbers is how a working game becomes a fun one.</li>
+                        <li>Start second sittings by playing, stop on a win, and shrink bugs to the last change.</li>
+                        <li>Launch day turns "I made a game" into "people play my game."</li>
                     </ul>
+                </div>
+
+                <div class="card card-accent" style="text-align:center;">
+                    <h3>🏆 You finished Module 4!</h3>
+                    <p>Clones, custom blocks, and a complete game taken from a paper plan to launch day with your child.</p>
                 </div>
 
                 <div class="summary-grid">
                     <div class="card">
                         <h4>🏅 What You've Accomplished</h4>
                         <ul>
-                            <li>Learned the scaffolding ladder: I lead → they lead → they teach</li>
-                            <li>Built a question toolkit to replace ready-made answers</li>
-                            <li>Swapped talent praise for process praise and "yet"</li>
-                            <li>Learned to spot boredom vs. frustration and adjust the challenge</li>
+                            <li>Finished Star Catcher with score, lives, and Game Over</li>
+                            <li>Used a broadcast and <em>stop all</em> to end a game cleanly</li>
+                            <li>Held a launch day with a real player</li>
                         </ul>
                     </div>
                     <div class="card">
                         <h4>📋 Before the Next Lesson</h4>
                         <ul>
-                            <li>Run one Scratch session where you keep your hands off the mouse the whole time</li>
-                            <li>Use at least one "yet" and one process-praise sentence out loud</li>
+                            <li>Tick every box on the Project Completion checklist</li>
+                            <li>Add one someday item, <em>or</em> start a design card for your child's own game</li>
                             <li>Write your journal entry</li>
                         </ul>
                     </div>
@@ -285,32 +385,35 @@
                 <div class="faq">
                     <h3>❓ Common Questions at This Stage</h3>
                     <details>
-                        <summary>My child just wants me to do it for them. What do I do?</summary>
-                        <p>That's very common, especially after a frustrating stretch. Offer to be their "hands" while they're the "boss": you drag only the blocks they name and point to. They still do all the thinking, and within a session or two most kids want the mouse back.</p>
+                        <summary>I ended up doing most of the building. Is that a problem?</summary>
+                        <p>It's common in a first capstone. What matters is who made the <em>decisions</em>: if your child chose the idea, sprites, sounds, and tuning, it's their game. Next time, hand over one more step; that's what the next lesson is about.</p>
                     </details>
                     <details>
-                        <summary>Isn't it unkind to watch them struggle when I know the answer?</summary>
-                        <p>Watching them struggle <em>alone</em> would be. Staying next to them, asking questions, and shrinking the step when needed is the opposite — it's support that trusts them. If tears start, take a break; that's a respected strategy, not a failure.</p>
+                        <summary>Should we publish it on the Scratch website?</summary>
+                        <p>Not yet. Sharing is a great goal, but read Lesson 5.2 first so you can make the choice together with the safety settings in mind.</p>
                     </details>
                     <details>
-                        <summary>I've said "you're so smart" a thousand times. Have I done damage?</summary>
-                        <p>Not at all — kids are resilient, and warmth matters more than perfect wording. Simply start adding process praise alongside it ("…and I love how you kept testing"). The shift happens over months, not in a single sentence.</p>
+                        <summary>My child wants to keep adding features forever. Should I stop them?</summary>
+                        <p>No, that's the best outcome! Keep the rhythm: one feature, test, save. If it gets tangled, call this version "done" and start Star Catcher 2.</p>
                     </details>
                 </div>
 
                 <h3>🔭 Looking Ahead</h3>
-                <p>As your child grows more confident, they'll want to share their creations with the world. In <strong>Lesson 5.2: Sharing Safely &amp; the Scratch Community</strong>, we set that up <em>safely</em> — accounts, privacy, the moderated community, comments, and healthy habits.</p>
+                <p>Next comes the other half of this course: <strong>Module 5: Teaching Scratch to Your Child</strong>. It opens with <strong>Lesson 5.1: The Art of Not Taking Over</strong>, on the hardest part of coaching: keeping your hands off the mouse. You'll learn what to say instead of fixing it yourself, so the win belongs to your child.</p>
 
                 <div class="card card-info encourage-card">
                     <h4>💛 Encouragement for the Journey</h4>
-                    <p style="margin-bottom:0;">Sitting on your hands is genuinely hard — you'll slip, and that's fine. Every time you catch yourself and ask a question instead, you're giving your child something more lasting than a working project: the belief that they can figure things out.</p>
+                    <p style="margin-bottom:0;">You started this course unsure what a sprite was. Now you've planned a game, built it over two sittings, and watched someone play it. That's what game designers do. Keep the design card somewhere you'll see it.</p>
                 </div>
+                <p style="text-align:center;">
+                    <a href="index.html" class="button">🏠 Back to Course Home</a>
+                </p>
             </section>
 
             <nav class="lesson-nav" aria-label="Lesson Navigation">
-                <a href="lesson_12.html" class="prev-lesson">← Previous: Capstone — Plan &amp; Build a Game</a>
+                <a href="lesson_12.html" class="prev-lesson">← Previous: Capstone Part 1 — Plan It &amp; Build the Core</a>
                 <a href="index.html" class="home-link">🏠 Home</a>
-                <a href="lesson_14.html" class="next-lesson">Next: Sharing Safely →</a>
+                <a href="lesson_14.html" class="next-lesson">Next: The Art of Not Taking Over →</a>
             </nav>
         </div>
     </main>

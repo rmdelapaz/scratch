@@ -3,24 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Where to go after Scratch — what is still ahead inside Scratch (lists, extensions), the offline app, physical computing, and the path to text languages like Python. The course finale for parents.">
+    <meta name="description" content="ScratchJr for ages 5–7 — the free picture-block coding app for tablets. Learn how it differs from Scratch, build a tap-to-talk pet and a two-page story, and coach a very young coder.">
     <meta name="author" content="Ray de la Paz">
-    <title>Lesson 5.4: What Comes After Scratch — Scratch for Parents</title>
+    <title>Lesson 5.3: ScratchJr — Coding for Ages 5–7 — Scratch for Parents</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/png" href="favicon.png">
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        window.__mermaid = mermaid;
-        const isDark = localStorage.getItem('theme') === 'dark' ||
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: isDark ? 'dark' : 'default',
-            themeVariables: isDark
-                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
-                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
-        });
-    </script>
+    <style>
+        /* ScratchJr scripts: one horizontal row of picture blocks, read left to right.
+           Fixed, high-contrast colors so the text stays readable in light and dark themes. */
+        .jr-script {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            gap: 4px;
+            margin: var(--spacing-md, 1rem) 0;
+            padding: 12px;
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md, 8px);
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        .jr-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            min-width: 86px;
+            padding: 8px 10px;
+            border-radius: 10px;
+            font-family: var(--font-family-base);
+            font-weight: 700;
+            font-size: 0.82rem;
+            line-height: 1.15;
+            text-align: center;
+            white-space: nowrap;
+            color: #fff;
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+            flex-shrink: 0;
+        }
+        .jr-icon { font-size: 1.35rem; line-height: 1; }
+        .jr-num {
+            background: #fff;
+            color: #1e293b;
+            border-radius: 100px;
+            padding: 1px 8px;
+            font-size: 0.8rem;
+        }
+        .jr-trigger { background: #F7C948; color: #3d2e00; border-radius: 18px 10px 10px 18px; }
+        .jr-motion  { background: #2F6FD6; }
+        .jr-looks   { background: #7A4FD6; }
+        .jr-sound   { background: #2E7D32; }
+        .jr-control { background: #F59E0B; color: #3a2000; }
+        .jr-end     { background: #C62828; border-radius: 10px 18px 18px 10px; }
+        .jr-legend  { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: var(--spacing-md, 1rem) 0; }
+        .jr-legend li { margin: 0; }
+        .jr-legend .jr-block { flex-direction: row; min-width: 0; }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
@@ -44,24 +84,24 @@
     <main id="main-content">
         <div class="container">
             <header>
-                <h1>🚀 Lesson 5.4: What Comes After Scratch</h1>
-                <p class="lead">You've come the whole way — sixteen lessons, from "what is this?" to clones, custom blocks, a finished game, coaching, and sharing. This finale maps the road ahead, whether your child is 5 or 15, so the momentum you've built keeps rolling.</p>
+                <h1>🧸 Lesson 5.3: ScratchJr — Coding for Ages 5–7</h1>
+                <p class="lead">Got a little one who wants to do what the big kids are doing, but can't read the blocks yet? ScratchJr is Scratch's younger sibling: picture blocks, big buttons, and no reading needed. In this lesson you'll learn it in minutes and discover how to coach a five-year-old coder.</p>
 
                 <div class="card card-info">
                     <h2>📚 What You'll Learn</h2>
                     <p>By the end of this lesson, you will be able to:</p>
                     <ul>
-                        <li>See where ScratchJr, Scratch, hardware, and text coding fit on one road map</li>
-                        <li>Know what's still ahead <em>inside</em> Scratch — lists and extensions like Pen, Music, and micro:bit</li>
-                        <li>Discover ways to take Scratch beyond the screen (physical computing)</li>
-                        <li>Understand the bridge from blocks to <strong>text-based</strong> coding</li>
-                        <li>Leave with a shortlist of trusted next resources — and look back on your whole journey</li>
+                        <li>Explain what ScratchJr is and how it differs from Scratch</li>
+                        <li>Recognize the six color-coded block categories and read a script left to right</li>
+                        <li>Build a tap-to-talk character with a recorded sound, then a two-page story</li>
+                        <li>Run short, playful coding sessions that suit a 4–7-year-old's attention span</li>
+                        <li>Decide when your child is ready to move up to full Scratch</li>
                     </ul>
-                    <p><strong>Estimated Time:</strong> 25 minutes &nbsp;•&nbsp; <strong>The finale!</strong> 🎓</p>
+                    <p><strong>Estimated Time:</strong> 35 minutes &nbsp;•&nbsp; <strong>Project:</strong> “My Pet Says Hi” + a two-page story</p>
                     <div class="age-badges">
-                        <span class="age-badge">Ages 5–7</span>
-                        <span class="age-badge">Ages 8–11</span>
-                        <span class="age-badge">Ages 12+</span>
+                        <span class="age-badge">Ages 4–5 (lap-sitting)</span>
+                        <span class="age-badge">Ages 5–6</span>
+                        <span class="age-badge">Ages 6–7</span>
                     </div>
                 </div>
             </header>
@@ -74,186 +114,284 @@
                 </summary>
                 <nav aria-label="Table of Contents">
                     <ol>
-                        <li><a href="#map" class="toc-link">The coding road map</a></li>
-                        <li><a href="#younger" class="toc-link">For younger kids: ScratchJr recap</a></li>
-                        <li><a href="#deeper" class="toc-link">Going deeper in Scratch</a></li>
-                        <li><a href="#physical" class="toc-link">Beyond the screen: hardware</a></li>
-                        <li><a href="#text" class="toc-link">The bridge to text code</a></li>
-                        <li><a href="#resources" class="toc-link">Trusted next resources</a></li>
-                        <li><a href="#teach" class="toc-link">Teach It: Keep the momentum</a></li>
+                        <li><a href="#meet" class="toc-link">Meet ScratchJr</a></li>
+                        <li><a href="#differences" class="toc-link">Learn It: How it differs from Scratch</a></li>
+                        <li><a href="#blocks" class="toc-link">Learn It: Six colors of picture blocks</a></li>
+                        <li><a href="#build" class="toc-link">Try It: “My Pet Says Hi”</a></li>
+                        <li><a href="#story" class="toc-link">Try It: A two-page story</a></li>
+                        <li><a href="#fixes" class="toc-link">Common problems &amp; fixes</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Coding with a very young child</a></li>
                         <li><a href="#quiz" class="toc-link">Quick Check</a></li>
                         <li><a href="#journal" class="toc-link">Learning Journal</a></li>
-                        <li><a href="#summary" class="toc-link">Course Complete 🎓</a></li>
+                        <li><a href="#summary" class="toc-link">Summary</a></li>
                     </ol>
                 </nav>
             </details>
 
-            <section id="map" class="lesson-section">
-                <h2>🗺️ The coding road map</h2>
-                <p>There's no single "correct" path — it depends on your child's age and interests. Here's the lay of the land:</p>
-                <div class="mermaid">
-                    flowchart TD
-                        J["ScratchJr<br/>(ages 5–7, Lesson 5.3)"] --> S["Scratch<br/>(ages 8+, you are here)"]
-                        S --> P["Physical computing<br/>micro:bit, Makey Makey"]
-                        S --> T["Text languages<br/>Python, JavaScript"]
-                        S --> D["Deeper Scratch<br/>lists, extensions, bigger games"]
-                        style J fill:#59C059,color:#fff,stroke:#333
-                        style S fill:#FFAB19,color:#5c3d00,stroke:#333
-                        style P fill:#5CB1D6,color:#fff,stroke:#333
-                        style T fill:#4C97FF,color:#fff,stroke:#333
-                        style D fill:#9966FF,color:#fff,stroke:#333
-                </div>
-                <p>The key idea: <strong>the concepts transfer</strong>. Sequences, loops, conditionals, variables, and events exist in <em>every</em> language. Your child already knows them — later tools just change the syntax.</p>
-            </section>
+            <!-- Meet -->
+            <section id="meet" class="lesson-section">
+                <h2>🎬 Meet ScratchJr</h2>
+                <p><strong>ScratchJr</strong> is a free app for children about 5 to 7, on iPads, Android tablets, and Chromebooks. Kids snap blocks together just like in Scratch, but every block is a <em>picture</em>, so a child who can't read yet can still code.</p>
 
-            <section id="younger" class="lesson-section">
-                <h2>🎓 For younger kids: ScratchJr recap</h2>
-                <p>You covered this in depth in <a href="lesson_15.html">Lesson 5.3: ScratchJr — Coding for Ages 5–7</a>. The one-line version: <strong>ScratchJr</strong> is the free tablet app where blocks are <em>pictures</em> instead of words, so a 5–7-year-old (or any child who finds reading in Scratch tough) can code without reading. It's the start of the road map above — and a natural stepping stone <em>up</em> to full Scratch when they're ready.</p>
-                <p>If you have a younger sibling in the house, revisit Lesson 5.3 for the coaching tips; they're a great chance for your older child to play teacher.</p>
-            </section>
+                <figure class="shot">
+                    <img loading="lazy" decoding="async" width="1400" height="922" class="screenshot" src="images/scratchjr_home.webp" alt="The ScratchJr website homepage, describing a free introductory programming app for young children ages 5 to 7.">
+                    <figcaption>Figure 1: The <a href="https://www.scratchjr.org/">ScratchJr</a> website, with download links and guides for parents and teachers.</figcaption>
+                </figure>
 
-            <section id="deeper" class="lesson-section">
-                <h2>🎓 Going deeper in Scratch</h2>
-                <p>Your child may spend years in Scratch alone — it has surprising depth. You've already climbed two of the big steps together; here's what you've got and what's still ahead.</p>
+                <p>By the end of this lesson you'll have built this: tap the pet, and it hops, grows, and says hello in <em>your child's own recorded voice</em>.</p>
 
-                <h3>✅ Already in your toolkit</h3>
-                <div class="card-grid">
-                    <div class="card">
-                        <h4>🧬 Clones</h4>
-                        <p>You met these in <a href="lesson_10.html">Lesson 4.1</a> and used them for Star Catcher's falling stars. <strong>Next step:</strong> make a variable "for this sprite only" so each clone keeps its own speed or health.</p>
-                    </div>
-                    <div class="card">
-                        <h4>🧩 My Blocks</h4>
-                        <p>You built your own blocks in <a href="lesson_11.html">Lesson 4.2</a> — like Star Catcher's <em>reset game</em>. <strong>Next step:</strong> go back through an old project and replace every repeated chunk of blocks with a well-named custom block that takes inputs — the same clean-up professional programmers call <em>refactoring</em>.</p>
-                    </div>
+                <div class="jr-script" role="img" aria-label="Finished ScratchJr script, read left to right: start on tap, hop, grow, play recorded sound, shrink, end">
+                    <span class="jr-block jr-trigger"><span class="jr-icon" aria-hidden="true">👆</span>Start on Tap</span>
+                    <span class="jr-block jr-motion"><span class="jr-icon" aria-hidden="true">⤴️</span>Hop <span class="jr-num">2</span></span>
+                    <span class="jr-block jr-looks"><span class="jr-icon" aria-hidden="true">🔼</span>Grow <span class="jr-num">2</span></span>
+                    <span class="jr-block jr-sound"><span class="jr-icon" aria-hidden="true">🎙️</span>My Sound</span>
+                    <span class="jr-block jr-looks"><span class="jr-icon" aria-hidden="true">🔽</span>Shrink <span class="jr-num">2</span></span>
+                    <span class="jr-block jr-end"><span class="jr-icon" aria-hidden="true">⏹️</span>End</span>
                 </div>
 
-                <h3>🔭 Still ahead</h3>
-                <div class="card-grid">
-                    <div class="card">
-                        <h4>📋 Lists</h4>
-                        <p>Store many values (high scores, inventory, quiz questions) — variables' bigger sibling. Find them under <strong>Variables → Make a List</strong>.</p>
-                    </div>
-                    <div class="card">
-                        <h4>🧰 Extensions</h4>
-                        <p>Click the <strong>Add Extension</strong> button (bottom-left of the editor) for new block categories: <strong>Pen</strong> (draw on the stage), <strong>Music</strong> (instruments and drums), <strong>Text to Speech</strong>, <strong>Video Sensing</strong>, and <strong>micro:bit</strong>.</p>
-                    </div>
-                    <div class="card">
-                        <h4>🎨 Costumes &amp; the paint editor</h4>
-                        <p>Draw original characters and multi-frame animations from scratch.</p>
-                    </div>
-                    <div class="card">
-                        <h4>🎮 Bigger games</h4>
-                        <p>Levels, boss fights, menus — the same clones, My Blocks, variables, and broadcasts from Star Catcher, just more of them.</p>
-                    </div>
+                <div class="card card-info">
+                    <h4>💡 Before you start</h4>
+                    <p>Install ScratchJr from your tablet's app store (free, no ads or in-app purchases). Open it, tap the house icon, then the big <strong>+</strong> to start a new project.</p>
                 </div>
-                <p>The official <a href="https://scratch.mit.edu/ideas">Scratch Ideas</a> page has step-by-step tutorials for all of these.</p>
             </section>
 
-            <section id="physical" class="lesson-section">
-                <h2>🎓 Beyond the screen: physical computing</h2>
-                <p>Coding gets extra magical when it moves real things. These pair beautifully with Scratch:</p>
+            <!-- Differences -->
+            <section id="differences" class="lesson-section">
+                <h2>🎓 Learn It: How ScratchJr differs from Scratch</h2>
+                <p>The big ideas carry over: events start scripts, blocks run in order, loops repeat. What changes is everything that would trip up a small child.</p>
+
                 <div class="table-wrap">
                     <table>
-                        <thead><tr><th>Tool</th><th>What it does</th><th>Great for</th></tr></thead>
+                        <thead><tr><th></th><th>Scratch</th><th>ScratchJr</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>Makey Makey</strong></td><td>Turns bananas, foil, playdough into keyboard keys</td><td>Playful invention, ages 7+</td></tr>
-                            <tr><td><strong>micro:bit</strong></td><td>A tiny programmable board with lights &amp; sensors; works with Scratch through the micro:bit extension</td><td>Hands-on projects, ages 9+</td></tr>
-                            <tr><td><strong>LEGO robotics</strong></td><td>Motors &amp; sensors you program to move</td><td>Builders, ages 8+</td></tr>
+                            <tr><td><strong>Block direction</strong></td><td>Stack top to bottom</td><td>Snap side by side, read <strong>left to right</strong> like a sentence</td></tr>
+                            <tr><td><strong>Reading</strong></td><td>Every block has words</td><td>Blocks show <strong>pictures</strong>; only a few, like “Say,” take typed words</td></tr>
+                            <tr><td><strong>Device</strong></td><td>Computer browser</td><td>Made for <strong>tablets</strong>: tap and drag with a finger</td></tr>
+                            <tr><td><strong>Numbers</strong></td><td>“Steps” (tiny units)</td><td>Grid squares a child can count</td></tr>
+                            <tr><td><strong>Sharing</strong></td><td>Online community</td><td>Projects stay <strong>on the device</strong>, with no public community</td></tr>
                         </tbody>
                     </table>
                 </div>
-                <p>Suddenly code controls the physical world — a huge motivator for kids who love building.</p>
+
+                <p>That last row is a quiet gift for parents: no comments, followers, or strangers. (The community safety habits from <a href="lesson_15.html">Lesson 5.2</a> can wait until your child moves up to Scratch.)</p>
             </section>
 
-            <section id="text" class="lesson-section">
-                <h2>🎓 The bridge to text code</h2>
-                <p>Eventually many kids grow curious about "real" typed code. The transition is smoother than you'd think, because they already own the concepts.</p>
-                <div class="card-grid">
-                    <div class="card">
-                        <h4>Scratch (blocks)</h4>
-                        <div class="sb-script" aria-label="scratch repeat say">
-                            <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
-                            <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi!</span></div></div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h4>Python (text)</h4>
-                        <pre><code class="language-python">for i in range(3):
-    print("Hi!")</code></pre>
-                        <p><small>Same loop, same idea — just typed.</small></p>
-                    </div>
-                </div>
-                <ul>
-                    <li><strong>Good first text languages:</strong> Python (friendly and popular), or JavaScript (makes web pages interactive).</li>
-                    <li><strong>Gentle bridges:</strong> tools that show blocks <em>and</em> the equivalent text side-by-side help a lot.</li>
-                    <li><strong>No rush.</strong> Many kids happily stay in Scratch through their early teens. Follow their curiosity, not a timetable.</li>
+            <!-- Blocks -->
+            <section id="blocks" class="lesson-section">
+                <h2>🎓 Learn It: Six colors of picture blocks</h2>
+                <p>Tap a colored button on the left of the block area and that category's blocks slide into view. Color tells you what a block does:</p>
+
+                <ul class="jr-legend">
+                    <li><span class="jr-block jr-trigger">🟡 Triggering</span></li>
+                    <li><span class="jr-block jr-motion">🔵 Motion</span></li>
+                    <li><span class="jr-block jr-looks">🟣 Looks</span></li>
+                    <li><span class="jr-block jr-sound">🟢 Sound</span></li>
+                    <li><span class="jr-block jr-control">🟠 Control</span></li>
+                    <li><span class="jr-block jr-end">🔴 End</span></li>
                 </ul>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Color</th><th>What it does</th><th>Blocks you'll use most</th></tr></thead>
+                        <tbody>
+                            <tr><td>🟡 <strong>Triggering</strong></td><td>Starts a script</td><td>Start on Green Flag, Start on Tap, Start on Bump (touching another character)</td></tr>
+                            <tr><td>🔵 <strong>Motion</strong></td><td>Moves the character</td><td>Move right/left/up/down, Turn, Hop, Go Home</td></tr>
+                            <tr><td>🟣 <strong>Looks</strong></td><td>Changes how it looks</td><td>Say, Grow, Shrink, Reset Size, Hide, Show</td></tr>
+                            <tr><td>🟢 <strong>Sound</strong></td><td>Makes noise</td><td>Pop, plus sounds <em>you record</em></td></tr>
+                            <tr><td>🟠 <strong>Control</strong></td><td>Timing and repetition</td><td>Wait, Set Speed, Repeat</td></tr>
+                            <tr><td>🔴 <strong>End</strong></td><td>Caps the script</td><td>End, Repeat Forever, Go to Page</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>The small number under a Motion block counts <strong>grid squares</strong>. Tap the grid button above the stage, and “Move right 3” becomes something a child can count with a finger.</p>
+
+                <div class="card card-warning">
+                    <h4>🎨 Watch out: the colors don't match Scratch</h4>
+                    <p>In Scratch, green is Operators and sound is pink. In ScratchJr, green is Sound and yellow starts things. Kids won't care, but it can confuse <em>you</em> when switching apps. Trust the pictures.</p>
+                </div>
+            </section>
+
+            <!-- Build -->
+            <section id="build" class="lesson-section">
+                <h2>🛠️ Try It: “My Pet Says Hi”</h2>
+                <p>Build this yourself first (about ten minutes) so you know where everything is before you sit down with your child.</p>
+
+                <ol class="steps">
+                    <li>
+                        <h3 style="margin-top:0;">Pick or make a pet</h3>
+                        <p>Tap the <strong>+</strong> beside the character list and choose an animal, or tap the paintbrush to draw one. The paint editor's <strong>camera</strong> tool fills a shape with a photo. Kids love putting their own face on a character.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Start on tap</h3>
+                        <p>Tap the <strong>yellow</strong> button and drag <strong>Start on Tap</strong> (a finger touching a character) into the script area. The script now runs whenever someone taps the pet.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Hop and grow</h3>
+                        <p>From <strong>blue</strong>, drag <strong>Hop</strong> so it snaps onto the <em>right</em> side of the trigger. From <strong>purple</strong>, snap <strong>Grow</strong> on after it. Tap the pet to test.</p>
+                        <div class="jr-script" role="img" aria-label="start on tap, hop, grow">
+                            <span class="jr-block jr-trigger"><span class="jr-icon" aria-hidden="true">👆</span>Start on Tap</span>
+                            <span class="jr-block jr-motion"><span class="jr-icon" aria-hidden="true">⤴️</span>Hop <span class="jr-num">2</span></span>
+                            <span class="jr-block jr-looks"><span class="jr-icon" aria-hidden="true">🔼</span>Grow <span class="jr-num">2</span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Record a sound</h3>
+                        <p>Tap <strong>green</strong>, then the <strong>microphone</strong> block. Press record, say “Hi! I'm your pet!” (or bark, or giggle), stop, and accept it. Snap the new sound block on after Grow.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">Shrink back and end</h3>
+                        <p>Add a purple <strong>Shrink</strong> so the pet returns to normal size (otherwise it grows with every tap), then cap the row with the red <strong>End</strong> block.</p>
+                        <div class="jr-script" role="img" aria-label="start on tap, hop, grow, play recorded sound, shrink, end">
+                            <span class="jr-block jr-trigger"><span class="jr-icon" aria-hidden="true">👆</span>Start on Tap</span>
+                            <span class="jr-block jr-motion"><span class="jr-icon" aria-hidden="true">⤴️</span>Hop <span class="jr-num">2</span></span>
+                            <span class="jr-block jr-looks"><span class="jr-icon" aria-hidden="true">🔼</span>Grow <span class="jr-num">2</span></span>
+                            <span class="jr-block jr-sound"><span class="jr-icon" aria-hidden="true">🎙️</span>My Sound</span>
+                            <span class="jr-block jr-looks"><span class="jr-icon" aria-hidden="true">🔽</span>Shrink <span class="jr-num">2</span></span>
+                            <span class="jr-block jr-end"><span class="jr-icon" aria-hidden="true">⏹️</span>End</span>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="card card-success">
+                    <h4>✅ Tap the pet!</h4>
+                    <p>It hops, puffs up, says hi in a real voice, and settles back down: an event, a sequence, and a sound, the same thinking as your first Scratch cat laid out sideways.</p>
+                </div>
+            </section>
+
+            <!-- Story -->
+            <section id="story" class="lesson-section">
+                <h2>🛠️ Try It: A two-page story</h2>
+                <p>A ScratchJr project can have up to <strong>four pages</strong>, like a picture book, each with its own background and characters.</p>
+
+                <ol class="steps">
+                    <li>
+                        <h3 style="margin-top:0;">Add page 2</h3>
+                        <p>Tap the <strong>+</strong> in the page strip on the right. Pick a background for the new page and add a character.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">On page 1, turn the page</h3>
+                        <p>Back on page 1, give the pet a green-flag script that ends with <strong>Go to Page</strong>, which appears in the red End category once a second page exists.</p>
+                        <div class="jr-script" role="img" aria-label="Page 1: start on green flag, say Come to my house!, wait, go to page 2">
+                            <span class="jr-block jr-trigger"><span class="jr-icon" aria-hidden="true">🏁</span>Start on Green Flag</span>
+                            <span class="jr-block jr-looks"><span class="jr-icon" aria-hidden="true">💬</span>Say <span class="jr-num">Come to my house!</span></span>
+                            <span class="jr-block jr-control"><span class="jr-icon" aria-hidden="true">⏱️</span>Wait <span class="jr-num">10</span></span>
+                            <span class="jr-block jr-end"><span class="jr-icon" aria-hidden="true">📄</span>Go to Page <span class="jr-num">2</span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 style="margin-top:0;">On page 2, say hello</h3>
+                        <p>Give page 2's character a green-flag script too. When the story turns to a page, that page's green-flag scripts start.</p>
+                        <div class="jr-script" role="img" aria-label="Page 2: start on green flag, move right 3, say Welcome home!, end">
+                            <span class="jr-block jr-trigger"><span class="jr-icon" aria-hidden="true">🏁</span>Start on Green Flag</span>
+                            <span class="jr-block jr-motion"><span class="jr-icon" aria-hidden="true">➡️</span>Move Right <span class="jr-num">3</span></span>
+                            <span class="jr-block jr-looks"><span class="jr-icon" aria-hidden="true">💬</span>Say <span class="jr-num">Welcome home!</span></span>
+                            <span class="jr-block jr-end"><span class="jr-icon" aria-hidden="true">⏹️</span>End</span>
+                        </div>
+                    </li>
+                </ol>
+                <p>Press the green flag and watch the story play across two pages.</p>
+            </section>
+
+            <!-- Fixes -->
+            <section id="fixes" class="lesson-section">
+                <h2>🐛 Common problems &amp; fixes</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>What you see</th><th>Likely cause</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td>Tapping the pet does nothing</td><td>Script starts with Green Flag, or a block isn't snapped on</td><td>Use <em>Start on Tap</em>; drag blocks until they click into one row</td></tr>
+                            <tr><td>The pet keeps getting bigger</td><td>Grow with no Shrink</td><td>Add Shrink (same number) or Reset Size at the end</td></tr>
+                            <tr><td>The pet walks off the stage</td><td>Moves add up each run</td><td>Start the row with the blue <em>Go Home</em> block</td></tr>
+                            <tr><td>Recording is silent</td><td>No microphone permission</td><td>Allow the microphone for ScratchJr in the tablet's settings</td></tr>
+                            <tr><td>A block “vanished”</td><td>It was dragged back onto the palette, which deletes it</td><td>Drag a fresh one out; no harm done</td></tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <div class="card growth-card">
-                    <h4>🌱 Growth mindset: every new tool starts at "beginner" again</h4>
-                    <p>The first week in Python — or with a micro:bit, or even the Pen extension — will feel clumsy, just like your first hour of dragging blocks did in Module 1. That dip isn't going backward; it's what learning something new always feels like. Remind your child (and yourself): <em>"We couldn't make the cat move at first either. We can't do this <strong>yet</strong>."</em></p>
-                    <p style="margin-bottom:0;">You now have proof that it works. Sixteen lessons ago, clones and custom blocks were a mystery. The same patience that got you here will carry you through whatever comes next.</p>
+                    <h4>🌱 Growth mindset: wobbly is what learning looks like</h4>
+                    <p>Your five-year-old will drop blocks in the wrong spot, and you may find sideways rows odd after weeks of Scratch. That's experimenting, not failing. When a script flops, laugh: <em>“Whoa, that's not what we planned! What should we try?”</em> A child who hears that at five learns that surprises are interesting, not scary.</p>
                 </div>
             </section>
 
-            <section id="resources" class="lesson-section">
-                <h2>🔗 Trusted next resources</h2>
-                <ul>
-                    <li><a href="https://scratch.mit.edu/ideas">Scratch Ideas &amp; Tutorials</a> — official, step-by-step, free.</li>
-                    <li><a href="https://scratch.mit.edu/download">Scratch offline app</a> — code without internet (Windows, Mac, ChromeOS, Android).</li>
-                    <li><a href="https://www.scratchjr.org/">ScratchJr</a> — for ages 5–7 (see <a href="lesson_15.html">Lesson 5.3</a>).</li>
-                    <li><a href="https://microbit.org/">micro:bit</a> — physical computing that works with Scratch.</li>
-                    <li><a href="https://code.org/">Code.org</a> — free courses across ages, including block-based and beyond.</li>
-                    <li>Your local library or school often runs free coding clubs — ask around!</li>
-                </ul>
-            </section>
-
+            <!-- TEACH IT -->
             <section id="teach" class="lesson-section">
                 <div class="teach-panel">
-                    <h2 style="border:0;padding:0;">💬 Teach It: Keep the momentum</h2>
-                    <p>The best "next step" is almost always <em>one more project your child is excited about.</em> Depth of interest beats rushing to the next tool.</p>
-                    <ul>
-                        <li><strong>Follow the fire.</strong> Loves animation? Do more animation. Loves games? Build the next game. Interest sustains itself.</li>
-                        <li><strong>Set gentle challenges.</strong> "Could you add a second level?" keeps growth happening without pressure.</li>
-                        <li><strong>Find a community.</strong> A coding club, a cousin who codes, or Scratch's own community gives them peers and an audience.</li>
-                        <li><strong>Celebrate the journey.</strong> Look back at their first three-block cat versus what they build now. Growth is a powerful motivator to see.</li>
-                    </ul>
-                    <p class="say-this">"Look how far you've come — remember when we made the cat just say hello? Now look what you can build. What do you want to make next?"</p>
+                    <h2 style="border:0;padding:0;">💬 Teach It: Coding with a very young child</h2>
+                    <p>Five-year-olds have short attention, fingers still learning to drag, and huge imaginations. Plan around all three.</p>
+
+                    <h4>Keep sessions short: 10–15 minutes</h4>
+                    <p>Stop while it's still fun, ideally after a big laugh, and they'll ask to do it again tomorrow.</p>
+
+                    <h4>Tell the story first, then code it</h4>
+                    <p>Before touching the tablet, ask for a tiny story out loud: <em>who</em> is in it and <em>what happens</em>. Then turn each event into a block.</p>
+                    <p class="say-this">“So the puppy jumps, gets really big, and barks. Which picture looks like jumping? …Yes, the hop! What comes next?”</p>
+
+                    <h4>You read, they tap</h4>
+                    <p>You read anything with words aloud. <strong>They</strong> tap, drag, and press the green flag. Keep your hands in your lap; if a drag keeps missing, steady the tablet rather than doing it for them.</p>
+
+                    <h4>Let them record silly sounds</h4>
+                    <p>The microphone is the most motivating feature in the app. Burps, animal noises, “I'm a dinosaur!”: hearing their own voice come out of a character they coded is pure magic.</p>
+                    <p class="say-this">“You made the puppy do that! You told it what to do, and it listened. That's what coders do.”</p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>👶 Ages 4–5</h4>
+                            <p>Sit them on your lap like a shared picture book. You set up the character; they pick from two or three blocks you point to and do all the tapping. One trigger plus two blocks is plenty.</p>
+                        </div>
+                        <div class="card">
+                            <h4>👧 Ages 5–6</h4>
+                            <p>They drag and snap while you sit beside them. Build “My Pet Says Hi” together, then ask, “What else could it do when you tap it?” Count grid squares together for Move blocks.</p>
+                        </div>
+                        <div class="card">
+                            <h4>🧒 Ages 6–7</h4>
+                            <p>Give a goal, not steps: “Make a story with two pages.” Let them draw characters and try Repeat or Start on Bump, then read their row back to you, left to right.</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-success">
+                        <h4>🌟 End with a show</h4>
+                        <p>Use full-screen mode and have them “perform” their story for the family, tapping the pet on cue. Applause and an encore beat any sticker chart.</p>
+                    </div>
+
                     <div class="card card-info" style="margin-bottom:0;">
-                        <h4>💡 And keep being the buddy</h4>
-                        <p>Even as they surpass you (they will!), your encouragement, your curiosity, and your "show me what you made" stay just as valuable. You don't need to keep up with the code to keep cheering the coder.</p>
+                        <h4>🚀 When to move up to Scratch</h4>
+                        <p>Readiness matters more than age, though most kids are ready around <strong>7 or 8</strong>. Look for comfortable reading of short labels, a mouse or trackpad they can handle, and requests ScratchJr can't meet (like keeping score). When you switch, bridge it: <em>“Remember the yellow start blocks? In Scratch they're Events, and the blocks stack like a tower.”</em> Then start with <a href="lesson_03.html">Lesson 1.3</a>'s moving, talking cat.</p>
                     </div>
                 </div>
             </section>
 
+            <!-- Quiz -->
             <section id="quiz" class="lesson-section">
                 <h2>🎯 Quick Check</h2>
                 <div class="card quiz-container">
                     <div class="quiz-question">
-                        <p><strong>Question 1:</strong> Your child built Star Catcher with clones and a My Block. What's a natural next thing to explore <em>inside</em> Scratch?</p>
+                        <p><strong>Question 1:</strong> How are blocks arranged in a ScratchJr script?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="false" data-hint="Scratch has lots more depth — they've only scratched the surface.">A) Nothing — they've learned all of Scratch</button>
-                            <button class="quiz-option" data-correct="true" data-explanation="Yes — lists (and extensions like Pen and Music) are the next layers of depth inside Scratch.">B) Lists, or an extension like Pen or Music</button>
-                            <button class="quiz-option" data-correct="false" data-hint="There's no rush — many kids stay in Scratch for years.">C) They must switch to Python right away</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That's how full Scratch works: stacked top to bottom.">A) Stacked top to bottom</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Right! ScratchJr blocks snap side by side and run left to right, like reading a sentence.">B) In a horizontal row, read left to right</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Order still matters in ScratchJr.">C) In any order; the app sorts them</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
+
                     <div class="quiz-question">
-                        <p><strong>Question 2:</strong> Why is moving from Scratch to Python not as scary as it sounds?</p>
+                        <p><strong>Question 2:</strong> You want the pet to react when your child touches it on the screen. Which block starts the script?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="true" data-explanation="Right — loops, variables, conditionals transfer; only the syntax changes.">A) The core concepts transfer; only the syntax changes</button>
-                            <button class="quiz-option" data-correct="false" data-hint="They're related, not identical.">B) Python and Scratch are exactly the same</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Nothing carries over is the opposite of true.">C) You start completely from zero</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Bump means touching another character, not a finger.">A) Start on Bump</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That runs when the green flag is pressed, not when the pet is tapped.">B) Start on Green Flag</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes! Start on Tap (yellow) runs the row whenever someone taps that character.">C) Start on Tap</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
+
                     <div class="quiz-question">
-                        <p><strong>Question 3:</strong> Best way to keep a child's coding momentum?</p>
+                        <p><strong>Question 3:</strong> What's the best length for a ScratchJr session with a 5-year-old?</p>
                         <div class="quiz-options">
-                            <button class="quiz-option" data-correct="false" data-hint="Rushing tools can kill interest.">A) Push them to the next tool as fast as possible</button>
-                            <button class="quiz-option" data-correct="true" data-explanation="Yes — follow their interests with one more project they're excited about.">B) Follow their interests with another project they're excited about</button>
-                            <button class="quiz-option" data-correct="false" data-hint="Pressure backfires.">C) Require an hour of coding daily</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Exactly. Short, playful sessions that end on a high keep them coming back.">A) About 10–15 minutes, ending while it's still fun</button>
+                            <button class="quiz-option" data-correct="false" data-hint="That's a long stretch for a young child's attention.">B) An hour, so they finish the whole project</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Stopping on a meltdown makes coding feel like a chore.">C) Until they get frustrated, so they learn persistence</button>
                         </div>
                         <div class="quiz-feedback"></div>
                     </div>
@@ -264,63 +402,48 @@
             <section id="journal" class="lesson-section">
                 <h2>📓 Learning Journal</h2>
                 <div class="card journal-card">
-                    <h3>Your final entry: look back, then look ahead</h3>
-                    <p>Before you write anything, flip back to your very first entry — the "why" page from <a href="lesson_01.html">Lesson 1.1</a>. Read it slowly. Then answer these.</p>
-
-                    <h3>Whole-course reflection</h3>
-                    <ul>
-                        <li><strong>Your why:</strong> What did you hope to create with your child back then? Did you make it — or something even better?</li>
-                        <li><strong>Your worry:</strong> Reread the worry you wrote down. How big does it feel now? Cross it off if you've earned it.</li>
-                        <li><strong>Your number:</strong> In Lesson 1.1 you rated your confidence from 1–10. What's your number today? What moved it most?</li>
-                    </ul>
-
-                    <h3>Lesson 5.4 reflection</h3>
+                    <h3>Take five minutes to write it down</h3>
+                    <p>A notebook or a sticky note on the fridge works. Your notes will help you plan the next session.</p>
                     <ol>
-                        <li><strong>Key concepts:</strong> In your own words, why do the ideas from this course (sequences, loops, conditionals, variables, events) carry over to Python or any other language?</li>
-                        <li><strong>What clicked:</strong> Looking back over all sixteen lessons, which moment made you feel like a real coder — the first moving cat, the first working loop, the first falling clone, the finished game?</li>
-                        <li><strong>Questions &amp; confusion:</strong> What do you still want to learn? Lists? Extensions? Text code? Write it down — that's your next course.</li>
-                        <li><strong>Ideas to try:</strong> Name the next project your child is excited about, and which path on the road map it leads toward.</li>
-                        <li><strong>Progress &amp; feelings:</strong> How has coding together changed your relationship with your child, or how they handle hard things?</li>
+                        <li><strong>Key concepts:</strong> How is a ScratchJr row like a Scratch stack, and how is it different?</li>
+                        <li><strong>What clicked:</strong> Did counting grid squares or hearing a recorded voice make a coding idea feel simpler?</li>
+                        <li><strong>Questions &amp; confusion:</strong> What tripped you up (the mismatched colors, pages, the microphone)? Check it before your child sits down.</li>
+                        <li><strong>Ideas to try:</strong> Jot down one tiny story your child could turn into a two-page project.</li>
+                        <li><strong>Progress &amp; feelings:</strong> How did it feel to keep your hands in your lap, and what made your child laugh?</li>
                     </ol>
-                    <p class="journal-tip">💡 <strong>Teach It tip:</strong> Sit down with your child and page through their coder's notebook from the very first drawing. Ask them to pick their favorite page and tell you the story of that project — then start a fresh page titled "What I'll make next."</p>
+                    <p class="journal-tip">💡 <strong>Teach It tip:</strong> Young kids can journal too. Have them draw their pet and what it did, and write their words underneath. Months later, those drawings show how they grew.</p>
                 </div>
             </section>
 
+            <!-- Summary -->
             <section id="summary" class="lesson-section">
-                <h2>Course Complete 🎓</h2>
+                <h2>Summary</h2>
                 <div class="card card-success">
                     <h3>🎓 Key Takeaways</h3>
                     <ul>
-                        <li><strong>ScratchJr</strong> serves younger kids; the free <strong>offline app</strong> serves no-internet situations.</li>
-                        <li>You already have clones and My Blocks; <strong>lists</strong> and <strong>extensions</strong> (Pen, Music, micro:bit) are the next layers, and Scratch extends to <strong>hardware</strong>.</li>
-                        <li>The concepts transfer to <strong>text languages</strong> like Python — the jump is mostly syntax.</li>
-                        <li>Momentum comes from interest: one more exciting project beats rushing ahead.</li>
+                        <li><strong>ScratchJr</strong> is a free tablet app for ages 5–7 with picture blocks, so no reading is needed.</li>
+                        <li>Blocks snap into a <strong>horizontal row</strong> read left to right, in six colors: yellow Triggering, blue Motion, purple Looks, green Sound, orange Control, red End.</li>
+                        <li>Projects have up to <strong>four pages</strong>, turned with <em>Go to Page</em>, and stay on the device.</li>
+                        <li>Coach in <strong>10–15-minute</strong> sessions: story first, you read, they tap, lots of silly sounds.</li>
+                        <li>Move up to Scratch around <strong>7–8</strong>, when reading is comfortable and they want more.</li>
                     </ul>
-                </div>
-
-                <div class="card card-accent" style="text-align:center;">
-                    <h2 style="border:0;background:none;color:#fff;box-shadow:none;">🏆 You did it — Module 5 and the whole course!</h2>
-                    <p>Sixteen lessons, five modules. You went from never having coded to learning Scratch, building a real game with clones and custom blocks, teaching your child, and guiding them safely into a whole community of young creators. That's an extraordinary gift to give a kid — and yourself.</p>
-                    <p><strong>Now go make something wonderful together.</strong> 🐱💛</p>
                 </div>
 
                 <div class="summary-grid">
                     <div class="card">
                         <h4>🏅 What You've Accomplished</h4>
                         <ul>
-                            <li><strong>Module 1:</strong> met Scratch, toured the editor, and wrote your first program</li>
-                            <li><strong>Module 2:</strong> mastered sequences, loops, and conditionals</li>
-                            <li><strong>Module 3:</strong> built an animated story and a scoring game, then debugged and remixed</li>
-                            <li><strong>Module 4:</strong> learned clones and My Blocks, and built Star Catcher together</li>
-                            <li><strong>Module 5:</strong> became a coach, set up safe sharing, met ScratchJr, and mapped the road ahead</li>
+                            <li>Built a tap-to-talk pet with a recorded sound</li>
+                            <li>Made a two-page story with Go to Page</li>
+                            <li>Planned a coaching style for a very young child</li>
                         </ul>
                     </div>
                     <div class="card">
-                        <h4>📋 Before Your Next Project</h4>
+                        <h4>📋 Before the Next Lesson</h4>
                         <ul>
-                            <li>Write your final journal entry and reread your first one</li>
-                            <li>Download the <a href="https://scratch.mit.edu/download">offline app</a> if you'll code without internet</li>
-                            <li>Let your child choose the next project and one new thing to try (a list or an extension)</li>
+                            <li>Install ScratchJr on a tablet your child can use</li>
+                            <li>Do one 10-minute “My Pet Says Hi” session together</li>
+                            <li>Write your journal entry</li>
                         </ul>
                     </div>
                 </div>
@@ -328,38 +451,35 @@
                 <div class="faq">
                     <h3>❓ Common Questions at This Stage</h3>
                     <details>
-                        <summary>My child is already better at Scratch than I am. Is my job done?</summary>
-                        <p>Your job changes, it doesn't end. You don't have to keep up with the code to keep asking "show me what you made," "how did you do that?", and "what's next?" Being their audience and their question-asker stays valuable for years.</p>
+                        <summary>My child is 4. Is that too young for ScratchJr?</summary>
+                        <p>Not if you're sitting together. Keep it very short and focus on tapping and recording sounds. If it isn't fun yet, try again in a few months.</p>
                     </details>
                     <details>
-                        <summary>When should we switch to Python?</summary>
-                        <p>When your child is curious about it — not on a schedule. Typing fluency and reading comfort help, so many kids start around 10–13, but plenty stay happily in Scratch longer. Nothing they learn in Scratch is wasted; it all carries over.</p>
+                        <summary>We don't have a tablet. Can we use ScratchJr on a laptop?</summary>
+                        <p>ScratchJr is built for tablets and Chromebooks. On a regular computer, use full Scratch and follow the Ages 5–7 tips in each lesson: you read, they choose and press the green flag.</p>
                     </details>
                     <details>
-                        <summary>We took a long break and forgot things. Should we start the course over?</summary>
-                        <p>No need. Skim the Key Takeaways of the lessons you want to refresh and rebuild one small project, like the Lesson 1.3 cat. It comes back much faster the second time — that's how learning works.</p>
+                        <summary>My 6-year-old wants to use Scratch like an older sibling. Should I say no?</summary>
+                        <p>No need. Let them try; if it frustrates them, offer ScratchJr as “your own coding app.” The concepts are the same, so time in either counts.</p>
                     </details>
                 </div>
 
                 <h3>🔭 Looking Ahead</h3>
-                <p>This is the last lesson, but not the last project. The road ahead is yours to choose: one more Scratch game with a high-score <strong>list</strong>, a drawing toy with the <strong>Pen</strong> extension, a banana piano with a Makey Makey, or a first <strong>Python</strong> loop. Pick the one your child's eyes light up for, and start there.</p>
+                <p>In the course finale, <strong>Lesson 5.4: What Comes After Scratch</strong>, you'll map the road ahead: going deeper in Scratch, coding real-world gadgets, and the bridge from blocks to typed languages like Python.</p>
 
                 <div class="card card-info encourage-card">
                     <h4>💛 Encouragement for the Journey</h4>
-                    <p style="margin-bottom:0;">You started this course unsure whether you were "techy enough." You finished it having written programs, fixed bugs, built a game, and — most importantly — shown your child that grown-ups learn hard things too. That lesson will outlast every block you dragged. Thank you for taking the journey. 💛</p>
+                    <p style="margin-bottom:0;">You learned to make coding fit a child who can't even read yet. That flexibility is the heart of great teaching, and your little one is lucky to have you as their first coding buddy.</p>
                 </div>
-
-                <h3>📚 Revisit anytime</h3>
-                <p>Every lesson stays here for you to return to. Bookmark the parts you'll reference most — the editor tour, the debugging table, the safety checklist.</p>
                 <p style="text-align:center;">
                     <a href="index.html" class="button">🏠 Back to Course Home</a>
                 </p>
             </section>
 
             <nav class="lesson-nav" aria-label="Lesson Navigation">
-                <a href="lesson_15.html" class="prev-lesson">← Previous: ScratchJr — Coding for Ages 5–7</a>
+                <a href="lesson_15.html" class="prev-lesson">← Previous: Sharing Safely &amp; the Scratch Community</a>
                 <a href="index.html" class="home-link">🏠 Home</a>
-                <a href="index.html" class="next-lesson">🎉 Course Home →</a>
+                <a href="lesson_17.html" class="next-lesson">Next: What Comes After Scratch →</a>
             </nav>
         </div>
     </main>

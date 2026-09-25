@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Where to go after Scratch — what is still ahead inside Scratch (lists, extensions), the offline app, physical computing, and the path to text languages like Python. The course finale for parents.">
+    <meta name="author" content="Ray de la Paz">
+    <title>Lesson 5.4: What Comes After Scratch — Scratch for Parents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        window.__mermaid = mermaid;
+        const isDark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: isDark
+                ? { primaryColor: '#334155', primaryTextColor: '#e2e8f0', primaryBorderColor: '#6366f1', lineColor: '#94a3b8', secondaryColor: '#1e293b', tertiaryColor: '#0f172a' }
+                : { primaryColor: '#eff6ff', primaryTextColor: '#1e293b', primaryBorderColor: '#3b82f6', lineColor: '#64748b', secondaryColor: '#f8fafc', tertiaryColor: '#f1f5f9' }
+        });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="presentation" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🐱 Scratch for Parents</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Modules</a>
+                <span class="nav-divider"></span>
+                <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🚀 Lesson 5.4: What Comes After Scratch</h1>
+                <p class="lead">You've come the whole way — seventeen lessons, from "what is this?" to clones, custom blocks, a finished game, coaching, and sharing. This finale maps the road ahead, whether your child is 5 or 15, so the momentum you've built keeps rolling.</p>
+
+                <div class="card card-info">
+                    <h2>📚 What You'll Learn</h2>
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>See where ScratchJr, Scratch, hardware, and text coding fit on one road map</li>
+                        <li>Know what's still ahead <em>inside</em> Scratch — lists and extensions like Pen, Music, and micro:bit</li>
+                        <li>Discover ways to take Scratch beyond the screen (physical computing)</li>
+                        <li>Understand the bridge from blocks to <strong>text-based</strong> coding</li>
+                        <li>Leave with a shortlist of trusted next resources — and look back on your whole journey</li>
+                    </ul>
+                    <p><strong>Estimated Time:</strong> 25 minutes &nbsp;•&nbsp; <strong>The finale!</strong> 🎓</p>
+                    <div class="age-badges">
+                        <span class="age-badge">Ages 5–7</span>
+                        <span class="age-badge">Ages 8–11</span>
+                        <span class="age-badge">Ages 12+</span>
+                    </div>
+                </div>
+            </header>
+
+            <details class="card toc-card" open>
+                <summary aria-label="Toggle table of contents">
+                    <span class="toc-icon" aria-hidden="true">📑</span>
+                    <span class="toc-label">In This Lesson</span>
+                    <span class="toc-chevron" aria-hidden="true">▾</span>
+                </summary>
+                <nav aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#map" class="toc-link">The coding road map</a></li>
+                        <li><a href="#younger" class="toc-link">For younger kids: ScratchJr recap</a></li>
+                        <li><a href="#deeper" class="toc-link">Going deeper in Scratch</a></li>
+                        <li><a href="#physical" class="toc-link">Beyond the screen: hardware</a></li>
+                        <li><a href="#text" class="toc-link">The bridge to text code</a></li>
+                        <li><a href="#resources" class="toc-link">Trusted next resources</a></li>
+                        <li><a href="#teach" class="toc-link">Teach It: Keep the momentum</a></li>
+                        <li><a href="#quiz" class="toc-link">Quick Check</a></li>
+                        <li><a href="#journal" class="toc-link">Learning Journal</a></li>
+                        <li><a href="#summary" class="toc-link">Course Complete 🎓</a></li>
+                    </ol>
+                </nav>
+            </details>
+
+            <section id="map" class="lesson-section">
+                <h2>🗺️ The coding road map</h2>
+                <p>There's no single "correct" path — it depends on your child's age and interests. Here's the lay of the land:</p>
+                <div class="mermaid">
+                    flowchart TD
+                        J["ScratchJr<br/>(ages 5–7, Lesson 5.3)"] --> S["Scratch<br/>(ages 8+, you are here)"]
+                        S --> P["Physical computing<br/>micro:bit, Makey Makey"]
+                        S --> T["Text languages<br/>Python, JavaScript"]
+                        S --> D["Deeper Scratch<br/>lists, extensions, bigger games"]
+                        style J fill:#59C059,color:#fff,stroke:#333
+                        style S fill:#FFAB19,color:#5c3d00,stroke:#333
+                        style P fill:#5CB1D6,color:#fff,stroke:#333
+                        style T fill:#4C97FF,color:#fff,stroke:#333
+                        style D fill:#9966FF,color:#fff,stroke:#333
+                </div>
+                <p>The key idea: <strong>the concepts transfer</strong>. Sequences, loops, conditionals, variables, and events exist in <em>every</em> language. Your child already knows them — later tools just change the syntax.</p>
+            </section>
+
+            <section id="younger" class="lesson-section">
+                <h2>🎓 For younger kids: ScratchJr recap</h2>
+                <p>You covered this in depth in <a href="lesson_16.html">Lesson 5.3: ScratchJr — Coding for Ages 5–7</a>. The one-line version: <strong>ScratchJr</strong> is the free tablet app where blocks are <em>pictures</em> instead of words, so a 5–7-year-old (or any child who finds reading in Scratch tough) can code without reading. It's the start of the road map above — and a natural stepping stone <em>up</em> to full Scratch when they're ready.</p>
+                <p>If you have a younger sibling in the house, revisit Lesson 5.3 for the coaching tips; they're a great chance for your older child to play teacher.</p>
+            </section>
+
+            <section id="deeper" class="lesson-section">
+                <h2>🎓 Going deeper in Scratch</h2>
+                <p>Your child may spend years in Scratch alone — it has surprising depth. You've already climbed two of the big steps together; here's what you've got and what's still ahead.</p>
+
+                <h3>✅ Already in your toolkit</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>🧬 Clones</h4>
+                        <p>You met these in <a href="lesson_10.html">Lesson 4.1</a> and used them for Star Catcher's falling stars. <strong>Next step:</strong> make a variable "for this sprite only" so each clone keeps its own speed or health.</p>
+                    </div>
+                    <div class="card">
+                        <h4>🧩 My Blocks</h4>
+                        <p>You built your own blocks in <a href="lesson_11.html">Lesson 4.2</a> — like Star Catcher's <em>reset game</em>. <strong>Next step:</strong> go back through an old project and replace every repeated chunk of blocks with a well-named custom block that takes inputs — the same clean-up professional programmers call <em>refactoring</em>.</p>
+                    </div>
+                </div>
+
+                <h3>🔭 Still ahead</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>📋 Lists</h4>
+                        <p>Store many values (high scores, inventory, quiz questions) — variables' bigger sibling. Find them under <strong>Variables → Make a List</strong>.</p>
+                    </div>
+                    <div class="card">
+                        <h4>🧰 Extensions</h4>
+                        <p>Click the <strong>Add Extension</strong> button (bottom-left of the editor) for new block categories: <strong>Pen</strong> (draw on the stage), <strong>Music</strong> (instruments and drums), <strong>Text to Speech</strong>, <strong>Video Sensing</strong>, and <strong>micro:bit</strong>.</p>
+                    </div>
+                    <div class="card">
+                        <h4>🎨 Costumes &amp; the paint editor</h4>
+                        <p>Draw original characters and multi-frame animations from scratch.</p>
+                    </div>
+                    <div class="card">
+                        <h4>🎮 Bigger games</h4>
+                        <p>Levels, boss fights, menus — the same clones, My Blocks, variables, and broadcasts from Star Catcher, just more of them.</p>
+                    </div>
+                </div>
+                <p>The official <a href="https://scratch.mit.edu/ideas">Scratch Ideas</a> page has step-by-step tutorials for all of these.</p>
+            </section>
+
+            <section id="physical" class="lesson-section">
+                <h2>🎓 Beyond the screen: physical computing</h2>
+                <p>Coding gets extra magical when it moves real things. These pair beautifully with Scratch:</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Tool</th><th>What it does</th><th>Great for</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Makey Makey</strong></td><td>Turns bananas, foil, playdough into keyboard keys</td><td>Playful invention, ages 7+</td></tr>
+                            <tr><td><strong>micro:bit</strong></td><td>A tiny programmable board with lights &amp; sensors; works with Scratch through the micro:bit extension</td><td>Hands-on projects, ages 9+</td></tr>
+                            <tr><td><strong>LEGO robotics</strong></td><td>Motors &amp; sensors you program to move</td><td>Builders, ages 8+</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Suddenly code controls the physical world — a huge motivator for kids who love building.</p>
+            </section>
+
+            <section id="text" class="lesson-section">
+                <h2>🎓 The bridge to text code</h2>
+                <p>Eventually many kids grow curious about "real" typed code. The transition is smoother than you'd think, because they already own the concepts.</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Scratch (blocks)</h4>
+                        <div class="sb-script" aria-label="scratch repeat say">
+                            <div class="sb-block sb-control">repeat <span class="sb-input">3</span></div>
+                            <div class="sb-nest"><div class="sb-block sb-looks">say <span class="sb-input sb-text">Hi!</span></div></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4>Python (text)</h4>
+                        <pre><code class="language-python">for i in range(3):
+    print("Hi!")</code></pre>
+                        <p><small>Same loop, same idea — just typed.</small></p>
+                    </div>
+                </div>
+                <ul>
+                    <li><strong>Good first text languages:</strong> Python (friendly and popular), or JavaScript (makes web pages interactive).</li>
+                    <li><strong>Gentle bridges:</strong> tools that show blocks <em>and</em> the equivalent text side-by-side help a lot.</li>
+                    <li><strong>No rush.</strong> Many kids happily stay in Scratch through their early teens. Follow their curiosity, not a timetable.</li>
+                </ul>
+
+                <div class="card growth-card">
+                    <h4>🌱 Growth mindset: every new tool starts at "beginner" again</h4>
+                    <p>The first week in Python — or with a micro:bit, or even the Pen extension — will feel clumsy, just like your first hour of dragging blocks did in Module 1. That dip isn't going backward; it's what learning something new always feels like. Remind your child (and yourself): <em>"We couldn't make the cat move at first either. We can't do this <strong>yet</strong>."</em></p>
+                    <p style="margin-bottom:0;">You now have proof that it works. Seventeen lessons ago, clones and custom blocks were a mystery. The same patience that got you here will carry you through whatever comes next.</p>
+                </div>
+            </section>
+
+            <section id="resources" class="lesson-section">
+                <h2>🔗 Trusted next resources</h2>
+                <ul>
+                    <li><a href="https://scratch.mit.edu/ideas">Scratch Ideas &amp; Tutorials</a> — official, step-by-step, free.</li>
+                    <li><a href="https://scratch.mit.edu/download">Scratch offline app</a> — code without internet (Windows, Mac, ChromeOS, Android).</li>
+                    <li><a href="https://www.scratchjr.org/">ScratchJr</a> — for ages 5–7 (see <a href="lesson_16.html">Lesson 5.3</a>).</li>
+                    <li><a href="https://microbit.org/">micro:bit</a> — physical computing that works with Scratch.</li>
+                    <li><a href="https://code.org/">Code.org</a> — free courses across ages, including block-based and beyond.</li>
+                    <li>Your local library or school often runs free coding clubs — ask around!</li>
+                </ul>
+            </section>
+
+            <section id="teach" class="lesson-section">
+                <div class="teach-panel">
+                    <h2 style="border:0;padding:0;">💬 Teach It: Keep the momentum</h2>
+                    <p>The best "next step" is almost always <em>one more project your child is excited about.</em> Depth of interest beats rushing to the next tool.</p>
+                    <ul>
+                        <li><strong>Follow the fire.</strong> Loves animation? Do more animation. Loves games? Build the next game. Interest sustains itself.</li>
+                        <li><strong>Set gentle challenges.</strong> "Could you add a second level?" keeps growth happening without pressure.</li>
+                        <li><strong>Find a community.</strong> A coding club, a cousin who codes, or Scratch's own community gives them peers and an audience.</li>
+                        <li><strong>Celebrate the journey.</strong> Look back at their first three-block cat versus what they build now. Growth is a powerful motivator to see.</li>
+                    </ul>
+                    <p class="say-this">"Look how far you've come — remember when we made the cat just say hello? Now look what you can build. What do you want to make next?"</p>
+                    <div class="card card-info" style="margin-bottom:0;">
+                        <h4>💡 And keep being the buddy</h4>
+                        <p>Even as they surpass you (they will!), your encouragement, your curiosity, and your "show me what you made" stay just as valuable. You don't need to keep up with the code to keep cheering the coder.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quiz" class="lesson-section">
+                <h2>🎯 Quick Check</h2>
+                <div class="card quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> Your child built Star Catcher with clones and a My Block. What's a natural next thing to explore <em>inside</em> Scratch?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Scratch has lots more depth — they've only scratched the surface.">A) Nothing — they've learned all of Scratch</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — lists (and extensions like Pen and Music) are the next layers of depth inside Scratch.">B) Lists, or an extension like Pen or Music</button>
+                            <button class="quiz-option" data-correct="false" data-hint="There's no rush — many kids stay in Scratch for years.">C) They must switch to Python right away</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 2:</strong> Why is moving from Scratch to Python not as scary as it sounds?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="true" data-explanation="Right — loops, variables, conditionals transfer; only the syntax changes.">A) The core concepts transfer; only the syntax changes</button>
+                            <button class="quiz-option" data-correct="false" data-hint="They're related, not identical.">B) Python and Scratch are exactly the same</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Nothing carries over is the opposite of true.">C) You start completely from zero</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p><strong>Question 3:</strong> Best way to keep a child's coding momentum?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false" data-hint="Rushing tools can kill interest.">A) Push them to the next tool as fast as possible</button>
+                            <button class="quiz-option" data-correct="true" data-explanation="Yes — follow their interests with one more project they're excited about.">B) Follow their interests with another project they're excited about</button>
+                            <button class="quiz-option" data-correct="false" data-hint="Pressure backfires.">C) Require an hour of coding daily</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Journal -->
+            <section id="journal" class="lesson-section">
+                <h2>📓 Learning Journal</h2>
+                <div class="card journal-card">
+                    <h3>Your final entry: look back, then look ahead</h3>
+                    <p>Before you write anything, flip back to your very first entry — the "why" page from <a href="lesson_01.html">Lesson 1.1</a>. Read it slowly. Then answer these.</p>
+
+                    <h3>Whole-course reflection</h3>
+                    <ul>
+                        <li><strong>Your why:</strong> What did you hope to create with your child back then? Did you make it — or something even better?</li>
+                        <li><strong>Your worry:</strong> Reread the worry you wrote down. How big does it feel now? Cross it off if you've earned it.</li>
+                        <li><strong>Your number:</strong> In Lesson 1.1 you rated your confidence from 1–10. What's your number today? What moved it most?</li>
+                    </ul>
+
+                    <h3>Lesson 5.4 reflection</h3>
+                    <ol>
+                        <li><strong>Key concepts:</strong> In your own words, why do the ideas from this course (sequences, loops, conditionals, variables, events) carry over to Python or any other language?</li>
+                        <li><strong>What clicked:</strong> Looking back over all seventeen lessons, which moment made you feel like a real coder — the first moving cat, the first working loop, the first falling clone, the finished game?</li>
+                        <li><strong>Questions &amp; confusion:</strong> What do you still want to learn? Lists? Extensions? Text code? Write it down — that's your next course.</li>
+                        <li><strong>Ideas to try:</strong> Name the next project your child is excited about, and which path on the road map it leads toward.</li>
+                        <li><strong>Progress &amp; feelings:</strong> How has coding together changed your relationship with your child, or how they handle hard things?</li>
+                    </ol>
+                    <p class="journal-tip">💡 <strong>Teach It tip:</strong> Sit down with your child and page through their coder's notebook from the very first drawing. Ask them to pick their favorite page and tell you the story of that project — then start a fresh page titled "What I'll make next."</p>
+                </div>
+            </section>
+
+            <section id="summary" class="lesson-section">
+                <h2>Course Complete 🎓</h2>
+                <div class="card card-success">
+                    <h3>🎓 Key Takeaways</h3>
+                    <ul>
+                        <li><strong>ScratchJr</strong> serves younger kids; the free <strong>offline app</strong> serves no-internet situations.</li>
+                        <li>You already have clones and My Blocks; <strong>lists</strong> and <strong>extensions</strong> (Pen, Music, micro:bit) are the next layers, and Scratch extends to <strong>hardware</strong>.</li>
+                        <li>The concepts transfer to <strong>text languages</strong> like Python — the jump is mostly syntax.</li>
+                        <li>Momentum comes from interest: one more exciting project beats rushing ahead.</li>
+                    </ul>
+                </div>
+
+                <div class="card card-accent" style="text-align:center;">
+                    <h2 style="border:0;background:none;color:#fff;box-shadow:none;">🏆 You did it — Module 5 and the whole course!</h2>
+                    <p>Seventeen lessons, five modules. You went from never having coded to learning Scratch, building a real game with clones and custom blocks, teaching your child, and guiding them safely into a whole community of young creators. That's an extraordinary gift to give a kid — and yourself.</p>
+                    <p><strong>Now go make something wonderful together.</strong> 🐱💛</p>
+                </div>
+
+                <div class="summary-grid">
+                    <div class="card">
+                        <h4>🏅 What You've Accomplished</h4>
+                        <ul>
+                            <li><strong>Module 1:</strong> met Scratch, toured the editor, and wrote your first program</li>
+                            <li><strong>Module 2:</strong> mastered sequences, loops, and conditionals</li>
+                            <li><strong>Module 3:</strong> built an animated story and a scoring game, then debugged and remixed</li>
+                            <li><strong>Module 4:</strong> learned clones and My Blocks, and built Star Catcher together</li>
+                            <li><strong>Module 5:</strong> became a coach, set up safe sharing, met ScratchJr, and mapped the road ahead</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>📋 Before Your Next Project</h4>
+                        <ul>
+                            <li>Write your final journal entry and reread your first one</li>
+                            <li>Download the <a href="https://scratch.mit.edu/download">offline app</a> if you'll code without internet</li>
+                            <li>Let your child choose the next project and one new thing to try (a list or an extension)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <h3>❓ Common Questions at This Stage</h3>
+                    <details>
+                        <summary>My child is already better at Scratch than I am. Is my job done?</summary>
+                        <p>Your job changes, it doesn't end. You don't have to keep up with the code to keep asking "show me what you made," "how did you do that?", and "what's next?" Being their audience and their question-asker stays valuable for years.</p>
+                    </details>
+                    <details>
+                        <summary>When should we switch to Python?</summary>
+                        <p>When your child is curious about it — not on a schedule. Typing fluency and reading comfort help, so many kids start around 10–13, but plenty stay happily in Scratch longer. Nothing they learn in Scratch is wasted; it all carries over.</p>
+                    </details>
+                    <details>
+                        <summary>We took a long break and forgot things. Should we start the course over?</summary>
+                        <p>No need. Skim the Key Takeaways of the lessons you want to refresh and rebuild one small project, like the Lesson 1.3 cat. It comes back much faster the second time — that's how learning works.</p>
+                    </details>
+                </div>
+
+                <h3>🔭 Looking Ahead</h3>
+                <p>This is the last lesson, but not the last project. The road ahead is yours to choose: one more Scratch game with a high-score <strong>list</strong>, a drawing toy with the <strong>Pen</strong> extension, a banana piano with a Makey Makey, or a first <strong>Python</strong> loop. Pick the one your child's eyes light up for, and start there.</p>
+
+                <div class="card card-info encourage-card">
+                    <h4>💛 Encouragement for the Journey</h4>
+                    <p style="margin-bottom:0;">You started this course unsure whether you were "techy enough." You finished it having written programs, fixed bugs, built a game, and — most importantly — shown your child that grown-ups learn hard things too. That lesson will outlast every block you dragged. Thank you for taking the journey. 💛</p>
+                </div>
+
+                <h3>📚 Revisit anytime</h3>
+                <p>Every lesson stays here for you to return to. Bookmark the parts you'll reference most — the editor tour, the debugging table, the safety checklist.</p>
+                <p style="text-align:center;">
+                    <a href="index.html" class="button">🏠 Back to Course Home</a>
+                </p>
+            </section>
+
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="lesson_16.html" class="prev-lesson">← Previous: ScratchJr — Coding for Ages 5–7</a>
+                <a href="index.html" class="home-link">🏠 Home</a>
+                <a href="index.html" class="next-lesson">🎉 Course Home →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Ray de la Paz. Scratch for Parents. All rights reserved.</p>
+        <p><small>An independent course — not affiliated with the Scratch Foundation or MIT. Scratch is a project of the Scratch Foundation.</small></p>
+        <div class="footer-links">
+            <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+            <a href="https://scratch.mit.edu/">Scratch</a>
+            <a href="#" id="print-button">Print Page</a>
+        </div>
+        <p><small>Press <kbd>?</kbd> for keyboard shortcuts</small></p>
+    </footer>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/course-enhancements.js"></script>
+</body>
+</html>

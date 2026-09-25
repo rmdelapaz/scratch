@@ -154,9 +154,16 @@
         },
         {
           "id": "lesson-4-3",
-          "title": "Capstone — Plan & Build a Game Together",
+          "title": "Capstone Part 1 — Plan It & Build the Core",
           "filename": "lesson_12.html",
-          "duration": "60 minutes",
+          "duration": "40 minutes",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "lesson-4-4",
+          "title": "Capstone Part 2 — Lives, Game Over & Launch Day",
+          "filename": "lesson_13.html",
+          "duration": "35 minutes",
           "difficulty": "beginner"
         }
       ]
@@ -169,28 +176,28 @@
         {
           "id": "lesson-5-1",
           "title": "The Art of Not Taking Over",
-          "filename": "lesson_13.html",
+          "filename": "lesson_14.html",
           "duration": "25 minutes",
           "difficulty": "beginner"
         },
         {
           "id": "lesson-5-2",
           "title": "Sharing Safely & the Scratch Community",
-          "filename": "lesson_14.html",
+          "filename": "lesson_15.html",
           "duration": "30 minutes",
           "difficulty": "beginner"
         },
         {
           "id": "lesson-5-3",
           "title": "ScratchJr — Coding for Ages 5–7",
-          "filename": "lesson_15.html",
+          "filename": "lesson_16.html",
           "duration": "35 minutes",
           "difficulty": "beginner"
         },
         {
           "id": "lesson-5-4",
           "title": "What Comes After Scratch",
-          "filename": "lesson_16.html",
+          "filename": "lesson_17.html",
           "duration": "25 minutes",
           "difficulty": "beginner"
         }
